@@ -45,31 +45,51 @@
         <input class="retos__buscar" id="buscar" name="buscar" type="search" placeholder="⌕  Buscar reto">
       </div>
       <div class="retos__selectores">
-        <div class="retos__selector">
-          <label class="visualmente-oculto" for="tema">Tema</label>
-          <select class="retos__select" id="tema" name="tema">
-            <option value="todos">Tema: todos ▾</option>
-          </select>
-        </div>
-        <div class="retos__selector">
-          <label class="visualmente-oculto" for="estado">Estado</label>
-          <select class="retos__select" id="estado" name="estado">
-            <option value="todos">Estado: todos ▾</option>
-          </select>
-        </div>
-        <div class="retos__selector">
-          <label class="visualmente-oculto" for="fecha">Fecha</label>
-          <select class="retos__select" id="fecha" name="fecha">
-            <option value="todos">Fecha: todos ▾</option>
-          </select>
-        </div>
-        <div class="retos__selector">
-          <label class="visualmente-oculto" for="orden">Ordenar</label>
-          <select class="retos__select" id="orden" name="orden">
-            <option value="recientes">Ordenar: recientes ▾</option>
-          </select>
-        </div>
-      </div>
+
+  <!-- Filtro por tema -->
+  <div class="retos__selector">
+    <label class="visualmente-oculto" for="tema">Tema</label>
+    <select class="retos__select" id="tema" name="tema">
+      <option value="todos">Tema: todos</option>
+      <option value="grafos">Grafos</option>
+      <option value="algoritmos">Algoritmos</option>
+      <option value="estructuras">Estructuras de datos</option>
+    </select>
+  </div>
+
+  <!-- Filtro por estado -->
+  <div class="retos__selector">
+    <label class="visualmente-oculto" for="estado">Estado</label>
+    <select class="retos__select" id="estado" name="estado">
+      <option value="todos">Estado: todos</option>
+      <option value="pendiente">Pendiente</option>
+      <option value="revision">En revisión</option>
+      <option value="aceptado">Aceptado</option>
+    </select>
+  </div>
+
+  <!-- Filtro por fecha -->
+  <div class="retos__selector">
+    <label class="visualmente-oculto" for="fecha">Fecha</label>
+    <select class="retos__select" id="fecha" name="fecha">
+      <option value="todos">Fecha: todas</option>
+      <option value="semana">Esta semana</option>
+      <option value="mes">Este mes</option>
+      <option value="vencidos">Vencidos</option>
+    </select>
+  </div>
+
+  <!-- Ordenar retos -->
+  <div class="retos__selector">
+    <label class="visualmente-oculto" for="orden">Ordenar</label>
+    <select class="retos__select" id="orden" name="orden">
+      <option value="recientes">Ordenar: recientes</option>
+      <option value="antiguos">Más antiguos</option>
+      <option value="entrega">Próxima entrega</option>
+    </select>
+  </div>
+
+</div>
     </form>
 
     <section class="tarjeta retos__tarjeta" aria-label="Lista de retos">

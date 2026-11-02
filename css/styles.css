@@ -944,7 +944,7 @@ textarea.campo__input {
 @media (min-width: 768px) {
   .retos {
     gap: 28px;
-    padding-top: 153px;
+    padding-top: 32px;
     padding-bottom: 94px;
   }
   .retos__titulo {
