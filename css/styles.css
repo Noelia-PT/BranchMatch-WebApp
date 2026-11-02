@@ -1152,6 +1152,160 @@ textarea.campo__input {
 }
 
 
+/* --- 02 · Crear cuenta y 03 · Iniciar sesión (pages/auth/) --- */
+
+/* Fondo: Popa aterrizada en «BASE 01» (exportar del Figma como auth-fondo.gif) */
+.auth {
+  background:
+    url("../assets/img/auth-fondo.gif") 30% bottom / cover no-repeat,
+    var(--color-fondo) url("../assets/img/fondo-estrellas.png") center top / 1440px auto repeat;
+}
+.auth-header__contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-16);
+  padding-top: var(--espacio-24);
+}
+.auth-header__volver {
+  min-height: 40px;
+  padding: var(--espacio-8) var(--espacio-16);
+  border-width: var(--borde-fino);
+  font-size: var(--texto-stats);
+}
+.auth__main {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--espacio-32);
+}
+.auth-tarjeta {
+  width: 100%;
+  max-width: 652px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+  padding: var(--espacio-24) var(--espacio-16);
+  background: rgba(18, 22, 58, 0.8);
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+}
+.auth-tarjeta__titulo {
+  font-size: var(--texto-h2);
+  line-height: var(--lh-h2);
+  color: var(--color-menta);
+  text-align: center;
+}
+.auth-formulario {
+  gap: var(--espacio-16);
+}
+.auth-formulario__label {
+  font-size: var(--texto-body);
+  line-height: var(--lh-body);
+}
+.auth-formulario .campo__input {
+  border-radius: 10px;
+}
+.auth-formulario__check-label {
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+}
+.auth-formulario__boton {
+  align-self: stretch;
+  margin-top: var(--espacio-8);
+}
+.auth-tarjeta__pie {
+  text-align: center;
+  font-size: var(--texto-small);
+}
+.auth-tarjeta__link {
+  color: var(--color-celeste);
+}
+.auth-tarjeta__link:hover {
+  text-decoration: underline;
+}
+.auth-footer {
+  margin-top: var(--espacio-48);
+  background: transparent;
+  text-align: center;
+}
+.auth-footer .footer__contenido {
+  justify-content: center;
+}
+
+/* Campo con ícono a la derecha (ojo de contraseña, solo decorativo) */
+.campo__con-icono {
+  position: relative;
+}
+.campo__con-icono .campo__input {
+  padding-right: var(--espacio-48);
+}
+.campo__icono {
+  position: absolute;
+  top: 50%;
+  right: var(--espacio-16);
+  width: 24px;
+  height: 24px;
+  transform: translateY(-50%);
+}
+
+/* Casilla de verificación con su texto al lado */
+.campo--check {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  column-gap: var(--espacio-8);
+}
+.campo--check .campo__error {
+  grid-column: 1 / -1;
+}
+.campo__check {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  accent-color: var(--color-celeste);
+}
+.campo__check:user-invalid ~ .campo__error {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .auth-header__logo {
+    visibility: hidden;
+  }
+  .auth-header__volver {
+    min-height: 56px;
+    min-width: 243px;
+    font-size: var(--texto-boton);
+  }
+  .auth__main {
+    justify-content: flex-end;
+    padding-top: var(--espacio-16);
+  }
+  .auth-tarjeta {
+    padding: var(--espacio-16) var(--espacio-24) var(--espacio-24);
+  }
+  .auth-tarjeta__titulo {
+    font-size: var(--texto-display);
+    line-height: var(--lh-display);
+  }
+  .auth-formulario__label {
+    font-size: var(--texto-h3);
+    line-height: var(--lh-h3);
+    font-weight: 600;
+  }
+  .auth-formulario__check-label {
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+  }
+  .auth-formulario__boton {
+    align-self: center;
+    min-width: 243px;
+  }
+  .auth-tarjeta__pie {
+    font-size: var(--texto-body);
+  }
+}
+
 /* ===== P2 · Perfiles y Party ===== */
 
 
