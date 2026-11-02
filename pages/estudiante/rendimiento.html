@@ -33,18 +33,53 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Resumen de rendimiento</h1>
-    <!-- TODO P4: implementar la pantalla 33 según el Figma. -->
+  <main class="contenedor rend">
+    <header class="rend__intro">
+      <h1 class="titulo-1">Resumen de rendimiento</h1>
+      <p class="rend__subtitulo">Así vas en tus retos y temas.</p>
+    </header>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="tema.html">23 · Grafos</a></li>
-        <li><a href="retos.html">26 · Mis retos</a></li>
+    <section class="tarjeta rend__kpi" aria-labelledby="rend-kpi">
+      <span class="chip chip--amarillo rend__chip" id="rend-kpi">KPI</span>
+      <p class="rend__kpi-valor">60%</p>
+      <p class="rend__kpi-texto">de retos aprobados</p>
+    </section>
+
+    <section class="tarjeta rend__dominio" aria-labelledby="rend-dominio">
+      <h2 class="titulo-3" id="rend-dominio">Dominio por tema</h2>
+      <ul class="rend__lista">
+        <li class="rend__tema">
+          <span class="rend__tema-nombre">Listas Enlazadas</span>
+          <span class="rend__tema-valor">90%</span>
+          <span class="rend__barra"><span class="rend__relleno rend__relleno--90 rend__relleno--menta"></span></span>
+        </li>
+        <li class="rend__tema">
+          <span class="rend__tema-nombre">Árboles Binarios</span>
+          <span class="rend__tema-valor">85%</span>
+          <span class="rend__barra"><span class="rend__relleno rend__relleno--85 rend__relleno--menta"></span></span>
+        </li>
+        <li class="rend__tema">
+          <span class="rend__tema-nombre">Programación dinámica</span>
+          <span class="rend__tema-valor">75%</span>
+          <span class="rend__barra"><span class="rend__relleno rend__relleno--75 rend__relleno--amarillo"></span></span>
+        </li>
+        <li class="rend__tema">
+          <span class="rend__tema-nombre">Grafos</span>
+          <span class="rend__tema-valor">50%</span>
+          <span class="rend__barra"><span class="rend__relleno rend__relleno--50 rend__relleno--rosa"></span></span>
+        </li>
       </ul>
-    </nav>
+    </section>
 
+    <section class="tarjeta rend__plan" aria-labelledby="rend-plan">
+      <span class="chip chip--rosa rend__chip">Plan de mejora sugerido</span>
+      <h2 class="rend__plan-titulo" id="rend-plan">Tema a reforzar: Grafos</h2>
+      <p class="rend__plan-texto">Notamos que tu desempeño en Grafos es del 50%. Te sugerimos repasar la lección y reintentar los retos pendientes.</p>
+      <div class="rend__acciones">
+        <a class="boton" href="tema.html">Ir a lección de Grafos</a>
+        <a class="boton boton--secundario" href="retos.html">Ver retos de Grafos</a>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
