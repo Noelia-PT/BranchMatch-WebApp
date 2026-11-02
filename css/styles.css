@@ -812,16 +812,24 @@ textarea.campo__input {
 }
 
 /* Hero */
+/* Móvil: el GIF va arriba en su propia franja y el texto debajo, sin taparlo */
 .hero {
   display: flex;
-  align-items: flex-end;
-  min-height: 576px;
-  background: var(--color-fondo) url("../assets/img/landing-hero.gif") 20% center / cover no-repeat;
+  flex-direction: column;
+  background: var(--color-fondo);
+}
+.hero::before {
+  content: "";
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 480px;
+  background: url("../assets/img/landing-hero.gif") left center / cover no-repeat;
 }
 .hero__contenido {
   display: flex;
   justify-content: center;
-  padding-top: var(--espacio-48);
+  padding-top: var(--espacio-24);
   padding-bottom: var(--espacio-32);
 }
 .hero__texto {
@@ -1052,11 +1060,16 @@ textarea.campo__input {
   .landing-header__nav .header__lista {
     align-items: center;
   }
+  /* Escritorio: el GIF ocupa todo el fondo y el texto va a la derecha */
   .hero {
+    flex-direction: row;
     align-items: center;
     min-height: 1022px;
     margin-top: calc(-1 * var(--alto-header));
-    background-position: center top;
+    background: var(--color-fondo) url("../assets/img/landing-hero.gif") center top / cover no-repeat;
+  }
+  .hero::before {
+    display: none;
   }
   .hero__contenido {
     justify-content: flex-end;
