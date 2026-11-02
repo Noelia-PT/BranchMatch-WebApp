@@ -33,17 +33,65 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Chat de la party</h1>
-    <!-- TODO P2: implementar la pantalla 20 según el Figma. -->
+  <main class="contenedor chat">
+    <section class="tarjeta chat__tarjeta" aria-labelledby="chat-titulo">
+      <header class="chat__cabecera">
+        <a class="chat__volver" href="mi-party.html" aria-label="Volver a mi party"><img class="chat__volver-icono" src="../../assets/icons/chat-volver.svg" alt=""></a>
+        <img class="chat__avatar" src="../../assets/img/chat-avatar.png" alt="Avatar del grupo">
+        <div class="chat__grupo">
+          <h1 class="chat__titulo" id="chat-titulo"><a href="mi-party.html">Los Insanos</a></h1>
+          <p class="chat__subtitulo texto-secundario">Todos los integrantes</p>
+        </div>
+        <img class="chat__mas" src="../../assets/icons/chat-mas.svg" alt="Más opciones">
+      </header>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="mi-party.html">19 · Mi party</a></li>
-      </ul>
-    </nav>
+      <div class="chat__mensajes">
+        <p class="chat__dia">Hoy</p>
+        <ul class="chat__lista">
+          <li class="chat__item">
+            <article class="chat__msg">
+              <p class="chat__meta"><span class="chat__autor">Ana</span><time class="chat__hora">17:01</time></p>
+              <p class="chat__texto">¡Wow, qué buen ranking!</p>
+            </article>
+          </li>
+          <li class="chat__item">
+            <article class="chat__msg">
+              <p class="chat__meta"><span class="chat__autor">Edson</span><time class="chat__hora">17:02</time></p>
+              <p class="chat__texto">Hoy había un concurso, ¡efe!</p>
+            </article>
+          </li>
+          <li class="chat__item">
+            <article class="chat__msg">
+              <p class="chat__meta"><span class="chat__autor">Valeria</span><time class="chat__hora">17:03</time></p>
+              <p class="chat__texto">Para la siguiente</p>
+            </article>
+          </li>
+          <li class="chat__item chat__item--propio">
+            <article class="chat__msg chat__msg--propio">
+              <p class="chat__meta"><span class="chat__autor">Tomas</span><time class="chat__hora">17:30</time></p>
+              <p class="chat__texto">¡Sí, con fe! :)</p>
+            </article>
+          </li>
+          <li class="chat__item">
+            <article class="chat__msg">
+              <p class="chat__meta"><span class="chat__autor">Edson</span><time class="chat__hora">18:01</time></p>
+              <p class="chat__texto">¡Oka, nos vemos en la sesión!</p>
+            </article>
+          </li>
+        </ul>
+      </div>
 
+      <form class="chat__redactar" action="chat.html" method="get">
+        <div class="chat__campo">
+          <img class="chat__adjuntar" src="../../assets/icons/chat-adjuntar.png" alt="Adjuntar archivo">
+          <label class="visualmente-oculto" for="mensaje">Escribe tu mensaje</label>
+          <input class="chat__input" id="mensaje" name="mensaje" type="text" placeholder="Escribe tu mensaje..." required minlength="1" autocomplete="off">
+          <img class="chat__emoji" src="../../assets/icons/chat-emoji.svg" alt="Emojis">
+          <img class="chat__microfono" src="../../assets/icons/chat-microfono.png" alt="Mensaje de voz">
+        </div>
+        <a class="chat__enviar" href="chat.html" aria-label="Enviar mensaje"><img class="chat__enviar-icono" src="../../assets/icons/chat-enviar.png" alt=""></a>
+      </form>
+    </section>
   </main>
 
   <footer class="footer">
