@@ -1175,6 +1175,7 @@ textarea.campo__input {
 }
 .auth__main {
   display: flex;
+  align-items: flex-start;
   justify-content: center;
   padding-top: var(--espacio-32);
 }
@@ -1230,6 +1231,34 @@ textarea.campo__input {
 }
 .auth-footer .footer__contenido {
   justify-content: center;
+}
+
+/* 03 · Iniciar sesión: otro fondo animado y tarjeta más ancha */
+.auth--login {
+  background:
+    url("../assets/img/login-fondo.gif") 25% bottom / cover no-repeat,
+    var(--color-fondo) url("../assets/img/fondo-estrellas.png") center top / 1440px auto repeat;
+}
+.auth-tarjeta--ancha {
+  max-width: 759px;
+}
+.auth-tarjeta__encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+  text-align: center;
+}
+.auth-tarjeta__subtitulo {
+  font-family: var(--fuente-pixel);
+  font-weight: 600;
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+  color: var(--color-menta);
+}
+.auth-formulario--angosto {
+  width: 100%;
+  max-width: 414px;
+  align-self: center;
 }
 
 /* Campo con ícono a la derecha (ojo de contraseña, solo decorativo) */
@@ -1303,6 +1332,13 @@ textarea.campo__input {
   }
   .auth-tarjeta__pie {
     font-size: var(--texto-body);
+  }
+  .auth-tarjeta__subtitulo {
+    font-size: var(--texto-h2);
+    line-height: var(--lh-h2);
+  }
+  .auth-tarjeta__pie--derecha {
+    text-align: right;
   }
 }
 
