@@ -775,6 +775,368 @@ textarea.campo__input {
 
 /* ===== P1 · Entrada: landing, auth, prueba, notificaciones, party completa ===== */
 
+/* --- 01 · Landing (index.html) --- */
+
+/* Cabecera propia del landing: fija, enlaces a las secciones y botón */
+.landing-header {
+  background: rgba(18, 22, 58, 0.92);
+}
+.landing-header__link {
+  font-family: var(--fuente-pixel);
+  font-weight: 700;
+  font-size: var(--texto-boton);
+  line-height: var(--lh-boton);
+  color: var(--color-menta);
+}
+.landing-header__link:hover {
+  color: var(--color-texto);
+}
+.landing-header__boton {
+  min-height: 48px;
+  padding: var(--espacio-8) var(--espacio-24);
+  border-width: var(--borde-fino);
+}
+.landing-header__nav .header__lista {
+  align-items: flex-start;
+}
+
+/* Enlaces de ancla: que no queden tapados por la cabecera fija */
+.landing-seccion {
+  scroll-margin-top: var(--alto-header);
+}
+
+.landing__main {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: flex-end;
+  min-height: 576px;
+  background: var(--color-fondo) url("../assets/img/landing-hero.png") 20% center / cover no-repeat;
+}
+.hero__contenido {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--espacio-48);
+  padding-bottom: var(--espacio-32);
+}
+.hero__texto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+  max-width: 500px;
+}
+.hero__titulo {
+  font-size: var(--texto-display);
+  line-height: var(--lh-display);
+  color: var(--color-celeste);
+  text-align: center;
+}
+.hero__descripcion {
+  font-size: var(--texto-body);
+  line-height: var(--lh-body);
+  color: var(--color-texto);
+}
+.hero__registro a {
+  color: var(--color-texto-2);
+}
+.hero__registro a:hover {
+  color: var(--color-celeste);
+  text-decoration: underline;
+}
+.hero__boton {
+  width: 100%;
+}
+
+/* Secciones */
+.landing-seccion__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-32);
+  padding-top: var(--espacio-64);
+  padding-bottom: var(--espacio-32);
+}
+.landing-seccion__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espacio-16);
+  max-width: 1000px;
+}
+.landing-seccion__bajada {
+  max-width: 860px;
+  color: var(--color-texto-2);
+  font-size: var(--texto-body);
+  line-height: var(--lh-body);
+}
+.landing-subtitulo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+}
+
+/* Grillas de tarjetas: 1 columna en móvil */
+.landing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+  align-items: start;
+}
+.landing-tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+}
+.landing-tarjeta__titulo--amarillo {
+  color: var(--color-amarillo);
+}
+.landing-tarjeta__titulo--rosa {
+  color: var(--color-rosa);
+}
+
+/* ¿Cómo funciona? */
+.paso__numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: var(--borde-medio) solid var(--color-borde);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-h2);
+  font-weight: 600;
+  color: var(--color-borde);
+}
+.paso__numero--amarillo { background: var(--color-amarillo); }
+.paso__numero--rosa { background: var(--color-rosa); }
+.paso__numero--menta { background: var(--color-menta); }
+
+/* Glosario */
+.glosario__termino {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espacio-8);
+}
+
+/* Beneficios: barrita de color arriba */
+.beneficio::before {
+  content: "";
+  width: 40px;
+  height: 8px;
+  background: var(--color-amarillo);
+}
+.beneficio--menta::before { background: var(--color-menta); }
+.beneficio--celeste::before { background: var(--color-celeste); }
+.beneficio--rosa::before { background: var(--color-rosa); }
+
+/* Nuestro equipo: escena con la mesa + tarjetas de integrantes */
+.equipo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+}
+.equipo__escena {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.equipo__lider {
+  margin-bottom: var(--espacio-4);
+}
+.equipo__popa {
+  width: 140px;
+  image-rendering: pixelated;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -16px;
+}
+.equipo__mesa {
+  width: 100%;
+  max-width: 652px;
+  image-rendering: pixelated;
+}
+.equipo__popa-tarjeta {
+  margin-top: var(--espacio-16);
+  padding: var(--espacio-8) var(--espacio-16);
+  background: var(--color-superficie);
+  border: var(--borde-medio) solid var(--color-amarillo);
+  text-align: center;
+}
+.equipo__popa-tarjeta .titulo-3 {
+  color: var(--color-amarillo);
+}
+.equipo__integrantes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacio-16);
+}
+.integrante {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-4);
+  padding: var(--espacio-16) var(--espacio-16);
+  background: var(--color-superficie);
+  border: var(--borde-medio) solid var(--color-borde);
+}
+.integrante__nombre {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-8);
+}
+.integrante__color {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border: var(--borde-fino) solid var(--color-borde);
+}
+.integrante__color--naranja { background: #f4a259; }
+.integrante__color--crema { background: #f5e6c8; }
+.integrante__color--gris { background: #9aa3b5; }
+.integrante__color--negro { background: #3b3b4f; }
+.integrante__rol {
+  color: var(--color-amarillo);
+}
+
+/* Logros */
+.logro-destacado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espacio-16);
+}
+.competencia__encabezado {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-16);
+}
+.competencia__pais {
+  color: var(--color-amarillo);
+}
+.bandera {
+  width: 64px;
+  height: 44px;
+  flex-shrink: 0;
+  border: var(--borde-fino) solid var(--color-borde);
+}
+.bandera--peru {
+  background: linear-gradient(90deg, #d91023 33.3%, #ffffff 33.3% 66.6%, #d91023 66.6%);
+}
+.bandera--argentina {
+  background: linear-gradient(180deg, #74acdf 33.3%, #ffffff 33.3% 66.6%, #74acdf 66.6%);
+}
+.bandera--brasil {
+  background:
+    radial-gradient(circle, #002776 22%, transparent 23%),
+    conic-gradient(from 45deg, #009c3b 0 25%, #fedf00 0 50%, #009c3b 0 75%, #fedf00 0) center / 100% 100%;
+  background-color: #009c3b;
+}
+
+/* Llamado a la acción final */
+.cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+  border-color: var(--color-amarillo);
+  padding: var(--espacio-32);
+}
+.cta .boton {
+  align-self: stretch;
+}
+
+@media (min-width: 768px) {
+  .landing-header__nav .header__lista {
+    align-items: center;
+  }
+  .hero {
+    align-items: center;
+    min-height: 1022px;
+    margin-top: calc(-1 * var(--alto-header));
+    background-position: center top;
+  }
+  .hero__contenido {
+    justify-content: flex-end;
+    padding-top: 0;
+  }
+  .hero__texto {
+    max-width: 590px;
+  }
+  .hero__titulo {
+    text-align: left;
+    background: var(--color-fondo);
+    align-self: flex-start;
+    padding: 0 var(--espacio-8);
+  }
+  .hero__descripcion {
+    max-width: 466px;
+  }
+  .hero__descripcion,
+  .hero__registro {
+    background: var(--color-fondo);
+    padding: 0 var(--espacio-8);
+    align-self: flex-start;
+  }
+  .hero__boton {
+    width: auto;
+    align-self: flex-end;
+    min-width: 243px;
+  }
+  .landing-seccion__contenido {
+    padding-top: 112px;
+  }
+  .landing-grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .landing-grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .landing-grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .cta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--espacio-32) 40px;
+  }
+  .cta .boton {
+    align-self: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing-grid--4 { grid-template-columns: repeat(4, 1fr); }
+  /* Escena en el centro y dos integrantes a cada lado */
+  .equipo {
+    display: grid;
+    grid-template-columns: 276px 1fr 276px;
+    grid-template-areas: "izq escena der";
+    align-items: center;
+    gap: 0;
+  }
+  .equipo__escena {
+    grid-area: escena;
+  }
+  .equipo__integrantes {
+    display: contents;
+  }
+  .integrante:nth-child(1),
+  .integrante:nth-child(2) {
+    grid-area: izq;
+  }
+  .integrante:nth-child(3),
+  .integrante:nth-child(4) {
+    grid-area: der;
+  }
+  .integrante:nth-child(1),
+  .integrante:nth-child(3) {
+    align-self: start;
+    margin-top: 150px;
+  }
+  .integrante:nth-child(2),
+  .integrante:nth-child(4) {
+    align-self: start;
+    margin-top: 330px;
+  }
+}
+
 
 /* ===== P2 · Perfiles y Party ===== */
 

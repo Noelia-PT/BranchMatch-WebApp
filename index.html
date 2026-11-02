@@ -3,33 +3,271 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Landing · BranchMatch</title>
+  <title>Branch Match · Encuentra tu coding party</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="landing">
   <!-- Figma: pantalla 01 · Landing · Responsable: P1 -->
-  <header class="header">
+  <header class="header landing-header">
     <div class="contenedor header__contenido">
       <a class="header__logo" href="index.html">
         <img class="header__logo-img" src="assets/img/logo-antenas.png" alt="">
         <span class="header__logo-texto">Branch<span>Match</span></span>
       </a>
+      <nav class="header__nav landing-header__nav" id="menu" aria-label="Secciones del landing">
+        <ul class="header__lista">
+          <li><a class="landing-header__link" href="#que-hacemos">Qué hacemos</a></li>
+          <li><a class="landing-header__link" href="#por-que-unirte">Por qué unirte</a></li>
+          <li><a class="landing-header__link" href="#logros">Logros</a></li>
+          <li><a class="boton landing-header__boton" href="pages/auth/iniciar-sesion.html">Iniciar sesión</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <a class="header__menu-btn landing-header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Landing</h1>
-    <!-- TODO P1: implementar la pantalla 01 según el Figma. -->
+  <main class="landing__main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="contenedor hero__contenido">
+        <div class="hero__texto">
+          <h1 class="titulo-display hero__titulo" id="hero-titulo">Encuentra tu coding party!</h1>
+          <p class="hero__descripcion">Encuentra compañeros para programación competitiva, arma tu equipo y entrenen juntos!</p>
+          <p class="hero__registro"><a href="pages/auth/crear-cuenta.html">¿No tienes una cuenta? Regístrate :D</a></p>
+          <a class="boton hero__boton" href="pages/auth/crear-cuenta.html">Registrarse</a>
+        </div>
+      </div>
+    </section>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="pages/auth/crear-cuenta.html">02 · Crear cuenta</a></li>
-        <li><a href="pages/auth/iniciar-sesion.html">03 · Iniciar sesión</a></li>
-        <li><a href="pages/estudiante/inicio.html">11 · Inicio (feed)</a></li>
-      </ul>
-    </nav>
+    <!-- Qué hacemos -->
+    <section class="landing-seccion" id="que-hacemos" aria-labelledby="que-hacemos-titulo">
+      <div class="contenedor landing-seccion__contenido">
+        <header class="landing-seccion__intro">
+          <p class="chip chip--celeste">QUÉ HACEMOS</p>
+          <h2 class="titulo-1" id="que-hacemos-titulo">Encuentra a tu equipo de programación competitiva</h2>
+          <p class="landing-seccion__bajada">Branch Match es una plataforma web que conecta a estudiantes que quieren entrenar programación competitiva con equipos (parties) de su mismo nivel y horario, y convierte el entrenamiento en un juego.</p>
+        </header>
 
+        <div class="landing-grid landing-grid--2">
+          <article class="tarjeta landing-tarjeta">
+            <h3 class="titulo-3 landing-tarjeta__titulo--amarillo">¿Qué es Branch Match?</h3>
+            <p>Haces una prueba diagnóstica, descubres tu nivel y te mostramos parties compatibles contigo. Cuando un líder acepta tu solicitud, ¡hacen match! Desde ahí entrenan juntos con sesiones, lecciones y retos que suman XP.</p>
+          </article>
+          <article class="tarjeta landing-tarjeta">
+            <h3 class="titulo-3 landing-tarjeta__titulo--rosa">¿Por qué lo estamos creando?</h3>
+            <p>Somos estudiantes de la UPC del curso IHC y Programación Web. Notamos que entrenar programación competitiva solo es difícil y que encontrar compañeros con tu nivel y tus horarios toma mucho tiempo. Queremos que formar un equipo sea tan fácil como hacer match, y que practicar se sienta como subir de nivel en un videojuego.</p>
+          </article>
+        </div>
+
+        <h2 class="titulo-2">¿Cómo funciona?</h2>
+        <ol class="landing-grid landing-grid--3">
+          <li class="tarjeta landing-tarjeta">
+            <span class="paso__numero paso__numero--amarillo" aria-hidden="true">1</span>
+            <h3 class="titulo-3">Haz la prueba diagnóstica</h3>
+            <p class="texto-small texto-secundario">Responde unas preguntas y conoce tu nivel: Principiante, Intermedio o Avanzado.</p>
+          </li>
+          <li class="tarjeta landing-tarjeta">
+            <span class="paso__numero paso__numero--rosa" aria-hidden="true">2</span>
+            <h3 class="titulo-3">Haz match con una party</h3>
+            <p class="texto-small texto-secundario">Revisa parties de tu nivel y envía tu solicitud. El líder decide si te une.</p>
+          </li>
+          <li class="tarjeta landing-tarjeta">
+            <span class="paso__numero paso__numero--menta" aria-hidden="true">3</span>
+            <h3 class="titulo-3">Entrena y sube de nivel</h3>
+            <p class="texto-small texto-secundario">Asiste a sesiones, resuelve retos y gana XP junto a tu party.</p>
+          </li>
+        </ol>
+
+        <div class="landing-subtitulo">
+          <h2 class="titulo-2">Glosario</h2>
+          <p class="landing-seccion__bajada">Las palabras que usamos en Branch Match, explicadas en simple.</p>
+        </div>
+        <dl class="landing-grid landing-grid--4">
+          <div class="tarjeta glosario__termino">
+            <dt class="chip chip--amarillo">Party</dt>
+            <dd class="texto-small">Equipo de hasta 5 programadores que entrenan juntos, guiados por un líder.</dd>
+          </div>
+          <div class="tarjeta glosario__termino">
+            <dt class="chip chip--amarillo">Líder (capitán)</dt>
+            <dd class="texto-small">Crea la party, acepta solicitudes y organiza sesiones y retos.</dd>
+          </div>
+          <div class="tarjeta glosario__termino">
+            <dt class="chip chip--celeste">Jugador</dt>
+            <dd class="texto-small">Estudiante que busca una party o ya forma parte de una.</dd>
+          </div>
+          <div class="tarjeta glosario__termino">
+            <dt class="chip chip--rosa">Match</dt>
+            <dd class="texto-small">Cuando el líder acepta tu solicitud y entras a su party.</dd>
+          </div>
+          <div class="tarjeta glosario__termino">
+            <dt class="chip chip--celeste">Player Card</dt>
+            <dd class="texto-small">Tu tarjeta de jugador: nivel, stats, lenguajes y logros.</dd>
+          </div>
+          <div class="tarjeta glosario__termino">
+            <dt class="chip chip--menta">Nivel (LV) y XP</dt>
+            <dd class="texto-small">La XP se gana resolviendo retos; al juntar suficiente, subes de nivel.</dd>
+          </div>
+          <div class="tarjeta glosario__termino">
+            <dt class="chip chip--rosa">Racha</dt>
+            <dd class="texto-small">Días seguidos en los que practicas dentro de la plataforma.</dd>
+          </div>
+          <div class="tarjeta glosario__termino">
+            <dt class="chip chip--menta">Reto</dt>
+            <dd class="texto-small">Problema de programación que publica el líder para que lo resuelvas.</dd>
+          </div>
+          <div class="tarjeta glosario__termino">
+            <dt class="chip chip--celeste">Prueba diagnóstica</dt>
+            <dd class="texto-small">Test inicial que calcula tu nivel para recomendarte parties.</dd>
+          </div>
+          <div class="tarjeta glosario__termino">
+            <dt class="chip chip--menta">Sesión</dt>
+            <dd class="texto-small">Clase en vivo de tu party, con fecha, hora y un tema.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Por qué unirte -->
+    <section class="landing-seccion" id="por-que-unirte" aria-labelledby="por-que-titulo">
+      <div class="contenedor landing-seccion__contenido">
+        <header class="landing-seccion__intro">
+          <p class="chip chip--rosa">¿POR QUÉ UNIRTE?</p>
+          <h2 class="titulo-1" id="por-que-titulo">Entrenar en equipo es más fácil (y más divertido)</h2>
+          <p class="landing-seccion__bajada">Practicar con personas de tu nivel te mantiene constante, aprendes de otros y llegas mejor preparado a los concursos.</p>
+        </header>
+
+        <ul class="landing-grid landing-grid--4">
+          <li class="tarjeta landing-tarjeta beneficio beneficio--amarillo">
+            <h3 class="titulo-3">Un equipo a tu medida</h3>
+            <p class="texto-small texto-secundario">Parties según tu nivel, lenguajes y horario.</p>
+          </li>
+          <li class="tarjeta landing-tarjeta beneficio beneficio--menta">
+            <h3 class="titulo-3">Aprende practicando</h3>
+            <p class="texto-small texto-secundario">Lecciones por tema y retos revisados por tu líder.</p>
+          </li>
+          <li class="tarjeta landing-tarjeta beneficio beneficio--celeste">
+            <h3 class="titulo-3">Progreso visible</h3>
+            <p class="texto-small texto-secundario">XP, niveles, rachas y estadísticas de tu avance.</p>
+          </li>
+          <li class="tarjeta landing-tarjeta beneficio beneficio--rosa">
+            <h3 class="titulo-3">Rumbo a los concursos</h3>
+            <p class="texto-small texto-secundario">Prepárate en equipo para competencias como la ICPC.</p>
+          </li>
+        </ul>
+
+        <div class="landing-subtitulo">
+          <h2 class="titulo-2">Nuestro equipo</h2>
+          <p class="landing-seccion__bajada">La party que está creando Branch Match, con Popa como líder.</p>
+        </div>
+        <div class="equipo">
+          <div class="equipo__escena">
+            <p class="chip chip--amarillo equipo__lider">★ LÍDER</p>
+            <img class="equipo__popa" src="assets/img/popa-lider.png" alt="Popa, la mascota de Branch Match, sentada a la cabecera de la mesa">
+            <img class="equipo__mesa" src="assets/img/mesa-equipo.svg" alt="Cuatro gatitos pixel, uno por integrante, alrededor de una mesa redonda con una laptop">
+            <div class="equipo__popa-tarjeta">
+              <p class="titulo-3">Popa</p>
+              <p class="texto-small texto-secundario">Mascota y líder de la party</p>
+            </div>
+          </div>
+          <ul class="equipo__integrantes">
+            <li class="integrante">
+              <h3 class="titulo-3 integrante__nombre"><span class="integrante__color integrante__color--naranja" aria-hidden="true"></span>Jack Lima</h3>
+              <p class="texto-small integrante__rol">Futuro científico de datos</p>
+              <p class="texto-small texto-secundario">Estudiante UPC · IHC y Programación Web</p>
+            </li>
+            <li class="integrante">
+              <h3 class="titulo-3 integrante__nombre"><span class="integrante__color integrante__color--crema" aria-hidden="true"></span>Noelia Paquiñauri</h3>
+              <p class="texto-small integrante__rol">Futura científica de datos</p>
+              <p class="texto-small texto-secundario">Estudiante UPC · IHC y Programación Web</p>
+            </li>
+            <li class="integrante">
+              <h3 class="titulo-3 integrante__nombre"><span class="integrante__color integrante__color--gris" aria-hidden="true"></span>Edson Ramos</h3>
+              <p class="texto-small integrante__rol">Futuro científico de datos</p>
+              <p class="texto-small texto-secundario">Estudiante UPC · IHC y Programación Web</p>
+            </li>
+            <li class="integrante">
+              <h3 class="titulo-3 integrante__nombre"><span class="integrante__color integrante__color--negro" aria-hidden="true"></span>Addy Pinedo</h3>
+              <p class="texto-small integrante__rol">Futura UX/UI Designer y analista forense</p>
+              <p class="texto-small texto-secundario">Estudiante UPC · IHC y Programación Web</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logros -->
+    <section class="landing-seccion" id="logros" aria-labelledby="logros-titulo">
+      <div class="contenedor landing-seccion__contenido">
+        <header class="landing-seccion__intro">
+          <p class="chip chip--amarillo">LOGROS</p>
+          <h2 class="titulo-1" id="logros-titulo">Logros de la programación competitiva en la UPC</h2>
+          <p class="landing-seccion__bajada">Estos resultados muestran hasta dónde puede llegar alguien que entrena con constancia. ¡El próximo puede ser tu party!</p>
+        </header>
+
+        <article class="tarjeta logro-destacado">
+          <p class="chip chip--amarillo">🏆 3.er lugar mundial</p>
+          <h3 class="titulo-2">TCS CodeVita · Edición XIII</h3>
+          <p>Sebastián Valdivia, estudiante de la UPC, obtuvo el tercer puesto mundial y también el tercer lugar en el reto especial con inteligencia artificial. Es la mejor participación del Perú en la historia de este torneo, que superó las 600 mil inscripciones.</p>
+          <p class="texto-small texto-secundario">Fuente: Perú21, marzo de 2026</p>
+        </article>
+
+        <div class="landing-subtitulo">
+          <h2 class="titulo-2">Competencias de programación</h2>
+          <p class="landing-seccion__bajada">Torneos nacionales e internacionales en los que participa el GPC UPC.</p>
+        </div>
+        <ul class="landing-grid landing-grid--2">
+          <li class="tarjeta landing-tarjeta competencia">
+            <div class="competencia__encabezado">
+              <span class="bandera bandera--peru" aria-hidden="true"></span>
+              <div>
+                <h3 class="titulo-3">Torneo Peruano de Programación</h3>
+                <p class="texto-stats competencia__pais">Perú</p>
+              </div>
+            </div>
+            <p class="texto-small texto-secundario">Competencia nacional en la que equipos universitarios de todo el Perú resuelven problemas de algoritmos.</p>
+          </li>
+          <li class="tarjeta landing-tarjeta competencia">
+            <div class="competencia__encabezado">
+              <span class="bandera bandera--brasil" aria-hidden="true"></span>
+              <div>
+                <h3 class="titulo-3">Maratón Femenina de Programación (MFP)</h3>
+                <p class="texto-stats competencia__pais">Brasil</p>
+              </div>
+            </div>
+            <p class="texto-small texto-secundario">Maratón internacional de programación para mujeres, que impulsa la participación femenina en la programación competitiva.</p>
+          </li>
+          <li class="tarjeta landing-tarjeta competencia">
+            <div class="competencia__encabezado">
+              <span class="bandera bandera--argentina" aria-hidden="true"></span>
+              <div>
+                <h3 class="titulo-3">Concurso Codificadas de Tata Consultancy Services (TCS)</h3>
+                <p class="texto-stats competencia__pais">Argentina</p>
+              </div>
+            </div>
+            <p class="texto-small texto-secundario">Concurso de programación de TCS dirigido a mujeres estudiantes de Latinoamérica.</p>
+          </li>
+          <li class="tarjeta landing-tarjeta competencia">
+            <div class="competencia__encabezado">
+              <span class="bandera bandera--peru" aria-hidden="true"></span>
+              <div>
+                <h3 class="titulo-3">Software Week de la UNI</h3>
+                <p class="texto-stats competencia__pais">Perú</p>
+              </div>
+            </div>
+            <p class="texto-small texto-secundario">Semana de software de la Universidad Nacional de Ingeniería, con charlas, talleres y competencias de programación.</p>
+          </li>
+        </ul>
+
+        <aside class="tarjeta cta" aria-labelledby="cta-titulo">
+          <div>
+            <h2 class="titulo-2" id="cta-titulo">¿Listo para encontrar tu party?</h2>
+            <p class="landing-seccion__bajada">Crea tu cuenta, haz la prueba diagnóstica y empieza a entrenar.</p>
+          </div>
+          <a class="boton" href="pages/auth/crear-cuenta.html">Registrarse</a>
+        </aside>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
