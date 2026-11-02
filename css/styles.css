@@ -2073,12 +2073,21 @@ html:has(.pub) {
   align-items: center;
   gap: var(--espacio-24);
 }
-.unete__escena--radar,
-.unete__escena:target {
-  display: flex;
+.unete__grupos {
+  display: contents;
 }
-.unete:has(.unete__escena:target) .unete__escena--radar {
+/* Un grupo a la vez: la X lleva a #party-N (siguiente grupo); ✓ a su estado «enviada» */
+.unete__grupo {
   display: none;
+}
+.unete__grupo:has(:target),
+.unete__grupos:not(:has(:target)) > .unete__grupo:first-child {
+  display: contents;
+}
+.unete__grupo:not(:has(.unete__marca--enviada:target)):not(:has(.unete__marca--final:target)) .unete__escena--radar,
+.unete__grupo:has(.unete__marca--enviada:target) .unete__escena--enviada,
+.unete__grupo:has(.unete__marca--final:target) .unete__escena--final {
+  display: flex;
 }
 .unete__popa {
   width: 180px;
