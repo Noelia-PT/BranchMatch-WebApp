@@ -1,0 +1,785 @@
+/* =========================================================================
+   BranchMatch · styles.css
+   Único CSS del sitio. Basado en la página «Guía de estilos» del Figma.
+   Orden: 1. Fuentes · 2. Variables · 3. Reset · 4. Base y layout
+          5. Componentes comunes · 6. Secciones de cada persona
+   Reglas: mobile first (escritorio en @media (min-width: 768px)),
+   sin !important ni estilos inline, clases BEM.
+   No cambies las variables ni los componentes comunes: pídeselo a P1.
+   ========================================================================= */
+
+
+/* =========================================================================
+   1. FUENTES (archivos locales en assets/fonts, sin CDN)
+   ========================================================================= */
+@font-face {
+  font-family: "Pixelify Sans";
+  src: url("../assets/fonts/PixelifySans.ttf") format("truetype");
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+
+/* =========================================================================
+   2. VARIABLES (Guía de estilos del Figma)
+   ========================================================================= */
+:root {
+  /* Color · Fondo */
+  --color-fondo: #12163a;            /* background */
+  --color-superficie: #232a63;       /* tarjetas, superficies elevadas */
+  --color-borde: #0b0e26;            /* bordes y sombras */
+  /* Color · Marca */
+  --color-amarillo: #ffd230;         /* botón principal, XP, logros */
+  --color-amarillo-hover: #ffe066;
+  --color-amarillo-pressed: #e8ba1a;
+  --color-rosa: #f994ab;             /* Popa, detalles */
+  --color-celeste: #90d3fa;          /* links, focos, estados activos */
+  --color-menta: #b9e8c8;            /* éxito, progreso, etiquetas */
+  /* Color · Texto */
+  --color-texto: #fdfcfa;            /* texto principal */
+  --color-texto-2: #d6dbf5;          /* texto secundario, fondo de campos */
+  /* Color · Estado */
+  --color-error: #ff383c;            /* error, peligro */
+  --color-overlay: rgba(11, 14, 38, 0.75);
+
+  /* Tipografía */
+  --fuente-pixel: "Pixelify Sans", "Courier New", monospace;
+  --fuente-texto: "Poppins", system-ui, sans-serif;
+
+  /* Estilos de texto: tamaño / alto de línea (Figma) */
+  --texto-display: 64px;   --lh-display: 68px;   /* Pixelify Bold */
+  --texto-h1: 44px;        --lh-h1: 48px;        /* Pixelify Bold */
+  --texto-h2: 32px;        --lh-h2: 36px;        /* Pixelify SemiBold */
+  --texto-h3: 22px;        --lh-h3: 30px;        /* Poppins SemiBold */
+  --texto-body: 18px;      --lh-body: 26px;      /* Poppins Regular */
+  --texto-small: 14px;     --lh-small: 22px;     /* Poppins Regular */
+  --texto-boton: 20px;     --lh-boton: 24px;     /* Pixelify Bold */
+  --texto-stats: 16px;     --lh-stats: 20px;     /* Pixelify Regular */
+  --tracking-titulo: -0.02em;
+
+  /* Espaciado: sistema de 8 px (colección «Espaciado») */
+  --espacio-4: 4px;
+  --espacio-8: 8px;
+  --espacio-16: 16px;
+  --espacio-24: 24px;
+  --espacio-32: 32px;
+  --espacio-48: 48px;
+  --espacio-64: 64px;
+
+  /* Bordes y sombras pixel (sin blur) */
+  --borde-grueso: 4px;
+  --borde-medio: 3px;
+  --borde-fino: 2px;
+  --sombra-navy: 6px 6px 0 var(--color-celeste);   /* sobre fondo navy */
+  --sombra-claro: 6px 6px 0 var(--color-borde);    /* sobre fondo claro */
+  --sombra-pressed: 2px 2px 0 var(--color-celeste);
+
+  /* Layout */
+  --contenedor-max: 1200px;
+  --margen-pagina: 16px;          /* móvil: 4 columnas, gutter 16 */
+  --gutter: 16px;
+  --alto-header: 64px;
+  --alto-campo: 48px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --margen-pagina: 24px;        /* tablet/escritorio: gutter 24 */
+    --gutter: 24px;
+    --alto-header: 88px;
+  }
+}
+
+
+/* =========================================================================
+   3. RESET
+   ========================================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================================
+   4. BASE Y LAYOUT
+   ========================================================================= */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-fondo) url("../assets/img/fondo-estrellas.png") center top / 1440px auto repeat;
+  color: var(--color-texto);
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+}
+@media (min-width: 768px) {
+  body {
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+  }
+}
+
+main {
+  flex: 1;
+  padding-top: var(--espacio-32);
+  padding-bottom: var(--espacio-64);
+}
+
+/* Contenedor centrado: máx. 1200 px (grilla de 12 col en escritorio) */
+.contenedor {
+  width: 100%;
+  max-width: calc(var(--contenedor-max) + 2 * var(--margen-pagina));
+  margin: 0 auto;
+  padding-left: var(--margen-pagina);
+  padding-right: var(--margen-pagina);
+}
+
+/* Títulos según la guía. Móvil un paso más chico. */
+.titulo-display,
+.titulo-1,
+.titulo-2 {
+  font-family: var(--fuente-pixel);
+  letter-spacing: var(--tracking-titulo);
+}
+.titulo-display {
+  font-size: var(--texto-h1);
+  line-height: var(--lh-h1);
+  font-weight: 700;
+}
+.titulo-1 {
+  font-size: var(--texto-h2);
+  line-height: var(--lh-h2);
+  font-weight: 700;
+}
+.titulo-2 {
+  font-size: var(--texto-h3);
+  line-height: var(--lh-h3);
+  font-weight: 600;
+}
+.titulo-3 {
+  font-size: var(--texto-h3);
+  line-height: var(--lh-h3);
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .titulo-display { font-size: var(--texto-display); line-height: var(--lh-display); }
+  .titulo-1 { font-size: var(--texto-h1); line-height: var(--lh-h1); }
+  .titulo-2 { font-size: var(--texto-h2); line-height: var(--lh-h2); }
+}
+
+.texto-secundario {
+  color: var(--color-texto-2);
+}
+.texto-small {
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+}
+.texto-stats {
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+}
+
+/* Texto solo para lectores de pantalla */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Foco visible en todo lo navegable */
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: var(--borde-fino) solid var(--color-celeste);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================================
+   5. COMPONENTES COMUNES
+   ========================================================================= */
+
+/* ---------- 5.1 Header (estudiante y líder) ----------
+   Móvil: logo + campana + avatar + botón hamburguesa (#menu con :target).
+   Escritorio: logo · navegación · campana, chip de nivel/rol y avatar. */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-fondo);
+  border-bottom: var(--borde-fino) solid var(--color-superficie);
+}
+.header__contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-16);
+  min-height: var(--alto-header);
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-4);
+}
+.header__logo-img {
+  width: 30px;
+  height: auto;
+  image-rendering: pixelated;
+}
+.header__logo-texto {
+  font-family: var(--fuente-pixel);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: var(--tracking-titulo);
+  color: var(--color-texto);
+}
+.header__logo-texto span {
+  color: var(--color-rosa);
+}
+.header__nav {
+  display: none;
+}
+.header__nav:target {
+  display: block;
+  position: fixed;
+  inset: var(--alto-header) 0 0 0;
+  background: var(--color-fondo);
+  padding: var(--espacio-24) var(--margen-pagina);
+}
+.header__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+}
+.header__link {
+  font-family: var(--fuente-pixel);
+  font-weight: 700;
+  font-size: var(--texto-boton);
+  line-height: var(--lh-boton);
+  color: var(--color-texto-2);
+}
+.header__link:hover {
+  color: var(--color-texto);
+}
+.header__link--activo {
+  color: var(--color-amarillo);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+.header__cerrar {
+  display: inline-block;
+  margin-top: var(--espacio-32);
+  font-family: var(--fuente-pixel);
+  color: var(--color-celeste);
+}
+.header__usuario {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-8);
+  flex-shrink: 0;
+}
+.header__campana {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.header__usuario .header__chip {
+  display: none;
+}
+.header__menu-btn {
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-boton);
+  color: var(--color-texto);
+  border: var(--borde-fino) solid var(--color-texto-2);
+  padding: var(--espacio-4) var(--espacio-8);
+}
+
+@media (min-width: 768px) {
+  .header__logo-img { width: 46px; }
+  .header__logo-texto { font-size: 44px; }
+  .header__nav,
+  .header__nav:target {
+    display: block;
+    position: static;
+    padding: 0;
+    background: none;
+  }
+  .header__lista {
+    flex-direction: row;
+    gap: var(--espacio-32);
+  }
+  .header__cerrar,
+  .header__menu-btn {
+    display: none;
+  }
+  .header__usuario {
+    gap: var(--espacio-16);
+  }
+  .header__usuario .header__chip {
+    display: inline-flex;
+  }
+}
+
+/* ---------- 5.2 Avatar con iniciales ---------- */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: var(--color-superficie);
+  border: var(--borde-fino) solid var(--color-celeste);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  color: var(--color-texto);
+}
+.avatar--grande {
+  width: 64px;
+  height: 64px;
+  border-width: var(--borde-medio);
+  background: var(--color-fondo);
+  font-size: var(--texto-h2);
+  font-weight: 600;
+}
+
+/* ---------- 5.3 Footer ---------- */
+.footer {
+  background: var(--color-borde);
+  color: var(--color-texto-2);
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+}
+.footer__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-8);
+  padding-top: var(--espacio-16);
+  padding-bottom: var(--espacio-16);
+}
+.footer__links {
+  display: flex;
+  gap: var(--espacio-24);
+}
+.footer__link:hover {
+  color: var(--color-texto);
+}
+@media (min-width: 768px) {
+  .footer__contenido {
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 64px;
+  }
+}
+
+/* ---------- 5.4 Botones (todos son <a>) ----------
+   .boton                → primario amarillo
+   .boton--secundario    → borde blanco, fondo transparente
+   .boton--peligro       → borde y texto rojo (eliminar, salir)
+   .boton--deshabilitado → estado disabled */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-8);
+  min-height: 56px;
+  padding: var(--espacio-16) var(--espacio-24);
+  background: var(--color-amarillo);
+  border: var(--borde-grueso) solid var(--color-borde);
+  box-shadow: var(--sombra-navy);
+  color: var(--color-borde);
+  font-family: var(--fuente-pixel);
+  font-weight: 700;
+  font-size: var(--texto-boton);
+  line-height: var(--lh-boton);
+  text-align: center;
+  cursor: pointer;
+}
+.boton:hover {
+  background: var(--color-amarillo-hover);
+}
+.boton:active {
+  background: var(--color-amarillo-pressed);
+  box-shadow: var(--sombra-pressed);
+}
+.boton:focus-visible {
+  outline: none;
+  border-color: var(--color-texto);
+}
+.boton--secundario {
+  background: transparent;
+  border-color: var(--color-texto);
+  box-shadow: none;
+  color: var(--color-texto);
+}
+.boton--secundario:hover {
+  background: var(--color-superficie);
+}
+.boton--secundario:active {
+  background: var(--color-borde);
+  border-color: var(--color-celeste);
+  box-shadow: none;
+}
+.boton--secundario:focus-visible {
+  border-color: var(--color-celeste);
+  box-shadow: 0 0 0 2px var(--color-celeste);
+}
+.boton--peligro {
+  background: transparent;
+  border-color: var(--color-error);
+  box-shadow: none;
+  color: var(--color-error);
+}
+.boton--peligro:hover,
+.boton--peligro:active {
+  background: var(--color-borde);
+  box-shadow: none;
+}
+.boton--deshabilitado,
+.boton--deshabilitado:hover {
+  background: var(--color-superficie);
+  border-color: rgba(214, 219, 245, 0.3);
+  box-shadow: none;
+  color: rgba(214, 219, 245, 0.6);
+  pointer-events: none;
+}
+.boton--bloque {
+  width: 100%;
+}
+.boton-texto {
+  font-family: var(--fuente-pixel);
+  color: var(--color-celeste);
+}
+.boton-texto:hover {
+  text-decoration: underline;
+}
+.enlace-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-8);
+  color: var(--color-texto-2);
+  font-size: var(--texto-small);
+}
+.enlace-volver img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- 5.5 Tarjeta ---------- */
+.tarjeta {
+  background: var(--color-superficie);
+  border: var(--borde-grueso) solid var(--color-borde);
+  box-shadow: var(--sombra-navy);
+  padding: var(--espacio-24);
+}
+
+/* ---------- 5.6 Chips y etiquetas ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--espacio-4) var(--espacio-8);
+  border: var(--borde-fino) solid var(--color-borde);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+  color: var(--color-borde);
+  background: var(--color-texto-2);
+}
+.chip--amarillo { background: var(--color-amarillo); }
+.chip--celeste { background: var(--color-celeste); }
+.chip--menta { background: var(--color-menta); }
+.chip--rosa { background: var(--color-rosa); }
+.chip--logro {
+  background: transparent;
+  border-color: var(--color-amarillo);
+  color: var(--color-amarillo);
+}
+.chip--opcional {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--fuente-texto);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-celeste);
+}
+.chip--pdf {
+  padding: var(--espacio-4) var(--espacio-8);
+  border: 0;
+  background: var(--color-error);
+  font-family: var(--fuente-texto);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-texto);
+}
+.etiqueta-seccion {
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+  color: var(--color-menta);
+  text-transform: uppercase;
+}
+
+/* ---------- 5.7 Barra de XP / progreso ---------- */
+.barra-xp {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+}
+.barra-xp__encabezado {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+  color: var(--color-texto-2);
+}
+.barra-xp__nivel {
+  color: var(--color-amarillo);
+}
+.barra-xp__pista {
+  height: 20px;
+  background: var(--color-superficie);
+  border: var(--borde-medio) solid var(--color-borde);
+}
+.barra-xp__relleno {
+  display: block;
+  height: 100%;
+  background: var(--color-amarillo);
+}
+/* Anchos fijos de ejemplo (sin cálculos): */
+.barra-xp__relleno--25 { width: 25%; }
+.barra-xp__relleno--50 { width: 50%; }
+.barra-xp__relleno--60 { width: 60%; }
+.barra-xp__relleno--75 { width: 75%; }
+.barra-xp__relleno--100 { width: 100%; }
+
+/* ---------- 5.8 Formularios ----------
+   Campo de 48 px, etiqueta arriba y mensaje debajo.
+   .campo--error (borde rojo + mensaje con «!») y .campo--ok (menta). */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+}
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+}
+.campo__label {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-8);
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+  color: var(--color-texto);
+}
+.campo__input {
+  width: 100%;
+  min-height: var(--alto-campo);
+  padding: var(--espacio-8) var(--espacio-16);
+  background: var(--color-texto-2);
+  border: var(--borde-fino) solid transparent;
+  color: var(--color-fondo);
+  font-size: var(--texto-body);
+  line-height: var(--lh-body);
+}
+.campo__input::placeholder {
+  color: rgba(18, 22, 58, 0.6);
+}
+.campo__input:focus {
+  outline: none;
+  border-color: var(--color-celeste);
+}
+textarea.campo__input {
+  min-height: 120px;
+  resize: vertical;
+}
+.campo__ayuda {
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+  color: var(--color-texto-2);
+}
+.campo__error {
+  display: none;
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+  color: var(--color-error);
+}
+.campo__error::before {
+  content: "! ";
+  font-family: var(--fuente-pixel);
+  font-weight: 700;
+}
+.campo--error .campo__input {
+  border-color: var(--color-error);
+}
+.campo--error .campo__error {
+  display: block;
+}
+/* El navegador marca :invalid tras escribir; mostramos el mensaje igual */
+.campo__input:user-invalid {
+  border-color: var(--color-error);
+}
+.campo__input:user-invalid ~ .campo__error {
+  display: block;
+}
+.campo--ok {
+  border: var(--borde-fino) solid var(--color-menta);
+  padding: var(--espacio-16);
+  color: var(--color-menta);
+}
+
+/* Zona para subir archivos */
+.subir-archivo {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-16);
+  padding: var(--espacio-16);
+  border: var(--borde-fino) dashed var(--color-celeste);
+  font-size: var(--texto-small);
+}
+
+/* ---------- 5.9 Mensajes: toast y banner ---------- */
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-16);
+  padding: var(--espacio-16) var(--espacio-24);
+  background: var(--color-borde);
+  border: var(--borde-fino) solid var(--color-menta);
+}
+.toast::before {
+  content: "✓";
+  font-family: var(--fuente-pixel);
+  color: var(--color-menta);
+}
+.banner-error {
+  display: flex;
+  gap: var(--espacio-16);
+  padding: var(--espacio-16) var(--espacio-24);
+  background: var(--color-borde);
+  border: var(--borde-fino) solid var(--color-error);
+}
+.banner-error__titulo {
+  color: var(--color-error);
+}
+
+/* ---------- 5.10 Modal sin JavaScript (:target) ----------
+   <a href="#mi-modal">Abrir</a>
+   <section class="modal" id="mi-modal"> … <a href="#">Cerrar</a></section> */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  align-items: center;
+  justify-content: center;
+  padding: var(--margen-pagina);
+  background: var(--color-overlay);
+}
+.modal:target {
+  display: flex;
+}
+.modal__caja {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+  padding: var(--espacio-32);
+  background: var(--color-superficie);
+  border: var(--borde-grueso) solid var(--color-amarillo);
+  box-shadow: var(--sombra-navy);
+}
+.modal__acciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+}
+@media (min-width: 768px) {
+  .modal__acciones {
+    flex-direction: row;
+  }
+}
+
+/* ---------- 5.11 Popa (mascota pixel) ---------- */
+.popa {
+  image-rendering: pixelated;
+  width: 160px;
+  height: auto;
+}
+
+
+/* =========================================================================
+   6. SECCIONES POR PERSONA
+   Cada quien escribe SOLO dentro de su bloque. Un comentario por pantalla:
+   /* --- 02 · Crear cuenta (auth/crear-cuenta.html) --- *\/
+   ========================================================================= */
+
+/* ===== P1 · Entrada: landing, auth, prueba, notificaciones, party completa ===== */
+
+
+/* ===== P2 · Perfiles y Party ===== */
+
+
+/* ===== P3 · Feed y Lecciones ===== */
+
+
+/* ===== P4 · Retos y Rendimiento ===== */
