@@ -33,42 +33,63 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">¡Únete a una party!</h1>
-    <!-- TODO P2: implementar la pantalla 14 según el Figma. -->
+  <main class="contenedor unete">
+    <div class="unete__layout">
+      <h1 class="unete__titulo">¡Únete a una party!</h1>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="unete-party.html#solicitud-enviada">15 · Solicitud enviada</a></li>
-        <li><a href="unete-party.html#sigue-buscando">16 · Sigue buscando</a></li>
-      </ul>
-    </nav>
+      <div class="unete__escenas">
+        <section class="unete__escena unete__escena--radar" aria-label="Buscando party">
+          <img class="unete__popa" src="../../assets/img/popa-radar.gif" alt="Popa buscando una party con su radar">
+          <p class="unete__teclado texto-secundario">
+            <a class="unete__tecla" href="#sigue-buscando" aria-label="Descartar party">←</a>
+            <a class="unete__tecla" href="#solicitud-enviada" aria-label="Enviar solicitud">→</a>
+            también con el teclado
+          </p>
+        </section>
+        <section class="unete__escena" id="solicitud-enviada" aria-label="Solicitud enviada">
+          <img class="unete__popa" src="../../assets/img/popa-solicitud-enviada.gif" alt="Popa con corazones en los ojos y los brazos abiertos">
+          <p class="unete__mensaje" role="status">Enviaste una solicitud!</p>
+        </section>
+        <section class="unete__escena" id="sigue-buscando" aria-label="Sigue buscando">
+          <img class="unete__popa" src="../../assets/img/popa-sigue-buscando.gif" alt="Popa con los ojos cerrados, buscando otra party">
+          <p class="unete__mensaje" role="status">Sigue buscando</p>
+        </section>
+      </div>
 
-    <!-- Pantalla 15 · Solicitud enviada (se abre con href="#solicitud-enviada") -->
-    <section class="modal" id="solicitud-enviada" aria-labelledby="solicitud-enviada-titulo">
-      <div class="modal__caja">
-        <h2 class="titulo-3" id="solicitud-enviada-titulo">Solicitud enviada</h2>
-        <!-- TODO: contenido del Figma -->
-        <div class="modal__acciones">
-          <a class="boton" href="unete-party.html#sigue-buscando">Sigue buscando</a>
-          <a class="boton" href="notificaciones.html">Notificaciones</a>
-          <a class="boton boton--secundario" href="#">Cerrar</a>
+      <article class="tarjeta unete__party">
+        <header class="unete__encabezado">
+          <h2 class="unete__nombre">Los Insanos</h2>
+          <p class="chip chip--rosa unete__etiqueta">Party 1 de 6</p>
+          <a class="unete__ver" href="#" aria-label="Ver party"><img class="unete__ver-icono" src="../../assets/icons/party-ver.svg" alt=""></a>
+        </header>
+
+        <ul class="unete__datos">
+          <li class="unete__dato"><img class="unete__icono" src="../../assets/icons/party-lider.svg" alt="">Líder: Edson Mendiolaza</li>
+          <li class="unete__dato"><img class="unete__icono" src="../../assets/icons/party-nivel.svg" alt="">Nivel 3–5</li>
+          <li class="unete__dato">
+            <img class="unete__icono" src="../../assets/icons/party-miembros.svg" alt="">Miembros: 3 / 5
+            <span class="unete__cupos" role="img" aria-label="3 de 5 lugares ocupados">
+              <span class="unete__cupo unete__cupo--lleno"></span>
+              <span class="unete__cupo unete__cupo--lleno"></span>
+              <span class="unete__cupo unete__cupo--lleno"></span>
+              <span class="unete__cupo"></span>
+              <span class="unete__cupo"></span>
+            </span>
+          </li>
+        </ul>
+
+        <section class="unete__horarios" aria-labelledby="horarios-titulo">
+          <h3 class="unete__dato unete__horarios-titulo" id="horarios-titulo"><img class="unete__icono" src="../../assets/icons/party-horarios.svg" alt="">Horarios:</h3>
+          <p class="unete__horario texto-secundario">Lunes: 15:00 - 17:00 pm</p>
+          <p class="unete__horario texto-secundario">Jueves: 17:00 - 19:00 pm</p>
+        </section>
+
+        <div class="unete__acciones">
+          <a class="unete__accion" href="#sigue-buscando" aria-label="Descartar esta party"><img class="unete__accion-icono" src="../../assets/icons/party-x.svg" alt=""></a>
+          <a class="unete__accion" href="#solicitud-enviada" aria-label="Enviar solicitud a esta party"><img class="unete__accion-icono" src="../../assets/icons/party-check.svg" alt=""></a>
         </div>
-      </div>
-    </section>
-    <!-- Pantalla 16 · Sigue buscando (se abre con href="#sigue-buscando") -->
-    <section class="modal" id="sigue-buscando" aria-labelledby="sigue-buscando-titulo">
-      <div class="modal__caja">
-        <h2 class="titulo-3" id="sigue-buscando-titulo">Sigue buscando</h2>
-        <!-- TODO: contenido del Figma -->
-        <div class="modal__acciones">
-          <a class="boton" href="unete-party.html">¡Únete a una party!</a>
-          <a class="boton" href="unete-party.html#solicitud-enviada">Solicitud enviada</a>
-          <a class="boton boton--secundario" href="#">Cerrar</a>
-        </div>
-      </div>
-    </section>
+      </article>
+    </div>
   </main>
 
   <footer class="footer">

@@ -2041,6 +2041,284 @@ html:has(.pub) {
   }
 }
 
+/* --- 14 · Únete a una party + 15 · Solicitud enviada + 16 · Sigue buscando (estudiante/unete-party.html) ---
+   Los estados 15 y 16 son la misma pantalla: se muestran con #solicitud-enviada y #sigue-buscando (:target). */
+.unete {
+  --color-divisor: #3b4a8c;        /* línea divisoria de la tarjeta (Figma) */
+  padding-top: var(--espacio-32);
+  padding-bottom: var(--espacio-48);
+}
+.unete__layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-32);
+}
+.unete__titulo {
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-h2);
+  line-height: 38px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-titulo);
+  text-align: center;
+}
+
+/* Escena de Popa y sus tres estados */
+.unete__escenas {
+  display: flex;
+  justify-content: center;
+}
+.unete__escena {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-24);
+}
+.unete__escena--radar,
+.unete__escena:target {
+  display: flex;
+}
+.unete:has(.unete__escena:target) .unete__escena--radar {
+  display: none;
+}
+.unete__popa {
+  width: 180px;
+  height: 190px;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+.unete__mensaje {
+  font-family: var(--fuente-pixel);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-texto-2);
+  text-align: center;
+}
+.unete__teclado {
+  display: none;
+}
+
+/* Tarjeta de la party */
+.unete__party {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.unete__encabezado {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "nombre ver"
+    "etiqueta etiqueta";
+  align-items: center;
+  gap: 12px;
+}
+.unete__nombre {
+  grid-area: nombre;
+  font-family: var(--fuente-pixel);
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-titulo);
+}
+.unete__etiqueta {
+  grid-area: etiqueta;
+  justify-self: start;
+  padding: var(--espacio-4) 10px;
+  border-radius: 20px;
+  color: var(--color-borde);
+}
+.unete__ver {
+  grid-area: ver;
+}
+.unete__ver-icono {
+  width: 24px;
+  height: 24px;
+}
+.unete__datos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.unete__dato {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: var(--texto-stats);
+  line-height: var(--lh-small);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--color-texto);
+}
+.unete__icono {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.unete__cupos {
+  display: flex;
+  gap: var(--espacio-4);
+}
+.unete__cupo {
+  width: 16px;
+  height: 16px;
+  border: var(--borde-fino) solid var(--color-texto-2);
+}
+.unete__cupo--lleno {
+  background: var(--color-amarillo);
+  border-color: var(--color-borde);
+}
+.unete__horarios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+  padding-top: 20px;
+  border-top: var(--borde-fino) solid var(--color-divisor);
+}
+.unete__horario {
+  padding-left: 40px;
+  font-size: var(--texto-stats);
+  line-height: var(--lh-small);
+  letter-spacing: -0.02em;
+}
+.unete__acciones {
+  display: flex;
+  justify-content: center;
+  gap: var(--espacio-24);
+}
+.unete__accion {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+.unete__accion:hover {
+  opacity: 0.85;
+}
+.unete__accion:active {
+  transform: translateY(2px);
+}
+.unete__accion:focus-visible {
+  outline: var(--borde-fino) solid var(--color-celeste);
+  outline-offset: 4px;
+}
+.unete__accion-icono {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .unete {
+    padding-top: 78px;
+    padding-bottom: var(--espacio-64);
+  }
+  .unete__layout {
+    display: grid;
+    grid-template-columns: 505px 667px;
+    grid-template-rows: var(--lh-display) auto;
+    align-items: start;
+    justify-content: start;
+    column-gap: 0;
+    row-gap: 27px;
+  }
+  .unete__titulo {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: var(--texto-display);
+    line-height: var(--lh-display);
+  }
+  .unete__escenas {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    justify-content: flex-start;
+    margin: 141px 0 0 23px;
+  }
+  .unete__escena {
+    position: relative;
+    width: 360px;
+    height: 380px;
+  }
+  .unete__popa {
+    width: 360px;
+    height: 380px;
+  }
+  .unete__mensaje {
+    position: absolute;
+    top: 352px;
+    right: 0;
+    left: 0;
+    font-size: var(--texto-h2);
+    line-height: var(--lh-h2);
+    white-space: nowrap;
+  }
+  .unete__teclado {
+    position: absolute;
+    top: 378px;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: var(--texto-small);
+    line-height: var(--lh-small);
+    white-space: nowrap;
+  }
+  .unete__tecla {
+    padding: 2px 8px;
+    background: var(--color-superficie);
+    border: var(--borde-fino) solid var(--color-texto-2);
+    font-family: var(--fuente-pixel);
+    font-size: var(--texto-stats);
+    line-height: var(--lh-stats);
+    color: var(--color-texto);
+  }
+  .unete__tecla:hover {
+    border-color: var(--color-celeste);
+  }
+  .unete__party {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    width: 560px;
+    margin-left: 51px;
+    gap: 20px;
+    padding: 28px 32px 32px;
+  }
+  .unete__encabezado {
+    display: flex;
+    gap: 21px;
+    padding-top: 0;
+  }
+  .unete__nombre {
+    font-size: var(--texto-h1);
+    line-height: var(--lh-h1);
+  }
+  .unete__etiqueta {
+    margin-top: 0;
+  }
+  .unete__ver {
+    margin-left: auto;
+    margin-right: -8px;
+  }
+  .unete__ver-icono {
+    width: 30px;
+    height: 30px;
+  }
+  .unete__dato,
+  .unete__horario {
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+  }
+  .unete__acciones {
+    gap: 62px;
+  }
+  .unete__accion {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 /* ===== P3 · Feed y Lecciones ===== */
 
 
