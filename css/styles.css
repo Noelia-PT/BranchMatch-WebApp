@@ -1664,6 +1664,75 @@ textarea.campo__input {
   }
 }
 
+/* --- 17 · Notificaciones (estudiante/notificaciones.html) --- */
+.notificaciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+}
+.notificaciones__encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+}
+.notificaciones__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+}
+.notificacion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+}
+.notificacion__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espacio-16);
+}
+.notificacion__datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-8) var(--espacio-24);
+}
+.notificacion__datos div {
+  display: flex;
+  align-items: baseline;
+  gap: var(--espacio-8);
+}
+.notificacion__datos dt {
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-small);
+  color: var(--color-texto-2);
+}
+.notificacion__boton {
+  align-self: stretch;
+}
+
+/* Pie centrado de una sola línea (prueba, notificaciones, party completa) */
+.pie-centrado {
+  margin-top: var(--espacio-32);
+  text-align: center;
+}
+.pie-centrado .footer__contenido {
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .notificacion {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--espacio-24);
+  }
+  .notificacion__boton {
+    align-self: flex-start;
+    margin-top: var(--espacio-24);
+    white-space: nowrap;
+  }
+}
+
 /* ===== P2 · Perfiles y Party ===== */
 
 
