@@ -783,3 +783,351 @@ textarea.campo__input {
 
 
 /* ===== P4 · Retos y Rendimiento ===== */
+/* --- 61 · Revisar entrega (lider/revisar-entrega.html) --- */
+.re {
+  --re-linea: #3b4a8c;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "migas"
+    "alumno"
+    "pager"
+    "codigo"
+    "lateral";
+  gap: var(--espacio-8);
+  align-content: start;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.re__entrega {
+  display: contents;
+}
+.re .re__entrega--segunda {
+  display: none;
+}
+.re .re__entrega--segunda:target {
+  display: contents;
+}
+.re:has(#entrega-ana:target) .re__entrega--primera {
+  display: none;
+}
+.re__migas { grid-area: migas; }
+.re__alumno { grid-area: alumno; }
+.re__pager { grid-area: pager; }
+.re__lateral { grid-area: lateral; align-self: start; }
+.re__migas-lista {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-4);
+  color: var(--color-texto-2);
+  font-size: 12px;
+  line-height: 18px;
+}
+.re__migas-lista li + li::before {
+  content: "/";
+  margin-right: var(--espacio-4);
+}
+.re__miga-link {
+  color: var(--color-celeste);
+}
+.re__miga-link:hover,
+.re__miga:hover {
+  text-decoration: underline;
+}
+.re__miga {
+  color: var(--color-texto-2);
+}
+.re__alumno {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-8);
+}
+.re__avatar {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--color-celeste);
+  border: var(--borde-fino) solid var(--color-borde);
+  color: var(--color-borde);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+}
+.re__alumno-datos {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.re .titulo-1 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0;
+}
+.re__alumno-nombre {
+  font-family: var(--fuente-pixel);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+}
+.re .re__avatar--menta { background: var(--color-menta); }
+.re .re__estado--aceptado {
+  background: transparent;
+  border-color: var(--color-menta);
+  color: var(--color-menta);
+}
+.re__alumno-sub {
+  color: var(--color-texto-2);
+  font-size: 12px;
+  line-height: 18px;
+}
+.re__estado {
+  flex: none;
+  padding: var(--espacio-4) var(--espacio-8);
+  background: var(--color-rosa);
+  border: var(--borde-fino) solid var(--color-borde);
+  border-radius: 10px;
+  color: var(--color-borde);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+  white-space: nowrap;
+}
+.re__pager {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-8);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+}
+.re__pager-link {
+  padding: var(--espacio-4) 12px;
+}
+.re__pager-link--apagado {
+  color: var(--color-texto-2);
+}
+.re__pager-link--activo {
+  color: var(--color-celeste);
+}
+.re__pager-link:hover {
+  text-decoration: underline;
+}
+.re__pager-cuenta {
+  padding: var(--espacio-4) 12px;
+  color: var(--color-texto);
+}
+.re__captura {
+  grid-area: codigo;
+  align-self: start;
+  min-height: 300px;
+  background: var(--color-borde);
+  border: var(--borde-fino) solid var(--re-linea);
+  overflow: hidden;
+}
+.re__captura-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.re__lateral {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+  margin-top: var(--espacio-4);
+}
+.re__caja {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--espacio-8);
+  background: var(--color-superficie);
+  border: var(--borde-grueso) solid var(--color-borde);
+  box-shadow: var(--sombra-navy);
+}
+.re__caja-titulo {
+  color: var(--color-texto);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+.re__casos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-4);
+}
+.re__caso {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-texto);
+  font-size: 12px;
+  line-height: 18px;
+}
+.re__marca {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: var(--borde-fino) solid var(--color-borde);
+  color: var(--color-borde);
+  font-family: var(--fuente-pixel);
+  font-size: 12px;
+  line-height: 12px;
+}
+.re__marca--ok { background: var(--color-menta); }
+.re__marca--error { background: var(--color-error); }
+.re__caso-nombre {
+  flex: 1;
+  min-width: 0;
+}
+.re__caso-tiempo {
+  flex: none;
+  color: var(--color-texto-2);
+  font-family: var(--fuente-pixel);
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.re__caso-tiempo--error {
+  color: var(--color-error);
+}
+.re__resumen {
+  color: var(--color-amarillo);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-small);
+  line-height: 18px;
+}
+.re__campo {
+  gap: 6px;
+}
+textarea.re__textarea {
+  min-height: 0;
+  padding: var(--espacio-8) 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 18px;
+  resize: vertical;
+}
+.re__acciones {
+  display: flex;
+  gap: var(--espacio-8);
+}
+.re__boton {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  padding: 10px var(--espacio-8);
+  font-size: var(--texto-stats);
+  line-height: 24px;
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  .re {
+    grid-template-columns: minmax(0, 744px) minmax(0, 1fr);
+    grid-template-areas:
+      "migas pager"
+      "alumno lateral"
+      "codigo lateral";
+    grid-template-rows: auto auto 1fr;
+    column-gap: var(--espacio-24);
+    row-gap: 24px;
+    padding-top: 32px;
+    padding-bottom: var(--espacio-64);
+  }
+  .re__pager {
+    justify-self: end;
+    gap: var(--espacio-16);
+  }
+  .re__alumno { gap: var(--espacio-16); }
+  .re__lateral {
+    gap: var(--espacio-24);
+    margin-top: 36px;
+  }
+  .re__migas-lista {
+    font-size: var(--texto-small);
+    line-height: var(--lh-small);
+  }
+  .re__pager-link,
+  .re__pager-cuenta {
+    padding: 0;
+  }
+  .re__avatar {
+    width: 48px;
+    height: 48px;
+  }
+  .re .titulo-1,
+  .re__alumno-nombre {
+    font-size: var(--texto-h2);
+    line-height: var(--lh-h2);
+    letter-spacing: var(--tracking-titulo);
+  }
+  .re__alumno-sub {
+    font-size: var(--texto-small);
+    line-height: var(--lh-small);
+  }
+  .re__alumno-datos {
+    flex: none;
+  }
+  .re__estado {
+    padding: var(--espacio-4) 10px;
+  }
+  .re__captura {
+    min-height: 404px;
+  }
+  .re__caja {
+    gap: 10px;
+    padding: 20px;
+  }
+  .re__caja-titulo {
+    font-size: var(--texto-h3);
+    line-height: var(--lh-h3);
+  }
+  .re__caso {
+    gap: 10px;
+    font-size: var(--texto-small);
+    line-height: var(--lh-small);
+  }
+  .re__marca {
+    width: 20px;
+    height: 20px;
+    font-size: var(--texto-stats);
+    line-height: 16px;
+  }
+  .re__caso-nombre {
+    flex: none;
+  }
+  .re__caso-tiempo {
+    font-size: var(--texto-stats);
+    line-height: var(--lh-stats);
+  }
+  .re__resumen {
+    font-size: var(--texto-stats);
+    line-height: var(--lh-stats);
+  }
+  .re__comentario {
+    gap: 12px;
+  }
+  textarea.re__textarea {
+    min-height: 96px;
+    padding: 12px 16px;
+    font-size: var(--texto-small);
+    line-height: var(--lh-small);
+  }
+  .re__acciones {
+    gap: var(--espacio-16);
+  }
+  .re__boton {
+    padding: var(--espacio-16) 12px;
+    font-size: var(--texto-boton);
+    white-space: nowrap;
+  }
+}
