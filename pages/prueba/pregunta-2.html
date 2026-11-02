@@ -3,55 +3,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Prueba diagnóstica · Pregunta 2 · BranchMatch</title>
+  <title>Pregunta 2 · BranchMatch</title>
   <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
-  <!-- Figma: pantalla 06 · Prueba diagnóstica · Pregunta 2 · Responsable: P1 -->
+  <!-- Figma: pantalla 06 (y 07 en #salir) · Prueba diagnóstica · Pregunta 2 · Responsable: P1 -->
   <header class="header">
     <div class="contenedor header__contenido">
-      <a class="header__logo" href="../../index.html">
+      <a class="header__logo" href="../estudiante/inicio.html">
         <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
         <span class="header__logo-texto">Branch<span>Match</span></span>
       </a>
+      <a class="prueba-header__salir" href="#salir">Salir de la prueba</a>
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Prueba diagnóstica · Pregunta 2</h1>
-    <!-- TODO P1: implementar la pantalla 06 según el Figma. -->
+  <main class="contenedor prueba-pregunta">
+    <div class="prueba-estado">
+      <p class="prueba-estado__tiempo">⏱ 11:42 restantes</p>
+      <div class="barra-xp__pista prueba-estado__barra" role="img" aria-label="Pregunta 2 de 20">
+        <span class="barra-xp__relleno prueba-estado__relleno prueba-estado__relleno--2"></span>
+      </div>
+    </div>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="inicio.html">04 · Prueba diagnóstica · Inicio</a></li>
-        <li><a href="pregunta-2.html#salir">07 · ¿Salir de la prueba?</a></li>
-        <li><a href="../estudiante/inicio.html">11 · Inicio (feed)</a></li>
-      </ul>
-    </nav>
+    <form class="tarjeta prueba-tarjeta" action="resultado.html" method="get">
+      <fieldset class="prueba-tarjeta__pregunta">
+        <legend class="prueba-tarjeta__legend">
+          <span class="chip chip--celeste">Complejidad algorítmica</span>
+          <h1 class="titulo-3 prueba-tarjeta__titulo">¿Cuál es la complejidad temporal, en el peor caso, del siguiente fragmento?</h1>
+        </legend>
+        <ul class="prueba-opciones">
+          <li>
+            <input class="opcion__radio" type="radio" id="p2-a" name="respuesta" value="A" required>
+            <label class="opcion" for="p2-a"><span class="opcion__letra">A</span> O(n)</label>
+          </li>
+          <li>
+            <input class="opcion__radio" type="radio" id="p2-b" name="respuesta" value="B" required>
+            <label class="opcion" for="p2-b"><span class="opcion__letra">B</span> O(n log n)</label>
+          </li>
+          <li>
+            <input class="opcion__radio" type="radio" id="p2-c" name="respuesta" value="C" checked required>
+            <label class="opcion" for="p2-c"><span class="opcion__letra">C</span> O(n²)</label>
+          </li>
+          <li>
+            <input class="opcion__radio" type="radio" id="p2-d" name="respuesta" value="D" required>
+            <label class="opcion" for="p2-d"><span class="opcion__letra">D</span> O(log n)</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <figure class="codigo">
+        <figcaption class="codigo__archivo">main.cpp</figcaption>
+        <pre class="codigo__bloque"><code>for (int i = 0; i &lt; n; i++)
+    for (int j = i; j &lt; n; j++)
+        suma += a[i] * a[j];</code></pre>
+      </figure>
+    </form>
+
+    <div class="prueba-navegacion">
+      <p class="prueba-contador">Pregunta <strong>2</strong> de 20</p>
+      <!-- «Enviar» solo va en la última pregunta (20). Como no hay pantallas de la 3 a la 20, «Siguiente» lleva al resultado. -->
+      <a class="boton" href="resultado.html">Siguiente</a>
+    </div>
 
     <!-- Pantalla 07 · ¿Salir de la prueba? (se abre con href="#salir") -->
     <section class="modal" id="salir" aria-labelledby="salir-titulo">
       <div class="modal__caja">
-        <h2 class="titulo-3" id="salir-titulo">¿Salir de la prueba?</h2>
-        <!-- TODO: contenido del Figma -->
+        <h2 class="titulo-3 modal__titulo" id="salir-titulo"><span aria-hidden="true">⚠</span> ¿Salir de la prueba?</h2>
+        <p>Si sales ahora perderás tus respuestas y deberás empezar de nuevo. El tiempo no se detiene.</p>
         <div class="modal__acciones">
-          <a class="boton" href="inicio.html">Prueba diagnóstica · Inicio</a>
-          <a class="boton" href="pregunta-1.html">Prueba diagnóstica · Pregunta 1</a>
-          <a class="boton boton--secundario" href="#">Cerrar</a>
+          <a class="boton" href="#">Seguir respondiendo</a>
+          <a class="boton boton--peligro" href="../estudiante/inicio.html">Salir de todos modos</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer prueba-footer">
     <div class="contenedor footer__contenido">
-      <p>© 2026 Branch Match</p>
-      <ul class="footer__links">
-        <li><a class="footer__link" href="#">Ayuda</a></li>
-        <li><a class="footer__link" href="#">Términos</a></li>
-        <li><a class="footer__link" href="#">Privacidad</a></li>
-      </ul>
+      <p>© 2026 Branch Match. Todos los derechos reservados.</p>
     </div>
   </footer>
 </body>
