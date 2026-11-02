@@ -123,6 +123,7 @@
 }
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-behavior:smooth;
 }
 img,
 svg {
@@ -815,7 +816,7 @@ textarea.campo__input {
   display: flex;
   align-items: flex-end;
   min-height: 576px;
-  background: var(--color-fondo) url("../assets/img/landing-hero.png") 20% center / cover no-repeat;
+  background: var(--color-fondo) url("../assets/img/landing-hero.gif") 20% center / cover no-repeat;
 }
 .hero__contenido {
   display: flex;
