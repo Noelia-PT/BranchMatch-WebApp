@@ -1733,6 +1733,173 @@ textarea.campo__input {
   }
 }
 
+/* --- 18 · ¡Party completa! (estudiante/party-completa.html) --- */
+.party-completa {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-32);
+  overflow: hidden;
+}
+/* Confeti decorativo: un cuadrito de 6 px repetido con box-shadow */
+.party-completa__confeti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  pointer-events: none;
+  box-shadow:
+    371px 125px 0 2px var(--color-celeste),
+    490px 202px 0 2px var(--color-menta),
+    374px 491px 0 1px var(--color-menta),
+    541px 200px 0 1px var(--color-amarillo),
+    664px 534px 0 0px var(--color-rosa),
+    346px 243px 0 0px var(--color-celeste),
+    1178px 519px 0 0px var(--color-menta),
+    442px 306px 0 1px var(--color-amarillo),
+    701px 415px 0 0px var(--color-menta),
+    1101px 354px 0 1px var(--color-celeste),
+    620px 117px 0 1px var(--color-menta),
+    1163px 512px 0 0px var(--color-menta),
+    328px 194px 0 0px var(--color-menta),
+    269px 416px 0 2px var(--color-amarillo),
+    412px 265px 0 1px var(--color-menta),
+    181px 503px 0 0px var(--color-menta),
+    311px 501px 0 0px var(--color-rosa),
+    189px 556px 0 1px var(--color-rosa),
+    805px 545px 0 0px var(--color-rosa),
+    178px 489px 0 2px var(--color-menta),
+    371px 394px 0 2px var(--color-rosa),
+    554px 406px 0 1px var(--color-rosa),
+    687px 346px 0 1px var(--color-rosa),
+    888px 554px 0 0px var(--color-menta),
+    299px 166px 0 2px var(--color-amarillo),
+    1053px 469px 0 0px var(--color-amarillo),
+    527px 432px 0 2px var(--color-menta),
+    1143px 483px 0 2px var(--color-rosa),
+    460px 176px 0 0px var(--color-celeste),
+    608px 507px 0 0px var(--color-amarillo),
+    721px 553px 0 0px var(--color-rosa),
+    432px 268px 0 0px var(--color-rosa),
+    1172px 236px 0 0px var(--color-celeste),
+    217px 382px 0 0px var(--color-celeste),
+    672px 90px 0 1px var(--color-celeste),
+    349px 406px 0 2px var(--color-menta),
+    1068px 11px 0 1px var(--color-menta),
+    93px 262px 0 2px var(--color-celeste),
+    183px 220px 0 1px var(--color-rosa),
+    766px 139px 0 2px var(--color-amarillo),
+    219px 335px 0 1px var(--color-menta),
+    1085px 90px 0 0px var(--color-amarillo),
+    957px 322px 0 0px var(--color-amarillo),
+    451px 372px 0 2px var(--color-menta),
+    825px 315px 0 2px var(--color-amarillo),
+    1042px 194px 0 0px var(--color-amarillo),
+    170px 406px 0 1px var(--color-amarillo),
+    26px 287px 0 0px var(--color-rosa),
+    1103px 143px 0 1px var(--color-amarillo),
+    264px 235px 0 2px var(--color-celeste),
+    35px 539px 0 2px var(--color-rosa),
+    549px 424px 0 0px var(--color-menta),
+    496px 281px 0 2px var(--color-amarillo),
+    1077px 358px 0 0px var(--color-menta),
+    598px 293px 0 0px var(--color-rosa),
+    1065px 221px 0 0px var(--color-rosa),
+    608px 241px 0 0px var(--color-menta),
+    136px 180px 0 0px var(--color-menta),
+    1116px 255px 0 2px var(--color-amarillo),
+    996px 491px 0 0px var(--color-rosa);
+}
+.party-completa__encabezado {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-16);
+  text-align: center;
+}
+.party-completa__popa {
+  width: 140px;
+}
+.party-completa__bajada {
+  max-width: 600px;
+  color: var(--color-texto-2);
+}
+.party-completa__integrantes {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espacio-16);
+  width: 100%;
+  max-width: 600px;
+}
+.integrante-party {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-8);
+  padding: var(--espacio-16);
+  text-align: center;
+}
+.integrante-party__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: var(--borde-medio) solid var(--color-borde);
+  border-radius: 50%;
+  font-family: var(--fuente-pixel);
+  font-weight: 600;
+  font-size: var(--texto-h3);
+  color: var(--color-borde);
+}
+.integrante-party__avatar--amarillo { background: var(--color-amarillo); }
+.integrante-party__avatar--celeste { background: var(--color-celeste); }
+.integrante-party__avatar--menta { background: var(--color-menta); }
+.integrante-party__avatar--rosa { background: var(--color-rosa); }
+.integrante-party__avatar--lila { background: var(--color-texto-2); }
+.integrante-party__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--espacio-4);
+}
+.integrante-party__chips .chip {
+  padding: 2px 6px;
+  font-size: var(--texto-small);
+}
+.party-completa__acciones {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+  width: 100%;
+  max-width: 600px;
+}
+
+@media (min-width: 768px) {
+  .party-completa__popa {
+    width: 170px;
+  }
+  .party-completa__bajada {
+    font-size: var(--texto-body);
+  }
+  .party-completa__integrantes {
+    grid-template-columns: repeat(5, 152px);
+    justify-content: center;
+    max-width: none;
+  }
+  .party-completa__acciones {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--espacio-24);
+    margin-top: var(--espacio-32);
+  }
+}
+
 /* ===== P2 · Perfiles y Party ===== */
 
 

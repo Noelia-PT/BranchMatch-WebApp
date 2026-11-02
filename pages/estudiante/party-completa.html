@@ -33,28 +33,65 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">¡Party completa!</h1>
-    <!-- TODO P1: implementar la pantalla 18 según el Figma. -->
+  <main class="contenedor party-completa">
+    <div class="party-completa__confeti" aria-hidden="true"></div>
+    <section class="party-completa__encabezado" aria-labelledby="party-titulo">
+      <img class="popa party-completa__popa" src="../../assets/img/popa-lider.png" alt="Popa, la mascota de Branch Match, celebrando">
+      <p class="chip chip--menta">¡Party completa! · 5/5</p>
+      <h1 class="titulo-display" id="party-titulo">¡Los Insanos está lista!</h1>
+      <p class="party-completa__bajada">El match terminó: ya son 5. Ahora empieza la aventura de verdad — entrenar juntos rumbo a la ICPC.</p>
+    </section>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="mi-party.html">19 · Mi party</a></li>
-        <li><a href="chat.html">20 · Chat de la party</a></li>
-      </ul>
-    </nav>
+    <ul class="party-completa__integrantes" aria-label="Integrantes de Los Insanos">
+      <li class="tarjeta integrante-party">
+        <span class="integrante-party__avatar integrante-party__avatar--amarillo" aria-hidden="true">EM</span>
+        <h2 class="titulo-3">Edson</h2>
+        <ul class="integrante-party__chips">
+            <li class="chip chip--amarillo">LV 7</li>
+            <li class="chip chip--rosa">Líder</li>
+        </ul>
+      </li>
+      <li class="tarjeta integrante-party">
+        <span class="integrante-party__avatar integrante-party__avatar--celeste" aria-hidden="true">TC</span>
+        <h2 class="titulo-3">Tomas</h2>
+        <ul class="integrante-party__chips">
+            <li class="chip chip--amarillo">LV 5</li>
+            <li class="chip chip--celeste">Tú</li>
+        </ul>
+      </li>
+      <li class="tarjeta integrante-party">
+        <span class="integrante-party__avatar integrante-party__avatar--menta" aria-hidden="true">AG</span>
+        <h2 class="titulo-3">Ana</h2>
+        <ul class="integrante-party__chips">
+            <li class="chip chip--amarillo">LV 4</li>
+        </ul>
+      </li>
+      <li class="tarjeta integrante-party">
+        <span class="integrante-party__avatar integrante-party__avatar--rosa" aria-hidden="true">VR</span>
+        <h2 class="titulo-3">Valeria</h2>
+        <ul class="integrante-party__chips">
+            <li class="chip chip--amarillo">LV 5</li>
+        </ul>
+      </li>
+      <li class="tarjeta integrante-party">
+        <span class="integrante-party__avatar integrante-party__avatar--lila" aria-hidden="true">JL</span>
+        <h2 class="titulo-3">Jack</h2>
+        <ul class="integrante-party__chips">
+            <li class="chip chip--amarillo">LV 5</li>
+            <li class="chip chip--menta">¡Nuevo!</li>
+        </ul>
+      </li>
+    </ul>
 
+    <div class="party-completa__acciones">
+      <a class="boton" href="mi-party.html">Ir a mi party</a>
+      <a class="boton boton--secundario" href="chat.html">Saludar en el chat</a>
+    </div>
   </main>
 
-  <footer class="footer">
+  <footer class="footer pie-centrado">
     <div class="contenedor footer__contenido">
-      <p>© 2026 Branch Match</p>
-      <ul class="footer__links">
-        <li><a class="footer__link" href="#">Ayuda</a></li>
-        <li><a class="footer__link" href="#">Términos</a></li>
-        <li><a class="footer__link" href="#">Privacidad</a></li>
-      </ul>
+      <p>© 2026 Branch Match. Todos los derechos reservados.</p>
     </div>
   </footer>
 </body>
