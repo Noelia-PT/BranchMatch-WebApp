@@ -1102,3 +1102,16 @@ textarea.campo__input {
   .pl__metrica-valor { grid-column: 3; grid-row: 1; }
   .pl__barra { grid-column: 2; grid-row: 1; }
 }
+
+/* Tarjetas estadísticas interactivas */
+.pl__stat-enlace {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pl__stat-enlace:focus-visible {
+  outline: 3px solid #8bd4ff;
+  outline-offset: 4px;
+}
