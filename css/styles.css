@@ -865,7 +865,7 @@ textarea.campo__input {
   display: flex;
   flex-direction: column;
   gap: var(--espacio-32);
-  padding-top: var(--espacio-64);
+  padding-top: var(--espacio-48);
   padding-bottom: var(--espacio-32);
 }
 .landing-seccion__intro {
