@@ -1022,6 +1022,289 @@ textarea.personaliza__bio {
 }
 
 
+/* --- 09 · Completa tu perfil (estudiante/completa-perfil.html) --- */
+.completa {
+  --color-brillo-xp: #fff1a8;      /* brillo pixel de la barra de XP (Figma) */
+  padding-top: var(--espacio-32);
+  padding-bottom: var(--espacio-32);
+}
+.completa__layout {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.completa__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.completa__paso {
+  display: none;
+}
+.completa__titulo {
+  font-size: var(--texto-h3);
+  line-height: var(--lh-h3);
+  font-weight: 600;
+}
+.completa__subtitulo {
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+}
+.completa__form {
+  gap: var(--espacio-24);
+}
+.completa__fila {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+}
+.completa__input {
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+}
+.completa__input::placeholder {
+  opacity: 0.6;
+}
+textarea.completa__bio {
+  min-height: 100px;
+  height: 100px;
+}
+.completa__grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  border: 0;
+}
+.completa__leyenda {
+  padding: 0;
+}
+.completa__opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-8);
+}
+.completa__opcion {
+  display: block;
+  cursor: pointer;
+}
+.completa__opcion-texto {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--espacio-4) 10px;
+  border: var(--borde-fino) solid var(--color-texto-2);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+  color: var(--color-texto-2);
+  white-space: nowrap;
+}
+.completa__opcion:hover .completa__opcion-texto,
+a.completa__opcion-texto:hover {
+  border-color: var(--color-celeste);
+}
+.completa__check:checked + .completa__opcion-texto {
+  background: var(--color-celeste);
+  border-color: var(--color-borde);
+  color: var(--color-borde);
+}
+.completa__opcion--tema .completa__check:checked + .completa__opcion-texto {
+  background: var(--color-menta);
+}
+.completa__check:focus-visible + .completa__opcion-texto {
+  outline: var(--borde-fino) solid var(--color-celeste);
+  outline-offset: 2px;
+}
+.completa__acciones {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-16);
+}
+.completa__acciones .boton {
+  white-space: nowrap;
+}
+.completa__omitir {
+  color: var(--color-texto-2);
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+  white-space: nowrap;
+}
+.completa__omitir:hover {
+  color: var(--color-texto);
+  text-decoration: underline;
+}
+
+/* Vista previa: Player Card */
+.completa__preview {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.completa__player {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+}
+.completa__player-encabezado {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-16);
+}
+.completa__jugador {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.completa__nombre {
+  font-size: var(--texto-h3);
+  line-height: var(--lh-h3);
+  font-weight: 600;
+}
+.completa__usuario {
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+}
+.completa__nivel {
+  border-width: var(--borde-medio);
+}
+.completa__dato {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+}
+.completa__especialidad {
+  font-size: var(--texto-body);
+  line-height: var(--lh-body);
+  letter-spacing: -0.02em;
+}
+.completa__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-8);
+}
+.completa__tag {
+  padding: var(--espacio-4) 10px;
+}
+.completa__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.completa__stats-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.completa__stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.completa__stat-nombre {
+  flex: 0 0 150px;
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+}
+.completa__stat-barra {
+  flex: 1;
+  min-width: 0;
+  height: 12px;
+  background: var(--color-fondo);
+  border: var(--borde-fino) solid var(--color-borde);
+}
+.completa__stat-relleno {
+  display: block;
+  height: 100%;
+  background: var(--color-amarillo);
+}
+.completa__stat-relleno--82 { width: 82%; }
+.completa__stat-relleno--70 { width: 70%; }
+.completa__stat-relleno--64 { width: 64%; }
+.completa__stat-relleno--75 { width: 75%; }
+.completa__xp .barra-xp__relleno {
+  position: relative;
+}
+.completa__xp .barra-xp__relleno::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 4px;
+  height: 4px;
+  background: var(--color-brillo-xp);
+}
+
+@media (min-width: 768px) {
+  .completa {
+    padding-top: 38px;
+    padding-bottom: var(--espacio-64);
+  }
+  .completa__layout {
+    display: grid;
+    grid-template-columns: 744px 360px;
+    grid-template-rows: auto 1fr;
+    justify-content: start;
+    align-items: start;
+    column-gap: var(--espacio-64);
+    row-gap: 51px;
+  }
+  .completa__intro {
+    gap: var(--espacio-8);
+  }
+  .completa__paso {
+    display: inline-flex;
+  }
+  .completa__titulo {
+    font-family: var(--fuente-pixel);
+    font-size: var(--texto-h1);
+    line-height: var(--lh-h1);
+    font-weight: 700;
+    letter-spacing: var(--tracking-titulo);
+  }
+  .completa__subtitulo {
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+    letter-spacing: -0.02em;
+  }
+  .completa__form {
+    gap: 20px;
+    padding: var(--espacio-32);
+  }
+  .completa__fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-24);
+  }
+  .completa__input {
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+    letter-spacing: -0.02em;
+  }
+  textarea.completa__bio {
+    min-height: 84px;
+    height: 84px;
+  }
+  .completa__grupo {
+    gap: var(--espacio-8);
+  }
+  .completa__acciones {
+    gap: var(--espacio-24);
+  }
+  .completa__omitir {
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+    letter-spacing: -0.02em;
+    text-decoration: underline;
+  }
+  .completa__preview {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+}
+
 /* ===== P3 · Feed y Lecciones ===== */
 
 
