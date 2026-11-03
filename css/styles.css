@@ -1224,14 +1224,6 @@ textarea.campo__input {
 .auth-tarjeta__link:hover {
   text-decoration: underline;
 }
-.auth-footer {
-  margin-top: var(--espacio-48);
-  background: transparent;
-  text-align: center;
-}
-.auth-footer .footer__contenido {
-  justify-content: center;
-}
 
 /* 03 · Iniciar sesión: otro fondo animado y tarjeta más ancha */
 .auth--login {
@@ -1545,13 +1537,6 @@ textarea.campo__input {
   padding-left: var(--espacio-16);
   padding-right: var(--espacio-16);
 }
-.prueba-footer {
-  margin-top: var(--espacio-32);
-  text-align: center;
-}
-.prueba-footer .footer__contenido {
-  justify-content: center;
-}
 
 /* 08 · Resultado */
 .prueba-resultado {
@@ -1708,15 +1693,6 @@ textarea.campo__input {
 }
 .notificacion__boton {
   align-self: stretch;
-}
-
-/* Pie centrado de una sola línea (prueba, notificaciones, party completa) */
-.pie-centrado {
-  margin-top: var(--espacio-32);
-  text-align: center;
-}
-.pie-centrado .footer__contenido {
-  justify-content: center;
 }
 
 @media (min-width: 768px) {
