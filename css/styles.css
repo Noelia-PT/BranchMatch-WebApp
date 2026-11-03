@@ -819,9 +819,10 @@ textarea.campo__input {
   align-items: flex-start;
 }
 
-/* Enlaces de ancla: que no queden tapados por la cabecera fija */
-.landing-seccion {
-  scroll-margin-top: var(--alto-header);
+/* Enlaces del menú: saltan al título de la sección (no al borde con su padding),
+   que queda justo debajo de la cabecera fija con un poco de aire */
+.landing-seccion__intro {
+  scroll-margin-top: calc(var(--alto-header) + var(--espacio-32));
 }
 
 .landing__main {
