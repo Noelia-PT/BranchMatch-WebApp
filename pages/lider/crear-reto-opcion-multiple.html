@@ -33,19 +33,171 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Crear reto de opción múltiple</h1>
-    <!-- TODO P4: implementar la pantalla 58 según el Figma. -->
+  <main class="contenedor crm">
+    <a class="crm__volver" href="retos.html">
+      <img class="crm__volver-icono" src="../../assets/icons/crear-reto-opcion-volver.svg" alt="">
+      Volver a Retos
+    </a>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="retos.html">55 · Retos de la party</a></li>
-        <li><a href="crear-reto.html">56 · Crear reto</a></li>
-        <li><a href="reto-publicado.html">59 · Crear reto</a></li>
-      </ul>
-    </nav>
+    <header class="crm__intro">
+      <ol class="crm__pasos" aria-label="Pasos para crear un reto">
+        <li class="crm__paso"><span class="crm__paso-num">1</span> Elige el tipo</li>
+        <li class="crm__paso crm__paso--activo" aria-current="step"><span class="crm__paso-num">2</span> Completa el reto</li>
+        <li class="crm__paso crm__paso--pendiente"><span class="crm__paso-num">3</span> Publica</li>
+      </ol>
+      <div class="crm__titulo">
+        <h1 class="titulo-1">Crear reto de opción múltiple</h1>
+        <span class="crm__chip crm__chip--rosa">◉ Opción múltiple</span>
+        <a class="crm__cambiar" href="crear-reto.html">Cambiar tipo</a>
+      </div>
+      <p class="crm__subtitulo">Escribe la pregunta, agrega las alternativas y marca cuál es la correcta. Tu party solo tendrá que elegir una opción.</p>
+    </header>
 
+    <div class="crm__fila">
+      <form class="crm__form" action="reto-publicado.html" novalidate>
+        <section class="crm__seccion" aria-labelledby="crm-s1">
+          <h2 class="crm__seccion-titulo" id="crm-s1"><span class="crm__num">1</span> Datos del reto</h2>
+
+          <div class="crm__r1">
+            <div class="campo crm__campo">
+              <label class="campo__label" for="crm-titulo">Título del reto</label>
+              <input class="campo__input crm__input" id="crm-titulo" name="titulo" type="text" value="Complejidad de Dijkstra" required minlength="3" maxlength="80">
+              <p class="campo__error">Escribe un título de al menos 3 caracteres.</p>
+            </div>
+            <div class="campo crm__campo">
+              <label class="campo__label" for="crm-tema">Tema</label>
+              <select class="campo__input crm__input" id="crm-tema" name="tema" required>
+                <option value="grafos" selected>Grafos</option>
+                <option value="listas">Listas Enlazadas</option>
+                <option value="arboles">Árboles Binarios</option>
+                <option value="dp">Programación dinámica</option>
+              </select>
+              <p class="campo__error">Elige un tema.</p>
+            </div>
+          </div>
+
+          <div class="crm__r2">
+            <div class="campo crm__campo">
+              <label class="campo__label" for="crm-fecha">Fecha de entrega</label>
+              <input class="campo__input crm__input crm__input--calendario" id="crm-fecha" name="fecha" type="date" value="2026-10-20" required>
+              <p class="campo__error">Elige una fecha de entrega.</p>
+            </div>
+            <div class="campo crm__campo">
+              <label class="campo__label" for="crm-recompensa">Recompensa</label>
+              <input class="campo__input crm__input crm__input--trofeo" id="crm-recompensa" name="recompensa" type="text" value="+20 XP" required pattern="\+?[0-9]+ ?XP">
+              <p class="campo__error">Escribe la recompensa, por ejemplo «+20 XP».</p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="crm__divisor">
+
+        <section class="crm__seccion" aria-labelledby="crm-s2">
+          <h2 class="crm__seccion-titulo" id="crm-s2"><span class="crm__num">2</span> Pregunta</h2>
+          <div class="campo crm__campo">
+            <label class="campo__label" for="crm-pregunta">Enunciado de la pregunta</label>
+            <textarea class="campo__input crm__input crm__input--foco crm__textarea" id="crm-pregunta" name="pregunta" rows="2" required minlength="10" maxlength="300">¿Cuál es la complejidad de Dijkstra cuando usas una cola de prioridad (min-heap)?</textarea>
+            <p class="campo__error">Escribe la pregunta (mínimo 10 caracteres).</p>
+          </div>
+        </section>
+
+        <hr class="crm__divisor">
+
+        <section class="crm__seccion" aria-labelledby="crm-s3">
+          <h2 class="crm__seccion-titulo" id="crm-s3"><span class="crm__num">3</span> Alternativas <span class="crm__nota">marca la correcta con ✓</span></h2>
+          <fieldset class="crm__alternativas">
+            <legend class="visualmente-oculto">Alternativas y respuesta correcta</legend>
+
+            <div class="crm__alt">
+              <span class="crm__letra">A</span>
+              <label class="visualmente-oculto" for="crm-alt-a">Alternativa A</label>
+              <input class="campo__input crm__alt-input" id="crm-alt-a" name="alternativa-a" type="text" value="O(V²)" required>
+              <input class="visualmente-oculto" type="radio" id="crm-ok-a" name="correcta" value="a" required>
+              <label class="crm__marcar" for="crm-ok-a"><span class="crm__marcar-no">○ Marcar correcta</span><span class="crm__marcar-si">✓ Correcta</span></label>
+              <a class="crm__borrar" href="#" aria-label="Eliminar alternativa A"><img src="../../assets/icons/crear-reto-opcion-papelera.svg" alt=""></a>
+            </div>
+
+            <div class="crm__alt">
+              <span class="crm__letra">B</span>
+              <label class="visualmente-oculto" for="crm-alt-b">Alternativa B</label>
+              <input class="campo__input crm__alt-input" id="crm-alt-b" name="alternativa-b" type="text" value="O((V + E) log V)" required>
+              <input class="visualmente-oculto" type="radio" id="crm-ok-b" name="correcta" value="b" checked>
+              <label class="crm__marcar" for="crm-ok-b"><span class="crm__marcar-no">○ Marcar correcta</span><span class="crm__marcar-si">✓ Correcta</span></label>
+              <a class="crm__borrar" href="#" aria-label="Eliminar alternativa B"><img src="../../assets/icons/crear-reto-opcion-papelera.svg" alt=""></a>
+            </div>
+
+            <div class="crm__alt">
+              <span class="crm__letra">C</span>
+              <label class="visualmente-oculto" for="crm-alt-c">Alternativa C</label>
+              <input class="campo__input crm__alt-input" id="crm-alt-c" name="alternativa-c" type="text" value="O(V · E)" required>
+              <input class="visualmente-oculto" type="radio" id="crm-ok-c" name="correcta" value="c">
+              <label class="crm__marcar" for="crm-ok-c"><span class="crm__marcar-no">○ Marcar correcta</span><span class="crm__marcar-si">✓ Correcta</span></label>
+              <a class="crm__borrar" href="#" aria-label="Eliminar alternativa C"><img src="../../assets/icons/crear-reto-opcion-papelera.svg" alt=""></a>
+            </div>
+
+            <div class="crm__alt">
+              <span class="crm__letra">D</span>
+              <label class="visualmente-oculto" for="crm-alt-d">Alternativa D</label>
+              <input class="campo__input crm__alt-input" id="crm-alt-d" name="alternativa-d" type="text" value="O(E)" required>
+              <input class="visualmente-oculto" type="radio" id="crm-ok-d" name="correcta" value="d">
+              <label class="crm__marcar" for="crm-ok-d"><span class="crm__marcar-no">○ Marcar correcta</span><span class="crm__marcar-si">✓ Correcta</span></label>
+              <a class="crm__borrar" href="#" aria-label="Eliminar alternativa D"><img src="../../assets/icons/crear-reto-opcion-papelera.svg" alt=""></a>
+            </div>
+          </fieldset>
+        </section>
+
+        <hr class="crm__divisor">
+
+        <section class="crm__seccion" aria-labelledby="crm-s4">
+          <h2 class="crm__seccion-titulo" id="crm-s4"><span class="crm__num">4</span> Explicación <span class="crm__nota">opcional</span></h2>
+          <div class="campo crm__campo">
+            <label class="campo__label" for="crm-explicacion">Se mostrará después de responder</label>
+            <textarea class="campo__input crm__input crm__textarea" id="crm-explicacion" name="explicacion" rows="3" maxlength="300">Cada arista se procesa una vez y cada operación en el heap cuesta log V, por eso queda O((V + E) log V).</textarea>
+          </div>
+        </section>
+
+        <hr class="crm__divisor">
+
+        <div class="crm__acciones">
+          <a class="boton" href="reto-publicado.html">Publicar reto</a>
+          <a class="boton boton--secundario" href="retos.html">Guardar borrador</a>
+          <a class="boton boton--secundario" href="retos.html">Cancelar</a>
+        </div>
+      </form>
+
+      <div class="crm__lateral">
+        <section class="crm__caja" aria-labelledby="crm-previa">
+          <h2 class="crm__caja-titulo" id="crm-previa">Vista previa</h2>
+          <p class="crm__caja-texto">Así lo verá tu party al resolverlo.</p>
+          <div class="crm__mini">
+            <p class="crm__mini-pregunta">¿Cuál es la complejidad de Dijkstra con cola de prioridad?</p>
+            <ul class="crm__mini-lista">
+              <li class="crm__mini-opcion"><span class="crm__mini-letra">A</span> O(V²)</li>
+              <li class="crm__mini-opcion"><span class="crm__mini-letra">B</span> O((V + E) log V)</li>
+              <li class="crm__mini-opcion"><span class="crm__mini-letra">C</span> O(V · E)</li>
+              <li class="crm__mini-opcion"><span class="crm__mini-letra">D</span> O(E)</li>
+            </ul>
+            <p class="crm__mini-nota">La respuesta correcta no se muestra al estudiante.</p>
+          </div>
+        </section>
+
+        <section class="crm__caja" aria-labelledby="crm-lista">
+          <h2 class="crm__caja-titulo" id="crm-lista">Antes de publicar</h2>
+          <ul class="crm__lista">
+            <li class="crm__item"><span class="crm__ok">✓</span> Pregunta escrita</li>
+            <li class="crm__item"><span class="crm__ok">✓</span> Al menos 2 alternativas</li>
+            <li class="crm__item"><span class="crm__ok">✓</span> 1 alternativa correcta marcada</li>
+            <li class="crm__item"><span class="crm__ok">✓</span> Fecha de entrega</li>
+          </ul>
+          <span class="crm__chip crm__chip--menta">✓ 4 de 4 listos</span>
+        </section>
+
+        <aside class="crm__ayuda" aria-label="Ayuda de Popa">
+          <img class="crm__ayuda-img" src="../../assets/img/popa-derecha-check.gif" alt="">
+          <p>Escribe alternativas parecidas entre sí: así comprobarás si de verdad entendieron el tema.</p>
+        </aside>
+      </div>
+    </div>
   </main>
 
   <footer class="footer">

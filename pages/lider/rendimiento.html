@@ -33,19 +33,60 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Resumen de rendimiento grupal</h1>
-    <!-- TODO P4: implementar la pantalla 43 según el Figma. -->
+  <main class="contenedor rg">
+    <a class="rg__volver" href="panel.html">
+      <img class="rg__volver-icono" src="../../assets/icons/rendimiento-grupal-volver.svg" alt="">
+      <span class="rg__volver-texto">Volver</span>
+    </a>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="panel.html">38 · Hola, Edson</a></li>
-        <li><a href="calendario.html">42 · Calendario de clases</a></li>
-        <li><a href="subtemas.html">51 · Tema: Grafos</a></li>
+    <header class="rg__intro">
+      <h1 class="titulo-1">Resumen de rendimiento grupal</h1>
+      <p class="rg__subtitulo">Los Insanos · últimos 30 días</p>
+    </header>
+
+    <section class="tarjeta rg__kpi" aria-labelledby="rg-kpi">
+      <span class="rg__chip rg__chip--amarillo" id="rg-kpi">KPI</span>
+      <div class="rg__kpi-datos">
+        <p class="rg__kpi-valor">68%</p>
+        <p class="rg__kpi-texto">de aprobación grupal</p>
+      </div>
+    </section>
+
+    <section class="tarjeta rg__dominio" aria-labelledby="rg-dominio">
+      <h2 class="rg__dominio-titulo" id="rg-dominio">Dominio por tema</h2>
+      <ul class="rg__lista">
+        <li class="rg__tema">
+          <span class="rg__tema-nombre">Listas Enlazadas</span>
+          <span class="rg__tema-valor">90%</span>
+          <span class="rg__barra"><span class="rg__relleno rg__relleno--90 rg__relleno--menta"></span></span>
+        </li>
+        <li class="rg__tema">
+          <span class="rg__tema-nombre">Árboles Binarios</span>
+          <span class="rg__tema-valor">85%</span>
+          <span class="rg__barra"><span class="rg__relleno rg__relleno--85 rg__relleno--menta"></span></span>
+        </li>
+        <li class="rg__tema">
+          <span class="rg__tema-nombre">Programación dinámica</span>
+          <span class="rg__tema-valor">75%</span>
+          <span class="rg__barra"><span class="rg__relleno rg__relleno--75 rg__relleno--amarillo"></span></span>
+        </li>
+        <li class="rg__tema">
+          <span class="rg__tema-nombre">Grafos</span>
+          <span class="rg__tema-valor">40%</span>
+          <span class="rg__barra"><span class="rg__relleno rg__relleno--40 rg__relleno--rosa"></span></span>
+        </li>
       </ul>
-    </nav>
+    </section>
 
+    <section class="tarjeta rg__plan" aria-labelledby="rg-plan">
+      <span class="rg__chip rg__chip--rosa">Plan de mejora sugerido</span>
+      <h2 class="rg__plan-titulo" id="rg-plan">Tema a reforzar: Grafos</h2>
+      <p class="rg__plan-texto">El 60% del grupo tiene problemas en el tema: Grafos. Se sugiere programar una sesión de repaso o subir material adicional antes del próximo examen.</p>
+      <div class="rg__acciones">
+        <a class="boton rg__boton" href="calendario.html">Programar horario de repaso</a>
+        <a class="boton boton--secundario rg__boton" href="subtemas.html">Subir material de aprendizaje</a>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
