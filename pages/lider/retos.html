@@ -33,18 +33,79 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Retos de la party</h1>
-    <!-- TODO P4: implementar la pantalla 55 según el Figma. -->
+  <main class="contenedor rl">
+    <div class="rl__titulo">
+      <h1 class="titulo-1">Retos de la party</h1>
+      <p class="rl__subtitulo">Crea retos, sigue las entregas y revisa cada solución.</p>
+    </div>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="crear-reto.html">56 · Crear reto</a></li>
-        <li><a href="entregas.html">60 · Reto 1: Recorrido en profundidad (DFS)</a></li>
-      </ul>
-    </nav>
+    <a class="boton rl__boton rl__crear" href="crear-reto.html">+ Crear reto</a>
 
+    <form class="rl__buscar" role="search" action="retos.html">
+      <label class="visualmente-oculto" for="rl-buscar">Buscar reto</label>
+      <input class="rl__buscar-input" id="rl-buscar" name="buscar" type="search" placeholder="Buscar reto…">
+    </form>
+
+    <ul class="rl__filtros">
+      <li><a class="rl__pildora rl__pildora--amarillo" href="retos.html" aria-current="true">Activos · 3</a></li>
+      <li><a class="rl__pildora rl__pildora--borde" href="#">Cerrados · 5</a></li>
+    </ul>
+
+    <ul class="rl__lista">
+      <li class="rl__reto">
+        <div class="rl__reto-info">
+          <div class="rl__reto-cabecera">
+            <h2 class="rl__reto-titulo">Dijkstra con colas de prioridad</h2>
+            <span class="chip chip--celeste rl__tag">Grafos</span>
+          </div>
+          <p class="rl__reto-fecha">Cierra el 18 oct</p>
+        </div>
+        <div class="rl__progreso">
+          <p class="rl__progreso-texto">Entregas 3/5</p>
+          <span class="rl__barra"><span class="rl__relleno rl__relleno--menta rl__relleno--60"></span></span>
+        </div>
+        <div class="rl__reto-pie">
+          <span class="rl__pildora rl__pildora--rosa">2 por revisar</span>
+          <a class="boton rl__boton" href="entregas.html">Revisar</a>
+        </div>
+      </li>
+
+      <li class="rl__reto">
+        <div class="rl__reto-info">
+          <div class="rl__reto-cabecera">
+            <h2 class="rl__reto-titulo">Mochila 0/1</h2>
+            <span class="chip chip--celeste rl__tag">Programación dinámica</span>
+          </div>
+          <p class="rl__reto-fecha">Cierra el 19 oct</p>
+        </div>
+        <div class="rl__progreso">
+          <p class="rl__progreso-texto">Entregas 1/5</p>
+          <span class="rl__barra"><span class="rl__relleno rl__relleno--amarillo rl__relleno--20"></span></span>
+        </div>
+        <div class="rl__reto-pie">
+          <span class="rl__pildora rl__pildora--rosa">1 por revisar</span>
+          <a class="boton rl__boton" href="entregas.html">Revisar</a>
+        </div>
+      </li>
+
+      <li class="rl__reto">
+        <div class="rl__reto-info">
+          <div class="rl__reto-cabecera">
+            <h2 class="rl__reto-titulo">Palíndromos con hashing</h2>
+            <span class="chip chip--celeste rl__tag">Strings</span>
+          </div>
+          <p class="rl__reto-fecha">Cierra el 22 oct</p>
+        </div>
+        <div class="rl__progreso">
+          <p class="rl__progreso-texto">Entregas 0/5</p>
+          <span class="rl__barra"><span class="rl__relleno rl__relleno--amarillo rl__relleno--0"></span></span>
+        </div>
+        <div class="rl__reto-pie">
+          <span class="rl__pildora rl__pildora--apagada">Sin pendientes</span>
+          <a class="boton boton--secundario rl__boton" href="entregas.html">Ver detalle</a>
+        </div>
+      </li>
+    </ul>
   </main>
 
   <footer class="footer">
