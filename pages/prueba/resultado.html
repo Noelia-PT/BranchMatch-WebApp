@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Prueba diagnóstica · Resultado · BranchMatch</title>
+  <title>Eres nivel Intermedio · BranchMatch</title>
   <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
@@ -33,17 +33,44 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Prueba diagnóstica · Resultado</h1>
-    <!-- TODO P1: implementar la pantalla 08 según el Figma. -->
+  <main class="contenedor prueba-resultado">
+    <section class="prueba-resultado__encabezado" aria-labelledby="resultado-titulo">
+      <img class="popa prueba-resultado__popa" src="../../assets/img/popa-lider.png" alt="Popa, la mascota de Branch Match, feliz">
+      <div class="prueba-resultado__texto">
+        <p class="chip chip--menta">¡Prueba completada!</p>
+        <h1 class="titulo-1" id="resultado-titulo">Eres nivel Intermedio</h1>
+        <p class="texto-secundario">Buen trabajo. Ya puedes unirte a parties de nivel 3 a 5 y desbloquear sus retos.</p>
+      </div>
+    </section>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="../estudiante/completa-perfil.html">09 · Completa tu perfil</a></li>
-      </ul>
-    </nav>
+    <ul class="prueba-resultado__stats">
+      <li class="tarjeta prueba-stat"><span class="prueba-stat__valor prueba-stat__valor--amarillo">16/20</span> <span class="texto-secundario">respuestas correctas</span></li>
+      <li class="tarjeta prueba-stat"><span class="prueba-stat__valor prueba-stat__valor--celeste">11:24</span> <span class="texto-secundario">tiempo utilizado</span></li>
+      <li class="tarjeta prueba-stat"><span class="prueba-stat__valor prueba-stat__valor--menta">+120 XP</span> <span class="texto-secundario">ganados</span></li>
+    </ul>
 
+    <div class="prueba-resultado__temas">
+      <section class="tarjeta prueba-tema" aria-labelledby="fortalezas-titulo">
+        <h2 class="titulo-3" id="fortalezas-titulo">Tus fortalezas</h2>
+        <ul class="prueba-tema__chips">
+          <li class="chip chip--menta">Recursión</li>
+          <li class="chip chip--menta">Estructuras de datos</li>
+          <li class="chip chip--menta">Búsqueda binaria</li>
+        </ul>
+      </section>
+      <section class="tarjeta prueba-tema" aria-labelledby="reforzar-titulo">
+        <h2 class="titulo-3" id="reforzar-titulo">Para reforzar</h2>
+        <ul class="prueba-tema__chips">
+          <li class="chip chip--rosa">Grafos</li>
+          <li class="chip chip--rosa">Programación dinámica</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="prueba-resultado__acciones">
+      <a class="boton" href="../estudiante/completa-perfil.html">Personalizar mi perfil</a>
+      <a class="boton boton--secundario" href="../estudiante/unete-party.html">Empezar a explorar parties</a>
+    </div>
   </main>
 
   <footer class="footer">
