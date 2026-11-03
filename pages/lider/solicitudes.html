@@ -33,19 +33,135 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">¡Quieren unirse a tu party!</h1>
-    <!-- TODO P2: implementar la pantalla 39 según el Figma. -->
+  <main class="contenedor sol">
+    <div class="sol__layout">
+      <div class="sol__izq">
+        <h1 class="sol__titulo">Quieren unirse a tu party!</h1>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="../estudiante/unete-party.html#solicitud-enviada">15 · Solicitud enviada</a></li>
-        <li><a href="../estudiante/unete-party.html#sigue-buscando">16 · Sigue buscando</a></li>
-        <li><a href="player-card.html">40 · Player Card del integrante</a></li>
-      </ul>
-    </nav>
+        <div class="sol__lado">
+          <img class="sol__popa" src="../../assets/img/popa-radar.gif" alt="Popa buscando integrantes con su radar">
+          <p class="sol__cupo">
+            <span>Cupo</span>
+            <span class="sol__cupos" role="img" aria-label="3 de 5 lugares ocupados">
+              <span class="sol__cupo-casilla sol__cupo-casilla--llena"></span>
+              <span class="sol__cupo-casilla sol__cupo-casilla--llena"></span>
+              <span class="sol__cupo-casilla sol__cupo-casilla--llena"></span>
+              <span class="sol__cupo-casilla"></span>
+              <span class="sol__cupo-casilla"></span>
+            </span>
+            <span class="sol__libres">2 libres</span>
+          </p>
+        </div>
+      </div>
 
+      <div class="sol__der">
+        <div class="sol__item" id="solicitud-1">
+          <article class="sol__tarjeta" aria-label="Solicitud de Jack">
+            <div class="sol__foto">
+              <img class="sol__foto-img" src="../../assets/img/jack-foto.png" alt="Foto de perfil de Jack: un gato con media máscara de Anonymous sobre un fondo de código">
+              <a class="sol__ver" href="player-card.html" aria-label="Ver la Player Card de Jack"><img class="sol__ver-icono" src="../../assets/icons/solicitud-ojo.svg" alt=""></a>
+              <div class="sol__nombre-barra">
+                <h2 class="sol__nombre"><a href="player-card.html">Jack</a></h2>
+                <span class="chip chip--amarillo sol__nivel">LV 5</span>
+              </div>
+            </div>
+            <div class="sol__intereses">
+              <h3 class="sol__intereses-titulo">Intereses</h3>
+              <ul class="sol__intereses-lista">
+                <li class="sol__interes">Grafos</li>
+                <li class="sol__interes">DP</li>
+                <li class="sol__interes">C++</li>
+                <li class="sol__interes">ICPC</li>
+                <li class="sol__interes">Codeforces</li>
+              </ul>
+            </div>
+          </article>
+
+          <div class="sol__acciones">
+            <a class="sol__accion" href="#solicitud-2" aria-label="Rechazar la solicitud de Jack"><img class="sol__accion-icono" src="../../assets/icons/party-x.svg" alt=""></a>
+            <a class="sol__accion" href="#solicitud-2" aria-label="Aceptar la solicitud de Jack"><img class="sol__accion-icono" src="../../assets/icons/party-check.svg" alt=""></a>
+          </div>
+
+          <p class="sol__teclado texto-secundario">
+            <a class="sol__tecla" href="#solicitud-2" aria-label="Rechazar">←</a>
+            <a class="sol__tecla" href="#solicitud-2" aria-label="Aceptar">→</a>
+            también con el teclado
+          </p>
+        </div>
+
+        <div class="sol__item" id="solicitud-2">
+          <article class="sol__tarjeta" aria-label="Solicitud de Lucía">
+            <div class="sol__foto">
+              <img class="sol__foto-img sol__foto-img--avatar" src="../../assets/icons/foto-perfil.svg" alt="Foto de perfil de Lucía">
+              <a class="sol__ver" href="player-card.html" aria-label="Ver la Player Card de Lucía"><img class="sol__ver-icono" src="../../assets/icons/solicitud-ojo.svg" alt=""></a>
+              <div class="sol__nombre-barra">
+                <h2 class="sol__nombre"><a href="player-card.html">Lucía</a></h2>
+                <span class="chip chip--amarillo sol__nivel">LV 4</span>
+              </div>
+            </div>
+            <div class="sol__intereses">
+              <h3 class="sol__intereses-titulo">Intereses</h3>
+              <ul class="sol__intereses-lista">
+                <li class="sol__interes">Strings</li>
+                <li class="sol__interes">Matemática</li>
+                <li class="sol__interes">Python</li>
+              </ul>
+            </div>
+          </article>
+
+          <div class="sol__acciones">
+            <a class="sol__accion" href="#solicitud-3" aria-label="Rechazar la solicitud de Lucía"><img class="sol__accion-icono" src="../../assets/icons/party-x.svg" alt=""></a>
+            <a class="sol__accion" href="#solicitud-3" aria-label="Aceptar la solicitud de Lucía"><img class="sol__accion-icono" src="../../assets/icons/party-check.svg" alt=""></a>
+          </div>
+
+          <p class="sol__teclado texto-secundario">
+            <a class="sol__tecla" href="#solicitud-3" aria-label="Rechazar">←</a>
+            <a class="sol__tecla" href="#solicitud-3" aria-label="Aceptar">→</a>
+            también con el teclado
+          </p>
+        </div>
+
+        <div class="sol__item" id="solicitud-3">
+          <article class="sol__tarjeta" aria-label="Solicitud de Mateo">
+            <div class="sol__foto">
+              <img class="sol__foto-img sol__foto-img--avatar" src="../../assets/icons/foto-perfil.svg" alt="Foto de perfil de Mateo">
+              <a class="sol__ver" href="player-card.html" aria-label="Ver la Player Card de Mateo"><img class="sol__ver-icono" src="../../assets/icons/solicitud-ojo.svg" alt=""></a>
+              <div class="sol__nombre-barra">
+                <h2 class="sol__nombre"><a href="player-card.html">Mateo</a></h2>
+                <span class="chip chip--amarillo sol__nivel">LV 6</span>
+              </div>
+            </div>
+            <div class="sol__intereses">
+              <h3 class="sol__intereses-titulo">Intereses</h3>
+              <ul class="sol__intereses-lista">
+                <li class="sol__interes">Geometría</li>
+                <li class="sol__interes">Java</li>
+                <li class="sol__interes">Kotlin</li>
+              </ul>
+            </div>
+          </article>
+
+          <div class="sol__acciones">
+            <a class="sol__accion" href="#sin-solicitudes" aria-label="Rechazar la solicitud de Mateo"><img class="sol__accion-icono" src="../../assets/icons/party-x.svg" alt=""></a>
+            <a class="sol__accion" href="#sin-solicitudes" aria-label="Aceptar la solicitud de Mateo"><img class="sol__accion-icono" src="../../assets/icons/party-check.svg" alt=""></a>
+          </div>
+
+          <p class="sol__teclado texto-secundario">
+            <a class="sol__tecla" href="#sin-solicitudes" aria-label="Rechazar">←</a>
+            <a class="sol__tecla" href="#sin-solicitudes" aria-label="Aceptar">→</a>
+            también con el teclado
+          </p>
+        </div>
+
+        <div class="sol__item" id="sin-solicitudes">
+          <section class="sol__vacio" aria-labelledby="vacio-titulo">
+            <h2 class="sol__vacio-titulo" id="vacio-titulo">No tienes más solicitudes</h2>
+            <p class="sol__vacio-texto">Cuando alguien quiera unirse a tu party, aparecerá aquí.</p>
+            <a class="boton boton--secundario sol__vacio-boton" href="panel.html">Volver al panel</a>
+          </section>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="footer">
