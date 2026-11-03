@@ -88,9 +88,3 @@ Estudiantes de la UPC, cursos IHC y Programación Web:
 - Noelia Paquiñauri
 - Edson Ramos
 - Addy Pinedo
-
-## Pendiente
-
-- Confirmar con el Figma si existen las pantallas 25, 31, 32, 47, 50 y 53, que no tienen página en el proyecto.
-- En `pages/lider/revisar-entrega.html` falta una captura de ejemplo en el recuadro de la solución del estudiante.
-- Revisar que `assets/img/fondo-estrellas.png` coincide con el fondo del Figma.
