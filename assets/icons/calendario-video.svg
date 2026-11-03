@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon / tabler-icons / video" clip-path="url(#clip0_0_125)">
+<g id="Vector">
+</g>
+<path id="Vector_2" d="M20 13.3333L26.0707 10.2987C26.2739 10.1971 26.4997 10.1492 26.7267 10.1594C26.9536 10.1696 27.1742 10.2377 27.3675 10.3571C27.5608 10.4765 27.7203 10.6433 27.831 10.8417C27.9417 11.0401 27.9999 11.2635 28 11.4907V20.5093C27.9999 20.7365 27.9417 20.9599 27.831 21.1583C27.7203 21.3567 27.5608 21.5235 27.3675 21.6429C27.1742 21.7623 26.9536 21.8304 26.7267 21.8406C26.4997 21.8508 26.2739 21.8029 26.0707 21.7013L20 18.6667V13.3333Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#90D3FA"/>
+<path id="Vector_3" d="M6.66667 8H17.3333C18.8061 8 20 9.19391 20 10.6667V21.3333C20 22.8061 18.8061 24 17.3333 24H6.66667C5.19391 24 4 22.8061 4 21.3333V10.6667C4 9.19391 5.19391 8 6.66667 8Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#90D3FA"/>
+</g>
+<defs>
+<clipPath id="clip0_0_125">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>

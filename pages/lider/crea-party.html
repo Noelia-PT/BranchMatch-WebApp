@@ -33,17 +33,61 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Crea tu primera party</h1>
-    <!-- TODO P2: implementar la pantalla 37 según el Figma. -->
+  <main class="contenedor crea">
+    <section class="crea__saludo">
+      <h1 class="crea__titulo">Hola, <span class="crea__nombre">Edson</span></h1>
+      <p class="crea__texto">Encuentra integrantes para tu team y que comience el coding party!</p>
+      <img class="crea__popa" src="../../assets/img/popa-radar.gif" alt="Popa buscando integrantes con su radar">
+    </section>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="panel.html">38 · Hola, Edson</a></li>
-      </ul>
-    </nav>
+    <form class="crea__tarjeta" action="panel.html" method="get">
+      <h2 class="crea__tarjeta-titulo">Crea tu primer party</h2>
 
+      <div class="crea__foto">
+        <label class="crea__foto-label" for="foto">
+          <img class="crea__foto-icono" src="../../assets/icons/camara-grupo.svg" alt="Subir foto del grupo">
+        </label>
+        <input class="visualmente-oculto" id="foto" name="foto" type="file" accept="image/*">
+        <p class="crea__foto-texto">Foto del grupo <span class="crea__opcional">(opcional)</span></p>
+      </div>
+
+      <div class="crea__campos">
+        <div class="campo crea__campo">
+          <label class="campo__label" for="nombre">Nombre del grupo</label>
+          <input class="campo__input crea__input" id="nombre" name="nombre" type="text" placeholder="Nombre del grupo" required minlength="3">
+          <p class="campo__error">Escribe un nombre para el grupo (mínimo 3 caracteres).</p>
+        </div>
+
+        <div class="campo crea__campo">
+          <label class="campo__label" for="descripcion">Descripción del grupo</label>
+          <textarea class="campo__input crea__input crea__descripcion" id="descripcion" name="descripcion" maxlength="200" placeholder="Descripción del grupo"></textarea>
+        </div>
+
+        <div class="campo crea__campo">
+          <label class="campo__label" for="integrantes">Número de integrantes</label>
+          <input class="campo__input crea__input" id="integrantes" name="integrantes" type="number" min="2" max="5" placeholder="Número de integrantes" required>
+          <p class="campo__error">Indica entre 2 y 5 integrantes.</p>
+        </div>
+
+        <div class="campo crea__campo">
+          <label class="campo__label" for="nivel">Rango de nivel</label>
+          <select class="campo__input crea__input crea__select" id="nivel" name="nivel" required>
+            <option value="" selected disabled>Rango del nivel del grupo</option>
+            <option value="1-3">Nivel 1–3</option>
+            <option value="3-5">Nivel 3–5</option>
+            <option value="5-8">Nivel 5–8</option>
+          </select>
+          <p class="campo__error">Elige un rango de nivel.</p>
+        </div>
+
+        <div class="campo crea__campo">
+          <span class="campo__label" id="horario-etiqueta">Horario de práctica</span>
+          <a class="campo__input crea__input crea__select crea__horario" href="#" aria-labelledby="horario-etiqueta">Crear horario de práctica</a>
+        </div>
+      </div>
+
+      <a class="boton crea__boton" href="panel.html">Crear party</a>
+    </form>
   </main>
 
   <footer class="footer">
