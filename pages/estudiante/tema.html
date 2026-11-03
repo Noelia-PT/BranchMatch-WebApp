@@ -33,18 +33,96 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Grafos</h1>
-    <!-- TODO P3: implementar la pantalla 23 según el Figma. -->
+  <main class="contenedor tem">
+    <a class="tem__volver" href="lecciones.html">
+      <img class="tem__volver-icono" src="../../assets/icons/tema-volver.svg" alt="">
+      Volver a Lecciones
+    </a>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="lecciones.html">22 · Lecciones</a></li>
-        <li><a href="leccion.html">24 · Tipos de grafos</a></li>
-      </ul>
-    </nav>
+    <header class="tem__cab">
+      <div class="tem__info">
+        <span class="chip chip--celeste tem__chip">Tema 1 · 6 subtemas</span>
+        <h1 class="titulo-1 tem__titulo">Grafos</h1>
+        <p class="tem__descripcion">Recorridos, caminos mínimos y árboles de expansión: la base de muchos problemas de concurso.</p>
+      </div>
+      <form class="tem__buscador" role="search" aria-label="Buscar subtemas">
+        <div class="campo tem__campo">
+          <label class="campo__label visualmente-oculto" for="tem-buscar">Buscar por nombre del subtema</label>
+          <img class="tem__lupa" src="../../assets/icons/tema-buscar.svg" alt="">
+          <input class="campo__input tem__input" id="tem-buscar" name="busqueda" type="search" placeholder="Buscar por nombre del subtema" maxlength="60">
+        </div>
+      </form>
+    </header>
 
+    <section class="tem__lista" aria-labelledby="tem-subtemas">
+      <h2 class="visualmente-oculto" id="tem-subtemas">Subtemas</h2>
+      <article class="tem__sub" id="subtema-1">
+        <a class="tem__sub-cab" href="#subtema-1">
+          <span class="tem__num">1</span>
+          <span class="tem__sub-titulo">Tipos de grafos</span>
+          <img class="tem__flecha" src="../../assets/icons/tema-flecha.svg" alt="">
+        </a>
+        <div class="tem__sub-cuerpo">
+          <p class="tem__sub-texto">Conoce los grafos dirigidos, no dirigidos y ponderados, y cómo se representan.</p>
+          <a class="boton tem__ver" href="leccion.html">Ver lección</a>
+        </div>
+      </article>
+      <article class="tem__sub" id="subtema-2">
+        <a class="tem__sub-cab" href="#subtema-2">
+          <span class="tem__num">2</span>
+          <span class="tem__sub-titulo">Tipos de grafos</span>
+          <img class="tem__flecha" src="../../assets/icons/tema-flecha.svg" alt="">
+        </a>
+        <div class="tem__sub-cuerpo">
+          <p class="tem__sub-texto">Conoce los grafos dirigidos, no dirigidos y ponderados, y cómo se representan.</p>
+          <a class="boton tem__ver" href="leccion.html">Ver lección</a>
+        </div>
+      </article>
+      <article class="tem__sub" id="subtema-3">
+        <a class="tem__sub-cab" href="#subtema-3">
+          <span class="tem__num">3</span>
+          <span class="tem__sub-titulo">Tipos de grafos</span>
+          <img class="tem__flecha" src="../../assets/icons/tema-flecha.svg" alt="">
+        </a>
+        <div class="tem__sub-cuerpo">
+          <p class="tem__sub-texto">Conoce los grafos dirigidos, no dirigidos y ponderados, y cómo se representan.</p>
+          <a class="boton tem__ver" href="leccion.html">Ver lección</a>
+        </div>
+      </article>
+      <article class="tem__sub" id="subtema-4">
+        <a class="tem__sub-cab" href="#subtema-4">
+          <span class="tem__num">4</span>
+          <span class="tem__sub-titulo">Tipos de grafos</span>
+          <img class="tem__flecha" src="../../assets/icons/tema-flecha.svg" alt="">
+        </a>
+        <div class="tem__sub-cuerpo">
+          <p class="tem__sub-texto">Conoce los grafos dirigidos, no dirigidos y ponderados, y cómo se representan.</p>
+          <a class="boton tem__ver" href="leccion.html">Ver lección</a>
+        </div>
+      </article>
+      <article class="tem__sub" id="subtema-5">
+        <a class="tem__sub-cab" href="#subtema-5">
+          <span class="tem__num">5</span>
+          <span class="tem__sub-titulo">Tipos de grafos</span>
+          <img class="tem__flecha" src="../../assets/icons/tema-flecha.svg" alt="">
+        </a>
+        <div class="tem__sub-cuerpo">
+          <p class="tem__sub-texto">Conoce los grafos dirigidos, no dirigidos y ponderados, y cómo se representan.</p>
+          <a class="boton tem__ver" href="leccion.html">Ver lección</a>
+        </div>
+      </article>
+      <article class="tem__sub" id="subtema-6">
+        <a class="tem__sub-cab" href="#subtema-6">
+          <span class="tem__num">6</span>
+          <span class="tem__sub-titulo">Tipos de grafos</span>
+          <img class="tem__flecha" src="../../assets/icons/tema-flecha.svg" alt="">
+        </a>
+        <div class="tem__sub-cuerpo">
+          <p class="tem__sub-texto">Conoce los grafos dirigidos, no dirigidos y ponderados, y cómo se representan.</p>
+          <a class="boton tem__ver" href="leccion.html">Ver lección</a>
+        </div>
+      </article>
+    </section>
   </main>
 
   <footer class="footer">
