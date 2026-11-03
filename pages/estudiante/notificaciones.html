@@ -33,18 +33,50 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Notificaciones</h1>
-    <!-- TODO P1: implementar la pantalla 17 según el Figma. -->
+  <main class="contenedor notificaciones">
+    <header class="notificaciones__encabezado">
+      <h1 class="titulo-1">Notificaciones</h1>
+      <p class="texto-secundario">Respuestas a tus solicitudes de ingreso a grupos.</p>
+    </header>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="unete-party.html">14 · ¡Únete a una party!</a></li>
-        <li><a href="party-completa.html">18 · ¡Party completa!</a></li>
-      </ul>
-    </nav>
-
+    <ul class="notificaciones__lista">
+      <li class="tarjeta notificacion">
+        <article class="notificacion__contenido">
+          <p class="chip chip--menta">Solicitud aceptada</p>
+          <h2 class="titulo-3">¡Bienvenido/a al equipo!</h2>
+          <dl class="notificacion__datos">
+            <div><dt>Grupo:</dt> <dd>Los Chacales</dd></div>
+            <div><dt>Líder:</dt> <dd>Jack Lima</dd></div>
+          </dl>
+          <p class="texto-secundario">Ya puedes entrar al espacio del grupo y conocer a tus compañeros.</p>
+        </article>
+        <a class="boton notificacion__boton" href="party-completa.html">Ir al espacio del grupo</a>
+      </li>
+      <li class="tarjeta notificacion">
+        <article class="notificacion__contenido">
+          <p class="chip chip--rosa">Solicitud rechazada</p>
+          <h2 class="titulo-3">Esta vez no hubo match</h2>
+          <dl class="notificacion__datos">
+            <div><dt>Grupo:</dt> <dd>Bit Busters</dd></div>
+            <div><dt>Líder:</dt> <dd>Valeria Ríos</dd></div>
+          </dl>
+          <p class="texto-secundario">No eres tú: el grupo no tiene cupo por ahora. ¡Hay más grupos esperándote!</p>
+        </article>
+        <a class="boton boton--secundario notificacion__boton" href="unete-party.html">Explorar grupos</a>
+      </li>
+      <li class="tarjeta notificacion">
+        <article class="notificacion__contenido">
+          <p class="chip ">Solicitud expirada</p>
+          <h2 class="titulo-3">Tu solicitud expiró</h2>
+          <dl class="notificacion__datos">
+            <div><dt>Grupo:</dt> <dd>Merge Masters</dd></div>
+            <div><dt>Líder:</dt> <dd>Camila Torres</dd></div>
+          </dl>
+          <p class="texto-secundario">Otro equipo ya te aceptó, así que esta solicitud se cerró automáticamente.</p>
+        </article>
+        <a class="boton boton--secundario notificacion__boton" href="notificaciones.html">Aceptar</a>
+      </li>
+    </ul>
   </main>
 
   <footer class="footer">
