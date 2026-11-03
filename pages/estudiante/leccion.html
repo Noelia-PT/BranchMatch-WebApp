@@ -33,19 +33,85 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Tipos de grafos</h1>
-    <!-- TODO P3: implementar la pantalla 24 según el Figma. -->
+  <main class="contenedor lcn">
+    <a class="lcn__volver" href="tema.html">
+      <img class="lcn__volver-icono" src="../../assets/icons/leccion-volver.svg" alt="">
+      Volver a Grafos
+    </a>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="chat.html">20 · Chat de la party</a></li>
-        <li><a href="lecciones.html">22 · Lecciones</a></li>
-        <li><a href="tema.html">23 · Grafos</a></li>
-      </ul>
-    </nav>
+    <div class="lcn__fila-principal">
+      <article class="tarjeta lcn__leccion" aria-labelledby="lcn-titulo">
+        <div class="lcn__video" role="img" aria-label="Reproductor de video de la clase grabada">
+          <span class="lcn__barra"></span>
+          <span class="lcn__barra"></span>
+          <span class="lcn__barra"></span>
+          <span class="lcn__barra"></span>
+          <span class="lcn__barra"></span>
+          <span class="lcn__barra"></span>
+          <span class="lcn__barra"></span>
+          <span class="lcn__barra"></span>
+          <span class="lcn__barra"></span>
+          <a class="lcn__play" href="#" aria-label="Reproducir video">►</a>
+          <div class="lcn__controles" aria-hidden="true">
+            <span class="lcn__control-play">►</span>
+            <span class="lcn__tiempo">08:24 / 24:58</span>
+            <span class="lcn__progreso"><span class="lcn__progreso-relleno"></span></span>
+            <span>1x</span>
+            <span>CC</span>
+            <span>⛶</span>
+          </div>
+        </div>
 
+        <div class="lcn__titulo-fila">
+          <div class="lcn__titulos">
+            <h1 class="lcn__titulo" id="lcn-titulo">Tipos de grafos</h1>
+            <p class="lcn__meta">Clase grabada · Edson Mendiolaza · 15 de octubre</p>
+          </div>
+          <a class="boton lcn__vista" href="#">✓ Marcar como vista</a>
+        </div>
+
+        <hr class="lcn__linea">
+
+        <p class="lcn__descripcion">Conoce los grafos dirigidos, no dirigidos y ponderados, y cómo se representan con listas y matrices de adyacencia.</p>
+
+        <div class="lcn__material">
+          <span class="lcn__pdf">PDF</span>
+          <div class="lcn__material-info">
+            <p class="lcn__material-nombre">grafos-tipos-teoria.pdf</p>
+            <p class="lcn__material-dato">Material de la clase · 2,4 MB</p>
+          </div>
+          <a class="lcn__descargar" href="#"><img class="lcn__descargar-icono" src="../../assets/icons/leccion-descargar.svg" alt="">Descargar</a>
+        </div>
+
+        <nav class="lcn__navegar" aria-label="Navegación entre subtemas">
+          <a class="lcn__anterior" href="#">← Subtema anterior</a>
+          <a class="lcn__siguiente" href="#">Siguiente: Representación →</a>
+        </nav>
+      </article>
+
+      <aside class="tarjeta lcn__lateral" aria-labelledby="lcn-subtemas">
+        <div class="lcn__lateral-cab">
+          <h2 class="lcn__lateral-titulo" id="lcn-subtemas">Subtemas de Grafos</h2>
+          <span class="chip chip--amarillo lcn__chip">1 de 6</span>
+        </div>
+        <ul class="lcn__lista">
+          <li><a class="lcn__fila lcn__fila--actual" href="#"><span class="lcn__fila-nombre">►&nbsp; Tipos de grafos</span><span class="lcn__fila-tiempo">24:58</span></a></li>
+          <li><a class="lcn__fila" href="#"><span class="lcn__fila-nombre">2. Representación: lista y matriz</span><span class="lcn__fila-tiempo">18:12</span></a></li>
+          <li><a class="lcn__fila" href="#"><span class="lcn__fila-nombre">3. BFS: recorrido en anchura</span><span class="lcn__fila-tiempo">20:40</span></a></li>
+          <li><a class="lcn__fila" href="#"><span class="lcn__fila-nombre">4. DFS: recorrido en profundidad</span><span class="lcn__fila-tiempo">Sin grabación</span></a></li>
+          <li><a class="lcn__fila" href="#"><span class="lcn__fila-nombre">5. Dijkstra: caminos mínimos</span><span class="lcn__fila-tiempo">Sin grabación</span></a></li>
+          <li><a class="lcn__fila" href="#"><span class="lcn__fila-nombre">6. Bellman-Ford</span><span class="lcn__fila-tiempo">Sin grabación</span></a></li>
+        </ul>
+        <hr class="lcn__linea">
+        <div class="lcn__avance">
+          <p class="lcn__avance-texto">Tu avance</p>
+          <span class="lcn__avance-barra"><span class="lcn__avance-relleno"></span></span>
+          <p class="lcn__avance-cuenta">1 / 6</p>
+        </div>
+        <p class="lcn__dudas">¿Dudas sobre esta clase?</p>
+        <a class="lcn__chat" href="chat.html"><img class="lcn__chat-icono" src="../../assets/icons/leccion-chat.svg" alt="">Preguntar en el chat de la party →</a>
+      </aside>
+    </div>
   </main>
 
   <footer class="footer">
