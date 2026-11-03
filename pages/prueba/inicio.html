@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Prueba diagnóstica · Inicio · BranchMatch</title>
+  <title>Descubre tu nivel · BranchMatch</title>
   <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
       <nav class="header__nav" id="menu" aria-label="Menú principal">
         <ul class="header__lista">
           <li><a class="header__link" href="../estudiante/inicio.html">Inicio</a></li>
-          <li><a class="header__link" href="../estudiante/mi-party.html">Parties</a></li>
+          <li><a class="header__link header__link--activo" href="../estudiante/mi-party.html" aria-current="page">Parties</a></li>
           <li><a class="header__link" href="../estudiante/lecciones.html">Lecciones</a></li>
           <li><a class="header__link" href="../estudiante/retos.html">Retos</a></li>
           <li><a class="header__link" href="../estudiante/comunidad.html">Comunidad</a></li>
@@ -33,17 +33,30 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Prueba diagnóstica · Inicio</h1>
-    <!-- TODO P1: implementar la pantalla 04 según el Figma. -->
+  <main class="contenedor prueba-inicio">
+    <img class="popa prueba-inicio__popa" src="../../assets/img/popa-lider.png" alt="Popa, la mascota de Branch Match">
+    <section class="prueba-inicio__texto" aria-labelledby="prueba-titulo">
+      <p class="chip chip--menta">Paso 1 de 3 · Prueba diagnóstica</p>
+      <h1 class="titulo-1" id="prueba-titulo">Descubre tu nivel</h1>
+      <p class="prueba-inicio__descripcion">Evalúa tus conocimientos en resolución de problemas y lógica algorítmica para ubicarte en el nivel de entrenamiento adecuado (Principiante, Intermedio o Avanzado) y recomendarte los clubes o retos que mejor se adapten a ti.</p>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="pregunta-1.html">05 · Prueba diagnóstica · Pregunta 1</a></li>
+      <ul class="prueba-datos">
+        <li class="tarjeta prueba-dato"><span class="prueba-dato__valor">20</span> <span class="texto-small">preguntas</span></li>
+        <li class="tarjeta prueba-dato"><span class="prueba-dato__valor">15 min</span> <span class="texto-small">de tiempo</span></li>
+        <li class="tarjeta prueba-dato"><span class="prueba-dato__valor">+120 XP</span> <span class="texto-small">al terminar</span></li>
       </ul>
-    </nav>
 
+      <section class="tarjeta prueba-reglas" aria-labelledby="reglas-titulo">
+        <h2 class="titulo-3" id="reglas-titulo">Antes de empezar</h2>
+        <ul class="prueba-reglas__lista">
+          <li>Cada pregunta tiene una sola respuesta correcta.</li>
+          <li>El tiempo corre sin pausas una vez que comienzas.</li>
+          <li>Responde sin ayuda de IA para obtener un nivel justo.</li>
+        </ul>
+      </section>
+
+      <a class="boton prueba-inicio__boton" href="pregunta-1.html">Comenzar prueba</a>
+    </section>
   </main>
 
   <footer class="footer">
