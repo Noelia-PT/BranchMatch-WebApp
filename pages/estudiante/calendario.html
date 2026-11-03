@@ -33,18 +33,73 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Calendario de clases</h1>
-    <!-- TODO P3: implementar la pantalla 21 según el Figma. -->
+  <main class="contenedor cal">
+    <header class="cal__intro">
+      <a class="cal__volver" href="mi-party.html" aria-label="Volver a Mi party">
+        <picture>
+          <source media="(min-width: 768px)" srcset="../../assets/icons/calendario-volver-grande.svg">
+          <img class="cal__volver-icono" src="../../assets/icons/calendario-volver.svg" alt="">
+        </picture>
+        <span class="cal__volver-texto">Volver</span>
+      </a>
+      <h1 class="titulo-1 cal__titulo">Calendario de clases</h1>
+      <p class="cal__subtitulo">Tus sesiones con Los Insanos.</p>
+    </header>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="mi-party.html">19 · Mi party</a></li>
-        <li><a href="leccion.html">24 · Tipos de grafos</a></li>
-      </ul>
-    </nav>
+    <section class="tarjeta cal__calendario" aria-labelledby="cal-mes">
+      <div class="cal__cab">
+        <a class="cal__nav cal__nav--ant" href="#" aria-label="Mes anterior">‹</a>
+        <h2 class="cal__mes" id="cal-mes">Octubre 2026</h2>
+        <a class="cal__nav cal__nav--sig" href="#" aria-label="Mes siguiente">›</a>
+        <ul class="cal__leyenda">
+          <li class="chip chip--amarillo cal__chip">Hoy</li>
+          <li class="chip chip--celeste cal__chip">Clase</li>
+        </ul>
+      </div>
+      <table class="cal__tabla">
+        <caption class="visualmente-oculto">Octubre 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col"><abbr title="Lunes">L</abbr></th>
+            <th scope="col"><abbr title="Martes">M</abbr></th>
+            <th scope="col"><abbr title="Miércoles">M</abbr></th>
+            <th scope="col"><abbr title="Jueves">J</abbr></th>
+            <th scope="col"><abbr title="Viernes">V</abbr></th>
+            <th scope="col"><abbr title="Sábado">S</abbr></th>
+            <th scope="col"><abbr title="Domingo">D</abbr></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="cal__vacio"></td><td class="cal__vacio"></td><td class="cal__vacio"></td><td class="cal__dia">1</td><td class="cal__dia">2</td><td class="cal__dia">3</td><td class="cal__dia">4</td></tr>
+          <tr><td class="cal__dia cal__dia--clase">5<span class="visualmente-oculto"> (clase)</span></td><td class="cal__dia">6</td><td class="cal__dia">7</td><td class="cal__dia cal__dia--clase">8<span class="visualmente-oculto"> (clase)</span></td><td class="cal__dia">9</td><td class="cal__dia">10</td><td class="cal__dia">11</td></tr>
+          <tr><td class="cal__dia cal__dia--clase">12<span class="visualmente-oculto"> (clase)</span></td><td class="cal__dia">13</td><td class="cal__dia">14</td><td class="cal__dia cal__dia--clase">15<span class="visualmente-oculto"> (clase)</span></td><td class="cal__dia">16</td><td class="cal__dia cal__dia--hoy">17<span class="visualmente-oculto"> (hoy, clase)</span></td><td class="cal__dia">18</td></tr>
+          <tr><td class="cal__dia cal__dia--clase">19<span class="visualmente-oculto"> (clase)</span></td><td class="cal__dia">20</td><td class="cal__dia">21</td><td class="cal__dia cal__dia--clase">22<span class="visualmente-oculto"> (clase)</span></td><td class="cal__dia">23</td><td class="cal__dia">24</td><td class="cal__dia">25</td></tr>
+          <tr><td class="cal__dia cal__dia--clase">26<span class="visualmente-oculto"> (clase)</span></td><td class="cal__dia">27</td><td class="cal__dia">28</td><td class="cal__dia cal__dia--clase">29<span class="visualmente-oculto"> (clase)</span></td><td class="cal__dia">30</td><td class="cal__dia">31</td><td class="cal__vacio"></td></tr>
+        </tbody>
+      </table>
+    </section>
 
+    <section class="tarjeta cal__panel" aria-labelledby="cal-proxima">
+      <div class="cal__usuario">
+        <span class="cal__avatar" aria-hidden="true">TC</span>
+        <div class="cal__usuario-datos">
+          <p class="cal__nombre">Tomas</p>
+          <p class="cal__nivel">Nivel 5 · 🔥 130</p>
+        </div>
+      </div>
+      <hr class="cal__linea">
+      <h2 class="cal__proxima" id="cal-proxima">Próxima clase:</h2>
+      <div class="cal__clase">
+        <img class="cal__clase-icono" src="../../assets/icons/calendario-video.svg" alt="">
+        <div class="cal__clase-datos">
+          <p class="cal__clase-hora">Clase: 17:00 - 19:00 pm</p>
+          <p class="cal__clase-sub">Hoy · Los Insanos</p>
+        </div>
+      </div>
+      <div class="cal__ingresar">
+        <a class="boton" href="leccion.html">Ingresar a clase</a>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">

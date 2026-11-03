@@ -33,19 +33,112 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Lecciones</h1>
-    <!-- TODO P3: implementar la pantalla 44 según el Figma. -->
+  <main class="contenedor lml">
+    <header class="lml__cabecera">
+      <div class="lml__titulos">
+        <h1 class="lml__titulo">Lecciones</h1>
+        <p class="lml__subtitulo">Elige un tema para ver sus subtemas y retos.</p>
+      </div>
+      <form class="lml__buscador" role="search" action="lecciones.html" method="get">
+        <img class="lml__buscador-icono" src="../../assets/icons/lecciones-buscar.svg" alt="">
+        <label class="visualmente-oculto" for="lml-buscar">Buscar por nombre del tema</label>
+        <input class="lml__buscador-input" id="lml-buscar" name="q" type="search" placeholder="Buscar por nombre del tema" maxlength="60">
+      </form>
+      <a class="boton lml__crear" href="crear-modulo.html"><img class="lml__crear-icono" src="../../assets/icons/lecciones-mas.svg" alt="">Crear módulo</a>
+    </header>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="editar-tema.html">45 · Editar tema</a></li>
-        <li><a href="crear-modulo.html">48 · Crear módulo</a></li>
-        <li><a href="subtemas.html">51 · Tema: Grafos</a></li>
+    <section aria-label="Temas">
+      <ul class="lml__lista">
+        <li class="lml__item">
+          <article class="lml__tema" aria-labelledby="lml-tema-1">
+            <div class="lml__imagen" aria-hidden="true"></div>
+            <div class="lml__contenido">
+              <div class="lml__texto">
+                <p class="chip chip--celeste lml__chip">Tema 1</p>
+                <h2 class="lml__tema-titulo" id="lml-tema-1">Grafos</h2>
+                <p class="lml__descripcion">Recorridos, caminos mínimos y árboles de expansión: la base de muchos problemas de concurso.</p>
+              </div>
+              <a class="boton lml__ingresar" href="subtemas.html">Ingresar al tema</a>
+            </div>
+            <div class="lml__acciones">
+              <a class="lml__accion" href="editar-tema.html" aria-label="Editar el tema Grafos">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="../../assets/icons/lecciones-editar.svg">
+                  <img class="lml__icono lml__icono--editar" src="../../assets/icons/lecciones-editar-movil.svg" alt="">
+                </picture>
+              </a>
+              <a class="lml__accion" href="#" aria-label="Eliminar el tema Grafos"><img class="lml__icono lml__icono--borrar" src="../../assets/icons/lecciones-borrar.svg" alt=""></a>
+            </div>
+          </article>
+        </li>
+        <li class="lml__item">
+          <article class="lml__tema" aria-labelledby="lml-tema-2">
+            <div class="lml__imagen" aria-hidden="true"></div>
+            <div class="lml__contenido">
+              <div class="lml__texto">
+                <p class="chip chip--celeste lml__chip">Tema 1</p>
+                <h2 class="lml__tema-titulo" id="lml-tema-2">Grafos</h2>
+                <p class="lml__descripcion">Recorridos, caminos mínimos y árboles de expansión: la base de muchos problemas de concurso.</p>
+              </div>
+              <a class="boton lml__ingresar" href="subtemas.html">Ingresar al tema</a>
+            </div>
+            <div class="lml__acciones">
+              <a class="lml__accion" href="editar-tema.html" aria-label="Editar el tema Grafos">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="../../assets/icons/lecciones-editar.svg">
+                  <img class="lml__icono lml__icono--editar" src="../../assets/icons/lecciones-editar-movil.svg" alt="">
+                </picture>
+              </a>
+              <a class="lml__accion" href="#" aria-label="Eliminar el tema Grafos"><img class="lml__icono lml__icono--borrar" src="../../assets/icons/lecciones-borrar.svg" alt=""></a>
+            </div>
+          </article>
+        </li>
+        <li class="lml__item">
+          <article class="lml__tema" aria-labelledby="lml-tema-3">
+            <div class="lml__imagen" aria-hidden="true"></div>
+            <div class="lml__contenido">
+              <div class="lml__texto">
+                <p class="chip chip--celeste lml__chip">Tema 1</p>
+                <h2 class="lml__tema-titulo" id="lml-tema-3">Grafos</h2>
+                <p class="lml__descripcion">Recorridos, caminos mínimos y árboles de expansión: la base de muchos problemas de concurso.</p>
+              </div>
+              <a class="boton lml__ingresar" href="subtemas.html">Ingresar al tema</a>
+            </div>
+            <div class="lml__acciones">
+              <a class="lml__accion" href="editar-tema.html" aria-label="Editar el tema Grafos">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="../../assets/icons/lecciones-editar.svg">
+                  <img class="lml__icono lml__icono--editar" src="../../assets/icons/lecciones-editar-movil.svg" alt="">
+                </picture>
+              </a>
+              <a class="lml__accion" href="#" aria-label="Eliminar el tema Grafos"><img class="lml__icono lml__icono--borrar" src="../../assets/icons/lecciones-borrar.svg" alt=""></a>
+            </div>
+          </article>
+        </li>
+        <li class="lml__item">
+          <article class="lml__tema" aria-labelledby="lml-tema-4">
+            <div class="lml__imagen" aria-hidden="true"></div>
+            <div class="lml__contenido">
+              <div class="lml__texto">
+                <p class="chip chip--celeste lml__chip">Tema 1</p>
+                <h2 class="lml__tema-titulo" id="lml-tema-4">Grafos</h2>
+                <p class="lml__descripcion">Recorridos, caminos mínimos y árboles de expansión: la base de muchos problemas de concurso.</p>
+              </div>
+              <a class="boton lml__ingresar" href="subtemas.html">Ingresar al tema</a>
+            </div>
+            <div class="lml__acciones">
+              <a class="lml__accion" href="editar-tema.html" aria-label="Editar el tema Grafos">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="../../assets/icons/lecciones-editar.svg">
+                  <img class="lml__icono lml__icono--editar" src="../../assets/icons/lecciones-editar-movil.svg" alt="">
+                </picture>
+              </a>
+              <a class="lml__accion" href="#" aria-label="Eliminar el tema Grafos"><img class="lml__icono lml__icono--borrar" src="../../assets/icons/lecciones-borrar.svg" alt=""></a>
+            </div>
+          </article>
+        </li>
       </ul>
-    </nav>
-
+    </section>
   </main>
 
   <footer class="footer">
