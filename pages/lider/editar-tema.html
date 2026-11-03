@@ -33,29 +33,52 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Editar tema</h1>
-    <!-- TODO P3: implementar la pantalla 45 según el Figma. -->
+  <main class="contenedor lcet">
+    <a class="lcet__volver" href="lecciones.html">
+      <img class="lcet__volver-icono" src="../../assets/icons/editar-tema-volver.svg" alt="">
+      Volver a Lecciones
+    </a>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="lecciones.html">44 · Lecciones</a></li>
-        <li><a href="editar-tema.html#guardado">46 · Tema guardado</a></li>
-      </ul>
-    </nav>
+    <header class="lcet__cabecera">
+      <h1 class="lcet__titulo">Editar tema</h1>
+      <p class="lcet__subtitulo">Los cambios se verán en Lecciones para toda tu party.</p>
+    </header>
 
-    <!-- Pantalla 46 · Tema guardado (se abre con href="#guardado") -->
-    <section class="modal" id="guardado" aria-labelledby="guardado-titulo">
-      <div class="modal__caja">
-        <h2 class="titulo-3" id="guardado-titulo">Tema guardado</h2>
-        <!-- TODO: contenido del Figma -->
-        <div class="modal__acciones">
-          <a class="boton" href="lecciones.html">Lecciones</a>
-          <a class="boton boton--secundario" href="#">Cerrar</a>
+    <form class="lcet__formulario" action="editar-tema.html#guardado" method="get">
+      <section class="lcet__tarjeta lcet__imagen" aria-labelledby="lcet-imagen-titulo">
+        <h2 class="lcet__tarjeta-titulo" id="lcet-imagen-titulo">Imagen del tema</h2>
+        <label class="lcet__zona" for="lcet-imagen">
+          <img class="lcet__zona-icono" src="../../assets/icons/editar-tema-lapiz.svg" alt="">
+          <span class="lcet__zona-texto">Cambiar imagen</span>
+          <span class="lcet__zona-ayuda">PNG o JPG · 1:1 · máx. 2 MB</span>
+        </label>
+        <input class="visualmente-oculto" id="lcet-imagen" name="imagen" type="file" accept="image/png, image/jpeg">
+      </section>
+
+      <section class="lcet__tarjeta lcet__datos" aria-label="Datos del tema">
+        <div class="campo lcet__campo">
+          <label class="campo__label lcet__label" for="lcet-nombre">Nombre del tema</label>
+          <input class="campo__input lcet__input lcet__input--activo" id="lcet-nombre" name="nombre" type="text" value="Grafos" required minlength="3" maxlength="60" placeholder="Escribe el nombre…">
+          <p class="campo__error">Escribe un nombre para el tema.</p>
         </div>
-      </div>
-    </section>
+        <div class="campo lcet__campo">
+          <label class="campo__label lcet__label" for="lcet-descripcion">Descripción</label>
+          <textarea class="campo__input lcet__input lcet__descripcion" id="lcet-descripcion" name="descripcion" required minlength="20" maxlength="200">Recorridos, caminos mínimos y árboles de expansión: la base de muchos problemas de concurso.</textarea>
+          <p class="campo__error">La descripción debe tener al menos 20 caracteres para que tu party sepa de qué trata.</p>
+        </div>
+        <hr class="lcet__divisor">
+        <div class="lcet__acciones">
+          <a class="boton" href="#guardado">Guardar cambios</a>
+          <a class="boton boton--secundario" href="lecciones.html">Cancelar</a>
+        </div>
+      </section>
+    </form>
+
+    <!-- Pantalla 46 · Tema guardado: misma página, se muestra con href="#guardado" -->
+    <div class="toast lcet__aviso" id="guardado" role="status">
+      <p class="lcet__aviso-texto">Cambios guardados en «Grafos»</p>
+      <a class="lcet__aviso-enlace" href="lecciones.html">Ver lecciones</a>
+    </div>
   </main>
 
   <footer class="footer">
