@@ -33,17 +33,68 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Mis publicaciones</h1>
-    <!-- TODO P2: implementar la pantalla 13 según el Figma. -->
+  <main class="contenedor pub">
+    <a class="boton-texto pub__volver" href="perfil.html">← Volver a mi perfil</a>
+    <h1 class="pub__titulo">Mis publicaciones</h1>
+    <p class="pub__subtitulo texto-secundario">Todas tus publicaciones · 12 en total</p>
+    <p class="chip chip--menta pub__pestana">Publicaciones (12)</p>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="perfil.html">12 · Mi perfil</a></li>
-      </ul>
-    </nav>
-
+    <ul class="pub__lista">
+      <li>
+        <article class="tarjeta pub__post">
+          <header class="pub__autor">
+            <img class="pub__foto" src="../../assets/icons/foto-autor-chico.svg" alt="Foto de Pollitopio">
+            <div class="pub__datos">
+              <p class="pub__nombre">Pollitopio</p>
+              <p class="pub__origen texto-secundario">Publicado en Comunidad</p>
+            </div>
+            <img class="pub__mas" src="../../assets/icons/puntos.svg" alt="Más opciones">
+          </header>
+          <p class="pub__texto">¿Alguien más se trabó con el problema de caminos mínimos de ayer? Comparto mi solución con Dijkstra y una cola de prioridad.</p>
+          <div class="pub__imagen" role="img" aria-label="Imagen de la publicación"></div>
+          <div class="pub__acciones">
+            <a class="pub__accion pub__accion--gusta" href="perfil.html"><img class="pub__accion-icono pub__accion-icono--gusta" src="../../assets/icons/me-gusta-grande.svg" alt="">Me gusta</a>
+            <a class="pub__accion pub__accion--comentarios" href="perfil.html"><img class="pub__accion-icono" src="../../assets/icons/comentarios.svg" alt="">Comentarios</a>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="tarjeta pub__post">
+          <header class="pub__autor">
+            <img class="pub__foto" src="../../assets/icons/foto-autor-chico.svg" alt="Foto de Pollitopio">
+            <div class="pub__datos">
+              <p class="pub__nombre">Pollitopio</p>
+              <p class="pub__origen texto-secundario">Publicado en Comunidad</p>
+            </div>
+            <img class="pub__mas" src="../../assets/icons/puntos.svg" alt="Más opciones">
+          </header>
+          <p class="pub__texto">¿Alguien más se trabó con el problema de caminos mínimos de ayer? Comparto mi solución con Dijkstra y una cola de prioridad.</p>
+          <div class="pub__imagen" role="img" aria-label="Imagen de la publicación"></div>
+          <div class="pub__acciones">
+            <a class="pub__accion pub__accion--gusta" href="perfil.html"><img class="pub__accion-icono pub__accion-icono--gusta" src="../../assets/icons/me-gusta-grande.svg" alt="">Me gusta</a>
+            <a class="pub__accion pub__accion--comentarios" href="perfil.html"><img class="pub__accion-icono" src="../../assets/icons/comentarios.svg" alt="">Comentarios</a>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="tarjeta pub__post">
+          <header class="pub__autor">
+            <img class="pub__foto" src="../../assets/icons/foto-autor-chico.svg" alt="Foto de Pollitopio">
+            <div class="pub__datos">
+              <p class="pub__nombre">Pollitopio</p>
+              <p class="pub__origen texto-secundario">Publicado en Comunidad</p>
+            </div>
+            <img class="pub__mas" src="../../assets/icons/puntos.svg" alt="Más opciones">
+          </header>
+          <p class="pub__texto">¿Alguien más se trabó con el problema de caminos mínimos de ayer? Comparto mi solución con Dijkstra y una cola de prioridad.</p>
+          <div class="pub__imagen" role="img" aria-label="Imagen de la publicación"></div>
+          <div class="pub__acciones">
+            <a class="pub__accion pub__accion--gusta" href="perfil.html"><img class="pub__accion-icono pub__accion-icono--gusta" src="../../assets/icons/me-gusta-grande.svg" alt="">Me gusta</a>
+            <a class="pub__accion pub__accion--comentarios" href="perfil.html"><img class="pub__accion-icono" src="../../assets/icons/comentarios.svg" alt="">Comentarios</a>
+          </div>
+        </article>
+      </li>
+    </ul>
   </main>
 
   <footer class="footer">

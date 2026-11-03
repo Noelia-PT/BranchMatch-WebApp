@@ -33,17 +33,71 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Editar party</h1>
-    <!-- TODO P2: implementar la pantalla 41 según el Figma. -->
+  <main class="contenedor edit">
+    <section class="edit__saludo">
+      <h1 class="edit__titulo">Hola, <span class="edit__nombre">Edson</span></h1>
+      <p class="edit__texto">¿Qué modificaciones traes hoy? :3</p>
+      <img class="edit__popa" src="../../assets/img/popa-radar.gif" alt="Popa lista para ayudarte con tu party">
+    </section>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="panel.html">38 · Hola, Edson</a></li>
-      </ul>
-    </nav>
+    <form class="edit__tarjeta" action="panel.html" method="get">
+      <header class="edit__encabezado">
+        <h2 class="edit__tarjeta-titulo">Editar grupo</h2>
+        <a class="edit__papelera" href="panel.html" aria-label="Eliminar grupo"><img class="edit__papelera-icono" src="../../assets/icons/editar-papelera.svg" alt=""></a>
+      </header>
 
+      <div class="edit__foto">
+        <label class="edit__foto-label" for="foto">
+          <img class="edit__foto-icono" src="../../assets/icons/editar-camara.svg" alt="Subir foto del grupo">
+        </label>
+        <input class="visualmente-oculto" id="foto" name="foto" type="file" accept="image/*">
+        <p class="edit__foto-texto">Foto del grupo <span class="edit__opcional">(opcional)</span></p>
+      </div>
+
+      <div class="campo edit__campo">
+        <label class="campo__label" for="nombre">Nombre del grupo</label>
+        <input class="campo__input edit__input" id="nombre" name="nombre" type="text" placeholder="Nombre del grupo" required minlength="3">
+        <p class="campo__error">Escribe un nombre para el grupo (mínimo 3 caracteres).</p>
+      </div>
+
+      <div class="campo edit__campo">
+        <label class="campo__label" for="descripcion">Descripción del grupo</label>
+        <textarea class="campo__input edit__input edit__descripcion" id="descripcion" name="descripcion" maxlength="200" placeholder="Descripción del grupo"></textarea>
+      </div>
+
+      <p class="edit__lider"><img class="edit__lider-icono" src="../../assets/icons/editar-lider.svg" alt=""><span class="edit__lider-nombre">Líder: Edson Mendiolaza</span><span class="edit__no-editable">· no editable</span></p>
+
+      <div class="edit__ajustes">
+        <div class="campo edit__campo">
+          <label class="campo__label edit__etiqueta" for="nivel"><img class="edit__etiqueta-icono" src="../../assets/icons/editar-nivel.svg" alt="">Nivel</label>
+          <select class="campo__input edit__input edit__select" id="nivel" name="nivel" required>
+            <option value="1-3" selected>Nivel 2–3</option>
+            <option value="3-5" selected>Nivel 3–5</option>
+            <option value="5-8" selected>Nivel 5–8</option>
+          </select>
+        </div>
+        <div class="campo edit__campo">
+          <label class="campo__label edit__etiqueta" for="miembros"><img class="edit__etiqueta-icono" src="../../assets/icons/editar-miembros.svg" alt="">Miembros</label>
+          <select class="campo__input edit__input edit__select" id="miembros" name="miembros" required>
+            <option value="1" selected>Miembros: 1 / 5</option>
+            <option value="2" selected>Miembros: 2 / 5</option>
+            <option value="3" selected>Miembros: 3 / 5</option>
+            <option value="4" selected>Miembros: 4 / 5</option>
+            <option value="5" selected>Miembros: 5 / 5</option>
+          </select>
+        </div>
+      </div>
+
+      <section class="edit__horarios" aria-labelledby="edit-horarios">
+        <h3 class="edit__etiqueta edit__horarios-titulo" id="edit-horarios"><img class="edit__etiqueta-icono" src="../../assets/icons/editar-horarios.svg" alt="">Horarios<span class="edit__dos-puntos">:</span></h3>
+        <ul class="edit__horarios-lista">
+          <li class="edit__horario"><span>Lunes: 15:00 - 17:00 pm</span><a class="edit__quitar" href="#" aria-label="Quitar este horario">✕</a></li>
+          <li class="edit__horario"><span>Lunes: 15:00 - 17:00 pm</span><a class="edit__quitar" href="#" aria-label="Quitar este horario">✕</a></li>
+        </ul>
+      </section>
+
+      <a class="boton edit__boton" href="panel.html">Guardar Cambios</a>
+    </form>
   </main>
 
   <footer class="footer">
