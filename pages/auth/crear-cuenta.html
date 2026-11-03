@@ -6,29 +6,64 @@
   <title>Crear cuenta · BranchMatch</title>
   <link rel="stylesheet" href="../../css/styles.css">
 </head>
-<body>
+<body class="auth">
   <!-- Figma: pantalla 02 · Crear cuenta · Responsable: P1 -->
-  <header class="header">
-    <div class="contenedor header__contenido">
-      <a class="header__logo" href="../../index.html">
+  <header class="auth-header">
+    <div class="contenedor auth-header__contenido">
+      <a class="header__logo auth-header__logo" href="../../index.html">
         <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
         <span class="header__logo-texto">Branch<span>Match</span></span>
       </a>
+      <a class="boton auth-header__volver" href="../../index.html">Volver</a>
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Crear cuenta</h1>
-    <!-- TODO P1: implementar la pantalla 02 según el Figma. -->
+  <main class="contenedor auth__main">
+    <section class="auth-tarjeta" aria-labelledby="crear-cuenta-titulo">
+      <h1 class="titulo-display auth-tarjeta__titulo" id="crear-cuenta-titulo">Crea tu cuenta</h1>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="iniciar-sesion.html">03 · Iniciar sesión</a></li>
-        <li><a href="../prueba/inicio.html">04 · Prueba diagnóstica · Inicio</a></li>
-      </ul>
-    </nav>
+      <form class="formulario auth-formulario" action="../prueba/inicio.html" method="get">
+        <div class="campo">
+          <label class="campo__label auth-formulario__label" for="usuario">Nombre de usuario</label>
+          <input class="campo__input" id="usuario" name="usuario" type="text" placeholder="@papita_frita" required minlength="3" maxlength="20" pattern="@?[A-Za-z0-9_.]+" autocomplete="username">
+          <p class="campo__error">Escribe un nombre de usuario de al menos 3 caracteres (letras, números, _ o .).</p>
+        </div>
 
+        <div class="campo">
+          <label class="campo__label auth-formulario__label" for="email">Email</label>
+          <input class="campo__input" id="email" name="email" type="email" placeholder="papita@email.com" required autocomplete="email">
+          <p class="campo__error">Escribe un email válido, por ejemplo papita@email.com.</p>
+        </div>
+
+        <div class="campo">
+          <label class="campo__label auth-formulario__label" for="contrasena">Contraseña</label>
+          <div class="campo__con-icono">
+            <input class="campo__input" id="contrasena" name="contrasena" type="password" placeholder="Mínimo 8 caracteres" required minlength="8" autocomplete="new-password">
+            <img class="campo__icono" src="../../assets/icons/ojo.svg" alt="">
+          </div>
+          <p class="campo__error">La contraseña debe tener al menos 8 caracteres.</p>
+        </div>
+
+        <div class="campo">
+          <label class="campo__label auth-formulario__label" for="confirmar">Confirmar contraseña</label>
+          <div class="campo__con-icono">
+            <input class="campo__input" id="confirmar" name="confirmar" type="password" placeholder="Confirmar contraseña" required minlength="8" autocomplete="new-password">
+            <img class="campo__icono" src="../../assets/icons/ojo.svg" alt="">
+          </div>
+          <p class="campo__error">Vuelve a escribir tu contraseña.</p>
+        </div>
+
+        <div class="campo campo--check">
+          <input class="campo__check" id="terminos" name="terminos" type="checkbox" required>
+          <label class="auth-formulario__check-label" for="terminos">Acepto los Términos y Condiciones y la Política de Privacidad</label>
+          <p class="campo__error">Debes aceptar los Términos y Condiciones para continuar.</p>
+        </div>
+
+        <a class="boton auth-formulario__boton" href="../prueba/inicio.html">Registrarse</a>
+      </form>
+
+      <p class="auth-tarjeta__pie">¿Ya tienes una cuenta? <a class="auth-tarjeta__link" href="iniciar-sesion.html">Iniciar sesión</a></p>
+    </section>
   </main>
 
   <footer class="footer">
