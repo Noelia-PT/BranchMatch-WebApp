@@ -3448,6 +3448,415 @@ html:has(.pub) {
   }
 }
 
+/* --- 19 · Mi party (estudiante/mi-party.html) --- */
+.mi-party {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+  padding-top: var(--espacio-32);
+  padding-bottom: var(--espacio-32);
+}
+.mi-party .tarjeta {
+  padding: 20px;
+}
+.mi-party__titulo {
+  font-family: var(--fuente-pixel);
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-texto);
+}
+.mi-party__titulo a:hover {
+  text-decoration: underline;
+}
+
+/* Cabecera de la party */
+.mi-party__cabecera {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "nombre"
+    "detalle"
+    "estado"
+    "miembros"
+    "dejar";
+  gap: var(--espacio-16);
+}
+.mi-party__nombre {
+  grid-area: nombre;
+  font-family: var(--fuente-pixel);
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.mi-party__detalle {
+  grid-area: detalle;
+  margin-top: -12px;
+  line-height: 1.5;
+}
+.mi-party__estado {
+  grid-area: estado;
+  justify-self: start;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: var(--texto-small);
+  line-height: 1.2;
+}
+.mi-party__miembros {
+  grid-area: miembros;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-8);
+}
+.mi-party__miembro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: var(--borde-fino) solid var(--color-borde);
+  border-radius: 50%;
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-small);
+  font-weight: 700;
+  color: var(--color-borde);
+}
+.mi-party__miembro--amarillo { background: var(--color-amarillo); }
+.mi-party__miembro--celeste { background: var(--color-celeste); }
+.mi-party__miembro--menta { background: var(--color-menta); }
+.mi-party__miembro--rosa { background: var(--color-rosa); }
+.mi-party__miembro--claro { background: var(--color-texto-2); }
+.mi-party__dejar {
+  grid-area: dejar;
+  justify-self: end;
+  font-family: var(--fuente-pixel);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-error);
+}
+.mi-party__dejar:hover {
+  text-decoration: underline;
+}
+
+/* Mi perfil en el grupo */
+.mi-party__perfil,
+.mi-party__sesion,
+.mi-party__tareas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+}
+.mi-party__yo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mi-party__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--color-celeste);
+  border: var(--borde-fino) solid var(--color-borde);
+  border-radius: 50%;
+  font-family: var(--fuente-pixel);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-borde);
+}
+.mi-party__yo-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mi-party__yo-nombre {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.mi-party__yo-rol {
+  font-size: var(--texto-small);
+  line-height: 1.3;
+}
+.mi-party__stats {
+  display: flex;
+  gap: var(--espacio-24);
+}
+.mi-party__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mi-party__stat-valor {
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-h2);
+  line-height: 1.2;
+  font-weight: 700;
+}
+.mi-party__stat-valor--nivel { color: var(--color-amarillo); }
+.mi-party__stat-valor--racha { color: var(--color-rosa); }
+.mi-party__stat-etiqueta {
+  font-size: var(--texto-small);
+  line-height: 1.3;
+}
+
+/* Próxima sesión */
+.mi-party__fecha {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-16);
+}
+.mi-party__dia-caja {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--espacio-8) 12px;
+  background: var(--color-amarillo);
+  border: var(--borde-fino) solid var(--color-borde);
+  font-family: var(--fuente-pixel);
+  font-weight: 700;
+  color: var(--color-borde);
+}
+.mi-party__mes {
+  font-size: 12px;
+  line-height: 1.3;
+}
+.mi-party__numero {
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: var(--tracking-titulo);
+}
+.mi-party__sesion-datos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-4);
+}
+.mi-party__horario {
+  font-size: var(--texto-stats);
+  line-height: 1.3;
+}
+.mi-party__tema {
+  font-size: var(--texto-small);
+  line-height: 1.3;
+}
+.mi-party__dias {
+  display: flex;
+  gap: 6px;
+}
+.mi-party__dia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--color-fondo);
+  border: var(--borde-fino) solid var(--color-borde);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-small);
+  font-weight: 700;
+  color: var(--color-texto-2);
+}
+.mi-party__dia--activo {
+  background: var(--color-celeste);
+  color: var(--color-borde);
+}
+.mi-party__sesiones {
+  font-size: var(--texto-small);
+  line-height: 1.3;
+}
+
+/* Tareas */
+.mi-party__tareas {
+  gap: 12px;
+}
+.mi-party__tareas-encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mi-party__contador {
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-small);
+}
+.mi-party__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.mi-party__tarea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mi-party__check {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: var(--color-fondo);
+  border: var(--borde-fino) solid var(--color-borde);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-small);
+  font-weight: 700;
+  color: var(--color-borde);
+}
+.mi-party__tarea--hecha .mi-party__check {
+  background: var(--color-menta);
+}
+.mi-party__tarea-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--texto-small);
+  line-height: 1.3;
+}
+.mi-party__tarea-enlace {
+  color: var(--color-texto);
+}
+.mi-party__tarea--hecha .mi-party__tarea-enlace {
+  color: var(--color-texto-2);
+}
+.mi-party__tarea-enlace:hover {
+  text-decoration: underline;
+}
+.mi-party__tarea-estado {
+  color: var(--color-amarillo);
+}
+.mi-party__tarea--hecha .mi-party__tarea-estado {
+  color: var(--color-menta);
+}
+.mi-party__chat {
+  display: flex;
+  justify-content: center;
+  min-height: 64px;
+}
+
+@media (min-width: 768px) {
+  .mi-party {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    column-gap: var(--espacio-24);
+    row-gap: 57px;
+    padding-top: 89px;
+    padding-bottom: 61px;
+  }
+  .mi-party .tarjeta {
+    padding: var(--espacio-24);
+  }
+  .mi-party__titulo {
+    font-family: var(--fuente-texto);
+    font-size: var(--texto-h3);
+    line-height: var(--lh-h3);
+    font-weight: 600;
+  }
+  .mi-party__cabecera {
+    grid-column: 1 / -1;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "nombre estado dejar"
+      "detalle detalle dejar"
+      "miembros miembros dejar";
+    column-gap: 12px;
+    row-gap: var(--espacio-8);
+    align-items: center;
+  }
+  .mi-party__nombre {
+    justify-self: start;
+    font-size: var(--texto-h1);
+    line-height: var(--lh-h1);
+    letter-spacing: var(--tracking-titulo);
+  }
+  .mi-party__estado {
+    padding: var(--espacio-4) 10px;
+    font-size: var(--texto-stats);
+    line-height: var(--lh-stats);
+  }
+  .mi-party__detalle {
+    margin-top: 0;
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+    letter-spacing: -0.02em;
+  }
+  .mi-party__miembro {
+    font-size: var(--texto-stats);
+    font-weight: 400;
+  }
+  .mi-party__dejar {
+    font-family: var(--fuente-texto);
+    font-size: var(--texto-h3);
+    line-height: var(--lh-h3);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-position: from-font;
+    margin-left: 12px;
+  }
+  .mi-party__sesion {
+    grid-column: 1;
+    grid-row: 2;
+    gap: 12px;
+  }
+  .mi-party__tareas {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .mi-party__perfil {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  .mi-party__avatar {
+    font-size: var(--texto-h2);
+    font-weight: 600;
+    letter-spacing: var(--tracking-titulo);
+  }
+  .mi-party__yo-nombre {
+    font-size: var(--texto-h3);
+    line-height: var(--lh-h3);
+  }
+  .mi-party__stat-valor {
+    font-size: var(--texto-h1);
+    line-height: var(--lh-h1);
+    letter-spacing: var(--tracking-titulo);
+  }
+  .mi-party__dia-caja {
+    padding: var(--espacio-8) var(--espacio-16);
+    font-weight: 400;
+  }
+  .mi-party__mes {
+    font-size: var(--texto-stats);
+    line-height: var(--lh-stats);
+  }
+  .mi-party__numero {
+    font-size: var(--texto-h1);
+    line-height: var(--lh-h1);
+    font-weight: 700;
+  }
+  .mi-party__horario {
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+    letter-spacing: -0.02em;
+  }
+  .mi-party__dia {
+    font-size: var(--texto-stats);
+    font-weight: 400;
+  }
+  .mi-party__tarea-texto {
+    line-height: var(--lh-small);
+  }
+  .mi-party__contador {
+    font-size: var(--texto-stats);
+  }
+  .mi-party__chat {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+    min-height: 0;
+    margin-top: 38px;
+  }
+}
+
 /* ===== P3 · Feed y Lecciones ===== */
 
 
