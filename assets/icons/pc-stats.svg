@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ic/chart" clip-path="url(#clip0_0_408)">
+<mask id="stroke0_0_408" fill="white">
+<path d="M25.1875 25.1875H0.8125V0.8125H2.4375V23.5625H25.1875V25.1875Z"/>
+</mask>
+<path id="Vector" d="M25.1875 25.1875H0.8125V0.8125H2.4375V23.5625H25.1875V25.1875Z" stroke-width="3" stroke="#FFD230" mask="url(#stroke0_0_408)"/>
+<path id="Vector_2" d="M9.75 21.9375H4.0625V10.5625H9.75V21.9375Z" fill="#FFD230"/>
+<path id="Vector_3" d="M17.0625 21.9375H11.375V8.125H17.0625V21.9375Z" fill="#FFD230"/>
+<path id="Vector_4" d="M24.3567 21.9375H18.6692V4.875H24.3567V21.9375Z" fill="#FFD230"/>
+</g>
+<defs>
+<clipPath id="clip0_0_408">
+<rect width="26" height="26" fill="white"/>
+</clipPath>
+</defs>
+</svg>
