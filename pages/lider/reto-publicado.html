@@ -33,17 +33,120 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Crear reto</h1>
-    <!-- TODO P4: implementar la pantalla 59 según el Figma. -->
+  <main class="contenedor rp">
+    <a class="rp__volver" href="retos.html">
+      <img class="rp__volver-icono" src="../../assets/icons/reto-publicado-volver.svg" alt="">
+      Volver a Retos
+    </a>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="retos.html">55 · Retos de la party</a></li>
-      </ul>
-    </nav>
+    <header class="rp__intro">
+      <h1 class="titulo-1">Crear reto</h1>
+      <p class="rp__subtitulo">Los Insanos · El reto se publicará para toda tu party.</p>
+    </header>
 
+    <div class="rp__fila">
+      <form class="rp__form" action="retos.html" aria-label="Reto publicado">
+        <div class="rp__r1">
+          <div class="campo rp__campo">
+            <label class="campo__label" for="rp-titulo">Título del reto</label>
+            <input class="campo__input rp__input" id="rp-titulo" name="titulo" type="text" value="Dijkstra con colas de prioridad" readonly>
+          </div>
+          <div class="campo rp__campo">
+            <label class="campo__label" for="rp-tema">Tema</label>
+            <input class="campo__input rp__input" id="rp-tema" name="tema" type="text" value="Grafos ▾" readonly>
+          </div>
+        </div>
+
+        <div class="rp__r2">
+          <div class="rp__dificultad">
+            <p class="campo__label" id="rp-dificultad">Dificultad</p>
+            <ul class="rp__chips" aria-labelledby="rp-dificultad">
+              <li class="rp__chip">Fácil</li>
+              <li class="rp__chip rp__chip--activo" aria-current="true">Media</li>
+              <li class="rp__chip">Difícil</li>
+            </ul>
+          </div>
+          <div class="campo rp__campo rp__fecha">
+            <label class="campo__label" for="rp-fecha">Fecha de entrega</label>
+            <input class="campo__input rp__input" id="rp-fecha" name="fecha" type="text" value="18 / 10 / 2026" readonly>
+          </div>
+          <div class="campo rp__campo rp__recompensa">
+            <label class="campo__label" for="rp-recompensa">Recompensa</label>
+            <input class="campo__input rp__input" id="rp-recompensa" name="recompensa" type="text" value="+40 XP" readonly>
+          </div>
+        </div>
+
+        <div class="campo rp__campo">
+          <label class="campo__label" for="rp-enunciado">Enunciado</label>
+          <textarea class="campo__input rp__input rp__textarea" id="rp-enunciado" name="enunciado" rows="3" readonly>Dado un grafo dirigido con pesos positivos, calcula la distancia mínima desde el nodo 1 a todos los demás usando una cola de prioridad.</textarea>
+        </div>
+
+        <div class="rp__ejemplo">
+          <p class="campo__label">Ejemplo de entrada y salida</p>
+          <div class="rp__codigo">
+            <p class="rp__codigo-archivo"><img src="../../assets/icons/reto-publicado-codigo.svg" alt="">ejemplo.txt</p>
+            <pre class="rp__pre">Entrada:  5 6  (nodos, aristas)
+          1 2 4   1 3 1   3 2 2 …
+Salida:   0 3 1 6 8</pre>
+          </div>
+        </div>
+
+        <div class="rp__casos">
+          <div class="rp__casos-cabecera">
+            <p class="rp__casos-titulo"><img class="rp__icono" src="../../assets/icons/reto-publicado-casos.svg" alt="">Casos de prueba</p>
+            <a class="rp__anadir" href="#"><img class="rp__icono-chico" src="../../assets/icons/reto-publicado-mas.svg" alt="">+ Añadir caso</a>
+          </div>
+          <p class="rp__caso"><span class="rp__ok">✓</span><span class="rp__caso-nombre">Caso 1 · grafo pequeño</span><span class="rp__caso-archivos">entrada1.txt · salida1.txt</span></p>
+          <p class="rp__caso"><span class="rp__ok">✓</span><span class="rp__caso-nombre">Caso 2 · 10⁵ nodos</span><span class="rp__caso-archivos">entrada2.txt · salida2.txt</span></p>
+        </div>
+
+        <div class="rp__asignar">
+          <p class="rp__asignar-texto"><span class="rp__asignar-icono">◎</span> Asignar a</p>
+          <span class="rp__etiqueta rp__etiqueta--menta">Toda la party (3 integrantes)</span>
+        </div>
+
+        <hr class="rp__divisor">
+
+        <div class="rp__acciones">
+          <a class="boton" href="retos.html">Publicar reto</a>
+          <a class="boton boton--secundario" href="retos.html">Guardar borrador</a>
+          <a class="boton boton--secundario" href="retos.html">Cancelar</a>
+        </div>
+      </form>
+
+      <section class="rp__previa" aria-labelledby="rp-previa">
+        <h2 class="rp__previa-titulo" id="rp-previa"><img class="rp__icono" src="../../assets/icons/reto-publicado-ojo.svg" alt="">Vista previa</h2>
+        <p class="rp__previa-texto">Así lo verán tus integrantes en Retos.</p>
+        <div class="rp__mini">
+          <span class="rp__etiqueta rp__etiqueta--celeste">Grafos</span>
+          <p class="rp__mini-titulo">Dijkstra con colas de prioridad</p>
+          <p class="rp__mini-fecha">Entrega: 18 de octubre · +40 XP</p>
+          <span class="rp__etiqueta rp__etiqueta--borde">Media</span>
+        </div>
+        <hr class="rp__divisor">
+        <h2 class="rp__previa-titulo"><img class="rp__icono" src="../../assets/icons/reto-publicado-lista.svg" alt="">Antes de publicar</h2>
+        <ul class="rp__lista">
+          <li class="rp__item"><span class="rp__ok">✓</span> Título del reto</li>
+          <li class="rp__item"><span class="rp__ok">✓</span> Fecha de entrega válida</li>
+          <li class="rp__item"><span class="rp__ok">✓</span> Al menos 1 caso de prueba</li>
+          <li class="rp__item"><span class="rp__ok">✓</span> Enunciado y ejemplo</li>
+        </ul>
+        <a class="rp__ayuda" href="#"><span class="rp__ayuda-signo">?</span> ¿Cómo escribo un buen reto?</a>
+      </section>
+    </div>
+
+    <section class="modal rp__modal" id="reto-publicado" role="dialog" aria-modal="true" aria-labelledby="rp-modal-titulo">
+      <div class="modal__caja rp__caja">
+        <h2 class="rp__modal-titulo" id="rp-modal-titulo"><span class="rp__modal-ok">✓</span> ¡Reto publicado!</h2>
+        <img class="rp__popa" src="../../assets/img/popa-derecha-check.gif" alt="">
+        <p class="rp__modal-texto">«Dijkstra con colas de prioridad» ya está disponible para los 3 integrantes de Los Insanos. Te avisaremos cuando lleguen las entregas.</p>
+        <p class="rp__modal-fecha"><img class="rp__icono-chico" src="../../assets/icons/reto-publicado-calendario.svg" alt=""><span class="rp__modal-fecha-rotulo">Entrega:</span> 18 de octubre · +40 XP</p>
+        <div class="modal__acciones rp__modal-acciones">
+          <a class="boton" href="retos.html">Ver reto</a>
+          <a class="boton boton--secundario" href="crear-reto.html">Crear otro reto</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
