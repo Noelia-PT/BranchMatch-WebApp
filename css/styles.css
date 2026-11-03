@@ -2765,8 +2765,13 @@ a.completa__opcion-texto:hover {
     display: grid;
     flex: 0 0 384px;
   }
-  .perfil__lado > * {
+  .perfil__lado > .perfil__aviso,
+  .perfil__lado > .perfil__tarjeta {
     grid-area: 1 / 1;
+  }
+  .perfil__boton {
+    grid-row: 2;
+    margin-top: var(--espacio-4);
   }
   .perfil__aviso {
     position: relative;
