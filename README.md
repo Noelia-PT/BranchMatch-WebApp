@@ -30,7 +30,7 @@ programación competitiva con equipos (*parties*) de su mismo nivel y horario, y
 - Retos: crear (de código o de opción múltiple), publicar, ver entregas y revisarlas.
 - Panel principal y resumen de rendimiento grupal.
 
-En total son **49 páginas**, cada una con su versión de escritorio y de móvil.
+En total son **51 páginas**, cada una con su versión de escritorio y de móvil.
 
 ## Ver el proyecto
 
@@ -66,7 +66,7 @@ por ejemplo `pages/lider/crear-modulo.html#creado`.
     ├── auth/           # Crear cuenta e iniciar sesión (2)
     ├── prueba/         # Prueba diagnóstica (4)
     ├── estudiante/     # Pantallas del estudiante (19)
-    └── lider/          # Pantallas del líder (23)
+    └── lider/          # Pantallas del líder (25)
 ```
 
 ## Diseño

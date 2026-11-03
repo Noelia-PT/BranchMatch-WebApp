@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notificaciones · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 17 · Notificaciones (versión del líder) · Responsable: P1 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="panel.html">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor notificaciones">
+    <header class="notificaciones__encabezado">
+      <h1 class="titulo-1">Notificaciones</h1>
+      <p class="texto-secundario">Solicitudes de ingreso a tu party.</p>
+    </header>
+
+    <ul class="notificaciones__lista">
+      <li class="tarjeta notificacion">
+        <article class="notificacion__contenido">
+          <p class="chip chip--menta">Nueva solicitud</p>
+          <h2 class="titulo-3">Un estudiante quiere unirse</h2>
+          <dl class="notificacion__datos">
+            <div><dt>Estudiante:</dt> <dd>Ana Gutiérrez</dd></div>
+            <div><dt>Party:</dt> <dd>Los Insanos</dd></div>
+          </dl>
+          <p class="texto-secundario">Revisa su perfil y decide si se une a tu party.</p>
+        </article>
+        <a class="boton notificacion__boton" href="solicitudes.html">Ver solicitudes</a>
+      </li>
+      <li class="tarjeta notificacion">
+        <article class="notificacion__contenido">
+          <p class="chip chip--rosa">Solicitud rechazada</p>
+          <h2 class="titulo-3">Rechazaste una solicitud</h2>
+          <dl class="notificacion__datos">
+            <div><dt>Estudiante:</dt> <dd>Valeria Ríos</dd></div>
+            <div><dt>Party:</dt> <dd>Los Insanos</dd></div>
+          </dl>
+          <p class="texto-secundario">El estudiante ya fue avisado y puede explorar otras parties.</p>
+        </article>
+        <a class="boton boton--secundario notificacion__boton" href="solicitudes.html">Ver solicitudes</a>
+      </li>
+      <li class="tarjeta notificacion">
+        <article class="notificacion__contenido">
+          <p class="chip ">Solicitud expirada</p>
+          <h2 class="titulo-3">Una solicitud expiró</h2>
+          <dl class="notificacion__datos">
+            <div><dt>Estudiante:</dt> <dd>Camila Torres</dd></div>
+            <div><dt>Party:</dt> <dd>Los Insanos</dd></div>
+          </dl>
+          <p class="texto-secundario">Otro equipo ya aceptó al estudiante, así que esta solicitud se cerró automáticamente.</p>
+        </article>
+        <a class="boton boton--secundario notificacion__boton" href="notificaciones.html">Aceptar</a>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
