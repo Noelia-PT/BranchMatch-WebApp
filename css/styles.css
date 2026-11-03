@@ -1901,6 +1901,176 @@ textarea.campo__input {
 
 /* ===== P3 · Feed y Lecciones ===== */
 
+/* --- 22 · Lecciones (estudiante/lecciones.html) --- */
+.lec {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+  padding-top: var(--espacio-24);
+  padding-bottom: var(--espacio-48);
+}
+
+/* Título y buscador */
+.lec__cab {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+}
+.lec__titulos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+}
+.lec__titulo {
+  font-size: var(--texto-h1);
+  line-height: var(--lh-h1);
+  font-weight: 700;
+}
+.lec__subtitulo {
+  font-size: var(--texto-body);
+  line-height: var(--lh-body);
+  letter-spacing: -0.02em;
+  color: var(--color-texto-2);
+}
+.lec__buscador {
+  width: 100%;
+}
+.lec__campo {
+  position: relative;
+}
+.lec__lupa {
+  position: absolute;
+  top: 13px;
+  left: var(--espacio-16);
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+}
+.lec__input {
+  padding-left: 50px;
+  border-radius: 4px;
+  font-size: var(--texto-body);
+  line-height: var(--lh-body);
+  letter-spacing: -0.02em;
+}
+.lec__input::placeholder {
+  color: var(--color-fondo);
+  opacity: 0.65;
+}
+
+/* Lista de temas */
+.lec__temas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+}
+.lec__tema {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+  padding: 12px;
+  background: var(--color-superficie);
+  border: var(--borde-grueso) solid var(--color-borde);
+  box-shadow: var(--sombra-navy);
+}
+.lec__imagen {
+  height: 160px;
+  background: var(--color-texto-2);
+  border-radius: 4px;
+}
+.lec__tema-cuerpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--espacio-16);
+  min-width: 0;
+}
+.lec__tema-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.lec__chip {
+  padding: 3px var(--espacio-8);
+}
+.lec__tema-titulo {
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-h2);
+  font-weight: 600;
+  line-height: var(--lh-h2);
+  letter-spacing: var(--tracking-titulo);
+  color: var(--color-texto);
+}
+.lec__tema-descripcion {
+  font-size: var(--texto-body);
+  line-height: var(--lh-body);
+  letter-spacing: -0.02em;
+  color: var(--color-texto-2);
+}
+.lec__ingresar {
+  width: 100%;
+}
+
+/* Escritorio */
+@media (min-width: 768px) {
+  .lec {
+    max-width: 636px;
+    gap: 28px;
+    padding-top: var(--espacio-32);
+    padding-bottom: var(--espacio-64);
+  }
+  .lec__cab {
+    flex-flow: row wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--espacio-24);
+  }
+  .lec__titulos {
+    gap: 6px;
+  }
+  .lec__buscador {
+    flex: 0 1 480px;
+    width: auto;
+  }
+  .lec__temas {
+    gap: var(--espacio-24);
+  }
+  .lec__tema {
+    flex-direction: row;
+    gap: var(--espacio-24);
+    padding: 20px;
+  }
+  .lec__imagen {
+    width: 200px;
+    height: auto;
+    min-height: 160px;
+    flex-shrink: 0;
+  }
+  .lec__tema-cuerpo {
+    justify-content: space-between;
+    gap: 0;
+  }
+  .lec__tema-texto {
+    gap: 10px;
+  }
+  .lec__ingresar {
+    width: auto;
+    align-self: flex-start;
+  }
+}
+
+/* Pantalla ancha: dos columnas de temas */
+@media (min-width: 1100px) {
+  .lec {
+    max-width: calc(var(--contenedor-max) + 2 * var(--margen-pagina));
+  }
+  .lec__temas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+}
 
 /* ===== P4 · Retos y Rendimiento ===== */
 /* --- 61 · Revisar entrega (lider/revisar-entrega.html) --- */
