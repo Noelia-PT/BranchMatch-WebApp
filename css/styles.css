@@ -264,9 +264,10 @@ select:focus-visible {
 }
 .header__contenido {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--espacio-16);
+  gap: var(--espacio-8) var(--espacio-16);
   min-height: var(--alto-header);
 }
 .header__logo {
@@ -350,8 +351,8 @@ select:focus-visible {
 }
 
 @media (min-width: 768px) {
-  .header__logo-img { width: 46px; }
-  .header__logo-texto { font-size: 44px; }
+  .header__logo-img { width: clamp(30px, 3.2vw, 46px); }
+  .header__logo-texto { font-size: clamp(26px, 3.05vw, 44px); }
   .header__nav,
   .header__nav:target {
     display: block;
@@ -359,10 +360,26 @@ select:focus-visible {
     padding: 0;
     background: none;
   }
+  /* Escritorio: grilla logo · menú · usuario. Los tamaños crecen con la pantalla
+     (clamp) para que entre todo en una fila desde 768 px hasta 1440 px. */
+  .header__contenido {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: var(--espacio-16);
+  }
+  .header__nav {
+    justify-self: center;
+  }
   .header__lista {
     flex-direction: row;
-    gap: var(--espacio-32);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espacio-8) clamp(var(--espacio-16), 2.2vw, var(--espacio-32));
   }
+  .header__link {
+    font-size: clamp(var(--texto-small), 1.39vw, var(--texto-boton));
+  }
+
   .header__cerrar,
   .header__menu-btn {
     display: none;
@@ -785,7 +802,7 @@ textarea.campo__input {
 .landing-header__link {
   font-family: var(--fuente-pixel);
   font-weight: 700;
-  font-size: var(--texto-boton);
+  font-size: clamp(var(--texto-small), 1.39vw, var(--texto-boton));
   line-height: var(--lh-boton);
   color: var(--color-menta);
 }
@@ -794,8 +811,9 @@ textarea.campo__input {
 }
 .landing-header__boton {
   min-height: 48px;
-  padding: var(--espacio-8) var(--espacio-24);
+  padding: var(--espacio-8) clamp(var(--espacio-16), 1.7vw, var(--espacio-24));
   border-width: var(--borde-fino);
+  font-size: clamp(var(--texto-small), 1.39vw, var(--texto-boton));
 }
 .landing-header__nav .header__lista {
   align-items: flex-start;
@@ -824,7 +842,10 @@ textarea.campo__input {
   width: 100%;
   aspect-ratio: 1 / 1;
   max-height: 480px;
-  background: url("../assets/img/landing-hero.gif") left center / cover no-repeat;
+  /* El borde de abajo del GIF se funde con el fondo */
+  background:
+    linear-gradient(to bottom, transparent 70%, var(--color-fondo) 100%),
+    url("../assets/img/landing-hero.gif") left center / cover no-repeat;
 }
 .hero__contenido {
   display: flex;
@@ -839,8 +860,9 @@ textarea.campo__input {
   max-width: 500px;
 }
 .hero__titulo {
-  font-size: var(--texto-display);
-  line-height: var(--lh-display);
+  /* Crece con la pantalla: 44 px en celulares chicos, 64 px desde ~430 px */
+  font-size: clamp(var(--texto-h1), 15vw, var(--texto-display));
+  line-height: 1.06;
   color: var(--color-celeste);
   text-align: center;
 }
@@ -891,6 +913,9 @@ textarea.campo__input {
 .landing-grid {
   display: grid;
   grid-template-columns: 1fr;
+}
+.landing-grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: var(--gutter);
   align-items: start;
 }
@@ -961,7 +986,7 @@ textarea.campo__input {
   image-rendering: pixelated;
   position: relative;
   z-index: 1;
-  margin-bottom: -16px;
+  margin-bottom: calc(-1 * var(--espacio-16));
 }
 .equipo__mesa {
   width: 100%;
@@ -1057,6 +1082,9 @@ textarea.campo__input {
 }
 
 @media (min-width: 768px) {
+  .landing-header__nav {
+    justify-self: end;
+  }
   .landing-header__nav .header__lista {
     align-items: center;
   }
@@ -1064,9 +1092,16 @@ textarea.campo__input {
   .hero {
     flex-direction: row;
     align-items: center;
-    min-height: 1022px;
+    /* Alto del Figma (1022 px) pero sin pasar el alto de la pantalla */
+    min-height: min(1022px, 100vh);
     margin-top: calc(-1 * var(--alto-header));
-    background: var(--color-fondo) url("../assets/img/landing-hero.gif") center top / cover no-repeat;
+    background:
+      linear-gradient(to bottom, transparent 65%, var(--color-fondo) 100%),
+      var(--color-fondo) url("../assets/img/landing-hero.gif") center top / cover no-repeat;
+  }
+  /* Menos espacio entre el hero y «Qué hacemos» */
+  .hero + .landing-seccion .landing-seccion__contenido {
+    padding-top: var(--espacio-48);
   }
   .hero::before {
     display: none;
@@ -1099,31 +1134,20 @@ textarea.campo__input {
     min-width: 243px;
   }
   .landing-seccion__contenido {
-    padding-top: 112px;
+    /* 112 px del Figma = 64 + 48 */
+    padding-top: calc(var(--espacio-64) + var(--espacio-48));
   }
   .landing-grid--2 { grid-template-columns: repeat(2, 1fr); }
   .landing-grid--3 { grid-template-columns: repeat(3, 1fr); }
-  .landing-grid--4 { grid-template-columns: repeat(2, 1fr); }
-  .cta {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--espacio-32) 40px;
-  }
-  .cta .boton {
-    align-self: center;
-  }
-}
-
-@media (min-width: 1024px) {
-  .landing-grid--4 { grid-template-columns: repeat(4, 1fr); }
   /* Escena en el centro y dos integrantes a cada lado */
   .equipo {
     display: grid;
-    grid-template-columns: 276px 1fr 276px;
-    grid-template-areas: "izq escena der";
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-areas:
+      "jack   escena edson"
+      "noelia escena addy";
     align-items: center;
-    gap: 0;
+    gap: var(--espacio-16);
   }
   .equipo__escena {
     grid-area: escena;
@@ -1131,23 +1155,18 @@ textarea.campo__input {
   .equipo__integrantes {
     display: contents;
   }
-  .integrante:nth-child(1),
-  .integrante:nth-child(2) {
-    grid-area: izq;
+  .integrante:nth-child(1) { grid-area: jack; align-self: end; }
+  .integrante:nth-child(2) { grid-area: noelia; align-self: start; }
+  .integrante:nth-child(3) { grid-area: edson; align-self: end; }
+  .integrante:nth-child(4) { grid-area: addy; align-self: start; }
+  .cta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--espacio-32) calc(var(--espacio-32) + var(--espacio-8));
   }
-  .integrante:nth-child(3),
-  .integrante:nth-child(4) {
-    grid-area: der;
-  }
-  .integrante:nth-child(1),
-  .integrante:nth-child(3) {
-    align-self: start;
-    margin-top: 150px;
-  }
-  .integrante:nth-child(2),
-  .integrante:nth-child(4) {
-    align-self: start;
-    margin-top: 330px;
+  .cta .boton {
+    align-self: center;
   }
 }
 
@@ -1282,7 +1301,7 @@ textarea.campo__input {
 .campo__check {
   width: 20px;
   height: 20px;
-  margin-top: 2px;
+  margin-top: var(--espacio-4);
   accent-color: var(--color-celeste);
 }
 .campo__check:user-invalid ~ .campo__error {
@@ -1358,7 +1377,7 @@ textarea.campo__input {
 }
 .prueba-datos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--espacio-16);
   width: 100%;
 }
@@ -1844,7 +1863,7 @@ textarea.campo__input {
   gap: var(--espacio-4);
 }
 .integrante-party__chips .chip {
-  padding: 2px 6px;
+  padding: var(--espacio-4) var(--espacio-8);
   font-size: var(--texto-small);
 }
 .party-completa__acciones {
@@ -1864,7 +1883,7 @@ textarea.campo__input {
     font-size: var(--texto-body);
   }
   .party-completa__integrantes {
-    grid-template-columns: repeat(5, 152px);
+    grid-template-columns: repeat(5, minmax(0, 168px));
     justify-content: center;
     max-width: none;
   }
