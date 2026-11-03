@@ -1354,6 +1354,74 @@ textarea.campo__input {
   }
 }
 
+/* --- Selector de rol para la demostración (auth/iniciar-sesion.html y auth/crear-cuenta.html) --- */
+/* Dos radios ocultos con pastillas; el botón correcto se muestra con :has() y :checked, sin JavaScript */
+.auth-rol {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.auth-rol__titulo {
+  padding: 0;
+  margin-bottom: var(--espacio-8);
+  font-size: var(--texto-body);
+  line-height: var(--lh-body);
+  color: var(--color-texto);
+}
+.auth-rol__opciones {
+  display: flex;
+  gap: var(--espacio-16);
+}
+.auth-rol__opcion {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.auth-rol__pastilla {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--alto-campo);
+  padding: var(--espacio-8) var(--espacio-16);
+  background: var(--color-fondo);
+  border: var(--borde-fino) solid var(--color-borde);
+  border-radius: 10px;
+  color: var(--color-texto);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+  text-align: center;
+  cursor: pointer;
+}
+.auth-rol__pastilla:hover {
+  border-color: var(--color-celeste);
+}
+.auth-rol__radio:checked + .auth-rol__pastilla {
+  background: var(--color-amarillo);
+  border-color: var(--color-borde);
+  box-shadow: var(--sombra-navy);
+  color: var(--color-borde);
+}
+.auth-rol__radio:focus-visible + .auth-rol__pastilla {
+  outline: var(--borde-fino) solid var(--color-celeste);
+  outline-offset: 2px;
+}
+.auth-formulario:has(#rol-estudiante:checked) .auth-formulario__boton--lider,
+.auth-formulario:has(#rol-lider:checked) .auth-formulario__boton--estudiante {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .auth-rol__titulo {
+    font-size: var(--texto-h3);
+    line-height: var(--lh-h3);
+    font-weight: 600;
+  }
+  .auth-rol__opciones {
+    max-width: 414px;
+  }
+}
+
 /* --- 04 a 08 · Prueba diagnóstica (pages/prueba/) --- */
 
 /* 04 · Inicio de la prueba */

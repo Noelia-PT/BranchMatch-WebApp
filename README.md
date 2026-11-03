@@ -44,6 +44,10 @@ python -m http.server 8765
 
 y entra a `http://127.0.0.1:8765/`. También funciona la extensión **Live Server** de VS Code.
 
+Para la demostración, entra desde `pages/auth/iniciar-sesion.html` y elige el rol antes de pulsar «Iniciar sesión»:
+- **Estudiante** (marcado por defecto): lleva a `pages/estudiante/inicio.html`.
+- **Líder**: lleva a `pages/lider/panel.html`. Para cambiar de rol, usa «Cerrar sesión» en el perfil.
+
 Como no hay JavaScript, los buscadores, filtros, contadores y reproductores están dibujados pero no hacen nada.
 Los estados de una pantalla (resultados, confirmaciones, ventanas emergentes) se activan con enlaces,
 por ejemplo `pages/lider/crear-modulo.html#creado`.
