@@ -1,68 +1,96 @@
 # BranchMatch · WebApp
 
-Plataforma web responsiva para formar equipos (parties) de práctica en programación competitiva.
-Solo HTML y CSS: sin JavaScript, frameworks ni CDNs.
+**Encuentra tu coding party.** BranchMatch es una plataforma web que conecta a estudiantes que quieren entrenar
+programación competitiva con equipos (*parties*) de su mismo nivel y horario, y convierte el entrenamiento en un juego.
+
+> Proyecto académico de estudiantes de la UPC, de los cursos **Interacción Humano-Computador (IHC)** y **Programación Web**.
+> Es un prototipo navegable en **HTML y CSS puros**: no hay servidor ni JavaScript.
+
+## ¿Cómo funciona?
+
+1. **Haces la prueba diagnóstica** y conoces tu nivel: Principiante, Intermedio o Avanzado.
+2. **Haces match con una party.** Revisas parties de tu nivel y envías tu solicitud; el líder decide si te une.
+3. **Entrenas y subes de nivel.** Asistes a sesiones, resuelves retos y ganas XP junto a tu party.
+
+## Qué incluye
+
+**Para estudiantes**
+- Crear cuenta, iniciar sesión y completar y personalizar el perfil (Player Card con nivel, stats, lenguajes y logros).
+- Prueba diagnóstica de opción múltiple, con un resultado que muestra tu nivel, tu puntaje, tus fortalezas y los temas por reforzar.
+- Buscar parties, enviar solicitudes y ver notificaciones.
+- Mi party: integrantes, chat y calendario de clases.
+- Lecciones por tema, con subtemas y video de la clase.
+- Retos de código y de opción múltiple, con estado de entrega y resultado.
+- Resumen de rendimiento, comunidad e inicio con feed de publicaciones.
+
+**Para líderes**
+- Perfil de líder, creación y edición de la party, y revisión de solicitudes.
+- Player Card de cada integrante.
+- Calendario de clases y gestión de lecciones: crear módulos, editar temas y añadir grabaciones y PDFs a cada subtema.
+- Retos: crear (de código o de opción múltiple), publicar, ver entregas y revisarlas.
+- Panel principal y resumen de rendimiento grupal.
+
+En total son **47 páginas**, cada una con su versión de escritorio y de móvil.
+
+## Ver el proyecto
+
+No hace falta instalar nada: abre **`index.html`** en un navegador reciente (Chrome, Edge, Safari o Firefox).
+
+Para probar bien las rutas, sirve la carpeta con un servidor local:
+
+```bash
+python -m http.server 8765
+```
+
+y entra a `http://127.0.0.1:8765/`. También funciona la extensión **Live Server** de VS Code.
+
+Como no hay JavaScript, los buscadores, filtros, contadores y reproductores están dibujados pero no hacen nada.
+Los estados de una pantalla (resultados, confirmaciones, ventanas emergentes) se activan con enlaces,
+por ejemplo `pages/lider/crear-modulo.html#creado`.
 
 ## Estructura
 
 ```
-├── index.html              # 01 Landing
-├── css/styles.css          # Único CSS: variables, reset, componentes y una sección por persona
-├── js/                     # Vacía
+├── index.html          # Landing
+├── css/styles.css      # Estilos de todo el sitio
+├── js/                 # Vacía: el proyecto no usa JavaScript
 ├── assets/
-│   ├── fonts/              # Pixelify Sans y Poppins (locales)
-│   ├── icons/              # Íconos pixel de la guía de estilos (SVG)
-│   └── img/                # Logo, fondo de estrellas, Popa…
+│   ├── fonts/          # Pixelify Sans y Poppins
+│   ├── icons/          # Íconos SVG
+│   └── img/            # Logo, fondos y la mascota Popa
 └── pages/
-    ├── auth/               # 02–03
-    ├── prueba/             # 04–08
-    ├── estudiante/         # 09–34
-    └── lider/              # 35–61
+    ├── auth/           # Crear cuenta e iniciar sesión (2)
+    ├── prueba/         # Prueba diagnóstica (4)
+    ├── estudiante/     # Pantallas del estudiante (19)
+    └── lider/          # Pantallas del líder (21)
 ```
 
-Cada página ya tiene su `<head>`, cabecera, pie, el `<h1>` y la lista «Lleva a →» con los enlaces que pide el Figma.
-Al empezar una pantalla, usa esos enlaces en los botones y borra la lista.
+## Diseño
 
-## Cómo trabajar
+- **Figma:** [TRABAJO-OFICIAL-IHC](https://www.figma.com/design/i9UTNn3TEpbD6kSEtZVvRw/TRABAJO-OFICIAL-IHC), con escritorio a 1440 px y móvil a 412 px.
+- **Estilo:** pixel art con aire de videojuego arcade, sobre fondo azul noche con un fondo de estrellas.
+- **Paleta:** fondo `#12163A`, superficies `#232A63`, amarillo `#FFD230`, celeste `#90D3FA`, menta `#B9E8C8` y rosa `#F994AB`.
+- **Tipografías:** [Pixelify Sans](https://fonts.google.com/specimen/Pixelify+Sans) para títulos y botones y [Poppins](https://fonts.google.com/specimen/Poppins) para el texto. Ambas se incluyen en `assets/fonts/` (licencia SIL OFL).
+- **Mascota:** Popa, la líder de la party.
+- **Responsive:** se diseña primero para móvil y se adapta a escritorio.
 
-1. `git pull origin develop` antes de empezar.
-2. Trabaja en tu rama: `p1-entrada`, `p2-party`, `p3-lecciones`, `p4-retos`.
-3. En `css/styles.css` escribe **solo dentro de tu bloque** (sección 6) y pon un comentario por pantalla.
-   No cambies las variables ni los componentes comunes; si falta algo, pídeselo a P1.
-4. Mobile first: estilos de móvil primero y `@media (min-width: 768px)` para escritorio.
-5. Abre la página en el navegador a 375 px y a 1440 px y prueba sus enlaces antes del pull request.
+Las reglas del proyecto y la numeración de pantallas están en [`SPEC.md`](SPEC.md).
 
-## Componentes listos (styles.css, sección 5)
+## Tecnologías
 
-| Clase | Uso |
-|---|---|
-| `.contenedor` | Ancho máx. 1200 px centrado |
-| `.titulo-display`, `.titulo-1`, `.titulo-2`, `.titulo-3` | Display 64, H1 44, H2 32, H3 22 |
-| `.boton`, `--secundario`, `--peligro`, `--deshabilitado`, `--bloque` | Botones (siempre `<a href>`) |
-| `.tarjeta` | Superficie con borde 4 px y sombra pixel celeste |
-| `.chip`, `--amarillo`, `--celeste`, `--menta`, `--rosa`, `--logro`, `--opcional`, `--pdf` | Chips y etiquetas |
-| `.etiqueta-seccion` | Rótulos verdes tipo «ESPECIALIDAD» |
-| `.barra-xp` (+ `__relleno--25/50/60/75/100`) | Barra de XP |
-| `.avatar`, `.avatar--grande` | Iniciales con borde celeste |
-| `.formulario`, `.campo`, `__label`, `__input`, `__ayuda`, `__error`, `.campo--error` | Formularios |
-| `.toast`, `.banner-error` | Mensajes |
-| `.modal` | Pop-up sin JS: `<a href="#id">` lo abre y `<a href="#">` lo cierra |
-| `.popa` | Imagen pixel de la mascota |
+HTML5 semántico y CSS3 (Flexbox y Grid). Sin JavaScript, frameworks, librerías ni CDNs.
 
-### Formulario con error
+## Equipo
 
-```html
-<div class="campo">
-  <label class="campo__label" for="nombre">Nombre del tema</label>
-  <input class="campo__input" id="nombre" name="nombre" type="text" required minlength="3">
-  <p class="campo__error">Escribe un nombre para el tema.</p>
-</div>
-```
+Estudiantes de la UPC, cursos IHC y Programación Web:
 
-El mensaje aparece solo cuando el campo es inválido, y siempre con `.campo--error`.
+- Jack Lima
+- Noelia Paquiñauri
+- Edson Ramos
+- Addy Pinedo
 
 ## Pendiente
 
-- Imágenes de cada pantalla (Popa en sus estados, fondo del landing y de auth): expórtalas del Figma a `assets/img/`
-  con nombres en minúsculas y guiones (`popa-exito.png`, `popa-buscando.png`…).
-- `fondo-estrellas.png` es provisional; se puede reemplazar por el del Figma con el mismo nombre.
+- Confirmar con el Figma si existen las pantallas 25, 31, 32, 47, 50 y 53, que no tienen página en el proyecto.
+- En `pages/lider/revisar-entrega.html` falta una captura de ejemplo en el recuadro de la solución del estudiante.
+- Revisar que `assets/img/fondo-estrellas.png` coincide con el fondo del Figma.
