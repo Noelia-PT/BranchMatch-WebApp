@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Player Card del integrante · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 40 · Player Card del integrante · Responsable: P2 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="panel.html">Panel</a></li>
+          <li><a class="header__link header__link--activo" href="solicitudes.html" aria-current="page">Solicitudes</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor pc">
+    <section class="tarjeta pc__cabecera" aria-labelledby="pc-nombre">
+      <span class="pc__avatar">TC</span>
+      <div class="pc__jugador">
+        <div class="pc__nombre-fila">
+          <h1 class="pc__nombre" id="pc-nombre">Tomas Carbajal</h1>
+          <span class="chip chip--amarillo pc__nivel">LV 5</span>
+        </div>
+        <p class="pc__usuario texto-secundario">@tomas_dev</p>
+        <p class="pc__racha"><img class="pc__racha-icono" src="../../assets/icons/pc-fuego.svg" alt="">130 días de racha</p>
+      </div>
+      <div class="pc__especialidad">
+        <h2 class="etiqueta-seccion">Especialidad</h2>
+        <p class="pc__especialidad-texto">Grafos · Strings</p>
+        <div class="barra-xp pc__xp">
+          <p class="barra-xp__encabezado"><span class="barra-xp__nivel">LV 5</span><span>1500 / 2000 XP</span></p>
+          <span class="barra-xp__pista"><span class="barra-xp__relleno barra-xp__relleno--60"></span></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="pc__cuerpo">
+      <div class="pc__izquierda">
+        <section class="tarjeta pc__bloque pc__lenguajes" aria-labelledby="pc-lenguajes">
+          <h2 class="pc__titulo" id="pc-lenguajes"><img class="pc__titulo-icono" src="../../assets/icons/pc-codigo.svg" alt="">Lenguajes dominantes</h2>
+          <ul class="pc__chips">
+            <li class="chip chip--celeste pc__chip">C++</li>
+            <li class="chip chip--menta pc__chip">Python</li>
+            <li class="chip pc__chip">Java</li>
+            <li class="chip pc__chip">JavaScript</li>
+          </ul>
+        </section>
+
+        <section class="tarjeta pc__bloque pc__github" aria-labelledby="pc-github">
+          <h2 class="pc__titulo" id="pc-github"><img class="pc__titulo-icono" src="../../assets/icons/pc-github.svg" alt="">Repositorio de GitHub</h2>
+          <a class="pc__enlace" href="https://github.com/tomascarbajal" rel="noopener">github.com/tomascarbajal <span class="pc__externo" aria-hidden="true">↗</span></a>
+        </section>
+
+        <section class="tarjeta pc__bloque pc__stats" aria-labelledby="pc-stats">
+          <h2 class="pc__titulo" id="pc-stats"><img class="pc__titulo-icono" src="../../assets/icons/pc-stats.svg" alt="">Stats</h2>
+          <ul class="pc__stats-lista">
+            <li class="pc__stat">
+              <span class="pc__stat-nombre">Algoritmos</span>
+              <span class="pc__stat-barra"><span class="pc__stat-relleno pc__stat-relleno--82"></span></span>
+              <span class="pc__stat-valor">82</span>
+            </li>
+            <li class="pc__stat">
+              <span class="pc__stat-nombre">Estructuras de datos</span>
+              <span class="pc__stat-barra"><span class="pc__stat-relleno pc__stat-relleno--70"></span></span>
+              <span class="pc__stat-valor">70</span>
+            </li>
+            <li class="pc__stat">
+              <span class="pc__stat-nombre">Matemática</span>
+              <span class="pc__stat-barra"><span class="pc__stat-relleno pc__stat-relleno--64"></span></span>
+              <span class="pc__stat-valor">64</span>
+            </li>
+            <li class="pc__stat">
+              <span class="pc__stat-nombre">Velocidad</span>
+              <span class="pc__stat-barra"><span class="pc__stat-relleno pc__stat-relleno--75"></span></span>
+              <span class="pc__stat-valor">75</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="tarjeta pc__bloque pc__logros" aria-labelledby="pc-logros">
+          <h2 class="pc__titulo" id="pc-logros"><img class="pc__titulo-icono" src="../../assets/icons/pc-logros.svg" alt="">Logros</h2>
+          <ul class="pc__chips">
+            <li class="chip chip--logro pc__chip">Top 3 regional</li>
+            <li class="chip chip--logro pc__chip">50 problemas</li>
+            <li class="chip chip--logro pc__chip">Racha 7 días</li>
+            <li class="chip chip--logro pc__chip">Primer merge</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="tarjeta pc__bloque pc__mas" aria-labelledby="pc-mas">
+        <h2 class="pc__titulo" id="pc-mas"><img class="pc__titulo-icono" src="../../assets/icons/pc-pin.svg" alt="">Más sobre mí</h2>
+        <div class="pc__seccion">
+          <h3 class="pc__subtitulo pc__subtitulo--basica"><img class="pc__subtitulo-icono" src="../../assets/icons/pc-libro.svg" alt="">Información básica</h3>
+          <ul class="pc__lista">
+            <li class="pc__item pc__item--celeste">Lima, Perú</li>
+            <li class="pc__item pc__item--celeste">Ing. de Sistemas</li>
+          </ul>
+        </div>
+        <div class="pc__seccion pc__seccion--linea">
+          <h3 class="pc__subtitulo pc__subtitulo--intereses"><img class="pc__subtitulo-icono" src="../../assets/icons/pc-intereses.svg" alt="">Intereses</h3>
+          <ul class="pc__chips">
+            <li class="chip chip--menta pc__chip">Grafos</li>
+            <li class="chip chip--menta pc__chip">Prog. dinámica</li>
+          </ul>
+        </div>
+        <div class="pc__seccion pc__seccion--linea">
+          <h3 class="pc__subtitulo pc__subtitulo--metas"><img class="pc__subtitulo-icono" src="../../assets/icons/objetivo.svg" alt="">Visión / metas</h3>
+          <ul class="pc__lista">
+            <li class="pc__item pc__item--amarillo">Clasificar a la ICPC</li>
+            <li class="pc__item pc__item--amarillo">Dominar DP</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <div class="pc__regresar">
+      <a class="boton pc__boton" href="solicitudes.html">Regresar</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

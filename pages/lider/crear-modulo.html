@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crear módulo · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 48 · Crear módulo · Responsable: P3 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="panel.html">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link header__link--activo" href="lecciones.html" aria-current="page">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor lcmo">
+    <a class="lcmo__volver" href="lecciones.html">
+      <img class="lcmo__volver-icono" src="../../assets/icons/crear-modulo-volver.svg" alt="">
+      Volver a Lecciones
+    </a>
+
+    <header class="lcmo__cabecera">
+      <h1 class="lcmo__titulo">Crear módulo</h1>
+      <p class="lcmo__subtitulo">El nuevo módulo aparecerá en Lecciones para toda tu party.</p>
+    </header>
+
+    <form class="lcmo__formulario" action="crear-modulo.html#creado" method="get">
+      <section class="lcmo__tarjeta lcmo__imagen" aria-labelledby="lcmo-imagen-titulo">
+        <h2 class="lcmo__tarjeta-titulo" id="lcmo-imagen-titulo">Imagen del módulo</h2>
+        <label class="lcmo__zona" for="lcmo-imagen">
+          <img class="lcmo__zona-icono" src="../../assets/icons/crear-modulo-camara.svg" alt="">
+          <span class="lcmo__zona-texto">Subir imagen</span>
+          <span class="lcmo__zona-ayuda">PNG o JPG · 1:1 · máx. 2 MB</span>
+        </label>
+        <input class="visualmente-oculto" id="lcmo-imagen" name="imagen" type="file" accept="image/png, image/jpeg">
+      </section>
+
+      <section class="lcmo__tarjeta lcmo__datos" aria-label="Datos del módulo">
+        <div class="campo lcmo__campo">
+          <label class="campo__label lcmo__label" for="lcmo-nombre">Nombre del módulo</label>
+          <input class="campo__input lcmo__input lcmo__input--activo" id="lcmo-nombre" name="nombre" type="text" value="Programación dinámica" required minlength="3" maxlength="60" placeholder="Escribe el nombre…">
+          <p class="campo__error">Escribe un nombre para el módulo.</p>
+        </div>
+        <div class="campo lcmo__campo">
+          <label class="campo__label lcmo__label" for="lcmo-descripcion">Descripción</label>
+          <textarea class="campo__input lcmo__input lcmo__descripcion" id="lcmo-descripcion" name="descripcion" required minlength="20" maxlength="200">Subproblemas, memoización y tabulación para optimizar soluciones.</textarea>
+          <p class="campo__error">La descripción debe tener al menos 20 caracteres para que tu party sepa de qué trata.</p>
+        </div>
+
+        <fieldset class="lcmo__subtemas">
+          <legend class="lcmo__label lcmo__leyenda">Subtemas iniciales (opcional)</legend>
+          <label class="lcmo__opcion" for="lcmo-subtema-1">
+            <input class="lcmo__check" id="lcmo-subtema-1" name="subtemas" type="checkbox" value="introduccion-a-dp" checked>
+            <span class="lcmo__opcion-texto">Introducción a DP</span>
+          </label>
+          <a class="lcmo__anadir" href="#">
+            <img class="lcmo__anadir-icono" src="../../assets/icons/crear-modulo-camara-chico.svg" alt="">
+            + Añadir subtema
+          </a>
+        </fieldset>
+
+        <hr class="lcmo__divisor">
+        <div class="lcmo__acciones">
+          <a class="boton" href="#creado">Crear módulo</a>
+          <a class="boton boton--secundario" href="lecciones.html">Cancelar</a>
+        </div>
+      </section>
+    </form>
+
+    <!-- Pantalla 49 · Módulo creado (se abre con href="#creado") -->
+    <section class="modal lcmo__modal" id="creado" aria-labelledby="creado-titulo">
+      <div class="modal__caja lcmo__caja">
+        <h2 class="lcmo__modal-titulo" id="creado-titulo"><img class="lcmo__modal-icono" src="../../assets/icons/crear-modulo-libro.svg" alt="">¡Módulo creado!</h2>
+        <img class="lcmo__popa" src="../../assets/img/crear-modulo-popa.gif" alt="Popa celebrando con un check">
+        <p class="lcmo__modal-texto">«Programación dinámica» ya aparece en Lecciones. Ahora añade sus subtemas y grabaciones.</p>
+        <div class="modal__acciones">
+          <a class="boton" href="subtemas.html">Añadir subtemas</a>
+          <a class="boton boton--secundario" href="lecciones.html">Ver Lecciones</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

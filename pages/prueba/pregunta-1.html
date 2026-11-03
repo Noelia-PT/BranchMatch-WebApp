@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pregunta 1 · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 05 · Prueba diagnóstica · Pregunta 1 · Responsable: P1 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="../estudiante/inicio.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <a class="prueba-header__salir" href="inicio.html">Salir de la prueba</a>
+    </div>
+  </header>
+
+  <main class="contenedor prueba-pregunta">
+    <div class="prueba-estado">
+      <p class="prueba-estado__tiempo">⏱ 11:42 restantes</p>
+      <div class="barra-xp__pista prueba-estado__barra" role="img" aria-label="Pregunta 1 de 20">
+        <span class="barra-xp__relleno prueba-estado__relleno prueba-estado__relleno--1"></span>
+      </div>
+    </div>
+
+    <form class="tarjeta prueba-tarjeta" action="pregunta-2.html" method="get">
+      <fieldset class="prueba-tarjeta__pregunta">
+        <legend class="prueba-tarjeta__legend">
+          <span class="chip chip--celeste">Complejidad algorítmica</span>
+          <h1 class="titulo-3 prueba-tarjeta__titulo">¿Cuál es la complejidad temporal, en el peor caso, del siguiente fragmento?</h1>
+        </legend>
+        <ul class="prueba-opciones">
+          <li>
+            <input class="opcion__radio" type="radio" id="p1-a" name="respuesta" value="A" required>
+            <label class="opcion" for="p1-a"><span class="opcion__letra">A</span> O(n)</label>
+          </li>
+          <li>
+            <input class="opcion__radio" type="radio" id="p1-b" name="respuesta" value="B" required>
+            <label class="opcion" for="p1-b"><span class="opcion__letra">B</span> O(n log n)</label>
+          </li>
+          <li>
+            <input class="opcion__radio" type="radio" id="p1-c" name="respuesta" value="C" checked required>
+            <label class="opcion" for="p1-c"><span class="opcion__letra">C</span> O(n²)</label>
+          </li>
+          <li>
+            <input class="opcion__radio" type="radio" id="p1-d" name="respuesta" value="D" required>
+            <label class="opcion" for="p1-d"><span class="opcion__letra">D</span> O(log n)</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <figure class="codigo">
+        <figcaption class="codigo__archivo">main.cpp</figcaption>
+        <pre class="codigo__bloque"><code>for (int i = 0; i &lt; n; i++)
+    for (int j = i; j &lt; n; j++)
+        suma += a[i] * a[j];</code></pre>
+      </figure>
+    </form>
+
+    <div class="prueba-navegacion">
+      <p class="prueba-contador">Pregunta <strong>1</strong> de 20</p>
+      <a class="boton" href="pregunta-2.html">Siguiente</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

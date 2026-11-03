@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tema: Grafos · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 51 · Tema: Grafos · Responsable: P3 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="panel.html">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link header__link--activo" href="lecciones.html" aria-current="page">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor lsub">
+    <header class="lsub__cabecera">
+      <div class="lsub__titulos">
+        <a class="lsub__volver" href="lecciones.html">
+          <picture>
+            <source media="(min-width: 768px)" srcset="../../assets/icons/subtemas-volver-grande.svg">
+            <img class="lsub__volver-icono" src="../../assets/icons/subtemas-volver.svg" alt="">
+          </picture>
+          <span class="lsub__volver-texto">Volver</span>
+          <span class="visualmente-oculto">a Lecciones</span>
+        </a>
+        <p class="chip chip--celeste lsub__etiqueta">Tema</p>
+        <h1 class="lsub__titulo">Tema: Grafos</h1>
+        <p class="lsub__subtitulo">Ordena, edita o añade subtemas. Arrastra ⋮⋮ para cambiar el orden.</p>
+      </div>
+      <a class="boton lsub__anadir" href="#">+ Añadir subtema</a>
+    </header>
+
+    <form class="lsub__filtros" role="search" action="subtemas.html" method="get">
+      <div class="lsub__buscador">
+        <span class="lsub__buscador-icono" aria-hidden="true">⌕</span>
+        <label class="visualmente-oculto" for="lsub-buscar">Buscar por nombre del subtema</label>
+        <input class="lsub__buscador-input" id="lsub-buscar" name="q" type="search" placeholder="Buscar por nombre del subtema" maxlength="60">
+      </div>
+      <div class="lsub__selectores">
+        <div class="lsub__selector">
+          <label class="visualmente-oculto" for="lsub-fecha">Filtrar por fecha</label>
+          <select class="lsub__select" id="lsub-fecha" name="fecha">
+            <option value="todos" selected>Fecha: todos</option>
+            <option value="hoy">Fecha: hoy</option>
+            <option value="semana">Fecha: semana</option>
+            <option value="mes">Fecha: mes</option>
+          </select>
+        </div>
+        <div class="lsub__selector">
+          <label class="visualmente-oculto" for="lsub-orden">Ordenar subtemas</label>
+          <select class="lsub__select" id="lsub-orden" name="orden">
+            <option value="recientes" selected>Ordenar: recientes</option>
+            <option value="antiguos">Ordenar: antiguos</option>
+            <option value="nombre">Ordenar: A-Z</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+    <section class="lsub__tarjeta" aria-labelledby="lsub-subtemas">
+      <div class="lsub__tarjeta-cabecera">
+        <h2 class="lsub__tarjeta-titulo" id="lsub-subtemas">Subtemas</h2>
+        <p class="lsub__contador">6 subtemas</p>
+      </div>
+      <ul class="lsub__lista">
+        <li class="lsub__fila">
+          <p class="lsub__nombre"><span class="lsub__asa" aria-hidden="true">⋮⋮</span>Tipos de grafos</p>
+          <div class="lsub__acciones">
+            <a class="lsub__grabacion" href="subtema.html">Sin grabación<span class="visualmente-oculto"> en Tipos de grafos, añadir</span></a>
+            <a class="lsub__accion lsub__accion--editar" href="#"><img class="lsub__accion-icono" src="../../assets/icons/subtemas-editar.svg" alt="">Editar<span class="visualmente-oculto"> Tipos de grafos</span></a>
+            <a class="lsub__accion lsub__accion--eliminar" href="#"><img class="lsub__accion-icono" src="../../assets/icons/subtemas-eliminar.svg" alt="">Eliminar<span class="visualmente-oculto"> Tipos de grafos</span></a>
+          </div>
+        </li>
+        <li class="lsub__fila">
+          <p class="lsub__nombre"><span class="lsub__asa" aria-hidden="true">⋮⋮</span>Representación: lista y matriz</p>
+          <div class="lsub__acciones">
+            <a class="lsub__grabacion lsub__grabacion--si" href="subtema.html">► Grabación<span class="visualmente-oculto"> de Representación: lista y matriz</span></a>
+            <a class="lsub__accion lsub__accion--editar" href="#"><img class="lsub__accion-icono" src="../../assets/icons/subtemas-editar.svg" alt="">Editar<span class="visualmente-oculto"> Representación: lista y matriz</span></a>
+            <a class="lsub__accion lsub__accion--eliminar" href="#"><img class="lsub__accion-icono" src="../../assets/icons/subtemas-eliminar.svg" alt="">Eliminar<span class="visualmente-oculto"> Representación: lista y matriz</span></a>
+          </div>
+        </li>
+        <li class="lsub__fila">
+          <p class="lsub__nombre"><span class="lsub__asa" aria-hidden="true">⋮⋮</span>BFS: recorrido en anchura</p>
+          <div class="lsub__acciones">
+            <a class="lsub__grabacion lsub__grabacion--si" href="subtema.html">► Grabación<span class="visualmente-oculto"> de BFS: recorrido en anchura</span></a>
+            <a class="lsub__accion lsub__accion--editar" href="#"><img class="lsub__accion-icono" src="../../assets/icons/subtemas-editar.svg" alt="">Editar<span class="visualmente-oculto"> BFS: recorrido en anchura</span></a>
+            <a class="lsub__accion lsub__accion--eliminar" href="#"><img class="lsub__accion-icono" src="../../assets/icons/subtemas-eliminar.svg" alt="">Eliminar<span class="visualmente-oculto"> BFS: recorrido en anchura</span></a>
+          </div>
+        </li>
+        <li class="lsub__fila">
+          <p class="lsub__nombre"><span class="lsub__asa" aria-hidden="true">⋮⋮</span>DFS: recorrido en profundidad</p>
+          <div class="lsub__acciones">
+            <a class="lsub__grabacion" href="subtema.html">Sin grabación<span class="visualmente-oculto"> en DFS: recorrido en profundidad, añadir</span></a>
+            <a class="lsub__accion lsub__accion--editar" href="#"><img class="lsub__accion-icono" src="../../assets/icons/subtemas-editar.svg" alt="">Editar<span class="visualmente-oculto"> DFS: recorrido en profundidad</span></a>
+            <a class="lsub__accion lsub__accion--eliminar" href="#"><img class="lsub__accion-icono" src="../../assets/icons/subtemas-eliminar.svg" alt="">Eliminar<span class="visualmente-oculto"> DFS: recorrido en profundidad</span></a>
+          </div>
+        </li>
+        <li class="lsub__fila">
+          <p class="lsub__nombre"><span class="lsub__asa" aria-hidden="true">⋮⋮</span>Dijkstra: caminos mínimos</p>
+          <div class="lsub__acciones">
+            <a class="lsub__grabacion" href="subtema.html">Sin grabación<span class="visualmente-oculto"> en Dijkstra: caminos mínimos, añadir</span></a>
+            <a class="lsub__accion lsub__accion--editar" href="#"><img class="lsub__accion-icono" src="../../assets/icons/subtemas-editar.svg" alt="">Editar<span class="visualmente-oculto"> Dijkstra: caminos mínimos</span></a>
+            <a class="lsub__accion lsub__accion--eliminar" href="#"><img class="lsub__accion-icono" src="../../assets/icons/subtemas-eliminar.svg" alt="">Eliminar<span class="visualmente-oculto"> Dijkstra: caminos mínimos</span></a>
+          </div>
+        </li>
+        <li class="lsub__fila">
+          <p class="lsub__nombre"><span class="lsub__asa" aria-hidden="true">⋮⋮</span>Bellman-Ford</p>
+          <div class="lsub__acciones">
+            <a class="lsub__grabacion" href="subtema.html">Sin grabación<span class="visualmente-oculto"> en Bellman-Ford, añadir</span></a>
+            <a class="lsub__accion lsub__accion--editar" href="#"><img class="lsub__accion-icono" src="../../assets/icons/subtemas-editar.svg" alt="">Editar<span class="visualmente-oculto"> Bellman-Ford</span></a>
+            <a class="lsub__accion lsub__accion--eliminar" href="#"><img class="lsub__accion-icono" src="../../assets/icons/subtemas-eliminar.svg" alt="">Eliminar<span class="visualmente-oculto"> Bellman-Ford</span></a>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

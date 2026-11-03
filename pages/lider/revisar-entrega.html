@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revisar entrega · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 61 · Revisar entrega · Responsable: P4 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="panel.html">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link header__link--activo" href="retos.html" aria-current="page">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor re">
+    <div class="re__entrega re__entrega--primera" id="entrega-tomas">
+      <nav class="re__migas" aria-label="Ruta de navegación">
+        <ol class="re__migas-lista">
+          <li><a class="re__miga-link" href="retos.html">Retos</a></li>
+          <li><a class="re__miga" href="entregas.html">Dijkstra con colas</a></li>
+          <li class="re__miga" aria-current="page">Entrega de Tomas</li>
+        </ol>
+      </nav>
+
+      <nav class="re__pager" aria-label="Entregas del reto">
+        <a class="re__pager-link re__pager-link--apagado" href="#entrega-tomas" aria-disabled="true">← Anterior</a>
+        <span class="re__pager-cuenta">1 de 2</span>
+        <a class="re__pager-link re__pager-link--activo" href="#entrega-ana">Siguiente →</a>
+      </nav>
+
+      <header class="re__alumno">
+        <span class="re__avatar">TC</span>
+        <div class="re__alumno-datos">
+          <h1 class="titulo-1">Tomas Carbajal</h1>
+          <p class="re__alumno-sub">Entregó hace 1 h · 2.° intento</p>
+        </div>
+        <span class="re__estado">Por revisar</span>
+      </header>
+
+      <!-- Aquí va la captura que subió el estudiante: <img class="re__captura-img" src="…" alt="Captura de la solución de Tomas"> -->
+      <div class="re__captura" role="img" aria-label="Captura de la solución subida por Tomas"></div>
+
+      <div class="re__lateral">
+        <section class="re__caja" aria-labelledby="re-casos-tomas">
+          <h2 class="re__caja-titulo" id="re-casos-tomas">Casos de prueba</h2>
+          <ul class="re__casos">
+            <li class="re__caso"><span class="re__marca re__marca--ok">✓</span><span class="re__caso-nombre">Caso 1 · grafo pequeño</span><span class="re__caso-tiempo">· 4 ms</span></li>
+            <li class="re__caso"><span class="re__marca re__marca--ok">✓</span><span class="re__caso-nombre">Caso 2 · 10⁵ nodos</span><span class="re__caso-tiempo">· 180 ms</span></li>
+            <li class="re__caso"><span class="re__marca re__marca--ok">✓</span><span class="re__caso-nombre">Caso 3 · aristas de peso 0</span><span class="re__caso-tiempo">· 6 ms</span></li>
+            <li class="re__caso"><span class="re__marca re__marca--error">✕</span><span class="re__caso-nombre">Caso 4 · grafo desconectado</span><span class="re__caso-tiempo re__caso-tiempo--error">· Incorrecto</span></li>
+          </ul>
+          <p class="re__resumen">3 de 4 casos correctos</p>
+        </section>
+
+        <form class="re__caja re__comentario" action="entregas.html">
+          <div class="campo re__campo">
+            <label class="re__caja-titulo" for="re-comentario-tomas">Comentario para Tomas</label>
+            <textarea class="campo__input re__textarea" id="re-comentario-tomas" name="comentario" rows="4" required minlength="10" maxlength="400">Muy bien la cola de prioridad. Revisa los nodos inalcanzables (caso 4): imprime -1 cuando d[v] sea INF.</textarea>
+            <p class="campo__error">Escribe un comentario de al menos 10 caracteres.</p>
+          </div>
+          <div class="re__acciones">
+            <a class="boton boton--peligro re__boton" href="entregas.html">Pedir corrección</a>
+            <a class="boton re__boton" href="entregas.html">Aprobar +40 XP</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="re__entrega re__entrega--segunda" id="entrega-ana">
+      <nav class="re__migas" aria-label="Ruta de navegación">
+        <ol class="re__migas-lista">
+          <li><a class="re__miga-link" href="retos.html">Retos</a></li>
+          <li><a class="re__miga" href="entregas.html">Dijkstra con colas</a></li>
+          <li class="re__miga" aria-current="page">Entrega de Ana</li>
+        </ol>
+      </nav>
+
+      <nav class="re__pager" aria-label="Entregas del reto">
+        <a class="re__pager-link re__pager-link--activo" href="#entrega-tomas">← Anterior</a>
+        <span class="re__pager-cuenta">2 de 2</span>
+        <a class="re__pager-link re__pager-link--apagado" href="#entrega-ana" aria-disabled="true">Siguiente →</a>
+      </nav>
+
+      <header class="re__alumno">
+        <span class="re__avatar re__avatar--menta">AG</span>
+        <div class="re__alumno-datos">
+          <h2 class="re__alumno-nombre">Ana Gutiérrez</h2>
+          <p class="re__alumno-sub">Entregó hace 1 día · 1.er intento</p>
+        </div>
+        <span class="re__estado re__estado--aceptado">Aceptado</span>
+      </header>
+
+      <!-- Aquí va la captura que subió el estudiante: <img class="re__captura-img" src="…" alt="Captura de la solución de Ana"> -->
+      <div class="re__captura" role="img" aria-label="Captura de la solución subida por Ana"></div>
+
+      <div class="re__lateral">
+        <section class="re__caja" aria-labelledby="re-casos-ana">
+          <h2 class="re__caja-titulo" id="re-casos-ana">Casos de prueba</h2>
+          <ul class="re__casos">
+            <li class="re__caso"><span class="re__marca re__marca--ok">✓</span><span class="re__caso-nombre">Caso 1 · grafo pequeño</span><span class="re__caso-tiempo">· 3 ms</span></li>
+            <li class="re__caso"><span class="re__marca re__marca--ok">✓</span><span class="re__caso-nombre">Caso 2 · 10⁵ nodos</span><span class="re__caso-tiempo">· 150 ms</span></li>
+            <li class="re__caso"><span class="re__marca re__marca--ok">✓</span><span class="re__caso-nombre">Caso 3 · aristas de peso 0</span><span class="re__caso-tiempo">· 5 ms</span></li>
+            <li class="re__caso"><span class="re__marca re__marca--ok">✓</span><span class="re__caso-nombre">Caso 4 · grafo desconectado</span><span class="re__caso-tiempo">· 4 ms</span></li>
+          </ul>
+          <p class="re__resumen">4 de 4 casos correctos</p>
+        </section>
+
+        <form class="re__caja re__comentario" action="entregas.html">
+          <div class="campo re__campo">
+            <label class="re__caja-titulo" for="re-comentario-ana">Comentario para Ana</label>
+            <textarea class="campo__input re__textarea" id="re-comentario-ana" name="comentario" rows="4" required minlength="10" maxlength="400">Excelente solución: limpia, eficiente y maneja bien los nodos inalcanzables.</textarea>
+            <p class="campo__error">Escribe un comentario de al menos 10 caracteres.</p>
+          </div>
+          <div class="re__acciones">
+            <a class="boton boton--peligro re__boton" href="entregas.html">Pedir corrección</a>
+            <a class="boton re__boton" href="entregas.html">Aprobar +40 XP</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

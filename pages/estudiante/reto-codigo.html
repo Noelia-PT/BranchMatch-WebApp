@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reto 3: Dijkstra con colas de prioridad · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 27 · Reto 3: Dijkstra con colas de prioridad · Responsable: P4 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="inicio.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="inicio.html">Inicio</a></li>
+          <li><a class="header__link" href="mi-party.html">Parties</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link header__link--activo" href="retos.html" aria-current="page">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LV 5</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">TC</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Pantalla 28 · Reto entregado: es esta misma página; se activa con href="#entregado" (:target) -->
+  <main class="contenedor rc">
+    <a class="rc__volver" href="retos.html">
+      <img class="rc__volver-icono" src="../../assets/icons/reto-volver.svg" alt="">
+      <span>Volver a Mis retos</span>
+    </a>
+
+    <p class="rc__aviso" id="entregado" role="status">
+      <span class="rc__aviso-check" aria-hidden="true">✓</span>
+      <span class="rc__aviso-texto">¡Listo! Tu archivo se envió. Edson lo revisará y te avisaremos cuando tenga nota.</span>
+      <a class="rc__deshacer" href="reto-codigo.html">DESHACER</a>
+    </p>
+
+    <header class="rc__cabecera">
+      <ul class="rc__chips">
+        <li class="rc__chip rc__chip--codigo">&lt;/&gt; Reto de código</li>
+        <li class="rc__chip rc__chip--pendiente rc__solo-pendiente">Pendiente · vence el 18 de octubre</li>
+        <li class="rc__chip rc__chip--entregado rc__solo-entregado">Entregado · en revisión</li>
+        <li class="rc__chip rc__chip--xp">+40 XP</li>
+      </ul>
+      <h1 class="rc__titulo">Reto 3: Dijkstra con colas de prioridad</h1>
+
+      <ol class="rc__pasos rc__solo-pendiente" aria-label="Pasos del reto">
+        <li class="rc__paso rc__paso--activo"><span class="rc__paso-num">1</span> Lee las indicaciones</li>
+        <li class="rc__flecha" aria-hidden="true">→</li>
+        <li class="rc__paso"><span class="rc__paso-num">2</span> Resuélvelo en Codeforces</li>
+        <li class="rc__flecha" aria-hidden="true">→</li>
+        <li class="rc__paso"><span class="rc__paso-num">3</span> Envía tu archivo</li>
+      </ol>
+      <ol class="rc__pasos rc__solo-entregado" aria-label="Pasos del reto">
+        <li class="rc__paso rc__paso--hecho"><span class="rc__paso-num rc__paso-num--hecho">✓</span> Lee las indicaciones</li>
+        <li class="rc__flecha" aria-hidden="true">→</li>
+        <li class="rc__paso rc__paso--hecho"><span class="rc__paso-num rc__paso-num--hecho">✓</span> Resuélvelo en Codeforces</li>
+        <li class="rc__flecha" aria-hidden="true">→</li>
+        <li class="rc__paso rc__paso--entregado"><span class="rc__paso-num">3</span> Envía tu archivo</li>
+      </ol>
+    </header>
+
+    <div class="rc__fila">
+      <section class="rc__tarjeta rc__indicaciones" aria-labelledby="rc-indicaciones">
+        <div class="rc__encabezado">
+          <span class="rc__numero">1</span>
+          <h2 class="rc__subtitulo" id="rc-indicaciones">Lee las indicaciones</h2>
+        </div>
+        <p class="rc__meta">Publicado por: Edson Mendiolaza · Líder<br>Tema: Grafos · Dificultad: Media</p>
+        <hr class="rc__divisor">
+        <ol class="rc__lista">
+          <li class="rc__item"><span class="rc__item-num">1</span><span>Lee un grafo dirigido con n nodos y m aristas con peso.</span></li>
+          <li class="rc__item"><span class="rc__item-num">2</span><span>Encuentra el camino más corto del nodo 1 al nodo n.</span></li>
+          <li class="rc__item"><span class="rc__item-num">3</span><span>Usa Dijkstra con cola de prioridad; si no hay camino, imprime -1.</span></li>
+        </ol>
+      </section>
+
+      <section class="rc__tarjeta rc__plataforma" aria-labelledby="rc-plataforma">
+        <div class="rc__encabezado">
+          <span class="rc__numero">2</span>
+          <h2 class="rc__subtitulo" id="rc-plataforma">Resuélvelo en Codeforces</h2>
+        </div>
+        <p class="rc__texto">El enunciado completo, los ejemplos y el juez están en la plataforma. Cuando te salga «Accepted», guarda tu código.</p>
+        <p class="rc__enlace">
+          <img class="rc__enlace-icono" src="../../assets/icons/reto-pin.svg" alt="">
+          <span>codeforces.com/problemset/problem/20/C</span>
+        </p>
+        <a class="boton boton--bloque rc__boton" href="https://codeforces.com/problemset/problem/20/C" target="_blank" rel="noopener">Abrir en Codeforces →</a>
+        <div class="rc__popa">
+          <img class="rc__popa-img" src="../../assets/img/popa-radar.gif" alt="Popa con su radar">
+          <p class="rc__popa-texto">Se abre en una pestaña nueva. Branch Match se queda abierto aquí.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="rc__tarjeta rc__entrega" aria-labelledby="rc-entrega">
+      <div class="rc__encabezado">
+        <span class="rc__numero">3</span>
+        <h2 class="rc__subtitulo" id="rc-entrega">Envía tu solución</h2>
+      </div>
+
+      <h3 class="rc__seccion">Estado de la entrega</h3>
+      <table class="rc__tabla">
+        <caption class="visualmente-oculto">Estado de la entrega</caption>
+        <tbody>
+          <tr class="rc__fila-tabla">
+            <th class="rc__etiqueta" scope="row">Estado de la entrega</th>
+            <td class="rc__valor rc__valor--estado">
+              <span class="rc__solo-pendiente">No entregado</span>
+              <span class="rc__solo-entregado">Enviado para calificar</span>
+            </td>
+          </tr>
+          <tr class="rc__fila-tabla">
+            <th class="rc__etiqueta" scope="row">Estado de la calificación</th>
+            <td class="rc__valor">
+              <span class="rc__solo-pendiente">Sin calificar</span>
+              <span class="rc__solo-entregado">Sin calificar · en revisión del líder</span>
+            </td>
+          </tr>
+          <tr class="rc__fila-tabla">
+            <th class="rc__etiqueta" scope="row">Fecha de entrega</th>
+            <td class="rc__valor">sábado, 18 de octubre de 2026, 23:59</td>
+          </tr>
+          <tr class="rc__fila-tabla">
+            <th class="rc__etiqueta" scope="row">Tiempo restante</th>
+            <td class="rc__valor rc__valor--tiempo">3 días 6 horas</td>
+          </tr>
+          <tr class="rc__fila-tabla">
+            <th class="rc__etiqueta" scope="row">Intentos</th>
+            <td class="rc__valor">
+              <span class="rc__solo-pendiente">0 de 3 usados</span>
+              <span class="rc__solo-entregado">1 de 3 usados</span>
+            </td>
+          </tr>
+          <tr class="rc__fila-tabla">
+            <th class="rc__etiqueta" scope="row">Última modificación</th>
+            <td class="rc__valor">
+              <span class="rc__solo-pendiente">—</span>
+              <span class="rc__solo-entregado">miércoles, 15 de octubre de 2026, 21:40</span>
+            </td>
+          </tr>
+          <tr class="rc__fila-tabla">
+            <th class="rc__etiqueta" scope="row">Comentarios de la entrega</th>
+            <td class="rc__valor rc__valor--comentarios">
+              <details>
+                <summary>Comentarios (0)</summary>
+                <p class="rc__vacio">Aún no hay comentarios.</p>
+              </details>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="rc__divisor">
+
+      <form class="rc__agregar rc__solo-pendiente" action="reto-codigo.html#entregado" method="get">
+        <h3 class="rc__seccion">Agregar entrega</h3>
+        <div class="rc__zona">
+          <img class="rc__zona-icono" src="../../assets/icons/reto-archivo.svg" alt="">
+          <p class="rc__zona-titulo">Arrastra y suelta tu archivo aquí</p>
+          <p class="rc__zona-o">o</p>
+          <label class="rc__seleccionar" for="archivo">Seleccionar archivo</label>
+          <input class="visualmente-oculto" id="archivo" name="archivo" type="file" accept=".doc,.docx,.pdf,.png,.jpg,.jpeg" required>
+          <p class="campo__error"> Selecciona un documento Word, PDF o una imagen PNG/JPG de máximo 5 MB. </p>
+          <p class="rc__zona-tipos"> Formatos permitidos: Word (.doc, .docx), PDF (.pdf), PNG (.png) y JPG (.jpg, .jpeg). Tamaño máximo: 5 MB. Máximo 1 archivo. </p>
+        </div>
+        <div class="rc__acciones">
+          <a class="boton rc__boton" href="#entregado">Enviar archivo</a>
+          <a class="boton boton--secundario rc__boton" href="retos.html">Guardar cambios</a>
+          <a class="boton boton--secundario rc__boton" href="retos.html">Cancelar</a>
+        </div>
+        <p class="rc__nota">«Enviar archivo» entrega tu solución al líder para que la califique. «Guardar cambios» la guarda sin enviarla.</p>
+      </form>
+
+      <div class="rc__enviado rc__solo-entregado">
+        <h3 class="rc__seccion">Archivo enviado</h3>
+        <div class="rc__archivo">
+          <span class="rc__archivo-tipo">PNG</span>
+          <div class="rc__archivo-info">
+            <p class="rc__archivo-nombre">dijkstra_tomas.png</p>
+            <p class="rc__archivo-detalle">3 KB · subido el 15 de octubre, 21:40 · ✓ Recibido</p>
+          </div>
+          <a class="rc__archivo-ver" href="#entregado">Ver archivo</a>
+        </div>
+        <div class="rc__ayuda">
+          <img class="rc__ayuda-img" src="../../assets/img/popa-derecha-check.gif" alt="Popa celebrando tu entrega">
+          <p class="rc__ayuda-texto">Has utilizado 1 de 3 intentos: todavía puedes realizar 2 intentos más antes de la fecha límite. Si Edson solicita correcciones, revisa sus comentarios antes de volver a enviar tu solución.</p>
+        </div>
+        <div class="rc__acciones">
+          <a class="boton rc__boton" href="reto-codigo.html">Volver a enviar</a>
+          <a class="boton boton--secundario rc__boton" href="retos.html">Ir a Mis retos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Completa tu perfil · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 09 · Completa tu perfil · Responsable: P2 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="inicio.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="inicio.html">Inicio</a></li>
+          <li><a class="header__link" href="mi-party.html">Parties</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LV 5</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">TC</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor completa">
+    <div class="completa__layout">
+      <section class="completa__intro">
+        <p class="chip chip--menta completa__paso">Paso 3 de 3 · Tu Player Card</p>
+        <h1 class="completa__titulo">Completa tu perf&zwnj;il</h1>
+        <p class="completa__subtitulo texto-secundario">Esto es lo que verán los líderes cuando revisen tu solicitud.</p>
+      </section>
+
+      <form class="tarjeta formulario completa__form" action="inicio.html" method="get">
+        <div class="completa__fila">
+          <div class="campo">
+            <label class="campo__label" for="jugador">Nombre de jugador</label>
+            <input class="campo__input completa__input" id="jugador" name="jugador" type="text" placeholder="@tomas_dev" required minlength="3">
+            <p class="campo__error">Escribe tu nombre de jugador (mínimo 3 caracteres).</p>
+          </div>
+          <div class="campo">
+            <label class="campo__label" for="github">Repositorio de GitHub</label>
+            <input class="campo__input completa__input" id="github" name="github" type="url" placeholder="github.com/usuario">
+            <p class="campo__error">Ingresa un enlace válido de GitHub.</p>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label class="campo__label" for="biografia">Biografía breve</label>
+          <textarea class="campo__input completa__input completa__bio" id="biografia" name="biografia" maxlength="300" placeholder="Cuéntales qué te gusta resolver y cómo trabajas en equipo…"></textarea>
+        </div>
+
+        <fieldset class="completa__grupo">
+          <legend class="campo__label completa__leyenda">Lenguajes que dominas</legend>
+          <ul class="completa__opciones">
+            <li><label class="completa__opcion"><input class="completa__check visualmente-oculto" type="checkbox" name="lenguajes" value="cpp" checked><span class="completa__opcion-texto">C++</span></label></li>
+            <li><label class="completa__opcion"><input class="completa__check visualmente-oculto" type="checkbox" name="lenguajes" value="python" checked><span class="completa__opcion-texto">Python</span></label></li>
+            <li><label class="completa__opcion"><input class="completa__check visualmente-oculto" type="checkbox" name="lenguajes" value="java"><span class="completa__opcion-texto">Java</span></label></li>
+            <li><label class="completa__opcion"><input class="completa__check visualmente-oculto" type="checkbox" name="lenguajes" value="javascript"><span class="completa__opcion-texto">JavaScript</span></label></li>
+            <li><label class="completa__opcion"><input class="completa__check visualmente-oculto" type="checkbox" name="lenguajes" value="kotlin"><span class="completa__opcion-texto">Kotlin</span></label></li>
+            <li><a class="completa__opcion-texto" href="#">+ Añadir</a></li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="completa__grupo">
+          <legend class="campo__label completa__leyenda">Temas favoritos</legend>
+          <ul class="completa__opciones">
+            <li><label class="completa__opcion completa__opcion--tema"><input class="completa__check visualmente-oculto" type="checkbox" name="temas" value="grafos" checked><span class="completa__opcion-texto">Grafos</span></label></li>
+            <li><label class="completa__opcion completa__opcion--tema"><input class="completa__check visualmente-oculto" type="checkbox" name="temas" value="dp"><span class="completa__opcion-texto">DP</span></label></li>
+            <li><label class="completa__opcion completa__opcion--tema"><input class="completa__check visualmente-oculto" type="checkbox" name="temas" value="geometria"><span class="completa__opcion-texto">Geometría</span></label></li>
+            <li><label class="completa__opcion completa__opcion--tema"><input class="completa__check visualmente-oculto" type="checkbox" name="temas" value="strings" checked><span class="completa__opcion-texto">Strings</span></label></li>
+            <li><label class="completa__opcion completa__opcion--tema"><input class="completa__check visualmente-oculto" type="checkbox" name="temas" value="matematica"><span class="completa__opcion-texto">Matemática</span></label></li>
+          </ul>
+        </fieldset>
+
+        <div class="completa__acciones">
+          <a class="boton" href="inicio.html">Guardar perf&zwnj;il</a>
+          <a class="completa__omitir" href="inicio.html">Omitir por ahora</a>
+        </div>
+      </form>
+
+      <aside class="completa__preview" aria-label="Vista previa de tu Player Card">
+        <p class="texto-stats texto-secundario">Vista previa</p>
+        <article class="tarjeta completa__player">
+          <header class="completa__player-encabezado">
+            <span class="avatar avatar--grande">TC</span>
+            <div class="completa__jugador">
+              <h2 class="completa__nombre">Tomas Carbajal</h2>
+              <p class="completa__usuario texto-secundario">@tomas_dev</p>
+            </div>
+            <span class="chip chip--amarillo completa__nivel">LV 5</span>
+          </header>
+
+          <section class="completa__dato">
+            <h3 class="etiqueta-seccion">Especialidad</h3>
+            <p class="completa__especialidad">Grafos · Strings</p>
+          </section>
+
+          <section class="completa__dato">
+            <h3 class="etiqueta-seccion">Lenguajes</h3>
+            <ul class="completa__tags">
+              <li><span class="chip chip--celeste completa__tag">C++</span></li>
+              <li><span class="chip chip--menta completa__tag">Python</span></li>
+              <li><span class="chip completa__tag">Java</span></li>
+            </ul>
+          </section>
+
+          <section class="completa__stats">
+            <h3 class="etiqueta-seccion">Stats</h3>
+            <ul class="completa__stats-lista">
+              <li class="completa__stat">
+                <span class="completa__stat-nombre">Algoritmos</span>
+                <span class="completa__stat-barra"><span class="completa__stat-relleno completa__stat-relleno--82"></span></span>
+                <span class="texto-stats">82</span>
+              </li>
+              <li class="completa__stat">
+                <span class="completa__stat-nombre">Estructuras de datos</span>
+                <span class="completa__stat-barra"><span class="completa__stat-relleno completa__stat-relleno--70"></span></span>
+                <span class="texto-stats">70</span>
+              </li>
+              <li class="completa__stat">
+                <span class="completa__stat-nombre">Matemática</span>
+                <span class="completa__stat-barra"><span class="completa__stat-relleno completa__stat-relleno--64"></span></span>
+                <span class="texto-stats">64</span>
+              </li>
+              <li class="completa__stat">
+                <span class="completa__stat-nombre">Velocidad</span>
+                <span class="completa__stat-barra"><span class="completa__stat-relleno completa__stat-relleno--75"></span></span>
+                <span class="texto-stats">75</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="completa__dato">
+            <h3 class="etiqueta-seccion">Logros</h3>
+            <ul class="completa__tags">
+              <li><span class="chip chip--logro">Top 3 regional</span></li>
+              <li><span class="chip chip--logro">50 problemas</span></li>
+              <li><span class="chip chip--logro">Racha 7 días</span></li>
+            </ul>
+          </section>
+
+          <div class="barra-xp completa__xp">
+            <p class="barra-xp__encabezado"><span class="barra-xp__nivel">LV 5</span><span>1500 / 2000 XP</span></p>
+            <span class="barra-xp__pista"><span class="barra-xp__relleno barra-xp__relleno--75"></span></span>
+          </div>
+        </article>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar sesión · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="auth auth--login">
+  <!-- Figma: pantalla 03 · Iniciar sesión · Responsable: P1 -->
+  <header class="auth-header">
+    <div class="contenedor auth-header__contenido">
+      <a class="header__logo auth-header__logo" href="../../index.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <a class="boton auth-header__volver" href="../../index.html">Volver</a>
+    </div>
+  </header>
+
+  <main class="contenedor auth__main">
+    <section class="auth-tarjeta auth-tarjeta--ancha" aria-labelledby="login-titulo">
+      <div class="auth-tarjeta__encabezado">
+        <h1 class="titulo-display auth-tarjeta__titulo" id="login-titulo">¡BIENVENIDO DE VUELTA!</h1>
+        <p class="auth-tarjeta__subtitulo">Continúa codeando con tu team</p>
+      </div>
+
+      <form class="formulario auth-formulario auth-formulario--angosto" action="../estudiante/inicio.html" method="get">
+        <div class="campo">
+          <label class="campo__label auth-formulario__label" for="usuario">Correo o usuario</label>
+          <input class="campo__input" id="usuario" name="usuario" type="text" placeholder="@papita_frita" required minlength="3" autocomplete="username">
+          <p class="campo__error">Escribe tu correo o tu nombre de usuario.</p>
+        </div>
+
+        <div class="campo">
+          <label class="campo__label auth-formulario__label" for="contrasena">Contraseña</label>
+          <div class="campo__con-icono">
+            <input class="campo__input" id="contrasena" name="contrasena" type="password" placeholder="Tu contraseña" required minlength="8" autocomplete="current-password">
+            <img class="campo__icono" src="../../assets/icons/ojo.svg" alt="">
+          </div>
+          <p class="campo__error">Escribe tu contraseña (mínimo 8 caracteres).</p>
+        </div>
+
+        <div class="campo campo--check">
+          <input class="campo__check" id="recordar" name="recordar" type="checkbox" checked>
+          <label class="auth-formulario__check-label" for="recordar">Recordar</label>
+        </div>
+
+        <fieldset class="auth-rol">
+          <legend class="auth-rol__titulo">Entrar como:</legend>
+          <div class="auth-rol__opciones">
+            <div class="auth-rol__opcion">
+              <input class="auth-rol__radio visualmente-oculto" id="rol-estudiante" name="rol" type="radio" value="estudiante" checked>
+              <label class="auth-rol__pastilla" for="rol-estudiante">Estudiante</label>
+            </div>
+            <div class="auth-rol__opcion">
+              <input class="auth-rol__radio visualmente-oculto" id="rol-lider" name="rol" type="radio" value="lider">
+              <label class="auth-rol__pastilla" for="rol-lider">Líder</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <a class="boton auth-formulario__boton auth-formulario__boton--estudiante" href="../estudiante/inicio.html">Iniciar sesión</a>
+        <a class="boton auth-formulario__boton auth-formulario__boton--lider" href="../lider/panel.html">Iniciar sesión</a>
+      </form>
+
+      <p class="auth-tarjeta__pie"><a class="auth-tarjeta__link" href="#">¿Olvidaste tu contraseña?</a></p>
+      <p class="auth-tarjeta__pie auth-tarjeta__pie--derecha">¿No tienes una cuenta? <a class="auth-tarjeta__link" href="crear-cuenta.html">Regístrate</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

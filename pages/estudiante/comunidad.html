@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comunidad · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 34 · Comunidad · Responsable: P3 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="inicio.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="inicio.html">Inicio</a></li>
+          <li><a class="header__link" href="mi-party.html">Parties</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link header__link--activo" href="comunidad.html" aria-current="page">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LV 5</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">TC</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor cmu">
+    <header class="cmu__intro">
+      <h1 class="titulo-1">Comunidad</h1>
+      <p class="cmu__subtitulo">Comparte soluciones, dudas y logros con otros programadores.</p>
+    </header>
+
+    <form class="tarjeta cmu__compositor" aria-label="Nueva publicación">
+      <div class="cmu__fila">
+        <span class="cmu__avatar" aria-hidden="true">TC</span>
+        <div class="campo cmu__campo">
+          <label class="campo__label visualmente-oculto" for="cmu-publicacion">¿Qué quieres compartir hoy?</label>
+          <input class="campo__input cmu__input" id="cmu-publicacion" name="publicacion" type="text" placeholder="¿Qué quieres compartir hoy?" required minlength="1" maxlength="280">
+          <p class="campo__error">Escribe algo para publicar.</p>
+        </div>
+      </div>
+      <div class="cmu__acciones">
+        <ul class="cmu__etiquetas">
+          <li><a class="cmu__etiqueta" href="#">+ Código</a></li>
+          <li><a class="cmu__etiqueta" href="#">+ Imagen</a></li>
+          <li><a class="cmu__etiqueta" href="#">+ Etiqueta</a></li>
+        </ul>
+        <a class="boton cmu__publicar" href="#">Publicar</a>
+      </div>
+    </form>
+
+    <section class="cmu__tendencias" aria-labelledby="cmu-tendencias">
+      <h2 class="cmu__tendencias-titulo" id="cmu-tendencias">Tendencias <img class="cmu__fuego" src="../../assets/icons/comunidad-fuego.svg" alt=""></h2>
+      <div class="cmu__tend-lista">
+        <article class="cmu__tend">
+          <p class="cmu__tend-usuario"><img class="cmu__tend-foto" src="../../assets/icons/comunidad-usuario.svg" alt="">@ProfeJuan</p>
+          <p class="cmu__tend-contenido"><img class="cmu__tend-pagina" src="../../assets/icons/comunidad-pagina.svg" alt=""><span>Solución explicada: Dijkstra vs<br>Floyd-Warshall</span></p>
+          <p class="cmu__tend-datos">
+            <span class="cmu__tend-dato"><img class="cmu__tend-icono" src="../../assets/icons/comunidad-ojo.svg" alt="">300 vistas</span>
+            <span class="cmu__tend-dato"><img class="cmu__tend-icono" src="../../assets/icons/comunidad-respuestas.svg" alt="">30 respuestas</span>
+          </p>
+        </article>
+        <article class="cmu__tend">
+          <p class="cmu__tend-usuario"><img class="cmu__tend-foto" src="../../assets/icons/comunidad-usuario.svg" alt="">@ProfeJuan</p>
+          <p class="cmu__tend-contenido"><img class="cmu__tend-pagina" src="../../assets/icons/comunidad-pagina.svg" alt=""><span>Solución explicada: Dijkstra vs<br>Floyd-Warshall</span></p>
+          <p class="cmu__tend-datos">
+            <span class="cmu__tend-dato"><img class="cmu__tend-icono" src="../../assets/icons/comunidad-ojo.svg" alt="">300 vistas</span>
+            <span class="cmu__tend-dato"><img class="cmu__tend-icono" src="../../assets/icons/comunidad-respuestas.svg" alt="">30 respuestas</span>
+          </p>
+        </article>
+        <article class="cmu__tend">
+          <p class="cmu__tend-usuario"><img class="cmu__tend-foto" src="../../assets/icons/comunidad-usuario.svg" alt="">@ProfeJuan</p>
+          <p class="cmu__tend-contenido"><img class="cmu__tend-pagina" src="../../assets/icons/comunidad-pagina.svg" alt=""><span>Solución explicada: Dijkstra vs<br>Floyd-Warshall</span></p>
+          <p class="cmu__tend-datos">
+            <span class="cmu__tend-dato"><img class="cmu__tend-icono" src="../../assets/icons/comunidad-ojo.svg" alt="">300 vistas</span>
+            <span class="cmu__tend-dato"><img class="cmu__tend-icono" src="../../assets/icons/comunidad-respuestas.svg" alt="">30 respuestas</span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cmu__feed" aria-labelledby="cmu-feed">
+      <h2 class="visualmente-oculto" id="cmu-feed">Publicaciones</h2>
+      <article class="cmu__pub">
+        <header class="cmu__pub-cab">
+          <span class="cmu__avatar cmu__avatar--rosa" aria-hidden="true">PO</span>
+          <div class="cmu__pub-info">
+            <h3 class="cmu__pub-nombre">pollitopio</h3>
+            <p class="cmu__pub-hace">hace 2 h</p>
+          </div>
+          <span class="chip chip--celeste cmu__tag">Grafos</span>
+        </header>
+        <p class="cmu__pub-texto">¿Alguien más se trabó con el problema de caminos mínimos de ayer? Comparto mi solución con Dijkstra y una cola de prioridad. Feedback bienvenido.</p>
+        <p class="cmu__pub-stats">
+          <span class="cmu__likes">♥ 24 Me gusta</span>
+          <span class="cmu__coments">8 comentarios</span>
+        </p>
+      </article>
+      <article class="cmu__pub">
+        <header class="cmu__pub-cab">
+          <span class="cmu__avatar cmu__avatar--menta" aria-hidden="true">AG</span>
+          <div class="cmu__pub-info">
+            <h3 class="cmu__pub-nombre">Ana Gutiérrez</h3>
+            <p class="cmu__pub-hace">hace 5 h</p>
+          </div>
+          <span class="chip chip--celeste cmu__tag">Logro</span>
+        </header>
+        <p class="cmu__pub-texto">¡Llegamos al top 10 del concurso interno con Los Insanos! Gracias party por las sesiones de los jueves.</p>
+        <p class="cmu__pub-stats">
+          <span class="cmu__likes">♥ 57 Me gusta</span>
+          <span class="cmu__coments">12 comentarios</span>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

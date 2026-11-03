@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 11 · Inicio (feed) · Responsable: P3 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="inicio.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link header__link--activo" href="inicio.html" aria-current="page">Inicio</a></li>
+          <li><a class="header__link" href="mi-party.html">Parties</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LV 5</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">TC</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor ifd">
+    <h1 class="visualmente-oculto">Inicio</h1>
+
+    <div class="ifd__izq">
+      <section class="tarjeta ifd__perfil" aria-labelledby="ifd-perfil">
+        <h2 class="ifd__perfil-nombre" id="ifd-perfil"><a href="perfil.html">Tomas Carbajal</a></h2>
+        <a class="ifd__perfil-foto" href="perfil.html" aria-label="Ver mi perfil"><img class="ifd__perfil-img" src="../../assets/img/inicio-avatar.png" alt="Foto de Tomas Carbajal"></a>
+        <p class="ifd__perfil-usuario">@tomas_dev</p>
+        <p class="ifd__perfil-chips">
+          <span class="chip chip--amarillo ifd__chip">LV 5</span>
+          <span class="chip chip--rosa ifd__chip ifd__chip--racha"><img class="ifd__racha" src="../../assets/icons/inicio-fuego.svg" alt="">7 días</span>
+        </p>
+        <p class="ifd__perfil-party">· Los Insanos</p>
+        <a class="ifd__perfil-xp" href="rendimiento.html" aria-label="Ver mi resumen de rendimiento">
+          <span class="barra-xp">
+            <span class="barra-xp__encabezado"><span class="barra-xp__nivel">LV 5</span><span>1500 / 2000 XP</span></span>
+            <span class="barra-xp__pista"><span class="barra-xp__relleno barra-xp__relleno--75"></span></span>
+          </span>
+        </a>
+        <a class="ifd__perfil-enlace" href="perfil.html">Ver mi Player Card</a>
+      </section>
+
+      <nav class="tarjeta ifd__accesos" aria-label="Accesos rápidos">
+        <ul class="ifd__accesos-lista">
+          <li><a class="ifd__acceso" href="mi-party.html"><img class="ifd__acceso-icono" src="../../assets/icons/inicio-personas.svg" alt="">Mi party</a></li>
+          <li><a class="ifd__acceso" href="retos.html"><img class="ifd__acceso-icono" src="../../assets/icons/inicio-trofeo.svg" alt="">Mis retos</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <form class="tarjeta ifd__compositor" aria-label="Nueva publicación">
+      <div class="ifd__compositor-fila">
+        <img class="ifd__compositor-img" src="../../assets/img/inicio-avatar.png" alt="">
+        <div class="campo ifd__compositor-campo">
+          <label class="campo__label visualmente-oculto" for="ifd-publicacion">¿Qué quieres compartir hoy?</label>
+          <input class="campo__input ifd__input" id="ifd-publicacion" name="publicacion" type="text" placeholder="¿Qué quieres compartir hoy?" required minlength="1" maxlength="280">
+          <p class="campo__error">Escribe algo para publicar.</p>
+        </div>
+      </div>
+      <div class="ifd__compositor-pie">
+        <a class="ifd__foto-boton" href="#"><img class="ifd__foto-icono" src="../../assets/icons/inicio-camara.svg" alt="">Foto</a>
+        <a class="boton ifd__publicar" href="#">Publicar</a>
+      </div>
+    </form>
+
+    <div class="ifd__der">
+      <section class="tarjeta ifd__lateral" aria-labelledby="ifd-parties">
+        <h2 class="ifd__lateral-titulo" id="ifd-parties">Parties que buscan gente</h2>
+        <ul class="ifd__parties">
+          <li class="ifd__party">
+            <span class="ifd__party-sigla ifd__party-sigla--menta" aria-hidden="true">BB</span>
+            <span class="ifd__party-datos"><span class="ifd__party-nombre">Bit Busters</span><span class="ifd__party-nivel">Nivel 4–6 · 1 lugar</span></span>
+            <a class="ifd__ver" href="unete-party.html" aria-label="Ver la party Bit Busters"><img class="ifd__ver-img" src="../../assets/icons/inicio-ojo.svg" alt=""></a>
+          </li>
+          <li class="ifd__party">
+            <span class="ifd__party-sigla ifd__party-sigla--rosa" aria-hidden="true">NP</span>
+            <span class="ifd__party-datos"><span class="ifd__party-nombre">Null Pointers</span><span class="ifd__party-nivel">Nivel 2–4 · 3 lugares</span></span>
+            <a class="ifd__ver" href="unete-party.html" aria-label="Ver la party Null Pointers"><img class="ifd__ver-img" src="../../assets/icons/inicio-ojo.svg" alt=""></a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="tarjeta ifd__lateral ifd__lateral--concurso" aria-labelledby="ifd-concurso">
+        <h2 class="ifd__lateral-titulo ifd__lateral-titulo--icono" id="ifd-concurso"><img class="ifd__calendario" src="../../assets/icons/inicio-calendario.svg" alt="">Próximo concurso</h2>
+        <p class="ifd__concurso-dato">Codeforces Round · Sáb 18 oct, 9:00</p>
+        <div class="ifd__concurso-pie">
+          <span class="chip chip--amarillo ifd__chip">Faltan 3 días</span>
+          <a class="ifd__ver" href="#" aria-label="Ver el concurso"><img class="ifd__ver-img" src="../../assets/icons/inicio-ojo.svg" alt=""></a>
+        </div>
+      </section>
+    </div>
+
+    <section class="ifd__feed" aria-labelledby="ifd-feed">
+      <h2 class="visualmente-oculto" id="ifd-feed">Publicaciones</h2>
+      <p class="ifd__nuevas"><a class="chip chip--celeste ifd__chip" href="#">↑ 3 publicaciones nuevas</a></p>
+      <article class="ifd__pub">
+        <header class="ifd__pub-cab">
+          <span class="ifd__pub-avatar" aria-hidden="true">AG</span>
+          <div class="ifd__pub-info">
+            <div class="ifd__pub-titulo">
+              <h3 class="ifd__autor">Ana Gutiérrez</h3>
+              <span class="chip chip--amarillo ifd__chip">LV 4</span>
+            </div>
+            <p class="ifd__meta">Los Insanos · hace 1 h</p>
+          </div>
+          <a class="ifd__puntos" href="#" aria-label="Más opciones de la publicación"><img class="ifd__puntos-img" src="../../assets/icons/inicio-puntos.svg" alt=""></a>
+        </header>
+        <p class="ifd__texto">¡Top 10 en el concurso interno! 🏆 Gracias Los Insanos por las sesiones de los jueves.</p>
+        <img class="ifd__foto" src="../../assets/img/inicio-publicacion-concurso.png" alt="Foto del equipo con su premio en el concurso">
+        <div class="ifd__pub-pie">
+          <p class="ifd__conteo">♥ 57 · 12 comentarios</p>
+          <ul class="ifd__acciones">
+            <li><a class="ifd__accion ifd__accion--like" href="#"><img class="ifd__me-gusta" src="../../assets/icons/inicio-me-gusta.svg" alt="">Me gusta</a></li>
+            <li><a class="ifd__accion" href="#"><img class="ifd__accion-icono" src="../../assets/icons/inicio-mensaje.svg" alt="">Comentar</a></li>
+            <li><a class="ifd__accion" href="#"><img class="ifd__accion-icono" src="../../assets/icons/inicio-compartir.svg" alt="">Compartir</a></li>
+          </ul>
+        </div>
+      </article>
+      <article class="ifd__pub">
+        <header class="ifd__pub-cab">
+          <span class="ifd__pub-avatar" aria-hidden="true">P</span>
+          <div class="ifd__pub-info">
+            <div class="ifd__pub-titulo">
+              <h3 class="ifd__autor">Pollitopio</h3>
+              <span class="chip chip--amarillo ifd__chip">LV 4</span>
+            </div>
+            <p class="ifd__meta">Los Insanos · hace 1 h</p>
+          </div>
+          <a class="ifd__puntos" href="#" aria-label="Más opciones de la publicación"><img class="ifd__puntos-img" src="../../assets/icons/inicio-puntos.svg" alt=""></a>
+        </header>
+        <p class="ifd__texto">Ya pero... python&gt;&gt;&gt;</p>
+        <div class="ifd__pub-pie">
+          <p class="ifd__conteo">♥ 57 · 12 comentarios</p>
+          <ul class="ifd__acciones">
+            <li><a class="ifd__accion ifd__accion--like" href="#"><img class="ifd__me-gusta" src="../../assets/icons/inicio-me-gusta.svg" alt="">Me gusta</a></li>
+            <li><a class="ifd__accion" href="#"><img class="ifd__accion-icono" src="../../assets/icons/inicio-mensaje.svg" alt="">Comentar</a></li>
+            <li><a class="ifd__accion" href="#"><img class="ifd__accion-icono" src="../../assets/icons/inicio-compartir.svg" alt="">Compartir</a></li>
+          </ul>
+        </div>
+      </article>
+      <article class="ifd__pub">
+        <header class="ifd__pub-cab">
+          <span class="ifd__pub-avatar" aria-hidden="true">E</span>
+          <div class="ifd__pub-info">
+            <div class="ifd__pub-titulo">
+              <h3 class="ifd__autor">Edson Mendiolaza</h3>
+              <span class="chip chip--amarillo ifd__chip">Lider</span>
+            </div>
+            <p class="ifd__meta">Los Insanos · hace 1 h</p>
+          </div>
+          <a class="ifd__puntos" href="#" aria-label="Más opciones de la publicación"><img class="ifd__puntos-img" src="../../assets/icons/inicio-puntos.svg" alt=""></a>
+        </header>
+        <p class="ifd__texto">Hackaton 18/09. Invitados!</p>
+        <div class="ifd__pub-pie">
+          <p class="ifd__conteo">♥ 57 · 12 comentarios</p>
+          <ul class="ifd__acciones">
+            <li><a class="ifd__accion ifd__accion--like" href="#"><img class="ifd__me-gusta" src="../../assets/icons/inicio-me-gusta.svg" alt="">Me gusta</a></li>
+            <li><a class="ifd__accion" href="#"><img class="ifd__accion-icono" src="../../assets/icons/inicio-mensaje.svg" alt="">Comentar</a></li>
+            <li><a class="ifd__accion" href="#"><img class="ifd__accion-icono" src="../../assets/icons/inicio-compartir.svg" alt="">Compartir</a></li>
+          </ul>
+        </div>
+      </article>
+      <article class="ifd__pub">
+        <header class="ifd__pub-cab">
+          <span class="ifd__pub-avatar" aria-hidden="true">PF</span>
+          <div class="ifd__pub-info">
+            <div class="ifd__pub-titulo">
+              <h3 class="ifd__autor">Papita Frita</h3>
+              <span class="chip chip--amarillo ifd__chip">LV 10</span>
+            </div>
+            <p class="ifd__meta">Los Insanos · hace 1 h</p>
+          </div>
+          <a class="ifd__puntos" href="#" aria-label="Más opciones de la publicación"><img class="ifd__puntos-img" src="../../assets/icons/inicio-puntos.svg" alt=""></a>
+        </header>
+        <p class="ifd__texto">Gracias!</p>
+        <img class="ifd__foto ifd__foto--retrato" src="../../assets/img/inicio-publicacion-codigo.png" alt="Foto de una taza con código en pantalla">
+        <div class="ifd__pub-pie">
+          <p class="ifd__conteo">♥ 57 · 12 comentarios</p>
+          <ul class="ifd__acciones">
+            <li><a class="ifd__accion ifd__accion--like" href="#"><img class="ifd__me-gusta" src="../../assets/icons/inicio-me-gusta.svg" alt="">Me gusta</a></li>
+            <li><a class="ifd__accion" href="#"><img class="ifd__accion-icono" src="../../assets/icons/inicio-mensaje.svg" alt="">Comentar</a></li>
+            <li><a class="ifd__accion" href="#"><img class="ifd__accion-icono" src="../../assets/icons/inicio-compartir.svg" alt="">Compartir</a></li>
+            <li><a class="ifd__accion" href="#"><img class="ifd__accion-icono" src="../../assets/icons/inicio-guardar.svg" alt="">Guardar</a></li>
+          </ul>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

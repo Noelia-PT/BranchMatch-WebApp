@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configura tu perfil de líder · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 36 · Configura tu perfil de líder · Responsable: P2 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="panel.html">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor cfg">
+    <header class="cfg__intro">
+      <h1 class="cfg__titulo">Conf&zwnj;igura tu perf&zwnj;il de líder</h1>
+      <p class="cfg__subtitulo texto-secundario">Esta información inspirará confianza a los postulantes y te ayudará a atraer el mejor talento para tu grupo.</p>
+    </header>
+
+    <form class="cfg__tarjeta" action="crea-party.html" method="get">
+      <div class="cfg__perfil">
+        <div class="cfg__foto">
+          <img class="cfg__foto-img" src="../../assets/img/edson-foto.png" alt="Foto de perfil de Edson Mendiolaza">
+          <label class="cfg__camara" for="foto">
+            <img class="cfg__camara-fondo" src="../../assets/icons/camara-fondo.svg" alt="">
+            <img class="cfg__camara-icono" src="../../assets/icons/camara-cambiar.svg" alt="Cambiar foto">
+          </label>
+          <input class="visualmente-oculto" id="foto" name="foto" type="file" accept="image/*">
+        </div>
+        <p class="cfg__usuario">@edson_mendiolaza</p>
+      </div>
+
+      <div class="cfg__derecha">
+      <div class="cfg__campos">
+          <fieldset class="cfg__grupo">
+            <legend class="cfg__leyenda">
+              <img class="cfg__leyenda-icono" src="../../assets/icons/corazon-intereses.svg" alt="">
+              <span class="cfg__leyenda-titulo">Intereses</span>
+              <span class="cfg__pista">· elige una o más</span>
+            </legend>
+            <ul class="cfg__opciones">
+            <li><label class="cfg__opcion"><input class="cfg__check" type="checkbox" name="intereses" value="algoritmos-1" checked><span class="cfg__opcion-texto">Algoritmos</span></label></li>
+            <li><label class="cfg__opcion"><input class="cfg__check" type="checkbox" name="intereses" value="algoritmos-2"><span class="cfg__opcion-texto">Algoritmos</span></label></li>
+            <li><label class="cfg__opcion"><input class="cfg__check" type="checkbox" name="intereses" value="algoritmos-3"><span class="cfg__opcion-texto">Algoritmos</span></label></li>
+            <li><label class="cfg__opcion"><input class="cfg__check" type="checkbox" name="intereses" value="algoritmos-4"><span class="cfg__opcion-texto">Algoritmos</span></label></li>
+            </ul>
+          </fieldset>
+          <fieldset class="cfg__grupo">
+            <legend class="cfg__leyenda">
+              <img class="cfg__leyenda-icono" src="../../assets/icons/objetivo.svg" alt="">
+              <span class="cfg__leyenda-titulo">Visión / metas</span>
+              <span class="cfg__pista">· elige una o más</span>
+            </legend>
+            <ul class="cfg__opciones">
+            <li><label class="cfg__opcion"><input class="cfg__check" type="checkbox" name="metas" value="algoritmos-1"><span class="cfg__opcion-texto">Algoritmos</span></label></li>
+            <li><label class="cfg__opcion"><input class="cfg__check" type="checkbox" name="metas" value="algoritmos-2"><span class="cfg__opcion-texto">Algoritmos</span></label></li>
+            <li><label class="cfg__opcion"><input class="cfg__check" type="checkbox" name="metas" value="algoritmos-3"><span class="cfg__opcion-texto">Algoritmos</span></label></li>
+            <li><label class="cfg__opcion"><input class="cfg__check" type="checkbox" name="metas" value="algoritmos-4"><span class="cfg__opcion-texto">Algoritmos</span></label></li>
+            </ul>
+          </fieldset>
+          <fieldset class="cfg__grupo">
+            <legend class="cfg__leyenda">
+              <img class="cfg__leyenda-icono" src="../../assets/icons/lenguajes.svg" alt="">
+              <span class="cfg__leyenda-titulo">Lenguajes dominantes</span>
+              <span class="cfg__pista">· elige una o más</span>
+            </legend>
+            <ul class="cfg__opciones">
+            <li><label class="cfg__opcion"><input class="cfg__check" type="checkbox" name="lenguajes" value="algoritmos-1"><span class="cfg__opcion-texto">Algoritmos</span></label></li>
+            <li><label class="cfg__opcion"><input class="cfg__check" type="checkbox" name="lenguajes" value="algoritmos-2"><span class="cfg__opcion-texto">Algoritmos</span></label></li>
+            <li><label class="cfg__opcion"><input class="cfg__check" type="checkbox" name="lenguajes" value="algoritmos-3"><span class="cfg__opcion-texto">Algoritmos</span></label></li>
+            <li><label class="cfg__opcion"><input class="cfg__check" type="checkbox" name="lenguajes" value="algoritmos-4"><span class="cfg__opcion-texto">Algoritmos</span></label></li>
+            </ul>
+          </fieldset>
+
+        <div class="campo cfg__campo">
+          <label class="campo__label" for="github">Repositorio de Github</label>
+          <input class="campo__input cfg__input" id="github" name="github" type="url" placeholder="Ingresa tu link de github">
+          <p class="campo__error">Ingresa un enlace válido de GitHub.</p>
+        </div>
+
+        <div class="campo cfg__campo">
+          <label class="campo__label" for="biografia">Biografía</label>
+          <textarea class="campo__input cfg__input cfg__bio" id="biografia" name="biografia" maxlength="300" placeholder="Breve biografía"></textarea>
+        </div>
+
+      </div>
+
+        <div class="cfg__acciones">
+          <a class="boton cfg__boton" href="crea-party.html">Completar perf&zwnj;il</a>
+          <a class="boton boton--secundario cfg__boton" href="crea-party.html">Omitir</a>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retos de la party · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 55 · Retos de la party · Responsable: P4 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="panel.html">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link header__link--activo" href="retos.html" aria-current="page">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor rl">
+    <div class="rl__titulo">
+      <h1 class="titulo-1">Retos de la party</h1>
+      <p class="rl__subtitulo">Crea retos, sigue las entregas y revisa cada solución.</p>
+    </div>
+
+    <a class="boton rl__boton rl__crear" href="crear-reto.html">+ Crear reto</a>
+
+    <form class="rl__buscar" role="search" action="retos.html">
+      <label class="visualmente-oculto" for="rl-buscar">Buscar reto</label>
+      <input class="rl__buscar-input" id="rl-buscar" name="buscar" type="search" placeholder="Buscar reto…">
+    </form>
+
+    <ul class="rl__filtros">
+      <li><a class="rl__pildora rl__pildora--amarillo" href="retos.html" aria-current="true">Activos · 3</a></li>
+      <li><a class="rl__pildora rl__pildora--borde" href="#">Cerrados · 5</a></li>
+    </ul>
+
+    <ul class="rl__lista">
+      <li class="rl__reto">
+        <div class="rl__reto-info">
+          <div class="rl__reto-cabecera">
+            <h2 class="rl__reto-titulo">Dijkstra con colas de prioridad</h2>
+            <span class="chip chip--celeste rl__tag">Grafos</span>
+          </div>
+          <p class="rl__reto-fecha">Cierra el 18 oct</p>
+        </div>
+        <div class="rl__progreso">
+          <p class="rl__progreso-texto">Entregas 3/5</p>
+          <span class="rl__barra"><span class="rl__relleno rl__relleno--menta rl__relleno--60"></span></span>
+        </div>
+        <div class="rl__reto-pie">
+          <span class="rl__pildora rl__pildora--rosa">2 por revisar</span>
+          <a class="boton rl__boton" href="entregas.html">Revisar</a>
+        </div>
+      </li>
+
+      <li class="rl__reto">
+        <div class="rl__reto-info">
+          <div class="rl__reto-cabecera">
+            <h2 class="rl__reto-titulo">Mochila 0/1</h2>
+            <span class="chip chip--celeste rl__tag">Programación dinámica</span>
+          </div>
+          <p class="rl__reto-fecha">Cierra el 19 oct</p>
+        </div>
+        <div class="rl__progreso">
+          <p class="rl__progreso-texto">Entregas 1/5</p>
+          <span class="rl__barra"><span class="rl__relleno rl__relleno--amarillo rl__relleno--20"></span></span>
+        </div>
+        <div class="rl__reto-pie">
+          <span class="rl__pildora rl__pildora--rosa">1 por revisar</span>
+          <a class="boton rl__boton" href="entregas.html">Revisar</a>
+        </div>
+      </li>
+
+      <li class="rl__reto">
+        <div class="rl__reto-info">
+          <div class="rl__reto-cabecera">
+            <h2 class="rl__reto-titulo">Palíndromos con hashing</h2>
+            <span class="chip chip--celeste rl__tag">Strings</span>
+          </div>
+          <p class="rl__reto-fecha">Cierra el 22 oct</p>
+        </div>
+        <div class="rl__progreso">
+          <p class="rl__progreso-texto">Entregas 0/5</p>
+          <span class="rl__barra"><span class="rl__relleno rl__relleno--amarillo rl__relleno--0"></span></span>
+        </div>
+        <div class="rl__reto-pie">
+          <span class="rl__pildora rl__pildora--apagada">Sin pendientes</span>
+          <a class="boton boton--secundario rl__boton" href="entregas.html">Ver detalle</a>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendario de clases · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 42 · Calendario de clases · Responsable: P3 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link header__link--activo" href="panel.html" aria-current="page">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor lcal">
+    <header class="lcal__cabecera">
+      <a class="lcal__volver" href="panel.html">
+        <img class="lcal__volver-icono" src="../../assets/icons/calendario-lider-volver.svg" alt="">
+        <span class="lcal__volver-texto">Volver</span>
+        <span class="visualmente-oculto">al panel</span>
+      </a>
+      <h1 class="lcal__titulo">Calendario de clases</h1>
+      <p class="lcal__subtitulo">Programa y gestiona las sesiones del grupo.</p>
+    </header>
+
+    <div class="lcal__cuerpo">
+      <section class="lcal__tarjeta lcal__calendario" aria-labelledby="lcal-mes">
+        <div class="lcal__mes-fila">
+          <h2 class="lcal__mes" id="lcal-mes">Octubre 2026</h2>
+          <p class="lcal__leyenda">
+            <span class="chip chip--amarillo lcal__marca">Hoy</span>
+            <span class="chip chip--celeste lcal__marca">Clase</span>
+          </p>
+        </div>
+        <div class="lcal__rejilla">
+          <ul class="lcal__semana" aria-hidden="true">
+            <li>L</li>
+            <li>M</li>
+            <li>M</li>
+            <li>J</li>
+            <li>V</li>
+            <li>S</li>
+            <li>D</li>
+          </ul>
+          <ol class="lcal__dias">
+            <li class="lcal__dia lcal__dia--vacio" aria-hidden="true"></li>
+            <li class="lcal__dia lcal__dia--vacio" aria-hidden="true"></li>
+            <li class="lcal__dia lcal__dia--vacio" aria-hidden="true"></li>
+            <li class="lcal__dia">1</li>
+            <li class="lcal__dia">2</li>
+            <li class="lcal__dia">3</li>
+            <li class="lcal__dia">4</li>
+            <li class="lcal__dia lcal__dia--clase">5<span class="visualmente-oculto"> (hay clase)</span></li>
+            <li class="lcal__dia">6</li>
+            <li class="lcal__dia">7</li>
+            <li class="lcal__dia lcal__dia--clase">8<span class="visualmente-oculto"> (hay clase)</span></li>
+            <li class="lcal__dia">9</li>
+            <li class="lcal__dia">10</li>
+            <li class="lcal__dia">11</li>
+            <li class="lcal__dia lcal__dia--clase">12<span class="visualmente-oculto"> (hay clase)</span></li>
+            <li class="lcal__dia">13</li>
+            <li class="lcal__dia">14</li>
+            <li class="lcal__dia lcal__dia--clase">15<span class="visualmente-oculto"> (hay clase)</span></li>
+            <li class="lcal__dia">16</li>
+            <li class="lcal__dia lcal__dia--hoy">17<span class="visualmente-oculto"> (hoy)</span></li>
+            <li class="lcal__dia">18</li>
+            <li class="lcal__dia lcal__dia--clase">19<span class="visualmente-oculto"> (hay clase)</span></li>
+            <li class="lcal__dia">20</li>
+            <li class="lcal__dia">21</li>
+            <li class="lcal__dia lcal__dia--clase">22<span class="visualmente-oculto"> (hay clase)</span></li>
+            <li class="lcal__dia">23</li>
+            <li class="lcal__dia">24</li>
+            <li class="lcal__dia">25</li>
+            <li class="lcal__dia lcal__dia--clase">26<span class="visualmente-oculto"> (hay clase)</span></li>
+            <li class="lcal__dia">27</li>
+            <li class="lcal__dia">28</li>
+            <li class="lcal__dia lcal__dia--clase">29<span class="visualmente-oculto"> (hay clase)</span></li>
+            <li class="lcal__dia">30</li>
+            <li class="lcal__dia">31</li>
+            <li class="lcal__dia lcal__dia--vacio" aria-hidden="true"></li>
+          </ol>
+        </div>
+      </section>
+
+      <aside class="lcal__tarjeta lcal__lateral" aria-label="Clases del día">
+        <h2 class="lcal__subtitulo-tarjeta">Clases creadas para hoy:</h2>
+        <p class="lcal__clase">
+          <span class="lcal__clase-hora">Clase: 17:00 – 19:00 pm</span>
+          <a class="lcal__editar" href="#">Editar</a>
+        </p>
+        <hr class="lcal__divisor">
+
+        <form class="lcal__formulario" action="#" method="get">
+          <h2 class="lcal__subtitulo-tarjeta">Registrar nueva clase:</h2>
+          <div class="campo lcal__campo">
+            <label class="campo__label" for="lcal-fecha">Fecha:</label>
+            <input class="campo__input lcal__input" id="lcal-fecha" name="fecha" type="date" value="2026-10-17" min="2026-10-01" max="2026-10-31" required>
+            <p class="campo__error">Elige la fecha de la clase.</p>
+          </div>
+          <div class="campo lcal__campo">
+            <label class="campo__label" for="lcal-hora">Hora:</label>
+            <select class="campo__input lcal__input lcal__select" id="lcal-hora" name="hora" required>
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option value="15-17">15:00 – 17:00 pm</option>
+              <option value="17-19">17:00 – 19:00 pm</option>
+              <option value="19-21">19:00 – 21:00 pm</option>
+            </select>
+            <p class="campo__error">Selecciona la hora de la clase.</p>
+          </div>
+          <div class="campo lcal__campo">
+            <label class="campo__label" for="lcal-link">Link:</label>
+            <input class="campo__input lcal__input" id="lcal-link" name="enlace" type="url" placeholder="Escribe aquí…" required maxlength="200">
+            <p class="campo__error">Escribe un enlace válido para la clase.</p>
+          </div>
+          <div class="lcal__acciones">
+            <a class="boton lcal__boton" href="#">Guardar</a>
+            <a class="boton boton--secundario lcal__boton" href="#">Descartar</a>
+          </div>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

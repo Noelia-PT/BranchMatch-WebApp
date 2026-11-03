@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil del líder · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 35 · Perfil del líder · Responsable: P2 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="panel.html">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor perfil">
+    <h1 class="visualmente-oculto">Perfil del líder</h1>
+
+    <div class="perfil__layout">
+      <div class="perfil__lado">
+        <aside class="perfil__aviso" aria-label="Completa tu perfil">
+          <div class="perfil__aviso-encabezado">
+            <img class="perfil__aviso-icono" src="../../assets/icons/foco.svg" alt="">
+            <h2 class="perfil__aviso-titulo">Tu perf&zwnj;il está al 80 %</h2>
+            <a class="perfil__aviso-cerrar" href="#" aria-label="Cerrar aviso">✕</a>
+          </div>
+          <p class="perfil__aviso-texto">Agrega tu biografía para que los líderes te conozcan mejor.</p>
+          <a class="perfil__aviso-enlace" href="personaliza-perfil.html">Completar perf&zwnj;il →</a>
+        </aside>
+
+        <section class="tarjeta perfil__tarjeta" aria-label="Datos del líder">
+          <div class="perfil__portada">
+            <a class="perfil__personalizar" href="personaliza-perfil.html">
+              <img class="perfil__personalizar-icono" src="../../assets/icons/lapiz-chico.svg" alt="">
+              <span>Personalizar</span>
+            </a>
+            <div class="perfil__foto">
+              <img class="perfil__foto-img" src="../../assets/icons/foto-perfil.svg" alt="Foto de perfil de Edson Mendiolaza">
+              <img class="perfil__foto-aro" src="../../assets/icons/foto-perfil-aro.svg" alt="">
+              <a class="perfil__foto-cambiar" href="personaliza-perfil.html" aria-label="Cambiar foto">+</a>
+            </div>
+          </div>
+
+          <div class="perfil__cuerpo">
+            <h2 class="perfil__nombre">Edson Mendiolaza</h2>
+            <p class="perfil__usuario texto-secundario">@pollitopio · Ing. Software</p>
+            <ul class="perfil__insignias">
+              <li class="chip chip--amarillo perfil__insignia">Líder</li>
+            </ul>
+            <div class="perfil__grupo">
+              <img class="perfil__grupo-icono" src="../../assets/icons/personas.svg" alt="">
+              <div class="perfil__grupo-enlace">
+                <span class="perfil__grupo-nombre">Party: Los Insanos</span>
+                <span class="perfil__grupo-detalle texto-secundario">Nivel 3–5</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+        <a class="boton boton--peligro boton--bloque" href="../auth/iniciar-sesion.html">Cerrar sesión</a>
+      </div>
+
+      <section class="tarjeta perfil__actividad" aria-labelledby="publicaciones-titulo">
+        <header class="perfil__actividad-encabezado">
+          <h2 class="perfil__actividad-titulo" id="publicaciones-titulo">Mis publicaciones</h2>
+          <p class="perfil__actividad-sub texto-secundario">Lo que has compartido con la comunidad.</p>
+          <p class="perfil__actividad-cifras texto-secundario">24 seguidores · 12 publicaciones</p>
+        </header>
+        <p class="chip chip--menta perfil__pestana">Publicaciones</p>
+
+        <div class="perfil__carrusel">
+          <ul class="perfil__publicaciones">
+            <li class="perfil__post">
+              <article class="perfil__post-caja">
+                <header class="perfil__post-autor">
+                  <img class="perfil__post-foto" src="../../assets/icons/foto-autor.svg" alt="Foto de @pollitopio">
+                  <p class="perfil__post-nombre">@pollitopio</p>
+                  <img class="perfil__post-mas" src="../../assets/icons/puntos.svg" alt="Más opciones">
+                </header>
+                <p class="perfil__post-texto">¿Alguien más se trabó con el problema de caminos mínimos de ayer? Comparto mi solución con Dijkstra y una cola de prioridad.</p>
+                <div class="perfil__post-imagen" role="img" aria-label="Imagen de la publicación"></div>
+                <p class="perfil__post-cifras texto-secundario">♥ 57 · 12 comentarios</p>
+                <div class="perfil__post-acciones">
+                  <a class="perfil__accion perfil__accion--gusta" href="publicaciones.html"><img class="perfil__accion-icono" src="../../assets/icons/me-gusta.svg" alt="">Me gusta</a>
+                  <a class="perfil__accion" href="publicaciones.html"><img class="perfil__accion-icono perfil__accion-icono--mensaje" src="../../assets/icons/mensaje.svg" alt="">Comentar</a>
+                </div>
+              </article>
+            </li>
+            <li class="perfil__post">
+              <article class="perfil__post-caja">
+                <header class="perfil__post-autor">
+                  <img class="perfil__post-foto" src="../../assets/icons/foto-autor.svg" alt="Foto de @pollitopio">
+                  <p class="perfil__post-nombre">@pollitopio</p>
+                  <img class="perfil__post-mas" src="../../assets/icons/puntos.svg" alt="Más opciones">
+                </header>
+                <p class="perfil__post-texto">¿Alguien más se trabó con el problema de caminos mínimos de ayer? Comparto mi solución con Dijkstra y una cola de prioridad.</p>
+                <div class="perfil__post-imagen" role="img" aria-label="Imagen de la publicación"></div>
+                <p class="perfil__post-cifras texto-secundario">♥ 57 · 12 comentarios</p>
+                <div class="perfil__post-acciones">
+                  <a class="perfil__accion perfil__accion--gusta" href="publicaciones.html"><img class="perfil__accion-icono" src="../../assets/icons/me-gusta.svg" alt="">Me gusta</a>
+                  <a class="perfil__accion" href="publicaciones.html"><img class="perfil__accion-icono perfil__accion-icono--mensaje" src="../../assets/icons/mensaje.svg" alt="">Comentar</a>
+                </div>
+              </article>
+            </li>
+            <li class="perfil__post perfil__post--extra">
+              <article class="perfil__post-caja">
+                <header class="perfil__post-autor">
+                  <img class="perfil__post-foto" src="../../assets/icons/foto-autor.svg" alt="Foto de @pollitopio">
+                  <p class="perfil__post-nombre">@pollitopio</p>
+                  <img class="perfil__post-mas" src="../../assets/icons/puntos.svg" alt="Más opciones">
+                </header>
+                <p class="perfil__post-texto">¿Alguien más se trabó con el problema de caminos mínimos de ayer? Comparto mi solución con Dijkstra y una cola de prioridad.</p>
+                <div class="perfil__post-imagen" role="img" aria-label="Imagen de la publicación"></div>
+                <p class="perfil__post-cifras texto-secundario">♥ 57 · 12 comentarios</p>
+                <div class="perfil__post-acciones">
+                  <a class="perfil__accion perfil__accion--gusta" href="publicaciones.html"><img class="perfil__accion-icono" src="../../assets/icons/me-gusta.svg" alt="">Me gusta</a>
+                  <a class="perfil__accion" href="publicaciones.html"><img class="perfil__accion-icono perfil__accion-icono--mensaje" src="../../assets/icons/mensaje.svg" alt="">Comentar</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <a class="perfil__siguiente" href="publicaciones.html" aria-label="Ver más publicaciones">›</a>
+        </div>
+
+        <a class="perfil__todas" href="publicaciones.html">Mostrar todas las publicaciones →</a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

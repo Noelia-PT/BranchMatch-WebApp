@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hola, Edson · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 38 · Hola, Edson · Responsable: P4 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link header__link--activo" href="panel.html" aria-current="page">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="pl">
+    <aside class="pl__lateral" aria-label="Panel del líder">
+      <p class="pl__lateral-titulo">PANEL DEL LÍDER</p>
+      <nav aria-label="Secciones del panel">
+        <ul class="pl__menu">
+          <li><a class="pl__menu-link pl__menu-link--activo" href="panel.html" aria-current="page"><img class="pl__menu-icono" src="../../assets/icons/panel-menu-panel.svg" alt="">Panel</a></li>
+          <li><a class="pl__menu-link" href="player-card.html"><img class="pl__menu-icono" src="../../assets/icons/panel-menu-integrantes.svg" alt="">Integrantes</a></li>
+          <li><a class="pl__menu-link" href="chat.html"><img class="pl__menu-icono" src="../../assets/icons/panel-item-mensaje.svg" alt="">Chat</a></li>
+        </ul>
+      </nav>
+      <a class="pl__grupo" href="editar-party.html">
+        <span class="pl__grupo-nombre">Los Insanos</span>
+        <span class="pl__grupo-datos">3 / 5 integrantes · Nivel 3–5</span>
+      </a>
+    </aside>
+
+    <main class="pl__main">
+      <header class="pl__intro">
+        <div class="pl__saludo">
+          <h1 class="titulo-1">Hola, Edson</h1>
+          <p class="pl__subtitulo">Esto es lo que pasa hoy en Los Insanos.</p>
+        </div>
+        <a class="boton boton--secundario" href="crear-reto.html">Crear reto</a>
+      </header>
+
+      <ul class="pl__stats">
+        <li>
+          <a class="pl__caja pl__stat pl__stat-enlace" href="solicitudes.html">
+            <p class="pl__stat-fila">
+              <img class="pl__stat-icono" src="../../assets/icons/panel-stat-solicitudes.svg" alt="">
+              <span class="pl__stat-valor pl__stat-valor--rosa">3</span>
+            </p>
+            <p class="pl__stat-texto">solicitudes nuevas</p>
+          </a>
+        </li>
+        <li>
+          <a class="pl__caja pl__stat pl__stat-enlace" href="retos.html">
+            <p class="pl__stat-fila">
+              <img class="pl__stat-icono" src="../../assets/icons/panel-stat-entregas.svg" alt="">
+              <span class="pl__stat-valor pl__stat-valor--amarillo">5</span>
+            </p>
+            <p class="pl__stat-texto">entregas por revisar</p>
+          </a>
+        </li>
+        <li>
+          <a class="pl__caja pl__stat" href="rendimiento.html">
+            <span class="pl__stat-fila">
+              <img class="pl__stat-icono" src="../../assets/icons/panel-stat-aprobacion.svg" alt="">
+              <span class="pl__stat-valor pl__stat-valor--menta">68%</span>
+            </span>
+            <span class="pl__stat-texto">aprobación grupal</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="pl__fila">
+        <section class="pl__caja pl__atencion" aria-labelledby="pl-atencion">
+          <h2 class="titulo-3" id="pl-atencion">Requiere tu atención</h2>
+          <ul class="pl__avisos">
+            <li class="pl__aviso">
+              <p class="pl__aviso-texto"><img class="pl__aviso-icono" src="../../assets/icons/panel-item-solicitud.svg" alt="">Jack Lima quiere unirse a tu party</p>
+              <a class="pl__aviso-link" href="solicitudes.html">Revisar →</a>
+            </li>
+            <li class="pl__aviso">
+              <p class="pl__aviso-texto"><img class="pl__aviso-icono" src="../../assets/icons/panel-item-entrega.svg" alt="">Tomas entregó «Dijkstra con colas»</p>
+              <a class="pl__aviso-link" href="revisar-entrega.html">Revisar →</a>
+            </li>
+            <li class="pl__aviso">
+              <p class="pl__aviso-texto"><img class="pl__aviso-icono" src="../../assets/icons/panel-item-mensaje.svg" alt="">Valeria no entra hace 4 días</p>
+              <a class="pl__aviso-link" href="chat.html">Enviar mensaje →</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="pl__caja pl__sesion" aria-labelledby="pl-sesion">
+          <h2 class="titulo-3 pl__sesion-titulo" id="pl-sesion"><img class="pl__sesion-icono" src="../../assets/icons/panel-calendario.svg" alt="">Próxima sesión</h2>
+          <p class="titulo-3">Jueves 15 oct · 17:00 – 19:00</p>
+          <p class="pl__sesion-tema">Tema: Caminos mínimos</p>
+          <span class="chip chip--menta pl__chip">4 de 5 confirmados</span>
+         <a class="boton boton--secundario" href="https://meet.google.com/" target="_blank" rel="noopener noreferrer">Entrar a la clase</a>
+        </section>
+      </div>
+
+      <a class="pl__caja pl__progreso" href="rendimiento.html">
+        <h2 class="titulo-3">Progreso de la semana</h2>
+        <ul class="pl__metricas">
+          <li class="pl__metrica">
+            <span class="pl__metrica-nombre">Retos entregados</span>
+            <span class="pl__metrica-valor">14 / 20</span>
+            <span class="pl__barra"><span class="pl__relleno pl__relleno--menta pl__relleno--70"></span></span>
+          </li>
+          <li class="pl__metrica">
+            <span class="pl__metrica-nombre">Asistencia</span>
+            <span class="pl__metrica-valor">92%</span>
+            <span class="pl__barra"><span class="pl__relleno pl__relleno--celeste pl__relleno--92"></span></span>
+          </li>
+        </ul>
+      </a>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

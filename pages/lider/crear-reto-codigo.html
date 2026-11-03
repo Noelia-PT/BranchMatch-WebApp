@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crear reto de código · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 57 · Crear reto de código · Responsable: P4 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="panel.html">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link header__link--activo" href="retos.html" aria-current="page">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor crc">
+    <a class="crc__volver" href="retos.html">
+      <img class="crc__volver-icono" src="../../assets/icons/crear-reto-codigo-volver.svg" alt="">
+      Volver a Retos
+    </a>
+
+    <header class="crc__intro">
+      <ol class="crc__pasos" aria-label="Pasos para crear un reto">
+        <li class="crc__paso"><span class="crc__paso-num">1</span> Elige el tipo</li>
+        <li class="crc__paso crc__paso--activo" aria-current="step"><span class="crc__paso-num">2</span> Completa el reto</li>
+        <li class="crc__paso crc__paso--pendiente"><span class="crc__paso-num">3</span> Publica</li>
+      </ol>
+      <div class="crc__titulo">
+        <h1 class="titulo-1">Crear reto de código</h1>
+        <span class="crc__chip crc__chip--celeste">&lt;/&gt; Código</span>
+        <a class="crc__cambiar" href="crear-reto.html">Cambiar tipo</a>
+      </div>
+      <p class="crc__subtitulo">Pega el link del problema y escribe en pocas líneas qué deben hacer. Tu party lo resolverá en la plataforma y te enviará su archivo.</p>
+    </header>
+
+    <div class="crc__fila">
+      <form class="crc__form" action="reto-publicado.html" novalidate>
+        <section class="crc__seccion" aria-labelledby="crc-s1">
+          <h2 class="crc__seccion-titulo" id="crc-s1"><span class="crc__num">1</span> Datos del reto</h2>
+
+          <div class="crc__r1">
+            <div class="campo crc__campo">
+              <label class="campo__label" for="crc-titulo">Título del reto</label>
+              <input class="campo__input crc__input" id="crc-titulo" name="titulo" type="text" value="Dijkstra con colas de prioridad" required minlength="3" maxlength="80">
+              <p class="campo__error">Escribe un título de al menos 3 caracteres.</p>
+            </div>
+            <div class="campo crc__campo">
+              <label class="campo__label" for="crc-tema">Tema</label>
+              <select class="campo__input crc__input" id="crc-tema" name="tema" required>
+                <option value="grafos" selected>Grafos</option>
+                <option value="listas">Listas Enlazadas</option>
+                <option value="arboles">Árboles Binarios</option>
+                <option value="dp">Programación dinámica</option>
+              </select>
+              <p class="campo__error">Elige un tema.</p>
+            </div>
+          </div>
+
+          <div class="crc__r2">
+            <fieldset class="crc__grupo">
+              <legend class="campo__label">Dificultad</legend>
+              <div class="crc__opciones">
+                <input class="visualmente-oculto" type="radio" id="crc-facil" name="dificultad" value="facil" required>
+                <label class="crc__opcion" for="crc-facil">Fácil</label>
+                <input class="visualmente-oculto" type="radio" id="crc-media" name="dificultad" value="media" checked>
+                <label class="crc__opcion" for="crc-media">Media</label>
+                <input class="visualmente-oculto" type="radio" id="crc-dificil" name="dificultad" value="dificil">
+                <label class="crc__opcion" for="crc-dificil">Difícil</label>
+              </div>
+            </fieldset>
+            <div class="campo crc__campo">
+              <label class="campo__label" for="crc-fecha">Fecha de entrega</label>
+              <input class="campo__input crc__input crc__input--calendario" id="crc-fecha" name="fecha" type="date" value="2026-10-18" required>
+              <p class="campo__error">Elige una fecha de entrega.</p>
+            </div>
+            <div class="campo crc__campo">
+              <label class="campo__label" for="crc-recompensa">Recompensa</label>
+              <input class="campo__input crc__input crc__input--trofeo" id="crc-recompensa" name="recompensa" type="text" value="+40 XP" required pattern="\+?[0-9]+ ?XP">
+              <p class="campo__error">Escribe la recompensa, por ejemplo «+40 XP».</p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="crc__divisor">
+
+        <section class="crc__seccion" aria-labelledby="crc-s2">
+          <h2 class="crc__seccion-titulo" id="crc-s2"><span class="crc__num">2</span> ¿Dónde lo resuelven?</h2>
+          <fieldset class="crc__plataforma">
+            <legend class="visualmente-oculto">Plataforma</legend>
+            <input class="visualmente-oculto" type="radio" id="crc-hackerrank" name="plataforma" value="hackerrank" required>
+            <label class="crc__plataforma-opcion" for="crc-hackerrank">○ HackerRank</label>
+            <input class="visualmente-oculto" type="radio" id="crc-codeforces" name="plataforma" value="codeforces" checked>
+            <label class="crc__plataforma-opcion" for="crc-codeforces">● Codeforces</label>
+          </fieldset>
+          <div class="campo crc__campo">
+            <label class="campo__label" for="crc-link">Link del problema</label>
+            <input class="campo__input crc__input crc__input--pin crc__input--ok" id="crc-link" name="link" type="url" value="https://codeforces.com/problemset/problem/20/C" required>
+            <p class="crc__valido">✓ Link válido · Codeforces · Problema 20C «Dijkstra?»</p>
+            <p class="campo__error">Pega un link válido del problema, por ejemplo https://codeforces.com/…</p>
+          </div>
+        </section>
+
+        <hr class="crc__divisor">
+
+        <section class="crc__seccion" aria-labelledby="crc-s3">
+          <h2 class="crc__seccion-titulo" id="crc-s3"><span class="crc__num">3</span> Indicaciones resumidas <span class="crc__maximo">máx. 5 líneas</span></h2>
+          <div class="campo crc__campo">
+            <label class="campo__label" for="crc-indicaciones">Lo que tu party debe hacer</label>
+            <textarea class="campo__input crc__input crc__textarea" id="crc-indicaciones" name="indicaciones" rows="3" required minlength="10" maxlength="400">• Lee un grafo dirigido con n nodos y m aristas con peso.
+• Encuentra el camino más corto del nodo 1 al nodo n.
+• Usa Dijkstra con cola de prioridad; si no hay camino, imprime -1.</textarea>
+            <p class="campo__error">Escribe las indicaciones (mínimo 10 caracteres).</p>
+            <p class="crc__tip">Tip: escribe pasos cortos. El enunciado completo lo leerán en la plataforma.</p>
+          </div>
+        </section>
+
+        <hr class="crc__divisor">
+
+        <div class="crc__acciones">
+          <a class="boton" href="reto-publicado.html">Publicar reto</a>
+          <a class="boton boton--secundario" href="retos.html">Guardar borrador</a>
+          <a class="boton boton--secundario" href="retos.html">Cancelar</a>
+        </div>
+      </form>
+
+      <div class="crc__lateral">
+        <section class="crc__caja" aria-labelledby="crc-previa">
+          <h2 class="crc__caja-titulo" id="crc-previa">Vista previa</h2>
+          <p class="crc__caja-texto">Así lo verá tu party en «Mis retos».</p>
+          <div class="crc__mini">
+            <p class="crc__mini-chips">
+              <span class="crc__chip crc__chip--celeste crc__chip--chico">&lt;/&gt; Código</span>
+              <span class="crc__chip crc__chip--menta crc__chip--chico">Grafos</span>
+              <span class="crc__chip crc__chip--amarillo crc__chip--chico">Media</span>
+            </p>
+            <p class="crc__mini-titulo">Dijkstra con colas de prioridad</p>
+            <p class="crc__mini-fecha">Entrega: 18 de octubre · +40 XP</p>
+            <a class="crc__mini-boton" href="#">Abrir en Codeforces →</a>
+          </div>
+        </section>
+
+        <section class="crc__caja" aria-labelledby="crc-lista">
+          <h2 class="crc__caja-titulo" id="crc-lista">Antes de publicar</h2>
+          <ul class="crc__lista">
+            <li class="crc__item"><span class="crc__ok">✓</span> Título y tema</li>
+            <li class="crc__item"><span class="crc__ok">✓</span> Link del problema válido</li>
+            <li class="crc__item"><span class="crc__ok">✓</span> Indicaciones resumidas</li>
+            <li class="crc__item"><span class="crc__ok">✓</span> Fecha de entrega</li>
+          </ul>
+          <span class="crc__chip crc__chip--menta">✓ 4 de 4 listos</span>
+        </section>
+
+        <aside class="crc__ayuda" aria-label="Ayuda de Popa">
+          <img class="crc__ayuda-img" src="../../assets/img/popa-radar.gif" alt="">
+          <p>El link debe abrir el problema exacto. Así nadie se confunde de ejercicio.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

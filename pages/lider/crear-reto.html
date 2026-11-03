@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crear reto · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 56 · Crear reto · Responsable: P4 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="panel.html">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link header__link--activo" href="retos.html" aria-current="page">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor cr">
+    <a class="cr__volver" href="retos.html">
+      <img class="cr__volver-icono" src="../../assets/icons/crear-reto-volver.svg" alt="">
+      Volver a Retos
+    </a>
+
+    <header class="cr__intro">
+      <ol class="cr__pasos" aria-label="Pasos para crear un reto">
+        <li class="cr__paso cr__paso--activo" aria-current="step"><span class="cr__paso-num">1</span> Elige el tipo</li>
+        <li class="cr__paso"><span class="cr__paso-num">2</span> Completa el reto</li>
+        <li class="cr__paso"><span class="cr__paso-num">3</span> Publica</li>
+      </ol>
+      <h1 class="titulo-1">Crear reto</h1>
+      <p class="cr__subtitulo">¿Qué tipo de reto quieres enviarle a Los Insanos? Elige uno para continuar.</p>
+    </header>
+
+    <fieldset class="cr__tipos">
+      <legend class="visualmente-oculto">Tipo de reto</legend>
+
+      <input class="visualmente-oculto" type="radio" id="cr-codigo" name="tipo" value="codigo" required checked>
+      <label class="cr__tipo" for="cr-codigo">
+        <span class="cr__cabecera">
+          <span class="cr__icono">
+            <img class="cr__icono-img cr__icono-img--sel" src="../../assets/icons/crear-reto-codigo.svg" alt="">
+            <img class="cr__icono-img cr__icono-img--normal" src="../../assets/icons/crear-reto-codigo-claro.svg" alt="">
+          </span>
+          <span class="cr__textos">
+            <span class="cr__nombre">Reto de código</span>
+            <span class="cr__etiqueta cr__etiqueta--celeste">HackerRank o Codeforces</span>
+          </span>
+          <span class="cr__estado cr__estado--sel">✓ Seleccionado</span>
+          <span class="cr__estado cr__estado--elegir">Elegir</span>
+        </span>
+        <span class="cr__descripcion">Ideal para practicar programación. Compartes el link del problema y unas indicaciones resumidas; tu party lo resuelve en la plataforma y te envía su archivo.</span>
+        <span class="cr__envios">
+          <span class="cr__envio">
+            <span class="cr__envio-rotulo cr__envio-rotulo--amarillo">TÚ ENVÍAS</span>
+            <span class="cr__envio-texto">Link del problema + indicaciones</span>
+          </span>
+          <span class="cr__envio">
+            <span class="cr__envio-rotulo cr__envio-rotulo--menta">TU PARTY ENVÍA</span>
+            <span class="cr__envio-texto">Archivo con su código</span>
+          </span>
+        </span>
+        <span class="cr__previa-titulo">Así lo verá tu party</span>
+        <span class="cr__previa">
+          <span class="cr__enlace">
+            <img class="cr__enlace-icono" src="../../assets/icons/crear-reto-pin.svg" alt="">
+            <span class="cr__enlace-url">codeforces.com/problemset/problem/20/C</span>
+            <span class="cr__enlace-flecha">→</span>
+          </span>
+          <span class="cr__indicaciones">
+            <span>• Lee el grafo dirigido con pesos.</span>
+            <span>• Calcula el camino más corto de 1 a n.</span>
+            <span>• Usa Dijkstra con cola de prioridad.</span>
+          </span>
+          <span class="cr__subir">
+            <img class="cr__enlace-icono" src="../../assets/icons/crear-reto-archivo.svg" alt="">
+            Sube tu solución
+          </span>
+        </span>
+      </label>
+
+      <input class="visualmente-oculto" type="radio" id="cr-opcion" name="tipo" value="opcion-multiple">
+      <label class="cr__tipo" for="cr-opcion">
+        <span class="cr__cabecera">
+          <span class="cr__icono">
+            <img class="cr__icono-img cr__icono-img--sel" src="../../assets/icons/crear-reto-objetivo-oscuro.svg" alt="">
+            <img class="cr__icono-img cr__icono-img--normal" src="../../assets/icons/crear-reto-objetivo.svg" alt="">
+          </span>
+          <span class="cr__textos">
+            <span class="cr__nombre">Reto de opción múltiple</span>
+            <span class="cr__etiqueta cr__etiqueta--rosa">Solo marcar</span>
+          </span>
+          <span class="cr__estado cr__estado--sel">✓ Seleccionado</span>
+          <span class="cr__estado cr__estado--elegir">Elegir</span>
+        </span>
+        <span class="cr__descripcion">Ideal para repasar teoría. Escribes la pregunta y las alternativas, marcas la correcta y tu party solo tiene que elegir una opción.</span>
+        <span class="cr__envios">
+          <span class="cr__envio">
+            <span class="cr__envio-rotulo cr__envio-rotulo--amarillo">TÚ ENVÍAS</span>
+            <span class="cr__envio-texto">Pregunta + alternativas</span>
+          </span>
+          <span class="cr__envio">
+            <span class="cr__envio-rotulo cr__envio-rotulo--menta">TU PARTY ENVÍA</span>
+            <span class="cr__envio-texto">La opción que marca</span>
+          </span>
+        </span>
+        <span class="cr__previa-titulo">Así lo verá tu party</span>
+        <span class="cr__previa cr__previa--opciones">
+          <span class="cr__pregunta">¿Cuál es la complejidad de Dijkstra con cola de prioridad?</span>
+          <span class="cr__opcion"><span class="cr__letra">A</span>O(V²)</span>
+          <span class="cr__opcion cr__opcion--marcada"><span class="cr__letra">B</span>O((V + E) log V)</span>
+          <span class="cr__opcion"><span class="cr__letra">C</span>O(V · E)</span>
+        </span>
+      </label>
+    </fieldset>
+
+    <aside class="cr__ayuda" aria-label="Ayuda de Popa">
+      <img class="cr__ayuda-img" src="../../assets/img/popa-pixel.png" alt="">
+      <p>¿No sabes cuál elegir? Usa «Reto de código» cuando quieras que programen, y «Opción múltiple» para comprobar que entendieron la teoría de la clase.</p>
+    </aside>
+
+    <div class="cr__acciones">
+      <a class="boton cr__continuar--codigo" href="crear-reto-codigo.html">Continuar</a>
+      <a class="boton cr__continuar--opcion" href="crear-reto-opcion-multiple.html">Continuar</a>
+      <a class="boton boton--secundario" href="retos.html">Cancelar</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

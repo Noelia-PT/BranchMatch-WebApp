@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen de rendimiento grupal · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <!-- Figma: pantalla 43 · Resumen de rendimiento grupal · Responsable: P4 -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link header__link--activo" href="panel.html" aria-current="page">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor rg">
+    <a class="rg__volver" href="panel.html">
+      <img class="rg__volver-icono" src="../../assets/icons/rendimiento-grupal-volver.svg" alt="">
+      <span class="rg__volver-texto">Volver</span>
+    </a>
+
+    <header class="rg__intro">
+      <h1 class="titulo-1">Resumen de rendimiento grupal</h1>
+      <p class="rg__subtitulo">Los Insanos · últimos 30 días</p>
+    </header>
+
+    <section class="tarjeta rg__kpi" aria-labelledby="rg-kpi">
+      <span class="rg__chip rg__chip--amarillo" id="rg-kpi">KPI</span>
+      <div class="rg__kpi-datos">
+        <p class="rg__kpi-valor">68%</p>
+        <p class="rg__kpi-texto">de aprobación grupal</p>
+      </div>
+    </section>
+
+    <section class="tarjeta rg__dominio" aria-labelledby="rg-dominio">
+      <h2 class="rg__dominio-titulo" id="rg-dominio">Dominio por tema</h2>
+      <ul class="rg__lista">
+        <li class="rg__tema">
+          <span class="rg__tema-nombre">Listas Enlazadas</span>
+          <span class="rg__tema-valor">90%</span>
+          <span class="rg__barra"><span class="rg__relleno rg__relleno--90 rg__relleno--menta"></span></span>
+        </li>
+        <li class="rg__tema">
+          <span class="rg__tema-nombre">Árboles Binarios</span>
+          <span class="rg__tema-valor">85%</span>
+          <span class="rg__barra"><span class="rg__relleno rg__relleno--85 rg__relleno--menta"></span></span>
+        </li>
+        <li class="rg__tema">
+          <span class="rg__tema-nombre">Programación dinámica</span>
+          <span class="rg__tema-valor">75%</span>
+          <span class="rg__barra"><span class="rg__relleno rg__relleno--75 rg__relleno--amarillo"></span></span>
+        </li>
+        <li class="rg__tema">
+          <span class="rg__tema-nombre">Grafos</span>
+          <span class="rg__tema-valor">40%</span>
+          <span class="rg__barra"><span class="rg__relleno rg__relleno--40 rg__relleno--rosa"></span></span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="tarjeta rg__plan" aria-labelledby="rg-plan">
+      <span class="rg__chip rg__chip--rosa">Plan de mejora sugerido</span>
+      <h2 class="rg__plan-titulo" id="rg-plan">Tema a reforzar: Grafos</h2>
+      <p class="rg__plan-texto">El 60% del grupo tiene problemas en el tema: Grafos. Se sugiere programar una sesión de repaso o subir material adicional antes del próximo examen.</p>
+      <div class="rg__acciones">
+        <a class="boton rg__boton" href="calendario.html">Programar horario de repaso</a>
+        <a class="boton boton--secundario rg__boton" href="subtemas.html">Subir material de aprendizaje</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
