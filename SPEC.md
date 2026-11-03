@@ -17,7 +17,7 @@ Al terminar, lista los archivos creados y qué quedó pendiente.
 No cambies las variables ni los estilos de otras pantallas.
 
 ## Estructura
-Estructura real del proyecto (51 páginas HTML):
+Estructura real del proyecto (52 páginas HTML):
 
 ```
 ├── index.html                # 01 Landing (la única página fuera de pages/)
@@ -34,7 +34,7 @@ Estructura real del proyecto (51 páginas HTML):
     ├── auth/                 #  2 páginas · pantallas 02-03
     ├── prueba/               #  4 páginas · pantallas 04-08
     ├── estudiante/           # 19 páginas · pantallas 09-34
-    └── lider/                # 25 páginas · pantallas 35-61 (+ comunidad, chat, notificaciones y personaliza perfil del líder)
+    └── lider/                # 26 páginas · pantallas 35-61 (+ comunidad, chat, notificaciones, personaliza perfil y publicaciones del líder)
 ```
 Un grupo es un conjunto de pantallas que comparten el mismo aspecto (cabecera y pie).
 `estudiante` y `lider` usan la cabecera común (`.header`) con su menú; `prueba` usa la misma cabecera (sin menú en las preguntas);
@@ -44,7 +44,7 @@ Las páginas están nombradas en minúsculas y con guiones (`crear-reto-codigo.h
 La lista pantalla por pantalla, con su número del Figma y su responsable, está en el `README.md`.
 
 ### Numeración de pantallas
-El Figma numera 61 pantallas. Hay 51 páginas porque algunas pantallas son **estados de otra página**
+El Figma numera 61 pantallas. Hay 52 páginas porque algunas pantallas son **estados de otra página**
 (7, 15, 16, 28, 30, 46, 49 y 54; ver «Pantallas alternativas»). Los números **25, 31, 32, 47, 50 y 53**
 no tienen página ni estado en el proyecto (pendiente confirmar con el Figma si existen).
 
