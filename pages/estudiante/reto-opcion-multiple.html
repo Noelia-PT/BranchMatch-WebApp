@@ -33,30 +33,143 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Reto 4: Complejidad de Dijkstra</h1>
-    <!-- TODO P4: implementar la pantalla 29 según el Figma. -->
+  <!-- Pantalla 30 · Resultado del reto: es esta misma página; se activa con href="#resultado" (:target) -->
+  <main class="contenedor rm">
+    <a class="rm__volver" href="retos.html">
+      <img class="rm__volver-icono" src="../../assets/icons/reto-volver.svg" alt="">
+      <span>Volver a Mis retos</span>
+    </a>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="retos.html">26 · Mis retos</a></li>
-        <li><a href="reto-opcion-multiple.html#resultado">30 · Resultado del reto</a></li>
+    <header class="rm__cabecera">
+      <ul class="rm__chips">
+        <li class="rm__chip rm__chip--tipo">◉ Opción múltiple</li>
+        <li class="rm__chip rm__chip--pendiente rm__solo-pendiente">Pendiente · vence el 20 de octubre</li>
+        <li class="rm__chip rm__chip--ok rm__solo-resultado">Completado · +20 XP ganados</li>
+        <li class="rm__chip rm__chip--ok">+20 XP</li>
       </ul>
-    </nav>
+      <h1 class="rm__titulo">Reto 4: Complejidad de Dijkstra</h1>
+      <p class="rm__subtitulo rm__solo-pendiente">Solo tienes que marcar la alternativa correcta y enviar tu respuesta.</p>
+      <p class="rm__subtitulo rm__solo-resultado">Ya enviaste tu respuesta. Mira el resultado y la explicación de Edson.</p>
+    </header>
 
-    <!-- Pantalla 30 · Resultado del reto (se abre con href="#resultado") -->
-    <section class="modal" id="resultado" aria-labelledby="resultado-titulo">
-      <div class="modal__caja">
-        <h2 class="titulo-3" id="resultado-titulo">Resultado del reto</h2>
-        <!-- TODO: contenido del Figma -->
-        <div class="modal__acciones">
-          <a class="boton" href="retos.html">Mis retos</a>
-          <a class="boton" href="reto-codigo.html">Reto 3: Dijkstra con colas de prioridad</a>
-          <a class="boton boton--secundario" href="#">Cerrar</a>
-        </div>
+    <section class="rm__resultado rm__solo-resultado" id="resultado" role="status" aria-labelledby="rm-resultado-titulo">
+      <img class="rm__resultado-img" src="../../assets/img/popa-derecha-check.gif" alt="Popa celebrando tu respuesta">
+      <div class="rm__resultado-textos">
+        <h2 class="rm__resultado-titulo" id="rm-resultado-titulo">¡Correcto! Ganaste +20 XP</h2>
+        <p class="rm__resultado-texto">Tu respuesta fue B · O((V + E) log V). ¡Sigue así!</p>
       </div>
     </section>
+
+    <div class="rm__fila">
+      <section class="rm__pregunta" aria-labelledby="rm-pregunta">
+        <p class="rm__paso">Pregunta 1 de 1</p>
+        <h2 class="rm__enunciado" id="rm-pregunta">¿Cuál es la complejidad de Dijkstra cuando usas una cola de prioridad (min-heap)?</h2>
+
+        <form class="rm__form rm__solo-pendiente" action="reto-opcion-multiple.html#resultado" method="get">
+          <fieldset class="rm__opciones">
+            <legend class="rm__leyenda">Elige una opción:</legend>
+            <label class="rm__opcion">
+              <input class="visualmente-oculto" type="radio" name="respuesta" value="a" required>
+              <span class="rm__radio" aria-hidden="true"></span>
+              <span class="rm__letra">A</span>
+              <span class="rm__texto">O(V²)</span>
+            </label>
+            <label class="rm__opcion">
+              <input class="visualmente-oculto" type="radio" name="respuesta" value="b" checked>
+              <span class="rm__radio" aria-hidden="true"></span>
+              <span class="rm__letra">B</span>
+              <span class="rm__texto">O((V + E) log V)</span>
+              <span class="rm__etiqueta">Tu respuesta</span>
+            </label>
+            <label class="rm__opcion">
+              <input class="visualmente-oculto" type="radio" name="respuesta" value="c">
+              <span class="rm__radio" aria-hidden="true"></span>
+              <span class="rm__letra">C</span>
+              <span class="rm__texto">O(V · E)</span>
+            </label>
+            <label class="rm__opcion">
+              <input class="visualmente-oculto" type="radio" name="respuesta" value="d">
+              <span class="rm__radio" aria-hidden="true"></span>
+              <span class="rm__letra">D</span>
+              <span class="rm__texto">O(E)</span>
+            </label>
+          </fieldset>
+          <p class="campo__error">Elige una opción antes de enviar tu respuesta.</p>
+          <p class="rm__atajo">Atajo: presiona A, B, C o D para elegir y Enter para enviar.</p>
+          <hr class="rm__divisor">
+          <div class="rm__acciones">
+            <a class="boton rm__boton" href="#resultado">Enviar respuesta</a>
+            <a class="boton boton--secundario rm__boton" href="retos.html">Guardar borrador</a>
+          </div>
+          <p class="rm__nota">Solo tienes 1 intento: revisa tu opción antes de enviar.</p>
+        </form>
+
+        <div class="rm__revision rm__solo-resultado">
+          <p class="rm__leyenda">Resultado:</p>
+          <ul class="rm__opciones">
+            <li class="rm__opcion rm__opcion--apagada">
+              <span class="rm__radio" aria-hidden="true"></span>
+              <span class="rm__letra">A</span>
+              <span class="rm__texto">O(V²)</span>
+            </li>
+            <li class="rm__opcion rm__opcion--correcta">
+              <span class="rm__radio rm__radio--marcada" aria-hidden="true"></span>
+              <span class="rm__letra">B</span>
+              <span class="rm__texto">O((V + E) log V)</span>
+              <span class="rm__etiqueta">✓ Correcta · tu respuesta</span>
+            </li>
+            <li class="rm__opcion rm__opcion--apagada">
+              <span class="rm__radio" aria-hidden="true"></span>
+              <span class="rm__letra">C</span>
+              <span class="rm__texto">O(V · E)</span>
+            </li>
+            <li class="rm__opcion rm__opcion--apagada">
+              <span class="rm__radio" aria-hidden="true"></span>
+              <span class="rm__letra">D</span>
+              <span class="rm__texto">O(E)</span>
+            </li>
+          </ul>
+          <div class="rm__explicacion">
+            <h3 class="rm__explicacion-titulo">¿Por qué?</h3>
+            <p class="rm__explicacion-texto">Cada arista se procesa una vez y cada operación en el heap cuesta log V, por eso queda O((V + E) log V).</p>
+          </div>
+          <hr class="rm__divisor">
+          <div class="rm__acciones">
+            <a class="boton rm__boton" href="retos.html">Siguiente reto</a>
+            <a class="boton boton--secundario rm__boton" href="retos.html">Ir a Mis retos</a>
+          </div>
+          <p class="rm__nota">Tu XP ya se sumó a tu Player Card.</p>
+        </div>
+      </section>
+
+      <aside class="rm__lateral" aria-label="Información del reto">
+        <section class="rm__caja" aria-labelledby="rm-datos">
+          <h2 class="rm__caja-titulo" id="rm-datos">Datos del reto</h2>
+          <dl class="rm__datos">
+            <div class="rm__dato"><dt>Publicado por:</dt><dd>Edson Mendiolaza · Líder</dd></div>
+            <div class="rm__dato"><dt>Tema:</dt><dd>Grafos</dd></div>
+            <div class="rm__dato"><dt>Entrega:</dt><dd>20 de octubre, 23:59</dd></div>
+            <div class="rm__dato"><dt>Recompensa:</dt><dd>+20 XP</dd></div>
+            <div class="rm__dato"><dt>Intentos:</dt><dd>1</dd></div>
+          </dl>
+        </section>
+
+        <section class="rm__caja rm__caja--pasos" aria-labelledby="rm-como">
+          <h2 class="rm__caja-titulo" id="rm-como">¿Cómo funciona?</h2>
+          <ol class="rm__pasos">
+            <li class="rm__paso-item"><span class="rm__num">1</span>Lee la pregunta con calma.</li>
+            <li class="rm__paso-item"><span class="rm__num">2</span>Marca la alternativa que creas correcta.</li>
+            <li class="rm__paso-item"><span class="rm__num">3</span>Envía y mira al instante si acertaste.</li>
+          </ol>
+        </section>
+
+        <div class="rm__ayuda">
+          <img class="rm__ayuda-img" src="../../assets/img/popa-radar.gif" alt="Popa con su radar">
+          <p class="rm__ayuda-texto rm__solo-pendiente">Pista: piensa en cuántas veces entra y sale cada nodo del heap.</p>
+          <p class="rm__ayuda-texto rm__solo-resultado">¿Quieres repasar? En Lecciones › Grafos tienes la clase grabada de Dijkstra.</p>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <footer class="footer">
