@@ -4140,6 +4140,323 @@ html:has(.pub) {
   }
 }
 
+/* --- 36 · Configura tu perfil de líder (lider/configura-perfil.html) ---
+   Esta pantalla usa esquinas redondeadas en el Figma (tarjeta, opciones, campos y botones). */
+.cfg {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-32);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.cfg__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cfg__titulo {
+  font-family: var(--fuente-pixel);
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+}
+.cfg__subtitulo {
+  font-size: 12px;
+  line-height: 17px;
+}
+.cfg__tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-32);
+}
+.cfg__perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.cfg__foto {
+  position: relative;
+  width: 56px;
+  height: 56px;
+}
+.cfg__foto-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.cfg__camara {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.cfg__camara-fondo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.cfg__camara-icono {
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+.cfg__usuario {
+  font-size: 11px;
+  line-height: 16px;
+  color: var(--color-texto);
+  text-align: center;
+}
+.cfg__campos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  background: var(--color-superficie);
+  border-radius: 10px;
+}
+.cfg__grupo {
+  min-width: 0;
+  border: 0;
+}
+.cfg__leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  margin-bottom: 6px;
+}
+.cfg__leyenda-icono {
+  width: 20px;
+  height: 20px;
+}
+.cfg__leyenda-titulo {
+  font-size: var(--texto-small);
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-texto);
+}
+.cfg__pista {
+  font-size: 10px;
+  line-height: 16px;
+  color: var(--color-texto-2);
+}
+.cfg__opciones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+.cfg__opcion {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--espacio-4) var(--espacio-8);
+  border: var(--borde-fino) solid var(--color-texto-2);
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-texto);
+  cursor: pointer;
+}
+.cfg__opcion:hover {
+  border-color: var(--color-celeste);
+}
+.cfg__opcion:has(.cfg__check:checked) {
+  border-color: var(--color-rosa);
+}
+.cfg__check {
+  appearance: none;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border: var(--borde-fino) solid var(--color-texto-2);
+  background: transparent;
+  cursor: pointer;
+}
+.cfg__check:checked {
+  background: var(--color-rosa);
+  border-color: var(--color-rosa);
+}
+.cfg__check:focus-visible {
+  outline: var(--borde-fino) solid var(--color-celeste);
+  outline-offset: 2px;
+}
+.cfg__campo .campo__label {
+  font-size: 12px;
+  line-height: 18px;
+}
+.cfg__input {
+  min-height: 40px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 20px;
+}
+textarea.cfg__bio {
+  min-height: 56px;
+  height: 56px;
+}
+.cfg__derecha {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-32);
+}
+.cfg__acciones {
+  display: flex;
+  gap: 12px;
+}
+.cfg__boton {
+  flex: 1;
+  min-height: 44px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: var(--texto-small);
+  line-height: 20px;
+}
+
+@media (min-width: 768px) {
+  .cfg {
+    gap: 23px;
+    padding-top: 18px;
+    padding-bottom: 40px;
+  }
+  .cfg__intro {
+    gap: var(--espacio-8);
+  }
+  .cfg__titulo {
+    font-size: var(--texto-h1);
+    line-height: var(--lh-h1);
+    letter-spacing: var(--tracking-titulo);
+  }
+  .cfg__subtitulo {
+    max-width: 1000px;
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+    letter-spacing: -0.02em;
+  }
+  .cfg__tarjeta {
+    flex-direction: row;
+    gap: 0;
+    min-height: 707px;
+    padding: var(--espacio-24) var(--espacio-32);
+    background: var(--color-superficie);
+    border: 1px solid var(--color-celeste);
+    border-radius: 20px;
+  }
+  .cfg__perfil {
+    flex: 0 0 246px;
+    padding-top: 38px;
+    padding-right: 36px;
+    margin: -15px 0 -13px;
+    border-right: 1px solid var(--color-celeste);
+    margin-right: 80px;
+    gap: 14px;
+  }
+  .cfg__foto {
+    width: 210px;
+    height: 200px;
+  }
+  .cfg__foto-img {
+    width: 210px;
+    height: 200px;
+    border: 1px solid var(--color-borde);
+    border-radius: 100px;
+  }
+  .cfg__camara {
+    right: 0;
+    bottom: -3px;
+    width: 62px;
+    height: 62px;
+  }
+  .cfg__camara-icono {
+    width: 24px;
+    height: 24px;
+  }
+  .cfg__usuario {
+    font-size: var(--texto-small);
+    line-height: var(--lh-small);
+  }
+  .cfg__derecha {
+    flex: 1;
+    max-width: 577px;
+    gap: 27px;
+    padding-top: var(--espacio-8);
+  }
+  .cfg__campos {
+    gap: 27px;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+  }
+  .cfg__leyenda {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .cfg__leyenda-icono {
+    width: 24px;
+    height: 24px;
+  }
+  .cfg__leyenda-titulo {
+    font-size: var(--texto-h3);
+    line-height: var(--lh-h3);
+  }
+  .cfg__pista {
+    font-size: var(--texto-small);
+    line-height: var(--lh-small);
+  }
+  .cfg__opciones {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .cfg__opcion {
+    gap: var(--espacio-8);
+    padding: 6px 12px 6px 10px;
+    border-radius: 10px;
+    font-family: var(--fuente-pixel);
+    font-size: var(--texto-stats);
+    line-height: var(--lh-stats);
+  }
+  .cfg__check {
+    width: 14px;
+    height: 14px;
+  }
+  .cfg__campo .campo__label {
+    font-size: var(--texto-small);
+    line-height: var(--lh-small);
+  }
+  .cfg__input {
+    min-height: 50px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+    letter-spacing: -0.02em;
+  }
+  textarea.cfg__bio {
+    min-height: 72px;
+    height: 72px;
+  }
+  .cfg__acciones {
+    gap: 36px;
+    margin-top: -4px;
+  }
+  .cfg__boton {
+    flex: 0 0 auto;
+    min-height: 64px;
+    padding: var(--espacio-16) var(--espacio-24);
+    font-size: var(--texto-boton);
+    line-height: var(--lh-boton);
+  }
+}
+
 /* ===== P3 · Feed y Lecciones ===== */
 
 
