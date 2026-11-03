@@ -33,17 +33,68 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Lecciones</h1>
-    <!-- TODO P3: implementar la pantalla 22 según el Figma. -->
+  <main class="contenedor lec">
+    <header class="lec__cab">
+      <div class="lec__titulos">
+        <h1 class="titulo-1 lec__titulo">Lecciones</h1>
+        <p class="lec__subtitulo">Elige un tema para ver sus subtemas y retos.</p>
+      </div>
+      <form class="lec__buscador" role="search" aria-label="Buscar lecciones">
+        <div class="campo lec__campo">
+          <label class="campo__label visualmente-oculto" for="lec-buscar">Buscar por nombre del tema</label>
+          <img class="lec__lupa" src="../../assets/icons/lecciones-buscar.svg" alt="">
+          <input class="campo__input lec__input" id="lec-buscar" name="busqueda" type="search" placeholder="Buscar por nombre del tema" maxlength="60">
+        </div>
+      </form>
+    </header>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="tema.html">23 · Grafos</a></li>
-      </ul>
-    </nav>
-
+    <section class="lec__temas" aria-labelledby="lec-temas">
+      <h2 class="visualmente-oculto" id="lec-temas">Temas disponibles</h2>
+        <article class="lec__tema">
+          <div class="lec__imagen" aria-hidden="true"></div>
+          <div class="lec__tema-cuerpo">
+            <div class="lec__tema-texto">
+              <span class="chip chip--celeste lec__chip">Tema 1</span>
+              <h3 class="lec__tema-titulo">Grafos</h3>
+              <p class="lec__tema-descripcion">Recorridos, caminos mínimos y árboles de expansión: la base de muchos problemas de concurso.</p>
+            </div>
+            <a class="boton lec__ingresar" href="tema.html">Ingresar al tema</a>
+          </div>
+        </article>
+        <article class="lec__tema">
+          <div class="lec__imagen" aria-hidden="true"></div>
+          <div class="lec__tema-cuerpo">
+            <div class="lec__tema-texto">
+              <span class="chip chip--celeste lec__chip">Tema 2</span>
+              <h3 class="lec__tema-titulo">Grafos</h3>
+              <p class="lec__tema-descripcion">Recorridos, caminos mínimos y árboles de expansión: la base de muchos problemas de concurso.</p>
+            </div>
+            <a class="boton lec__ingresar" href="tema.html">Ingresar al tema</a>
+          </div>
+        </article>
+        <article class="lec__tema">
+          <div class="lec__imagen" aria-hidden="true"></div>
+          <div class="lec__tema-cuerpo">
+            <div class="lec__tema-texto">
+              <span class="chip chip--celeste lec__chip">Tema 3</span>
+              <h3 class="lec__tema-titulo">Grafos</h3>
+              <p class="lec__tema-descripcion">Recorridos, caminos mínimos y árboles de expansión: la base de muchos problemas de concurso.</p>
+            </div>
+            <a class="boton lec__ingresar" href="tema.html">Ingresar al tema</a>
+          </div>
+        </article>
+        <article class="lec__tema">
+          <div class="lec__imagen" aria-hidden="true"></div>
+          <div class="lec__tema-cuerpo">
+            <div class="lec__tema-texto">
+              <span class="chip chip--celeste lec__chip">Tema 4</span>
+              <h3 class="lec__tema-titulo">Grafos</h3>
+              <p class="lec__tema-descripcion">Recorridos, caminos mínimos y árboles de expansión: la base de muchos problemas de concurso.</p>
+            </div>
+            <a class="boton lec__ingresar" href="tema.html">Ingresar al tema</a>
+          </div>
+        </article>
+    </section>
   </main>
 
   <footer class="footer">
