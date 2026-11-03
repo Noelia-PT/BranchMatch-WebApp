@@ -33,18 +33,115 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Mis retos</h1>
-    <!-- TODO P4: implementar la pantalla 26 según el Figma. -->
+  <main class="contenedor retos">
+    <section class="retos__intro">
+      <h1 class="retos__titulo">Mis retos</h1>
+      <p class="retos__subtitulo">Revisa el estado de tus entregas y los retos pendientes.</p>
+    </section>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="reto-codigo.html">27 · Reto 3: Dijkstra con colas de prioridad</a></li>
-        <li><a href="reto-opcion-multiple.html">29 · Reto 4: Complejidad de Dijkstra</a></li>
+    <form class="retos__filtros" action="retos.html" method="get" role="search" aria-label="Filtrar retos">
+      <div class="retos__buscador">
+        <label class="visualmente-oculto" for="buscar">Buscar reto</label>
+        <input class="retos__buscar" id="buscar" name="buscar" type="search" placeholder="⌕  Buscar reto">
+      </div>
+      <div class="retos__selectores">
+
+  <!-- Filtro por tema -->
+  <div class="retos__selector">
+    <label class="visualmente-oculto" for="tema">Tema</label>
+    <select class="retos__select" id="tema" name="tema">
+      <option value="todos">Tema: todos</option>
+      <option value="grafos">Grafos</option>
+      <option value="algoritmos">Algoritmos</option>
+      <option value="estructuras">Estructuras de datos</option>
+    </select>
+  </div>
+
+  <!-- Filtro por estado -->
+  <div class="retos__selector">
+    <label class="visualmente-oculto" for="estado">Estado</label>
+    <select class="retos__select" id="estado" name="estado">
+      <option value="todos">Estado: todos</option>
+      <option value="pendiente">Pendiente</option>
+      <option value="revision">En revisión</option>
+      <option value="aceptado">Aceptado</option>
+    </select>
+  </div>
+
+  <!-- Filtro por fecha -->
+  <div class="retos__selector">
+    <label class="visualmente-oculto" for="fecha">Fecha</label>
+    <select class="retos__select" id="fecha" name="fecha">
+      <option value="todos">Fecha: todas</option>
+      <option value="semana">Esta semana</option>
+      <option value="mes">Este mes</option>
+      <option value="vencidos">Vencidos</option>
+    </select>
+  </div>
+
+  <!-- Ordenar retos -->
+  <div class="retos__selector">
+    <label class="visualmente-oculto" for="orden">Ordenar</label>
+    <select class="retos__select" id="orden" name="orden">
+      <option value="recientes">Ordenar: recientes</option>
+      <option value="antiguos">Más antiguos</option>
+      <option value="entrega">Próxima entrega</option>
+    </select>
+  </div>
+
+</div>
+    </form>
+
+    <section class="tarjeta retos__tarjeta" aria-label="Lista de retos">
+      <p class="retos__cabecera" aria-hidden="true">
+        <span class="retos__col retos__col--reto">Reto</span>
+        <span class="retos__col retos__col--tema">Tema</span>
+        <span class="retos__col retos__col--entrega">Entrega</span>
+        <span class="retos__col retos__col--estado">Estado</span>
+      </p>
+      <ul class="retos__lista">
+        <li class="retos__fila">
+          <div class="retos__reto">
+            <h2 class="retos__nombre">Reto 1: Recorrido en profundidad (DFS)</h2>
+            <p class="retos__tipo retos__tipo--codigo">&lt;/&gt; Código</p>
+          </div>
+          <p class="retos__dato">Tema: Grafos</p>
+          <p class="retos__dato">Entrega: 12 de octubre</p>
+          <p class="retos__estado retos__estado--aceptado">Estado: Aceptado</p>
+          <a class="retos__accion retos__accion--ver" href="reto-codigo.html">Ver →</a>
+        </li>
+        <li class="retos__fila">
+          <div class="retos__reto">
+            <h2 class="retos__nombre">Reto 2: Componentes conexas</h2>
+            <p class="retos__tipo retos__tipo--codigo">&lt;/&gt; Código</p>
+          </div>
+          <p class="retos__dato">Tema: Grafos</p>
+          <p class="retos__dato">Entrega: 15 de octubre</p>
+          <p class="retos__estado retos__estado--revision">Estado: En revisión</p>
+          <a class="retos__accion retos__accion--ver" href="reto-codigo.html">Ver →</a>
+        </li>
+        <li class="retos__fila">
+          <div class="retos__reto">
+            <h2 class="retos__nombre">Reto 3: Dijkstra con colas de prioridad</h2>
+            <p class="retos__tipo retos__tipo--codigo">&lt;/&gt; Código</p>
+          </div>
+          <p class="retos__dato">Tema: Grafos</p>
+          <p class="retos__dato">Entrega: 18 de octubre</p>
+          <p class="retos__estado retos__estado--pendiente">Estado: Pendiente</p>
+          <a class="retos__accion retos__accion--resolver" href="reto-codigo.html">Resolver →</a>
+        </li>
+        <li class="retos__fila">
+          <div class="retos__reto">
+            <h2 class="retos__nombre">Reto 4: Complejidad de Dijkstra</h2>
+            <p class="retos__tipo retos__tipo--opcion">◉ Opción múltiple</p>
+          </div>
+          <p class="retos__dato">Tema: Grafos</p>
+          <p class="retos__dato">Entrega: 20 de octubre</p>
+          <p class="retos__estado retos__estado--pendiente">Estado: Pendiente</p>
+          <a class="retos__accion retos__accion--resolver" href="reto-opcion-multiple.html">Resolver →</a>
+        </li>
       </ul>
-    </nav>
-
+    </section>
   </main>
 
   <footer class="footer">

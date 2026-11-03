@@ -33,25 +33,106 @@
     </div>
   </header>
 
-  <main class="contenedor">
-    <h1 class="titulo-1">Hola, Edson</h1>
-    <!-- TODO P4: implementar la pantalla 38 según el Figma. -->
+  <div class="pl">
+    <aside class="pl__lateral" aria-label="Panel del líder">
+      <p class="pl__lateral-titulo">PANEL DEL LÍDER</p>
+      <nav aria-label="Secciones del panel">
+        <ul class="pl__menu">
+          <li><a class="pl__menu-link pl__menu-link--activo" href="panel.html" aria-current="page"><img class="pl__menu-icono" src="../../assets/icons/panel-menu-panel.svg" alt="">Panel</a></li>
+          <li><a class="pl__menu-link" href="player-card.html"><img class="pl__menu-icono" src="../../assets/icons/panel-menu-integrantes.svg" alt="">Integrantes</a></li>
+          <li><a class="pl__menu-link" href="../estudiante/chat.html"><img class="pl__menu-icono" src="../../assets/icons/panel-item-mensaje.svg" alt="">Chat</a></li>
+        </ul>
+      </nav>
+      <a class="pl__grupo" href="editar-party.html">
+        <span class="pl__grupo-nombre">Los Insanos</span>
+        <span class="pl__grupo-datos">3 / 5 integrantes · Nivel 3–5</span>
+      </a>
+    </aside>
 
-    <!-- Enlaces de esta pantalla («Lleva a →» del Figma). Úsalos en los botones y borra esta lista. -->
-    <nav aria-label="Lleva a">
-      <ul>
-        <li><a href="../estudiante/chat.html">20 · Chat de la party</a></li>
-        <li><a href="solicitudes.html">39 · ¡Quieren unirse a tu party!</a></li>
-        <li><a href="player-card.html">40 · Player Card del integrante</a></li>
-        <li><a href="editar-party.html">41 · Editar party</a></li>
-        <li><a href="calendario.html">42 · Calendario de clases</a></li>
-        <li><a href="rendimiento.html">43 · Resumen de rendimiento grupal</a></li>
-        <li><a href="crear-reto.html">56 · Crear reto</a></li>
-        <li><a href="revisar-entrega.html">61 · Revisar entrega</a></li>
+    <main class="pl__main">
+      <header class="pl__intro">
+        <div class="pl__saludo">
+          <h1 class="titulo-1">Hola, Edson</h1>
+          <p class="pl__subtitulo">Esto es lo que pasa hoy en Los Insanos.</p>
+        </div>
+        <a class="boton boton--secundario" href="crear-reto.html">Crear reto</a>
+      </header>
+
+      <ul class="pl__stats">
+        <li>
+          <a class="pl__caja pl__stat pl__stat-enlace" href="solicitudes.html">
+            <p class="pl__stat-fila">
+              <img class="pl__stat-icono" src="../../assets/icons/panel-stat-solicitudes.svg" alt="">
+              <span class="pl__stat-valor pl__stat-valor--rosa">3</span>
+            </p>
+            <p class="pl__stat-texto">solicitudes nuevas</p>
+          </a>
+        </li>
+        <li>
+          <a class="pl__caja pl__stat pl__stat-enlace" href="retos.html">
+            <p class="pl__stat-fila">
+              <img class="pl__stat-icono" src="../../assets/icons/panel-stat-entregas.svg" alt="">
+              <span class="pl__stat-valor pl__stat-valor--amarillo">5</span>
+            </p>
+            <p class="pl__stat-texto">entregas por revisar</p>
+          </a>
+        </li>
+        <li>
+          <a class="pl__caja pl__stat" href="rendimiento.html">
+            <span class="pl__stat-fila">
+              <img class="pl__stat-icono" src="../../assets/icons/panel-stat-aprobacion.svg" alt="">
+              <span class="pl__stat-valor pl__stat-valor--menta">68%</span>
+            </span>
+            <span class="pl__stat-texto">aprobación grupal</span>
+          </a>
+        </li>
       </ul>
-    </nav>
 
-  </main>
+      <div class="pl__fila">
+        <section class="pl__caja pl__atencion" aria-labelledby="pl-atencion">
+          <h2 class="titulo-3" id="pl-atencion">Requiere tu atención</h2>
+          <ul class="pl__avisos">
+            <li class="pl__aviso">
+              <p class="pl__aviso-texto"><img class="pl__aviso-icono" src="../../assets/icons/panel-item-solicitud.svg" alt="">Jack Lima quiere unirse a tu party</p>
+              <a class="pl__aviso-link" href="solicitudes.html">Revisar →</a>
+            </li>
+            <li class="pl__aviso">
+              <p class="pl__aviso-texto"><img class="pl__aviso-icono" src="../../assets/icons/panel-item-entrega.svg" alt="">Tomas entregó «Dijkstra con colas»</p>
+              <a class="pl__aviso-link" href="revisar-entrega.html">Revisar →</a>
+            </li>
+            <li class="pl__aviso">
+              <p class="pl__aviso-texto"><img class="pl__aviso-icono" src="../../assets/icons/panel-item-mensaje.svg" alt="">Valeria no entra hace 4 días</p>
+              <a class="pl__aviso-link" href="../estudiante/chat.html">Enviar mensaje →</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="pl__caja pl__sesion" aria-labelledby="pl-sesion">
+          <h2 class="titulo-3 pl__sesion-titulo" id="pl-sesion"><img class="pl__sesion-icono" src="../../assets/icons/panel-calendario.svg" alt="">Próxima sesión</h2>
+          <p class="titulo-3">Jueves 15 oct · 17:00 – 19:00</p>
+          <p class="pl__sesion-tema">Tema: Caminos mínimos</p>
+          <span class="chip chip--menta pl__chip">4 de 5 confirmados</span>
+         <a class="boton boton--secundario" href="https://meet.google.com/" target="_blank" rel="noopener noreferrer">Entrar a la clase</a>
+        </section>
+      </div>
+
+      <a class="pl__caja pl__progreso" href="rendimiento.html">
+        <h2 class="titulo-3">Progreso de la semana</h2>
+        <ul class="pl__metricas">
+          <li class="pl__metrica">
+            <span class="pl__metrica-nombre">Retos entregados</span>
+            <span class="pl__metrica-valor">14 / 20</span>
+            <span class="pl__barra"><span class="pl__relleno pl__relleno--menta pl__relleno--70"></span></span>
+          </li>
+          <li class="pl__metrica">
+            <span class="pl__metrica-nombre">Asistencia</span>
+            <span class="pl__metrica-valor">92%</span>
+            <span class="pl__barra"><span class="pl__relleno pl__relleno--celeste pl__relleno--92"></span></span>
+          </li>
+        </ul>
+      </a>
+    </main>
+  </div>
 
   <footer class="footer">
     <div class="contenedor footer__contenido">
