@@ -1,0 +1,8 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="smile">
+<circle id="Ellipse" opacity="0.3" cx="10" cy="10" r="10" fill="#0B0E26"/>
+<path id="Vector" d="M15 12H5C5.68627 13.3333 7.64706 16 10 16C12.3529 16 14.3137 13.3333 15 12Z" fill="white"/>
+<circle id="Ellipse2" cx="13.5" cy="7.5" r="1.5" transform="rotate(180 13.5 7.5)" fill="#D6DBF5"/>
+<circle id="Ellipse1" cx="6.5" cy="7.5" r="1.5" transform="rotate(180 6.5 7.5)" fill="#D6DBF5"/>
+</g>
+</svg>
