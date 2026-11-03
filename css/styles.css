@@ -5823,6 +5823,305 @@ textarea.edit__descripcion {
 
 /* ===== P3 · Feed y Lecciones ===== */
 
+/* --- 42 · Calendario de clases (lider/calendario.html) --- */
+.lcal {
+  --lcal-divisor: #3b4a8c;          /* línea divisoria (Figma) */
+  --lcal-espacio: 8px;              /* separación interna de la tarjeta lateral */
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+  padding-top: 0;
+  padding-bottom: var(--espacio-32);
+}
+.lcal__cabecera {
+  display: flex;
+  flex-direction: column;
+}
+.lcal__volver {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: var(--espacio-8);
+  align-self: flex-start;
+  height: 34px;
+  color: var(--color-texto);
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+}
+.lcal__volver-icono {
+  width: 20px;
+  height: 20px;
+}
+.lcal__titulo {
+  margin-top: 12px;
+  font-family: var(--fuente-pixel);
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-titulo);
+}
+.lcal__subtitulo {
+  margin-top: var(--espacio-4);
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+  color: var(--color-texto-2);
+}
+.lcal__cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+  align-items: stretch;
+}
+.lcal__tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--color-superficie);
+  border: var(--borde-fino) solid var(--color-borde);
+  border-radius: 12px;
+  box-shadow: var(--sombra-navy);
+}
+.lcal__mes-fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lcal__mes {
+  font-size: var(--texto-body);
+  line-height: var(--lh-h3);
+  font-weight: 600;
+}
+.lcal__leyenda {
+  display: flex;
+  gap: var(--espacio-4);
+}
+.lcal__marca {
+  padding: 2px 6px;
+  border-width: 1px;
+  font-size: 10px;
+  line-height: 20px;
+}
+.lcal__rejilla {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-4);
+}
+.lcal__semana,
+.lcal__dias {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: var(--espacio-4) 2px;
+}
+.lcal__semana {
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+  color: var(--color-texto-2);
+  text-align: center;
+}
+.lcal__dia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--espacio-4);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+  color: var(--color-texto);
+}
+.lcal__dia--vacio {
+  background: none;
+  border: 0;
+}
+.lcal__dia--clase {
+  background: var(--color-celeste);
+  color: var(--color-borde);
+}
+.lcal__dia--hoy {
+  background: var(--color-amarillo);
+  color: var(--color-borde);
+}
+.lcal__lateral {
+  gap: var(--lcal-espacio);
+}
+.lcal__subtitulo-tarjeta {
+  font-size: var(--texto-stats);
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--color-amarillo);
+}
+.lcal__clase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-8);
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+}
+.lcal__editar {
+  flex-shrink: 0;
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-stats);
+  line-height: var(--lh-stats);
+  color: var(--color-celeste);
+}
+.lcal__editar:hover {
+  text-decoration: underline;
+}
+.lcal__divisor {
+  height: 1px;
+  border: 0;
+  background: var(--lcal-divisor);
+}
+.lcal__formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lcal-espacio);
+}
+.lcal__campo {
+  gap: 6px;
+}
+.lcal__input {
+  min-height: 44px;
+  padding: 8px 10px;
+  border-radius: var(--espacio-8);
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+}
+.lcal__acciones {
+  display: flex;
+  gap: var(--espacio-8);
+}
+.lcal__boton {
+  flex: 1;
+  min-height: 0;
+  padding: 8px 20px;
+  font-size: var(--texto-small);
+}
+
+@media (min-width: 768px) {
+  .lcal {
+    max-width: calc(636px + 2 * var(--margen-pagina));
+    padding-top: var(--espacio-32);
+  }
+  .lcal__volver {
+    height: auto;
+    align-items: center;
+    margin-bottom: var(--espacio-16);
+  }
+  .lcal__titulo {
+    margin-top: 0;
+    font-size: var(--texto-h1);
+    line-height: var(--lh-h1);
+    font-weight: 700;
+  }
+  .lcal__subtitulo {
+    margin-top: var(--espacio-8);
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+    letter-spacing: -0.02em;
+  }
+  .lcal__tarjeta {
+    gap: var(--espacio-16);
+    padding: 20px;
+    border-width: var(--borde-grueso);
+    border-radius: 0;
+  }
+  .lcal__mes {
+    font-size: var(--texto-h3);
+  }
+  .lcal__leyenda {
+    gap: var(--espacio-8);
+  }
+  .lcal__marca {
+    padding: var(--espacio-4) 10px;
+    border-width: var(--borde-fino);
+    font-size: var(--texto-stats);
+  }
+  .lcal__rejilla {
+    gap: 6px;
+  }
+  .lcal__semana,
+  .lcal__dias {
+    gap: 6px;
+  }
+  .lcal__dia {
+    height: 71px;
+    border-width: var(--borde-fino);
+    border-radius: 0;
+  }
+  .lcal__lateral {
+    --lcal-espacio: 16px;
+  }
+  .lcal__subtitulo-tarjeta {
+    font-size: var(--texto-h3);
+    line-height: var(--lh-h3);
+  }
+  .lcal__clase {
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+    letter-spacing: -0.02em;
+  }
+  .lcal__divisor {
+    height: 2px;
+  }
+  .lcal__campo {
+    gap: var(--espacio-8);
+  }
+  .lcal__input {
+    min-height: var(--alto-campo);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: var(--texto-body);
+    line-height: var(--lh-body);
+  }
+  .lcal__acciones {
+    gap: var(--espacio-16);
+  }
+  .lcal__boton {
+    flex: 0 0 auto;
+    padding: 12px 20px;
+    font-size: var(--texto-boton);
+  }
+}
+
+@media (min-width: 1100px) {
+  .lcal {
+    max-width: calc(var(--contenedor-max) + 2 * var(--margen-pagina));
+  }
+  .lcal__cuerpo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 384px;
+    align-items: start;
+  }
+}
+
+@media (min-width: 1300px) {
+  .lcal__cabecera {
+    position: relative;
+  }
+  .lcal__volver {
+    position: absolute;
+    top: 12px;
+    left: -33px;
+    margin-bottom: 0;
+  }
+  .lcal__volver-icono {
+    width: 24px;
+    height: 24px;
+  }
+  .lcal__volver-texto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
 
 /* ===== P4 · Retos y Rendimiento ===== */
 /* --- 61 · Revisar entrega (lider/revisar-entrega.html) --- */
