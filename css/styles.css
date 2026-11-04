@@ -804,7 +804,7 @@ textarea.campo__input {
   font-weight: 700;
   font-size: clamp(var(--texto-small), 1.39vw, var(--texto-boton));
   line-height: var(--lh-boton);
-  color: var(--color-menta);
+  color: white;
 }
 .landing-header__link:hover {
   color: var(--color-texto);
