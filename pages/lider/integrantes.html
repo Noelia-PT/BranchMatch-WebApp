@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi party · BranchMatch</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body data-rol="lider">
+  <!-- Pantalla añadida por P2: mi party y sus integrantes (líder) -->
+  <header class="header">
+    <div class="contenedor header__contenido">
+      <a class="header__logo" href="panel.html">
+        <img class="header__logo-img" src="../../assets/img/logo-antenas.png" alt="">
+        <span class="header__logo-texto">Branch<span>Match</span></span>
+      </a>
+      <nav class="header__nav" id="menu" aria-label="Menú principal">
+        <ul class="header__lista">
+          <li><a class="header__link" href="panel.html">Panel</a></li>
+          <li><a class="header__link" href="solicitudes.html">Solicitudes</a></li>
+          <li><a class="header__link" href="lecciones.html">Lecciones</a></li>
+          <li><a class="header__link" href="retos.html">Retos</a></li>
+          <li><a class="header__link" href="comunidad.html">Comunidad</a></li>
+        </ul>
+        <a class="header__cerrar" href="#">Cerrar menú</a>
+      </nav>
+      <div class="header__usuario">
+        <a href="notificaciones.html"><img class="header__campana" src="../../assets/icons/avisos.svg" alt="Notificaciones"></a>
+        <span class="chip chip--amarillo header__chip">LÍDER</span>
+        <a class="avatar" href="perfil.html" aria-label="Mi perfil">EM</a>
+        <a class="header__menu-btn" href="#menu" aria-label="Abrir menú">☰</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor integ">
+    <section class="tarjeta integ__party" aria-labelledby="integ-titulo">
+      <header class="integ__encabezado">
+        <h1 class="integ__titulo" id="integ-titulo">Mi party</h1>
+        <p class="chip chip--menta integ__estado">Party en formación</p>
+      </header>
+      <p class="integ__descripcion texto-secundario"></p>
+      <ul class="integ__datos"></ul>
+      <section class="integ__bloque" aria-labelledby="integ-horarios">
+        <h2 class="integ__subtitulo" id="integ-horarios">Horarios</h2>
+        <ul class="integ__horarios"></ul>
+      </section>
+      <div class="integ__acciones">
+        <a class="boton" href="editar-party.html">Editar party</a>
+        <a class="boton boton--secundario" href="solicitudes.html">Ver solicitudes</a>
+      </div>
+    </section>
+
+    <section class="integ__seccion" aria-labelledby="integ-lista-titulo">
+      <h2 class="integ__subtitulo" id="integ-lista-titulo">Integrantes</h2>
+      <ul class="integ__lista"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__contenido">
+      <p>© 2026 Branch Match</p>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Ayuda</a></li>
+        <li><a class="footer__link" href="#">Términos</a></li>
+        <li><a class="footer__link" href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="../../js/localstorage.js" defer></script>
+  <script src="../../js/auth.js" defer></script>
+  <script src="../../js/notificaciones.js" defer></script>
+  <script src="../../js/perfil.js" defer></script>
+  <script src="../../js/party.js" defer></script>
+</body>
+</html>
