@@ -6,7 +6,7 @@
   <title>Descubre tu nivel · BranchMatch</title>
   <link rel="stylesheet" href="../../css/styles.css">
 </head>
-<body>
+<body data-rol="estudiante">
   <!-- Figma: pantalla 04 · Prueba diagnóstica · Inicio · Responsable: P1 -->
   <header class="header">
     <div class="contenedor header__contenido">
@@ -41,9 +41,9 @@
       <p class="prueba-inicio__descripcion">Evalúa tus conocimientos en resolución de problemas y lógica algorítmica para ubicarte en el nivel de entrenamiento adecuado (Principiante, Intermedio o Avanzado) y recomendarte los clubes o retos que mejor se adapten a ti.</p>
 
       <ul class="prueba-datos">
-        <li class="tarjeta prueba-dato"><span class="prueba-dato__valor">20</span> <span class="texto-small">preguntas</span></li>
-        <li class="tarjeta prueba-dato"><span class="prueba-dato__valor">15 min</span> <span class="texto-small">de tiempo</span></li>
-        <li class="tarjeta prueba-dato"><span class="prueba-dato__valor">+120 XP</span> <span class="texto-small">al terminar</span></li>
+        <li class="tarjeta prueba-dato"><span class="prueba-dato__valor" id="prueba-dato-preguntas">20</span> <span class="texto-small">preguntas</span></li>
+        <li class="tarjeta prueba-dato"><span class="prueba-dato__valor" id="prueba-dato-tiempo">15 min</span> <span class="texto-small">de tiempo</span></li>
+        <li class="tarjeta prueba-dato"><span class="prueba-dato__valor" id="prueba-dato-xp">+120 XP</span> <span class="texto-small">al terminar</span></li>
       </ul>
 
       <section class="tarjeta prueba-reglas" aria-labelledby="reglas-titulo">
@@ -69,5 +69,9 @@
       </ul>
     </div>
   </footer>
+  <script src="../../js/localstorage.js" defer></script>
+  <script src="../../js/auth.js" defer></script>
+  <script src="../../js/notificaciones.js" defer></script>
+  <script src="../../js/prueba.js" defer></script>
 </body>
 </html>
