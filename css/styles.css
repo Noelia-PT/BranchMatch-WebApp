@@ -5928,6 +5928,29 @@ textarea.edit__descripcion {
 
 /* ===== P3 · Feed y Lecciones ===== */
 
+/* --- P2 · Anchos de las barras de stats y de XP (perfil.js los pone según el valor, de 5 en 5) --- */
+.p2-ancho--0 { width: 0%; }
+.p2-ancho--5 { width: 5%; }
+.p2-ancho--10 { width: 10%; }
+.p2-ancho--15 { width: 15%; }
+.p2-ancho--20 { width: 20%; }
+.p2-ancho--25 { width: 25%; }
+.p2-ancho--30 { width: 30%; }
+.p2-ancho--35 { width: 35%; }
+.p2-ancho--40 { width: 40%; }
+.p2-ancho--45 { width: 45%; }
+.p2-ancho--50 { width: 50%; }
+.p2-ancho--55 { width: 55%; }
+.p2-ancho--60 { width: 60%; }
+.p2-ancho--65 { width: 65%; }
+.p2-ancho--70 { width: 70%; }
+.p2-ancho--75 { width: 75%; }
+.p2-ancho--80 { width: 80%; }
+.p2-ancho--85 { width: 85%; }
+.p2-ancho--90 { width: 90%; }
+.p2-ancho--95 { width: 95%; }
+.p2-ancho--100 { width: 100%; }
+
 /* --- 11 · Inicio (feed) (estudiante/inicio.html) --- */
 .ifd {
   --ifd-divisor: #3b4a8c;          /* línea entre conteo y acciones (Figma) */
