@@ -1,5 +1,5 @@
 // Parties y solicitudes: datos, crear y editar party, unirse, revisar solicitudes, mi party y party completa.
-// Páginas: lider/crea-party, editar-party, solicitudes; estudiante/unete-party, mi-party, party-completa; perfil (datos de la party).
+// Páginas: lider/crea-party, editar-party, solicitudes, integrantes; estudiante/unete-party, mi-party, party-completa; perfil (datos de la party).
 // Responsable: P2 (Perfiles y party).
 
 // ===== Elementos =====
@@ -9,6 +9,7 @@ const zonaUnete = document.querySelector(".unete__grupos");
 const zonaSolicitudes = document.querySelector(".sol__der");
 const principalMiParty = document.querySelector("main.mi-party");
 const principalPartyCompleta = document.querySelector("main.party-completa");
+const principalIntegrantes = document.querySelector("main.integ");
 
 
 // ===== Datos =====
@@ -369,39 +370,42 @@ const crearHtmlTarjetaParty = (party, posicion, total, pendiente) => {
   </article>`;
 };
 
-// Mensaje cuando no hay una party para mostrar (ya estás en una, o no quedan más)
-const crearHtmlSinParties = (titulo, texto, enlace, textoEnlace, accion) => `
-  <section class="unete__escena unete__escena--final" aria-label="Sigue buscando">
-    <img class="unete__popa" src="../../assets/img/popa-sigue-buscando.gif" alt="Popa con los ojos cerrados, buscando otra party">
-    <p class="unete__mensaje" role="status">Sigue buscando</p>
-  </section>
+// Tarjeta con un mensaje cuando no hay una party para mostrar (ya estás en una, o no quedan más)
+const crearHtmlTarjetaMensaje = (titulo, texto, enlace, textoEnlace, accion) => `
   <article class="tarjeta unete__party">
     <h2 class="unete__nombre">${escaparHtml(titulo)}</h2>
     <p class="texto-secundario">${escaparHtml(texto)}</p>
     <a class="boton" href="${enlace}"${accion ? ` data-accion="${accion}"` : ""}>${escaparHtml(textoEnlace)}</a>
   </article>`;
 
+// Un grupo con la escena de Popa y, debajo o al lado según el ancho, la tarjeta del mensaje
+const crearHtmlGrupoMensaje = (...datos) => `
+  <div class="unete__grupo unete__grupo--final">
+    <div class="unete__escenas">${crearHtmlEscenaUnete("final")}</div>
+    ${crearHtmlTarjetaMensaje(...datos)}
+  </div>`;
+
 const mostrarUnete = (sesion) => {
   const partyActual = obtenerPartyDe(sesion.correo);
   if (partyActual) {
-    zonaUnete.innerHTML = `<div class="unete__grupo unete__grupo--final"><div class="unete__escenas">${crearHtmlSinParties(
+    zonaUnete.innerHTML = crearHtmlGrupoMensaje(
       "Ya estás en una party",
       `Eres parte de ${partyActual.nombre}. Para buscar otra, primero deja tu party actual.`,
       "mi-party.html",
       "Ir a mi party"
-    )}</div></div>`;
+    );
     return;
   }
   cargarPartiesParaUnirse(sesion.correo);
 
   if (posicionParty >= partiesParaUnirse.length) {
-    zonaUnete.innerHTML = `<div class="unete__grupo unete__grupo--final"><div class="unete__escenas">${crearHtmlSinParties(
+    zonaUnete.innerHTML = crearHtmlGrupoMensaje(
       "No hay más parties por ahora",
       "Ya viste todas las parties de tu nivel con lugares libres. Vuelve más tarde o empieza de nuevo.",
       "#",
       "Volver a empezar",
       "reiniciar"
-    )}</div></div>`;
+    );
     return;
   }
 
@@ -563,6 +567,58 @@ const accionarSolicitud = (e, sesion) => {
   mostrarSolicitudes(sesion);
 };
 
+// ----- Mi party e integrantes (líder) -----
+const crearHtmlIntegrante = (correo, party, indice) => {
+  const perfil = obtenerPerfil(correo);
+  const nombre = obtenerNombrePerfil(correo);
+  const esLider = correo === party.correoLider;
+  const lenguajes = perfil.lenguajes.slice(0, 3);
+  return `
+    <li class="tarjeta integ__integrante">
+      <span class="integ__avatar integ__avatar--${coloresAvatarParty[indice % coloresAvatarParty.length]}" aria-hidden="true">${escaparHtml(obtenerIniciales(nombre))}</span>
+      <div class="integ__datos-integrante">
+        <h3 class="integ__nombre">${escaparHtml(nombre)}</h3>
+        <ul class="integ__chips">
+          <li class="chip chip--amarillo">LV ${obtenerNivelJugador(correo)}</li>
+          ${esLider ? '<li class="chip chip--rosa">Líder</li>' : ""}
+        </ul>
+        <p class="integ__usuario texto-secundario">${escaparHtml([perfil.jugador || "@sin_usuario", perfil.carrera].filter(Boolean).join(" · "))}</p>
+        <p class="integ__lenguajes texto-secundario">${lenguajes.length ? escaparHtml(lenguajes.join(" · ")) : "Sin lenguajes"}</p>
+      </div>
+      <a class="boton boton--secundario integ__boton" href="player-card.html?correo=${encodeURIComponent(correo)}">Ver Player Card</a>
+    </li>`;
+};
+
+const mostrarIntegrantes = (sesion) => {
+  const party = obtenerPartyDe(sesion.correo);
+  if (!party || party.correoLider !== sesion.correo) {
+    principalIntegrantes.innerHTML = `
+      <section class="tarjeta integ__party">
+        <h1 class="integ__titulo">Aún no tienes party</h1>
+        <p class="integ__descripcion texto-secundario">Crea tu party para ver aquí a tus integrantes.</p>
+        <div class="integ__acciones"><a class="boton" href="crea-party.html">Crear mi party</a></div>
+      </section>`;
+    return;
+  }
+  const llena = partyEstaLlena(party);
+  const libres = party.cupo - party.integrantes.length;
+  const estado = document.querySelector(".integ__estado");
+  estado.textContent = `${llena ? "Party completa" : "Party en formación"} · ${party.integrantes.length}/${party.cupo}`;
+  estado.className = `chip ${llena ? "chip--menta" : "chip--celeste"} integ__estado`;
+
+  document.title = `${party.nombre} · BranchMatch`;
+  document.querySelector(".integ__titulo").textContent = party.nombre;
+  document.querySelector(".integ__descripcion").textContent = party.descripcion || "Sin descripción.";
+  document.querySelector(".integ__datos").innerHTML = `
+    <li>Nivel ${formatearRangoNivel(party.nivel)}</li>
+    <li>Cupo: ${party.integrantes.length} de ${party.cupo} · ${llena ? "sin lugares libres" : `${libres} ${libres === 1 ? "libre" : "libres"}`}</li>
+    <li>Solicitudes pendientes: ${obtenerSolicitudesDeParty(party.id, "pendiente").length}</li>`;
+  document.querySelector(".integ__horarios").innerHTML = party.horarios.length
+    ? party.horarios.map((h) => `<li>${escaparHtml(formatearHorario(h))}</li>`).join("")
+    : "<li>Aún no hay horarios.</li>";
+  document.querySelector(".integ__lista").innerHTML = party.integrantes.map((correo, i) => crearHtmlIntegrante(correo, party, i)).join("");
+};
+
 // ----- Mi party (estudiante) -----
 const letrasDiasParty = ["L", "M", "M", "J", "V", "S", "D"];
 const mesesCortosParty = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"];
@@ -602,7 +658,7 @@ const mostrarMiParty = (sesion, party) => {
 
   const colores = ["amarillo", "celeste", "menta", "rosa", "claro"];
   document.querySelector(".mi-party__miembros").innerHTML = party.integrantes
-    .map((correo, i) => `<li class="mi-party__miembro mi-party__miembro--${colores[i % colores.length]}" title="${escaparHtml(obtenerNombrePerfil(correo))}">${escaparHtml(obtenerIniciales(obtenerNombrePerfil(correo)))}</li>`)
+    .map((correo, i) => `<li class="mi-party__miembro mi-party__miembro--${colores[i % colores.length]}" title="${escaparHtml(obtenerNombrePerfil(correo))}"><a href="player-card.html?correo=${encodeURIComponent(correo)}" aria-label="Ver la Player Card de ${escaparHtml(obtenerNombrePerfil(correo))}">${escaparHtml(obtenerIniciales(obtenerNombrePerfil(correo)))}</a></li>`)
     .join("");
 
   document.querySelector(".mi-party__avatar").textContent = obtenerIniciales(sesion.nombre);
@@ -663,7 +719,7 @@ const mostrarPartyCompleta = (sesion, party) => {
       if (correo === sesion.correo) etiquetas.push('<li class="chip chip--celeste">Tú</li>');
       return `<li class="tarjeta integrante-party">
         <span class="integrante-party__avatar integrante-party__avatar--${coloresAvatarParty[i % coloresAvatarParty.length]}" aria-hidden="true">${escaparHtml(obtenerIniciales(obtenerNombrePerfil(correo)))}</span>
-        <h2 class="titulo-3">${escaparHtml(nombre)}</h2>
+        <h2 class="titulo-3"><a href="player-card.html?correo=${encodeURIComponent(correo)}">${escaparHtml(nombre)}</a></h2>
         <ul class="integrante-party__chips">${etiquetas.join("")}</ul>
       </li>`;
     })
@@ -765,6 +821,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "ArrowRight") item.querySelector('.sol__accion[data-accion="aceptar"]').click();
     });
   }
+
+  if (principalIntegrantes) mostrarIntegrantes(sesion);
 
   if (principalMiParty) {
     const party = obtenerPartyDe(sesion.correo);

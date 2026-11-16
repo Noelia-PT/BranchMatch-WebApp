@@ -289,6 +289,9 @@ const mostrarPerfil = (sesion) => {
        <li class="chip chip--rosa perfil__insignia"><img class="perfil__insignia-icono" src="../../assets/icons/fuego.svg" alt="">${perfil.racha} días</li>`;
   document.querySelector(".perfil__insignias").innerHTML = insignias;
 
+  const enlaceMiPlayerCard = document.querySelector('[data-accion="ver-player-card"]');
+  if (enlaceMiPlayerCard) enlaceMiPlayerCard.href = `player-card.html?correo=${encodeURIComponent(sesion.correo)}`;
+
   mostrarAvisoPerfil(perfil);
   mostrarGrupoPerfil(sesion);
 };
@@ -336,6 +339,38 @@ const mostrarPlayerCard = (correo) => {
     ? perfil.intereses.map((i) => `<li class="chip chip--menta pc__chip">${escaparHtml(i)}</li>`).join("")
     : '<li class="texto-secundario">Sin intereses</li>';
   secciones[2].querySelector(".pc__lista").innerHTML = lista(perfil.metas, "pc__item--amarillo", "Sin metas");
+};
+
+
+// El estudiante ve su propia Player Card o la de alguien de su party; el líder ve la de cualquier jugador
+const puedeVerPlayerCard = (sesion, correo) => {
+  if (sesion.rol === "lider" || sesion.correo === correo) return true;
+  const party = typeof obtenerPartyDe === "function" ? obtenerPartyDe(sesion.correo) : null;
+  return Boolean(party && party.integrantes.includes(correo));
+};
+
+const iniciarPlayerCard = (sesion) => {
+  // Sin ?correo=: el estudiante ve la suya y el líder la lista de integrantes
+  const correo = correoPlayerCard || (sesion.rol === "estudiante" ? sesion.correo : null);
+  if (!correo) {
+    location.replace("integrantes.html");
+    return;
+  }
+  if (!puedeVerPlayerCard(sesion, correo)) {
+    location.replace("player-card.html");
+    return;
+  }
+  mostrarPlayerCard(correo);
+
+  // "Regresar" vuelve a la página anterior; si no hay, va a su destino de siempre
+  const botonRegresar = document.querySelector(".pc__boton");
+  if (correo === sesion.correo) botonRegresar.href = "perfil.html";
+  botonRegresar.addEventListener("click", (e) => {
+    if (document.referrer && history.length > 1) {
+      e.preventDefault();
+      history.back();
+    }
+  });
 };
 
 
@@ -425,13 +460,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (cabeceraPlayerCard) {
-    if (!correoPlayerCard) {
-      location.replace("solicitudes.html");
-    } else {
-      mostrarPlayerCard(correoPlayerCard);
-    }
-  }
+  if (cabeceraPlayerCard) iniciarPlayerCard(sesion);
 
   const textoUsuarioConfigura = document.querySelector(".cfg__usuario");
   if (textoUsuarioConfigura) {
