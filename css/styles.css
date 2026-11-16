@@ -1354,74 +1354,6 @@ textarea.campo__input {
   }
 }
 
-/* --- Selector de rol para la demostración (auth/iniciar-sesion.html y auth/crear-cuenta.html) --- */
-/* Dos radios ocultos con pastillas; el botón correcto se muestra con :has() y :checked, sin JavaScript */
-.auth-rol {
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-.auth-rol__titulo {
-  padding: 0;
-  margin-bottom: var(--espacio-8);
-  font-size: var(--texto-body);
-  line-height: var(--lh-body);
-  color: var(--color-texto);
-}
-.auth-rol__opciones {
-  display: flex;
-  gap: var(--espacio-16);
-}
-.auth-rol__opcion {
-  flex: 1 1 0;
-  min-width: 0;
-}
-.auth-rol__pastilla {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: var(--alto-campo);
-  padding: var(--espacio-8) var(--espacio-16);
-  background: var(--color-fondo);
-  border: var(--borde-fino) solid var(--color-borde);
-  border-radius: 10px;
-  color: var(--color-texto);
-  font-family: var(--fuente-pixel);
-  font-size: var(--texto-stats);
-  line-height: var(--lh-stats);
-  text-align: center;
-  cursor: pointer;
-}
-.auth-rol__pastilla:hover {
-  border-color: var(--color-celeste);
-}
-.auth-rol__radio:checked + .auth-rol__pastilla {
-  background: var(--color-amarillo);
-  border-color: var(--color-borde);
-  box-shadow: var(--sombra-navy);
-  color: var(--color-borde);
-}
-.auth-rol__radio:focus-visible + .auth-rol__pastilla {
-  outline: var(--borde-fino) solid var(--color-celeste);
-  outline-offset: 2px;
-}
-.auth-formulario:has(#rol-estudiante:checked) .auth-formulario__boton--lider,
-.auth-formulario:has(#rol-lider:checked) .auth-formulario__boton--estudiante {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .auth-rol__titulo {
-    font-size: var(--texto-h3);
-    line-height: var(--lh-h3);
-    font-weight: 600;
-  }
-  .auth-rol__opciones {
-    max-width: 414px;
-  }
-}
-
 /* --- 04 a 08 · Prueba diagnóstica (pages/prueba/) --- */
 
 /* 04 · Inicio de la prueba */
@@ -1520,6 +1452,60 @@ textarea.campo__input {
 }
 .prueba-estado__relleno--2 {
   width: 10%;
+}
+.prueba-estado__relleno--3 {
+  width: 15%;
+}
+.prueba-estado__relleno--4 {
+  width: 20%;
+}
+.prueba-estado__relleno--5 {
+  width: 25%;
+}
+.prueba-estado__relleno--6 {
+  width: 30%;
+}
+.prueba-estado__relleno--7 {
+  width: 35%;
+}
+.prueba-estado__relleno--8 {
+  width: 40%;
+}
+.prueba-estado__relleno--9 {
+  width: 45%;
+}
+.prueba-estado__relleno--10 {
+  width: 50%;
+}
+.prueba-estado__relleno--11 {
+  width: 55%;
+}
+.prueba-estado__relleno--12 {
+  width: 60%;
+}
+.prueba-estado__relleno--13 {
+  width: 65%;
+}
+.prueba-estado__relleno--14 {
+  width: 70%;
+}
+.prueba-estado__relleno--15 {
+  width: 75%;
+}
+.prueba-estado__relleno--16 {
+  width: 80%;
+}
+.prueba-estado__relleno--17 {
+  width: 85%;
+}
+.prueba-estado__relleno--18 {
+  width: 90%;
+}
+.prueba-estado__relleno--19 {
+  width: 95%;
+}
+.prueba-estado__relleno--20 {
+  width: 100%;
 }
 .prueba-tarjeta {
   display: grid;
@@ -1962,6 +1948,57 @@ textarea.campo__input {
     gap: var(--espacio-24);
     margin-top: var(--espacio-32);
   }
+}
+
+/* --- 17 · Notificaciones con JavaScript: acciones, no leídas y vacío (estudiante y lider/notificaciones.html) --- */
+.notif__acciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+  align-self: stretch;
+}
+.notificacion--nueva {
+  border-color: var(--color-amarillo);
+}
+.notif__vacio {
+  text-align: center;
+}
+.notif__marcar-todas {
+  align-self: flex-start;
+}
+
+/* Contador de la campana de la cabecera (todas las páginas con cabecera) */
+.campana__enlace {
+  position: relative;
+  display: inline-flex;
+}
+.campana__contador {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  min-width: 18px;
+  padding: 0 var(--espacio-4);
+  background: var(--color-rosa);
+  color: var(--color-borde);
+  font-family: var(--fuente-pixel);
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .notif__acciones {
+    align-self: flex-start;
+    margin-top: var(--espacio-24);
+  }
+  .notif__acciones .boton {
+    white-space: nowrap;
+  }
+}
+
+/* --- 02 y 03 · Auth: la zona de error general respeta el atributo hidden --- */
+.auth-formulario .campo[hidden] {
+  display: none;
 }
 
 /* ===== P2 · Perfiles y Party ===== */
