@@ -5928,6 +5928,13 @@ textarea.edit__descripcion {
 
 /* ===== P3 · Feed y Lecciones ===== */
 
+/* --- Únete a una party con JavaScript: escenas «enviada» y «sigue buscando» (estudiante/unete-party.html) --- */
+/* party.js dibuja una sola escena por party con estas clases, en lugar de usar :target */
+.unete__grupo--enviada .unete__escena--enviada,
+.unete__grupo--final .unete__escena--final {
+  display: flex;
+}
+
 /* --- P2 · Anchos de las barras de stats y de XP (perfil.js los pone según el valor, de 5 en 5) --- */
 .p2-ancho--0 { width: 0%; }
 .p2-ancho--5 { width: 5%; }
