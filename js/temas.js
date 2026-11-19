@@ -36,6 +36,8 @@ const avisoGrabacion = document.querySelector(".lsut__aviso");
 // Parámetros de la dirección: ?id= del tema (o del subtema en subtema.html)
 const parametrosTemas = new URLSearchParams(location.search);
 const idTemaDireccion = Number(parametrosTemas.get("id"));
+// En subtema.html, ?tema=3 abre el modal para crear un subtema nuevo en ese tema
+const idTemaNuevoSubtema = Number(parametrosTemas.get("tema"));
 
 
 // ===== Datos =====
@@ -280,20 +282,49 @@ const guardarTemaEditado = (e, tema) => {
 };
 
 // --- Líder: crear módulo ---
-const anadirSubtemaModulo = (e) => {
+// «+ Añadir subtema» muestra (una sola vez) un campo para escribir el nombre dentro del formulario
+const mostrarCampoSubtemaModulo = (e) => {
   e.preventDefault();
-  const nombre = (prompt("Nombre del subtema:") || "").trim();
-  if (!nombre) return;
+  let campo = grupoSubtemasModulo.querySelector("#lcmo-nuevo-subtema");
+  if (!campo) {
+    botonAnadirSubtemaModulo.insertAdjacentHTML("beforebegin", `
+      <div class="campo p3tem__nuevo">
+        <label class="campo__label lcmo__label" for="lcmo-nuevo-subtema">Nombre del nuevo subtema</label>
+        <div class="p3tem__nuevo-fila">
+          <input class="campo__input lcmo__input" id="lcmo-nuevo-subtema" type="text" maxlength="60" placeholder="Ej. Mochila 0/1">
+          <a class="boton boton--secundario p3tem__nuevo-boton" href="#" data-accion="confirmar-subtema">Añadir</a>
+        </div>
+        <p class="campo__error">Escribe un nombre de al menos 3 caracteres.</p>
+      </div>`);
+    campo = grupoSubtemasModulo.querySelector("#lcmo-nuevo-subtema");
+  }
+  campo.focus();
+};
+
+const anadirSubtemaModulo = () => {
+  const campo = grupoSubtemasModulo.querySelector("#lcmo-nuevo-subtema");
+  const nombre = campo.value.trim();
   if (nombre.length < 3) {
-    alert("El nombre del subtema debe tener al menos 3 caracteres.");
+    marcarErrorTema(campo);
+    campo.focus();
     return;
   }
   const numero = grupoSubtemasModulo.querySelectorAll(".lcmo__check").length + 1;
-  botonAnadirSubtemaModulo.insertAdjacentHTML("beforebegin", `
+  campo.closest(".p3tem__nuevo").insertAdjacentHTML("beforebegin", `
     <label class="lcmo__opcion" for="lcmo-subtema-${numero}">
       <input class="lcmo__check" id="lcmo-subtema-${numero}" name="subtemas" type="checkbox" value="${escaparHtml(nombre)}" checked>
       <span class="lcmo__opcion-texto">${escaparHtml(nombre)}</span>
     </label>`);
+  campo.value = "";
+  campo.focus();
+};
+
+// Clic en «Añadir» o Enter dentro del campo (sin enviar el formulario del módulo)
+const accionarSubtemaModulo = (e) => {
+  if (e.type === "click" && !e.target.closest('[data-accion="confirmar-subtema"]')) return;
+  if (e.type === "keydown" && (e.key !== "Enter" || e.target.id !== "lcmo-nuevo-subtema")) return;
+  e.preventDefault();
+  anadirSubtemaModulo();
 };
 
 const crearModulo = (e) => {
@@ -347,7 +378,7 @@ const crearHtmlSubtemaLider = (subtema, idActual) => {
       <p class="${p}__nombre"><span class="${p}__asa" aria-hidden="true">⋮⋮</span>${titulo}</p>
       <div class="${p}__acciones">
         ${grabacion}
-        <a class="${p}__accion ${p}__accion--editar" href="#" data-accion="renombrar-subtema" data-id="${subtema.id}"><img class="${p}__accion-icono" src="../../assets/icons/${p === "lsut" ? "subtema" : "subtemas"}-editar.svg" alt="">Editar<span class="visualmente-oculto"> ${titulo}</span></a>
+        <a class="${p}__accion ${p}__accion--editar" href="subtema.html?id=${subtema.id}"><img class="${p}__accion-icono" src="../../assets/icons/${p === "lsut" ? "subtema" : "subtemas"}-editar.svg" alt="">Editar<span class="visualmente-oculto"> ${titulo}</span></a>
         <a class="${p}__accion ${p}__accion--eliminar" href="#" data-accion="quitar-subtema" data-id="${subtema.id}"><img class="${p}__accion-icono" src="../../assets/icons/${p === "lsut" ? "subtema" : "subtemas"}-eliminar.svg" alt="">Eliminar<span class="visualmente-oculto"> ${titulo}</span></a>
       </div>
     </li>`;
@@ -369,18 +400,6 @@ const mostrarSubtemasLider = (tema, idActual = 0) => {
     : `<li class="${p}__fila"><p class="${p}__nombre">${todos.length ? "Ningún subtema coincide con la búsqueda o el filtro." : "Este tema aún no tiene subtemas. Añade el primero."}</p></li>`;
 };
 
-const anadirSubtemaLider = (e, tema, idActual) => {
-  e.preventDefault();
-  const nombre = (prompt(`Nombre del nuevo subtema de «${tema.titulo}»:`) || "").trim();
-  if (!nombre) return;
-  if (nombre.length < 3) {
-    alert("El nombre del subtema debe tener al menos 3 caracteres.");
-    return;
-  }
-  crearSubtema({ idTema: tema.id, titulo: nombre });
-  mostrarSubtemasLider(tema, idActual);
-};
-
 const accionarSubtemasLider = (e, tema, idActual) => {
   const enlace = e.target.closest("[data-accion]");
   if (!enlace) return;
@@ -388,15 +407,7 @@ const accionarSubtemasLider = (e, tema, idActual) => {
   const subtema = obtenerSubtema(Number(enlace.dataset.id));
   if (!subtema) return;
 
-  if (enlace.dataset.accion === "renombrar-subtema") {
-    const nombre = (prompt("Nuevo nombre del subtema:", subtema.titulo) || "").trim();
-    if (!nombre || nombre === subtema.titulo) return;
-    if (nombre.length < 3) {
-      alert("El nombre del subtema debe tener al menos 3 caracteres.");
-      return;
-    }
-    editarSubtema(subtema.id, { titulo: nombre });
-  } else if (enlace.dataset.accion === "quitar-subtema") {
+  if (enlace.dataset.accion === "quitar-subtema") {
     if (!confirm(`¿Eliminar el subtema «${subtema.titulo}»? Se perderán su grabación y sus PDFs.`)) return;
     borrarSubtema(subtema.id);
     if (subtema.id === idActual) {
@@ -407,11 +418,12 @@ const accionarSubtemasLider = (e, tema, idActual) => {
   mostrarSubtemasLider(tema, idActual);
 };
 
-// --- Líder: grabación y PDFs de un subtema (modal de subtema.html) ---
+// --- Líder: crear o editar un subtema (modal de subtema.html) ---
 // PDFs del formulario mientras se edita; se guardan al pulsar «Guardar»
 let pdfsEnEdicion = [];
-// Copia de lo que había antes de guardar, para «Deshacer»
+// Copia de lo que había antes de guardar, para «Deshacer» (null si el subtema se acaba de crear)
 let subtemaAntesDeGuardar = null;
+let subtemaRecienCreado = false;
 
 const detectarPlataforma = (link) => {
   try {
@@ -468,46 +480,94 @@ const quitarPdf = (e) => {
   campoPdfGrabacion.focus();
 };
 
-const abrirGrabacion = (subtema) => {
-  formGrabacion.querySelector(".lsut__modal-titulo").lastChild.textContent = `Grabación · ${subtema.titulo}`;
+// El diseño no trae campos para el nombre y la descripción: se insertan con las clases del propio modal
+const insertarCamposSubtema = () => {
+  if (formGrabacion.querySelector("#lsut-nombre")) return;
+  formGrabacion.querySelector(".lsut__modal-texto").insertAdjacentHTML("afterend", `
+    <div class="campo lsut__campo">
+      <label class="campo__label lsut__label" for="lsut-nombre">Nombre del subtema</label>
+      <input class="campo__input lsut__input" id="lsut-nombre" name="nombre" type="text" required minlength="3" maxlength="60" placeholder="Ej. Tipos de grafos">
+      <p class="campo__error">Escribe un nombre de al menos 3 caracteres.</p>
+    </div>
+    <div class="campo lsut__campo">
+      <label class="campo__label lsut__label" for="lsut-descripcion">Descripción <span class="lsut__opcional">Opcional</span></label>
+      <textarea class="campo__input lsut__input p3tem__descripcion" id="lsut-descripcion" name="descripcion" maxlength="200" placeholder="¿Qué aprenderá tu party en este subtema?"></textarea>
+    </div>`);
+};
+
+// Abre el modal con los datos del subtema (o vacío, si es nuevo)
+const abrirSubtemaEnModal = (subtema, tema) => {
+  const esNuevo = !subtema.id;
+  insertarCamposSubtema();
+  formGrabacion.querySelector(".lsut__modal-titulo").lastChild.textContent = esNuevo ? `Nuevo subtema · ${tema.titulo}` : `Editar subtema · ${subtema.titulo}`;
+  formGrabacion.querySelector(".lsut__modal-texto").textContent = esNuevo
+    ? "Ponle un nombre al subtema. Si ya tienes la clase grabada, pega su link y sube los PDFs para que tu party los vea en «Ver lección»."
+    : "Cambia el nombre o la descripción, pega el link de la clase grabada y, si quieres, sube los PDFs para que tu party los vea en «Ver lección».";
+  formGrabacion.querySelector('.lsut__botones a[href="#guardado"]').textContent = esNuevo ? "Crear subtema" : "Guardar";
+  formGrabacion.querySelector("#lsut-nombre").value = subtema.titulo;
+  formGrabacion.querySelector("#lsut-descripcion").value = subtema.descripcion || "";
   campoLinkGrabacion.value = subtema.linkGrabacion;
   campoLinkGrabacion.required = false;
   pdfsEnEdicion = [...subtema.pdfs];
   mostrarPdfsEnEdicion();
   mostrarDetectado();
   // «Cancelar» y la X vuelven a la lista de subtemas de su tema
-  formGrabacion.querySelectorAll('a[href="subtemas.html"]').forEach((a) => {
-    a.href = `subtemas.html?id=${subtema.idTema}`;
+  formGrabacion.querySelectorAll('a[href^="subtemas.html"]').forEach((a) => {
+    a.href = `subtemas.html?id=${tema.id}`;
   });
-  document.querySelector(".lsut__volver").href = `subtemas.html?id=${subtema.idTema}`;
+  document.querySelector(".lsut__volver").href = `subtemas.html?id=${tema.id}`;
 };
 
-const guardarGrabacion = (e, subtema) => {
+const guardarSubtemaDesdeModal = (e, estado) => {
   e.preventDefault();
-  if (!validarLinkGrabacion()) return;
-  subtemaAntesDeGuardar = { linkGrabacion: subtema.linkGrabacion, pdfs: subtema.pdfs };
-  const linkGrabacion = campoLinkGrabacion.value.trim();
-  editarSubtema(subtema.id, { linkGrabacion, pdfs: pdfsEnEdicion });
-  Object.assign(subtema, { linkGrabacion, pdfs: pdfsEnEdicion });
-  avisoGrabacion.querySelector(".lsut__aviso-texto").textContent = linkGrabacion
-    ? `Grabación guardada en «${subtema.titulo}»`
-    : `Cambios guardados en «${subtema.titulo}»`;
-  mostrarSubtemasLider(obtenerTema(subtema.idTema), subtema.id);
+  const campoNombre = formGrabacion.querySelector("#lsut-nombre");
+  if (!validarNombreSubtema(campoNombre, estado.subtema) || !validarLinkGrabacion()) return;
+  const datos = {
+    titulo: campoNombre.value.trim(),
+    descripcion: formGrabacion.querySelector("#lsut-descripcion").value.trim(),
+    linkGrabacion: campoLinkGrabacion.value.trim(),
+    pdfs: pdfsEnEdicion,
+  };
+  if (!estado.subtema.id) {
+    // Nuevo: se crea y la dirección pasa a ?id= para que los siguientes cambios lo editen
+    estado.subtema = crearSubtema({ idTema: estado.tema.id, ...datos });
+    subtemaAntesDeGuardar = null;
+    subtemaRecienCreado = true;
+    history.replaceState(null, "", `subtema.html?id=${estado.subtema.id}`);
+    avisoGrabacion.querySelector(".lsut__aviso-texto").textContent = `Subtema «${datos.titulo}» creado`;
+  } else {
+    const { titulo, descripcion, linkGrabacion, pdfs } = estado.subtema;
+    subtemaAntesDeGuardar = { titulo, descripcion, linkGrabacion, pdfs };
+    subtemaRecienCreado = false;
+    editarSubtema(estado.subtema.id, datos);
+    Object.assign(estado.subtema, datos);
+    avisoGrabacion.querySelector(".lsut__aviso-texto").textContent = datos.linkGrabacion
+      ? `Grabación guardada en «${datos.titulo}»`
+      : `Cambios guardados en «${datos.titulo}»`;
+  }
+  mostrarSubtemasLider(estado.tema, estado.subtema.id);
+  abrirSubtemaEnModal(estado.subtema, estado.tema);
   // Se muestra el aviso del diseño (pantalla 54) y se oculta el modal, con :target
   location.hash = "guardado";
 };
 
-const deshacerGrabacion = (e, subtema) => {
+// «Deshacer»: si el subtema se acaba de crear, se borra; si se editó, vuelve a lo de antes
+const deshacerSubtema = (e, estado) => {
   e.preventDefault();
+  if (subtemaRecienCreado) {
+    borrarSubtema(estado.subtema.id);
+    location.href = `subtema.html?tema=${estado.tema.id}`;
+    return;
+  }
   if (!subtemaAntesDeGuardar) return;
-  editarSubtema(subtema.id, subtemaAntesDeGuardar);
-  Object.assign(subtema, subtemaAntesDeGuardar);
+  editarSubtema(estado.subtema.id, subtemaAntesDeGuardar);
+  Object.assign(estado.subtema, subtemaAntesDeGuardar);
   subtemaAntesDeGuardar = null;
-  abrirGrabacion(subtema);
-  mostrarSubtemasLider(obtenerTema(subtema.idTema), subtema.id);
+  abrirSubtemaEnModal(estado.subtema, estado.tema);
+  mostrarSubtemasLider(estado.tema, estado.subtema.id);
   // Vuelve a abrir el modal: :target pasa de #guardado al propio modal
   location.hash = "grabacion";
-  campoLinkGrabacion.focus();
+  formGrabacion.querySelector("#lsut-nombre").focus();
 };
 
 
@@ -547,13 +607,37 @@ const validarDatosTema = (campoNombre, campoDescripcion, campoImagen) => {
     errores.push(campoDescripcion);
   }
   const imagen = campoImagen && campoImagen.files[0];
+  const ayudaImagen = campoImagen && campoImagen.closest("section").querySelector("[class$='__zona-ayuda']");
+  ayudaImagen?.classList.remove("p3tem__ayuda--error");
   if (imagen && (!["image/png", "image/jpeg"].includes(imagen.type) || imagen.size > MAXIMO_MB_IMAGEN * 1024 * 1024)) {
-    alert(`La imagen debe ser PNG o JPG y pesar como máximo ${MAXIMO_MB_IMAGEN} MB.`);
+    if (ayudaImagen) {
+      ayudaImagen.textContent = `La imagen debe ser PNG o JPG y pesar como máximo ${MAXIMO_MB_IMAGEN} MB.`;
+      ayudaImagen.classList.add("p3tem__ayuda--error");
+    }
     campoImagen.value = "";
     errores.push(campoImagen);
   }
   if (errores.length) errores[0].focus();
   return errores.length === 0;
+};
+
+// Nombre obligatorio (3 a 60) y sin repetirse dentro del mismo tema
+const validarNombreSubtema = (campo, subtema) => {
+  const nombre = campo.value.trim();
+  campo.closest(".campo").classList.remove("campo--error");
+  campo.removeAttribute("aria-invalid");
+  if (nombre.length < 3) {
+    marcarErrorTema(campo, nombre ? "El nombre debe tener al menos 3 caracteres." : "");
+    campo.focus();
+    return false;
+  }
+  const repetido = obtenerSubtemasDeTema(subtema.idTema).some((s) => s.id !== subtema.id && normalizarTextoTema(s.titulo) === normalizarTextoTema(nombre));
+  if (repetido) {
+    marcarErrorTema(campo, "Ya hay un subtema con ese nombre en este tema.");
+    campo.focus();
+    return false;
+  }
+  return true;
 };
 
 // El link es opcional (puede quedar «Sin grabación»), pero si se escribe debe ser de YouTube, Google Drive o Zoom
@@ -631,16 +715,24 @@ document.addEventListener("DOMContentLoaded", () => {
     if (location.hash === "#creado") location.hash = "";
     formCrearModulo.addEventListener("submit", crearModulo);
     formCrearModulo.querySelector('.lcmo__acciones a[href="#creado"]').addEventListener("click", crearModulo);
-    botonAnadirSubtemaModulo.addEventListener("click", anadirSubtemaModulo);
+    botonAnadirSubtemaModulo.addEventListener("click", mostrarCampoSubtemaModulo);
+    grupoSubtemasModulo.addEventListener("click", accionarSubtemaModulo);
+    grupoSubtemasModulo.addEventListener("keydown", accionarSubtemaModulo);
     formCrearModulo.addEventListener("input", limpiarErrorTema);
   }
 
-  // Líder: subtemas (?id= del tema) y subtema (?id= del subtema)
+  // Líder: subtemas (?id= del tema) y subtema (?id= para editar o ?tema= para crear)
   if (listaSubtemasLider) {
-    const subtema = modalGrabacion ? obtenerSubtema(idTemaDireccion) : null;
-    if (modalGrabacion && !subtema) {
-      location.href = "subtemas.html";
-      return;
+    let subtema = null;
+    if (modalGrabacion) {
+      const temaNuevo = idTemaNuevoSubtema ? obtenerTema(idTemaNuevoSubtema) : null;
+      subtema = temaNuevo
+        ? { id: 0, idTema: temaNuevo.id, titulo: "", descripcion: "", linkGrabacion: "", pdfs: [] }
+        : obtenerSubtema(idTemaDireccion);
+      if (!subtema) {
+        location.href = "subtemas.html";
+        return;
+      }
     }
     const tema = subtema ? obtenerTema(subtema.idTema) : obtenerTemaDeDireccion();
     if (!tema) {
@@ -650,25 +742,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const idActual = subtema ? subtema.id : 0;
     const p = prefijoSubtemas;
     mostrarSubtemasLider(tema, idActual);
+    // «+ Añadir subtema» abre el modal de subtema.html en modo «nuevo»
+    document.querySelector(`.${p}__anadir`).href = `subtema.html?tema=${tema.id}`;
     document.querySelector(`#${p}-buscar`).addEventListener("input", () => mostrarSubtemasLider(tema, idActual));
     document.querySelector(`#${p}-fecha`).addEventListener("change", () => mostrarSubtemasLider(tema, idActual));
     document.querySelector(`#${p}-orden`).addEventListener("change", () => mostrarSubtemasLider(tema, idActual));
     document.querySelector(`.${p}__filtros`).addEventListener("submit", (e) => e.preventDefault());
-    document.querySelector(`.${p}__anadir`).addEventListener("click", (e) => anadirSubtemaLider(e, tema, idActual));
     listaSubtemasLider.addEventListener("click", (e) => accionarSubtemasLider(e, tema, idActual));
 
     if (subtema) {
+      const estado = { subtema, tema };
       if (location.hash === "#guardado") location.hash = "grabacion";
-      abrirGrabacion(subtema);
-      formGrabacion.addEventListener("submit", (e) => guardarGrabacion(e, subtema));
-      formGrabacion.querySelector('.lsut__botones a[href="#guardado"]').addEventListener("click", (e) => guardarGrabacion(e, subtema));
-      campoLinkGrabacion.addEventListener("input", (e) => {
-        limpiarErrorTema(e);
-        mostrarDetectado();
+      abrirSubtemaEnModal(subtema, tema);
+      formGrabacion.addEventListener("submit", (e) => guardarSubtemaDesdeModal(e, estado));
+      formGrabacion.querySelector('.lsut__botones a[href="#guardado"]').addEventListener("click", (e) => guardarSubtemaDesdeModal(e, estado));
+      // El formulario no tiene botón submit: Enter en un campo de texto también guarda
+      formGrabacion.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && e.target.matches("input.lsut__input")) guardarSubtemaDesdeModal(e, estado);
       });
+      formGrabacion.addEventListener("input", limpiarErrorTema);
+      campoLinkGrabacion.addEventListener("input", mostrarDetectado);
       campoPdfGrabacion.addEventListener("change", anadirPdfs);
       zonaMaterialGrabacion.addEventListener("click", quitarPdf);
-      avisoGrabacion.querySelector(".lsut__aviso-enlace").addEventListener("click", (e) => deshacerGrabacion(e, subtema));
+      avisoGrabacion.querySelector(".lsut__aviso-enlace").addEventListener("click", (e) => deshacerSubtema(e, estado));
+      if (!subtema.id) formGrabacion.querySelector("#lsut-nombre").focus();
     }
   }
 });

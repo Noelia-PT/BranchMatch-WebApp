@@ -10453,6 +10453,27 @@ a.ifd__chip:hover {
 .p3tem__error-pdf {
   display: block;
 }
+/* Nombre y descripción que el JavaScript inserta en el modal de subtema */
+.p3tem__descripcion {
+  min-height: 88px;
+  resize: vertical;
+}
+/* Crear módulo: campo para escribir un subtema nuevo */
+.p3tem__nuevo {
+  gap: var(--espacio-8);
+}
+.p3tem__nuevo-fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-8);
+}
+.p3tem__nuevo-fila .campo__input {
+  flex: 1 1 180px;
+  min-width: 0;
+}
+.p3tem__ayuda--error {
+  color: var(--color-error);
+}
 .p3lec__visto {
   color: var(--color-menta);
 }
