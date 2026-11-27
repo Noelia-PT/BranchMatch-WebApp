@@ -12,7 +12,7 @@ const botonMicrofono = document.querySelector("#boton-microfono");
 // ===== Datos =====
 // La clave NO está aquí: la agrega la función de Netlify desde el archivo .env
 const urlApi = "/.netlify/functions/chat";
-const modelo = "gpt-4o-mini";
+const modelo = "openai/gpt-oss-20b"; // modelo gratis de Groq con herramientas (ver console.groq.com → Models)
 const idioma = "es-PE"; // idioma de la voz y del micrófono: "es-MX", "es-ES", "es-PE"...
 
 // Fecha local (no UTC) para que «hoy» sea el mismo día que ve el usuario en Perú
