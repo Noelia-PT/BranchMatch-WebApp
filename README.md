@@ -4,7 +4,7 @@
 programación competitiva con equipos (*parties*) de su mismo nivel y horario, y convierte el entrenamiento en un juego.
 
 > Proyecto académico de estudiantes de la UPC, de los cursos **Interacción Humano-Computador (IHC)** y **Programación Web**.
-> Es un prototipo navegable en **HTML y CSS puros**: no hay servidor ni JavaScript.
+> Es un prototipo navegable en **HTML, CSS y JavaScript vanilla**: no hay servidor; todo funciona en el navegador con datos de ejemplo y `localStorage`.
 
 ## ¿Cómo funciona?
 
@@ -44,11 +44,27 @@ python -m http.server 8765
 
 y entra a `http://127.0.0.1:8765/`. También funciona la extensión **Live Server** de VS Code.
 
-Para la demostración, entra desde `pages/auth/iniciar-sesion.html` y elige el rol antes de pulsar «Iniciar sesión»:
-- **Estudiante** (marcado por defecto): lleva a `pages/estudiante/inicio.html`.
-- **Líder**: lleva a `pages/lider/panel.html`. Para cambiar de rol, usa «Cerrar sesión» en el perfil.
+### Cómo entrar
 
-Como no hay JavaScript, los buscadores, filtros, contadores y reproductores están dibujados pero no hacen nada.
+Entra desde `pages/auth/iniciar-sesion.html` con el correo (o el nombre de usuario) y la contraseña. **El rol sale de la cuenta**:
+un estudiante va a `pages/estudiante/inicio.html` y un líder a `pages/lider/panel.html`. Cada rol solo ve sus páginas: si abres
+una del otro rol, te devuelve al inicio de sesión. Para cambiar de cuenta, usa «Cerrar sesión» en el perfil.
+
+Cuentas de ejemplo (demostración, sin seguridad real):
+
+| Rol | Correo | Contraseña |
+|---|---|---|
+| Estudiante | `estudiante1@branchmatch.test` | `estudiante123` |
+| Líder | `lider1@branchmatch.test` | `lider1234` |
+
+Hay otro estudiante (`estudiante2@...`) y cuatro líderes más (`lider2@...` a `lider5@...`); la lista completa está en
+[`js/CONTRATO-DATOS.md`](js/CONTRATO-DATOS.md). «Crear cuenta» siempre crea un **estudiante** y lo lleva a la prueba diagnóstica.
+
+### Reiniciar los datos
+
+Los datos que creas (cuentas, notificaciones, resultados…) se guardan en el `localStorage` de tu navegador. Para volver a los datos
+de ejemplo, abre `pages/auth/iniciar-sesion.html?reiniciar=1` o escribe `reiniciarDatos()` en la consola del navegador.
+
 Los estados de una pantalla (resultados, confirmaciones, ventanas emergentes) se activan con enlaces,
 por ejemplo `pages/lider/crear-modulo.html#creado`.
 
@@ -57,7 +73,7 @@ por ejemplo `pages/lider/crear-modulo.html#creado`.
 ```
 ├── index.html          # Landing
 ├── css/styles.css      # Estilos de todo el sitio
-├── js/                 # Vacía: el proyecto no usa JavaScript
+├── js/                 # JavaScript vanilla (un archivo por tema) y CONTRATO-DATOS.md
 ├── assets/
 │   ├── fonts/          # Pixelify Sans y Poppins
 │   ├── icons/          # Íconos SVG
@@ -82,7 +98,7 @@ Las reglas del proyecto y la numeración de pantallas están en [`SPEC.md`](SPEC
 
 ## Tecnologías
 
-HTML5 semántico y CSS3 (Flexbox y Grid). Sin JavaScript, frameworks, librerías ni CDNs.
+HTML5 semántico, CSS3 (Flexbox y Grid) y JavaScript vanilla con `localStorage`. Sin frameworks, librerías ni CDNs.
 
 ## Equipo
 

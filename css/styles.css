@@ -785,6 +785,55 @@ textarea.campo__input {
 }
 
 
+/* ===== Asistente IA (plantilla del curso: chat flotante de Popa) ===== */
+/* Reglas .asistente-* y del micrófono copiadas de la plantilla. Solo se ajustan sus variables
+   a la paleta de BranchMatch (--accent = amarillo del botón principal), sin tocar :root. */
+.asistente-boton,
+.asistente-ventana {
+  --accent: var(--color-amarillo);
+  --accent-dark: var(--color-amarillo-pressed);
+  --accent-texto: var(--color-borde);
+  --bg: var(--color-superficie);
+  --bg-soft: var(--color-fondo);
+  --text: var(--color-texto);
+  --muted: var(--color-texto-2);
+  --border: var(--color-celeste);
+  --radius: 0;
+  --font-titulo: var(--fuente-pixel);
+}
+.asistente-boton { display: flex; align-items: center; gap: .5rem; position: fixed; right: 1.25rem; bottom: 4.5rem; z-index: 40; padding: .7rem 1.3rem; font-family: var(--font-titulo); font-weight: 600; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .03em; color: var(--accent-texto); background: var(--accent); border: var(--borde-medio) solid var(--color-borde); border-radius: 999px; cursor: pointer; box-shadow: var(--sombra-navy); }
+.asistente-boton svg { width: 20px; height: 20px; }
+.asistente-boton:hover { background: var(--accent-dark); }
+.asistente-boton:focus-visible { outline: var(--borde-fino) solid var(--color-celeste); outline-offset: 3px; }
+.asistente-ventana { position: fixed; right: 1.25rem; bottom: 8.2rem; z-index: 40; width: min(360px, calc(100vw - 2.5rem)); height: 480px; max-height: calc(100vh - 10rem); display: flex; flex-direction: column; overflow: hidden; color: var(--text); background: var(--bg); border: var(--borde-medio) solid var(--border); border-radius: 4px; box-shadow: var(--sombra-claro); }
+.asistente-ventana[hidden] { display: none; }
+.chat-head { display: flex; justify-content: space-between; align-items: center; padding: .9rem 1.1rem; border-bottom: 1px solid var(--border); }
+.chat-head strong { display: block; font-family: var(--font-titulo); font-size: .95rem; }
+.chat-head span { font-size: .78rem; color: var(--muted); }
+.chat-head button { border: 0; background: transparent; font: inherit; font-size: .85rem; color: var(--muted); cursor: pointer; }
+.chat-msgs { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: .6rem; padding: 1rem; background: var(--bg-soft); }
+.msg { white-space: pre-wrap; max-width: 82%; padding: .6rem .9rem; font-size: .88rem; line-height: 1.45; border-radius: 14px; overflow-wrap: anywhere; }
+.msg-bot { align-self: flex-start; background: var(--bg); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+.msg-user { align-self: flex-end; background: var(--accent); color: var(--accent-texto); border-bottom-right-radius: 4px; }
+.puntos span { display: inline-block; width: 7px; height: 7px; margin-right: 4px; border-radius: 50%; background: var(--muted); animation: salto 1s infinite; }
+.puntos span:nth-child(2) { animation-delay: .15s; }
+.puntos span:nth-child(3) { animation-delay: .3s; }
+@keyframes salto { 0%, 60%, 100% { transform: translateY(0); opacity: .4; } 30% { transform: translateY(-5px); opacity: 1; } }
+.chat-form { display: flex; gap: .5rem; padding: .75rem; border-top: 1px solid var(--border); }
+.chat-form input { flex: 1; min-width: 0; padding: .6rem .85rem; font: inherit; font-size: .9rem; color: var(--color-borde); background: var(--color-texto-2); border: 1px solid var(--border); border-radius: var(--radius); }
+.chat-form input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--color-celeste); }
+/* Botones del formulario (la plantilla usa .btn y .btn-primary; aquí solo existen dentro del chat) */
+.chat-form .btn { display: inline-flex; align-items: center; justify-content: center; padding: .5rem 1rem; font-family: var(--font-titulo); font-weight: 600; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .03em; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; }
+.chat-form .btn[hidden] { display: none; }
+.chat-form .btn-primary { color: var(--accent-texto); background: var(--accent); border-color: var(--accent); }
+.chat-form .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+
+/* Micrófono del asistente */
+.chat-form .btn#boton-microfono { padding: .5rem .7rem; }
+#boton-microfono.escuchando { background: var(--accent); color: var(--accent-texto); animation: pulso 1s infinite; }
+@keyframes pulso { 50% { opacity: .5; } }
+
+
 /* =========================================================================
    6. SECCIONES POR PERSONA
    Cada quien escribe SOLO dentro de su bloque. Un comentario por pantalla:
@@ -1354,74 +1403,6 @@ textarea.campo__input {
   }
 }
 
-/* --- Selector de rol para la demostración (auth/iniciar-sesion.html y auth/crear-cuenta.html) --- */
-/* Dos radios ocultos con pastillas; el botón correcto se muestra con :has() y :checked, sin JavaScript */
-.auth-rol {
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-.auth-rol__titulo {
-  padding: 0;
-  margin-bottom: var(--espacio-8);
-  font-size: var(--texto-body);
-  line-height: var(--lh-body);
-  color: var(--color-texto);
-}
-.auth-rol__opciones {
-  display: flex;
-  gap: var(--espacio-16);
-}
-.auth-rol__opcion {
-  flex: 1 1 0;
-  min-width: 0;
-}
-.auth-rol__pastilla {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: var(--alto-campo);
-  padding: var(--espacio-8) var(--espacio-16);
-  background: var(--color-fondo);
-  border: var(--borde-fino) solid var(--color-borde);
-  border-radius: 10px;
-  color: var(--color-texto);
-  font-family: var(--fuente-pixel);
-  font-size: var(--texto-stats);
-  line-height: var(--lh-stats);
-  text-align: center;
-  cursor: pointer;
-}
-.auth-rol__pastilla:hover {
-  border-color: var(--color-celeste);
-}
-.auth-rol__radio:checked + .auth-rol__pastilla {
-  background: var(--color-amarillo);
-  border-color: var(--color-borde);
-  box-shadow: var(--sombra-navy);
-  color: var(--color-borde);
-}
-.auth-rol__radio:focus-visible + .auth-rol__pastilla {
-  outline: var(--borde-fino) solid var(--color-celeste);
-  outline-offset: 2px;
-}
-.auth-formulario:has(#rol-estudiante:checked) .auth-formulario__boton--lider,
-.auth-formulario:has(#rol-lider:checked) .auth-formulario__boton--estudiante {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .auth-rol__titulo {
-    font-size: var(--texto-h3);
-    line-height: var(--lh-h3);
-    font-weight: 600;
-  }
-  .auth-rol__opciones {
-    max-width: 414px;
-  }
-}
-
 /* --- 04 a 08 · Prueba diagnóstica (pages/prueba/) --- */
 
 /* 04 · Inicio de la prueba */
@@ -1520,6 +1501,60 @@ textarea.campo__input {
 }
 .prueba-estado__relleno--2 {
   width: 10%;
+}
+.prueba-estado__relleno--3 {
+  width: 15%;
+}
+.prueba-estado__relleno--4 {
+  width: 20%;
+}
+.prueba-estado__relleno--5 {
+  width: 25%;
+}
+.prueba-estado__relleno--6 {
+  width: 30%;
+}
+.prueba-estado__relleno--7 {
+  width: 35%;
+}
+.prueba-estado__relleno--8 {
+  width: 40%;
+}
+.prueba-estado__relleno--9 {
+  width: 45%;
+}
+.prueba-estado__relleno--10 {
+  width: 50%;
+}
+.prueba-estado__relleno--11 {
+  width: 55%;
+}
+.prueba-estado__relleno--12 {
+  width: 60%;
+}
+.prueba-estado__relleno--13 {
+  width: 65%;
+}
+.prueba-estado__relleno--14 {
+  width: 70%;
+}
+.prueba-estado__relleno--15 {
+  width: 75%;
+}
+.prueba-estado__relleno--16 {
+  width: 80%;
+}
+.prueba-estado__relleno--17 {
+  width: 85%;
+}
+.prueba-estado__relleno--18 {
+  width: 90%;
+}
+.prueba-estado__relleno--19 {
+  width: 95%;
+}
+.prueba-estado__relleno--20 {
+  width: 100%;
 }
 .prueba-tarjeta {
   display: grid;
@@ -1962,6 +1997,57 @@ textarea.campo__input {
     gap: var(--espacio-24);
     margin-top: var(--espacio-32);
   }
+}
+
+/* --- 17 · Notificaciones con JavaScript: acciones, no leídas y vacío (estudiante y lider/notificaciones.html) --- */
+.notif__acciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+  align-self: stretch;
+}
+.notificacion--nueva {
+  border-color: var(--color-amarillo);
+}
+.notif__vacio {
+  text-align: center;
+}
+.notif__marcar-todas {
+  align-self: flex-start;
+}
+
+/* Contador de la campana de la cabecera (todas las páginas con cabecera) */
+.campana__enlace {
+  position: relative;
+  display: inline-flex;
+}
+.campana__contador {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  min-width: 18px;
+  padding: 0 var(--espacio-4);
+  background: var(--color-rosa);
+  color: var(--color-borde);
+  font-family: var(--fuente-pixel);
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .notif__acciones {
+    align-self: flex-start;
+    margin-top: var(--espacio-24);
+  }
+  .notif__acciones .boton {
+    white-space: nowrap;
+  }
+}
+
+/* --- 02 y 03 · Auth: la zona de error general respeta el atributo hidden --- */
+.auth-formulario .campo[hidden] {
+  display: none;
 }
 
 /* ===== P2 · Perfiles y Party ===== */
@@ -5888,8 +5974,150 @@ textarea.edit__descripcion {
   }
 }
 
+/* --- Mi party e integrantes del líder (lider/integrantes.html, pantalla añadida por P2) --- */
+.integ {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-24);
+  padding-top: var(--espacio-24);
+  padding-bottom: var(--espacio-48);
+}
+.integ__party {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+}
+.integ__encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-8) var(--espacio-16);
+}
+.integ__titulo {
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-h2);
+  line-height: var(--lh-h2);
+  font-weight: 700;
+}
+.integ__datos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-4);
+}
+.integ__subtitulo {
+  margin-bottom: var(--espacio-8);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-h3);
+  line-height: var(--lh-h3);
+  font-weight: 600;
+}
+.integ__horarios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-4);
+  color: var(--color-texto-2);
+}
+.integ__acciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+}
+.integ__seccion {
+  display: flex;
+  flex-direction: column;
+}
+.integ__lista {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--espacio-24);
+}
+.integ__integrante {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+}
+.integ__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: var(--color-celeste);
+  border: var(--borde-fino) solid var(--color-borde);
+  color: var(--color-borde);
+  font-family: var(--fuente-pixel);
+  font-size: var(--texto-body);
+  font-weight: 700;
+}
+.integ__avatar--amarillo { background: var(--color-amarillo); }
+.integ__avatar--celeste { background: var(--color-celeste); }
+.integ__avatar--menta { background: var(--color-menta); }
+.integ__avatar--rosa { background: var(--color-rosa); }
+.integ__avatar--lila { background: var(--color-texto-2); }
+.integ__datos-integrante {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+}
+.integ__nombre {
+  font-size: var(--texto-h3);
+  line-height: var(--lh-h3);
+  font-weight: 600;
+}
+.integ__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-8);
+}
+
+@media (min-width: 768px) {
+  .integ {
+    padding-top: var(--espacio-48);
+  }
+  .integ__acciones {
+    flex-direction: row;
+  }
+  .integ__lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1100px) {
+  .integ__lista {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 
 /* ===== P3 · Feed y Lecciones ===== */
+
+/* --- Únete a una party con JavaScript: escenas «enviada» y «sigue buscando» (estudiante/unete-party.html) --- */
+/* party.js dibuja una sola escena por party con estas clases, en lugar de usar :target */
+.unete__grupo--enviada .unete__escena--enviada,
+.unete__grupo--final .unete__escena--final {
+  display: flex;
+}
+
+/* --- P2 · Anchos de las barras de stats y de XP (perfil.js los pone según el valor, de 5 en 5) --- */
+.p2-ancho--0 { width: 0%; }
+.p2-ancho--5 { width: 5%; }
+.p2-ancho--10 { width: 10%; }
+.p2-ancho--15 { width: 15%; }
+.p2-ancho--20 { width: 20%; }
+.p2-ancho--25 { width: 25%; }
+.p2-ancho--30 { width: 30%; }
+.p2-ancho--35 { width: 35%; }
+.p2-ancho--40 { width: 40%; }
+.p2-ancho--45 { width: 45%; }
+.p2-ancho--50 { width: 50%; }
+.p2-ancho--55 { width: 55%; }
+.p2-ancho--60 { width: 60%; }
+.p2-ancho--65 { width: 65%; }
+.p2-ancho--70 { width: 70%; }
+.p2-ancho--75 { width: 75%; }
+.p2-ancho--80 { width: 80%; }
+.p2-ancho--85 { width: 85%; }
+.p2-ancho--90 { width: 90%; }
+.p2-ancho--95 { width: 95%; }
+.p2-ancho--100 { width: 100%; }
 
 /* --- 11 · Inicio (feed) (estudiante/inicio.html) --- */
 .ifd {
@@ -10094,6 +10322,243 @@ a.ifd__chip:hover {
     align-items: center;
     justify-content: space-between;
     gap: var(--espacio-16);
+  }
+}
+
+
+/* --- P3 · JavaScript: comentarios, «Te gusta» y estados vacíos de publicaciones (feed.js y publicaciones.js) --- */
+/* Caja de comentarios que feed.js y publicaciones.js dibujan debajo de cada publicación */
+.pcom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+  margin-top: var(--espacio-8);
+  padding-top: var(--espacio-8);
+  border-top: var(--borde-fino) solid var(--color-divisor, var(--ifd-divisor));
+}
+.pcom[hidden] {
+  display: none;
+}
+.pcom__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pcom__item {
+  padding: var(--espacio-8);
+  background: var(--color-fondo);
+}
+.pcom__meta {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-texto-2);
+}
+.pcom__autor {
+  font-weight: 600;
+  color: var(--color-texto);
+}
+.pcom__texto,
+.pcom__vacio {
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+}
+.pcom__vacio {
+  color: var(--color-texto-2);
+}
+.pcom__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+}
+.pcom__campo {
+  flex: 1;
+}
+.pcom__enviar {
+  align-self: flex-end;
+}
+
+/* «Me gusta» pulsado */
+.p3-gusta--activo {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Mis publicaciones: conteo, imagen real, botón de borrar y lista vacía */
+.p3pub__conteo {
+  font-size: 12px;
+  line-height: 18px;
+}
+.p3pub__imagen {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.p3pub__borrar {
+  display: inline-flex;
+}
+.p3pub__vacio {
+  color: var(--color-texto-2);
+}
+
+/* Comunidad: buscador que inserta comunidad.js, enlaces de Tendencias y acciones de cada pregunta */
+.p3cmu__buscar {
+  margin-bottom: var(--espacio-8);
+}
+/* Contenedor de las preguntas: mismo espacio entre tarjetas que el feed */
+.p3cmu__resultados {
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+}
+.cmu__tend-contenido a {
+  color: inherit;
+}
+.cmu__tend-contenido a:hover,
+.cmu__likes:hover,
+.cmu__coments:hover {
+  text-decoration: underline;
+}
+
+/* Calendario del líder (calendario.js): días como enlaces, clases del día con Editar/Borrar y aviso al guardar */
+.p3cal__dia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+.p3cal__dia:hover,
+.p3cal__dia[aria-current="date"] {
+  outline: var(--borde-fino) solid var(--color-amarillo);
+  outline-offset: -2px;
+}
+.p3cal__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.p3cal__titulo {
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-texto-2);
+}
+.p3cal__acciones {
+  display: flex;
+  gap: var(--espacio-16);
+}
+.p3cal__borrar {
+  color: var(--color-error);
+}
+.p3cal__aviso {
+  font-size: var(--texto-small);
+  line-height: var(--lh-small);
+  color: var(--color-menta);
+}
+.p3cal__aviso:empty {
+  display: none;
+}
+
+/* Lecciones y temas (temas.js y lecciones.js) */
+/* Acordeón del tema con JavaScript: mismas medidas que .tem__sub, pero el abierto lo marca aria-expanded */
+.p3tem__sub {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-16);
+  padding: 12px;
+  background: var(--color-superficie);
+  border: var(--borde-grueso) solid var(--color-borde);
+  scroll-margin-top: 100px;
+}
+.p3tem__sub--abierto {
+  padding: 13px;
+  border: var(--borde-medio) solid var(--color-amarillo);
+  box-shadow: var(--sombra-navy);
+}
+.p3tem__sub--abierto .tem__sub-cuerpo {
+  display: flex;
+}
+.p3tem__sub--abierto .tem__num {
+  background: var(--color-amarillo);
+  color: var(--color-borde);
+}
+.p3tem__sub--abierto .tem__flecha {
+  transform: rotate(180deg);
+}
+.p3tem__vacio {
+  color: var(--color-texto-2);
+}
+.p3tem__fila--actual {
+  outline: var(--borde-fino) solid var(--color-amarillo);
+}
+.p3tem__error-pdf {
+  display: block;
+}
+/* Nombre y descripción que el JavaScript inserta en el modal de subtema */
+.p3tem__descripcion {
+  min-height: 88px;
+  resize: vertical;
+}
+/* Crear módulo: campo para escribir un subtema nuevo */
+.p3tem__nuevo {
+  gap: var(--espacio-8);
+}
+.p3tem__nuevo-fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-8);
+}
+.p3tem__nuevo-fila .campo__input {
+  flex: 1 1 180px;
+  min-width: 0;
+}
+.p3tem__ayuda--error {
+  color: var(--color-error);
+}
+.p3lec__visto {
+  color: var(--color-menta);
+}
+.p3lec__material + .p3lec__material {
+  margin-top: var(--espacio-8);
+}
+/* Elementos que el JavaScript oculta con el atributo hidden (su display del diseño le ganaría) */
+.lcn__leccion .lcn__play[hidden],
+.lcn__leccion .lcn__material[hidden],
+.cal__panel .cal__ingresar[hidden],
+.lsut__caja .lsut__detectado[hidden] {
+  display: none;
+}
+/* Barra de avance de la lección en pasos de 10 % */
+.p3lec-ancho--0 { width: 0%; }
+.p3lec-ancho--10 { width: 10%; }
+.p3lec-ancho--20 { width: 20%; }
+.p3lec-ancho--30 { width: 30%; }
+.p3lec-ancho--40 { width: 40%; }
+.p3lec-ancho--50 { width: 50%; }
+.p3lec-ancho--60 { width: 60%; }
+.p3lec-ancho--70 { width: 70%; }
+.p3lec-ancho--80 { width: 80%; }
+.p3lec-ancho--90 { width: 90%; }
+.p3lec-ancho--100 { width: 100%; }
+
+@media (min-width: 768px) {
+  .pcom__form {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .p3tem__sub {
+    padding: 12px var(--espacio-16);
+  }
+  .p3tem__sub--abierto {
+    padding: 13px 17px;
   }
 }
 
@@ -14645,4 +15110,58 @@ a.ent__nombre:hover,
     top: 73px;
     left: calc(var(--margen-pagina) - 34px);
   }
+}
+
+/* --- P4 · Anchos de las barras de avance, aprobación y progreso (los JS de retos y rendimiento los ponen según el valor, de 5 en 5) --- */
+.p4-ancho--0 { width: 0%; }
+.p4-ancho--5 { width: 5%; }
+.p4-ancho--10 { width: 10%; }
+.p4-ancho--15 { width: 15%; }
+.p4-ancho--20 { width: 20%; }
+.p4-ancho--25 { width: 25%; }
+.p4-ancho--30 { width: 30%; }
+.p4-ancho--35 { width: 35%; }
+.p4-ancho--40 { width: 40%; }
+.p4-ancho--45 { width: 45%; }
+.p4-ancho--50 { width: 50%; }
+.p4-ancho--55 { width: 55%; }
+.p4-ancho--60 { width: 60%; }
+.p4-ancho--65 { width: 65%; }
+.p4-ancho--70 { width: 70%; }
+.p4-ancho--75 { width: 75%; }
+.p4-ancho--80 { width: 80%; }
+.p4-ancho--85 { width: 85%; }
+.p4-ancho--90 { width: 90%; }
+.p4-ancho--95 { width: 95%; }
+.p4-ancho--100 { width: 100%; }
+
+/* --- P4 · Estados nuevos: «corrección pedida» e «incorrecta» (retos, entregas y revisar entrega) --- */
+.retos__estado--correccion {
+  color: var(--color-rosa);
+}
+.ent__estado--correccion {
+  border-color: var(--color-rosa);
+  color: var(--color-rosa);
+}
+.re__estado--correccion {
+  background: var(--color-error);
+  color: var(--color-texto);
+}
+
+/* --- P4 · Reto de opción múltiple: respuesta equivocada en el resultado y aviso de «elige una opción» (estudiante/reto-opcion-multiple.html) --- */
+.rm__opcion--incorrecta {
+  background: var(--color-fondo);
+  border: var(--borde-grueso) solid var(--color-error);
+  cursor: default;
+}
+.rm__opcion--incorrecta .rm__letra {
+  background: var(--color-error);
+  color: var(--color-borde);
+}
+.rm__opcion--incorrecta .rm__etiqueta {
+  display: inline-flex;
+  background: var(--color-error);
+}
+.rm__form .campo__error.campo__error--visible {
+  display: block;
 }
